@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Python语言知识点</title>
+    <url>/2020/05/09/Python%E8%AF%AD%E8%A8%80%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+    <content><![CDATA[<p>[TOC]</p>
+<h1 id="Python语言知识点"><a href="#Python语言知识点" class="headerlink" title="Python语言知识点"></a>Python语言知识点</h1><h2 id="1、Python-语言特性"><a href="#1、Python-语言特性" class="headerlink" title="1、Python 语言特性"></a>1、Python 语言特性</h2><h2 id="2、Python的函数参数传递"><a href="#2、Python的函数参数传递" class="headerlink" title="2、Python的函数参数传递"></a>2、Python的函数参数传递</h2><h2 id="3、Python中的元类"><a href="#3、Python中的元类" class="headerlink" title="3、Python中的元类"></a>3、Python中的元类</h2><h2 id="4、Python中的静态方法和类方法"><a href="#4、Python中的静态方法和类方法" class="headerlink" title="4、Python中的静态方法和类方法"></a>4、Python中的静态方法和类方法</h2><h2 id="5、Python中单例模式"><a href="#5、Python中单例模式" class="headerlink" title="5、Python中单例模式"></a>5、Python中单例模式</h2><ul>
+<li>__new__方法</li>
+<li>共享属性方法</li>
+<li>装饰器方法</li>
+<li>import方法</li>
+</ul>
+]]></content>
+      <categories>
+        <category>面试相关</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>基础知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo 简介</title>
+    <url>/2020/05/08/hexo%E7%AE%80%E4%BB%8B/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+</search>
