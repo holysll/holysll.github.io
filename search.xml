@@ -1,6 +1,254 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>自然语言处理</title>
+    <url>/2020/05/12/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+<p><strong>自然语言处理</strong></p>
+<ul>
+<li><a href="#文本分析">文本挖掘</a></li>
+<li><a href="#情感分析">情感分析</a></li>
+</ul>
+<!-- markdown-toc end -->
+]]></content>
+  </entry>
+  <entry>
+    <title>机器学习知识</title>
+    <url>/2020/05/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+<p><strong>机器学习</strong></p>
+<ul>
+<li><a href="#机器学习基础">机器学习基础</a><ul>
+<li><a href="#1-机器学习概述">1 机器学习概述</a></li>
+<li><a href="#2-监督学习">2 监督学习</a></li>
+<li><a href="#3-非监督学习">3 非监督学习</a></li>
+<li><a href="#4-增强学习">4 增强学习</a></li>
+<li><a href="#5-深度学习">5 深度学习</a></li>
+</ul>
+</li>
+<li><a href="#分类问题">分类问题</a><ul>
+<li><a href="#1-KNN">1 KNN</a></li>
+<li><a href="#2-NB">2 NB</a></li>
+<li><a href="#3-SVM">3 SVM</a></li>
+<li><a href="#4-AdaBoost">4 AdaBoost</a></li>
+<li><a href="#5-DT">5 DT</a></li>
+</ul>
+</li>
+<li><a href="#聚类分析">聚类分析</a><ul>
+<li><a href="#1-K-means">1 K-means</a></li>
+<li><a href="#2-DBSCAN">2 DBSCAN</a></li>
+<li><a href="#3-LDA">3 LDA</a></li>
+</ul>
+</li>
+<li><a href="#预测分析">预测分析</a><ul>
+<li><a href="#1-时间序列">1 时间序列</a></li>
+<li><a href="#2-BP神经网络">2 BP神经网络</a></li>
+</ul>
+</li>
+<li><a href="#关联分析">关联分析</a><ul>
+<li><a href="#1-Apriori">1 Apriori</a></li>
+<li><a href="#2-FP-Growth">2 FP-Growth</a></li>
+</ul>
+</li>
+<li><a href="#回归分析">回归分析</a><ul>
+<li><a href="#1-一元回归">1 一元回归</a></li>
+<li><a href="#2-多元回归">2 多元回归</a></li>
+<li><a href="#3-逻辑回归">3 逻辑回归</a></li>
+</ul>
+</li>
+<li><a href="#集成学习">集成学习</a><ul>
+<li><a href="#1-Bagging">1 Bagging</a></li>
+<li><a href="#2-随机森林">2 随机森林</a></li>
+<li><a href="#3-Boosting">3 Boosting</a></li>
+<li><a href="#4-AdaBoost">4 AdaBoost</a></li>
+</ul>
+</li>
+<li><a href="#深度学习">深度学习</a><ul>
+<li><a href="#1-有监督">1 有监督</a></li>
+<li><a href="#2-无监督">2 无监督</a></li>
+<li><a href="#3-TensorFlow">3 TensorFlow</a></li>
+<li><a href="#4-Theano">4 Theano</a></li>
+</ul>
+</li>
+<li><a href="#数据预处理">数据预处理</a><ul>
+<li><a href="#1-数据清洗">1 数据清洗</a><ul>
+<li><a href="#1-异常值处理">1 异常值处理</a></li>
+<li><a href="#2-缺失值处理">2 缺失值处理</a></li>
+<li><a href="#3-噪声处理">3 噪声处理</a></li>
+<li><a href="#4-倾斜数据处理">4 倾斜数据处理</a></li>
+</ul>
+</li>
+<li><a href="#2-数据集成">2 数据集成</a></li>
+<li><a href="#3-数据变换">3 数据变换</a></li>
+<li><a href="#4-数据归约">4 数据归约</a></li>
+</ul>
+</li>
+<li><a href="#数据降维">数据降维</a><ul>
+<li><a href="#1-PCA">1 主成份分析</a></li>
+<li><a href="#2-奇异值分解">2 奇异值分解</a></li>
+</ul>
+</li>
+</ul>
+<!-- markdown-toc end -->
+]]></content>
+  </entry>
+  <entry>
+    <title>数据结构</title>
+    <url>/2020/05/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+<p><strong>数据结构</strong></p>
+<ul>
+<li><a href="#数据结构">数据结构</a><ul>
+<li><a href="#1-字符串(String)">1 字符串(String)</a></li>
+<li><a href="#2-数组(Array)">2 数组(Array)</a></li>
+<li><a href="#3-堆(Heap)">3 堆(Heap)</a></li>
+<li><a href="#4-栈(Stack)">4 栈(Stack)</a></li>
+<li><a href="#5-队列(Queue)">5 队列(Queue)</a></li>
+<li><a href="#6-链表(Linked-List)">6 链表(Linked-List)</a></li>
+<li><a href="#7-树(Tree)">7 树(Tree)</a></li>
+<li><a href="#8-图(Graph)">8 图(Graph)</a></li>
+<li><a href="#9-哈希表(Hash)">9 哈希表(Hash)</a></li>
+</ul>
+</li>
+</ul>
+<!-- markdown-toc end -->
+]]></content>
+  </entry>
+  <entry>
+    <title>Web与前端</title>
+    <url>/2020/05/12/Web%E4%B8%8E%E5%89%8D%E7%AB%AF/</url>
+    <content><![CDATA[<p><strong>前端知识</strong></p>
+<ul>
+<li><a href="#Web基础">Web基础</a><ul>
+<li><a href="#1-常用的网络传输协议">1.常用的网络传输协议</a></li>
+<li><a href="#2-常见的状态码">2.常见的状态码</a></li>
+<li><a href="#3-三次握手">3.三次握手</a></li>
+<li><a href="#4-四次挥手">4.四次挥手</a></li>
+</ul>
+</li>
+<li><a href="#Django">Django</a></li>
+<li><a href="#Flask">Flask</a></li>
+<li><a href="#Vue">Vue</a></li>
+<li><a href="#AngularJS">AngularJS</a></li>
+<li><a href="#React">React</a></li>
+<li><a href="#jQuery">jQuery</a></li>
+</ul>
+<h1 id="Web基础"><a href="#Web基础" class="headerlink" title="Web基础"></a>Web基础</h1><h2 id="1-常用的网络传输协议"><a href="#1-常用的网络传输协议" class="headerlink" title="1 常用的网络传输协议"></a>1 常用的网络传输协议</h2><ul>
+<li>TCP：传输控制协议，可靠传输，面向连接</li>
+<li>UDP：用户数据包协议，不可靠传输，面向无连接</li>
+<li>FTP：文件传输协议,用于上传和下载文件</li>
+<li>HTTP：超文本传输协议，基于TCP/IP通信协议，面向对象</li>
+<li>SMTP：邮件传输协议</li>
+<li>TELNET：Internet远程登录服务的标准协议和主要方式</li>
+<li>DNS：域名系统，将域名解析为ip地址</li>
+</ul>
+<h2 id="2-常见的状态码"><a href="#2-常见的状态码" class="headerlink" title="2 常见的状态码"></a>2 常见的状态码</h2><table>
+<thead>
+<tr>
+<th align="center">状态码</th>
+<th align="left">状态</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">200</td>
+<td align="left">Ok</td>
+<td align="left">请求成功</td>
+</tr>
+<tr>
+<td align="center">400</td>
+<td align="left">Bad Request</td>
+<td align="left">请求语法错误，不能被服务器解析</td>
+</tr>
+<tr>
+<td align="center">401</td>
+<td align="left">Unauthorized</td>
+<td align="left">未经授权，需与www-Authenticate一起用</td>
+</tr>
+<tr>
+<td align="center">403</td>
+<td align="left">Forbidden</td>
+<td align="left">服务器收到请求，但拒绝提供服务</td>
+</tr>
+<tr>
+<td align="center">404</td>
+<td align="left">Not Found</td>
+<td align="left">请求资源不存在</td>
+</tr>
+<tr>
+<td align="center">500</td>
+<td align="left">Internal Server Error</td>
+<td align="left">服务器发生不可预期的错误</td>
+</tr>
+<tr>
+<td align="center">503</td>
+<td align="left">Server Unavailable</td>
+<td align="left">服务器当前请求不可用</td>
+</tr>
+</tbody></table>
+<h2 id="3-三次握手"><a href="#3-三次握手" class="headerlink" title="3 三次握手"></a>3 三次握手</h2><ul>
+<li>第一次握手：建立连接时，客户端发送SYN（SYN=x）到服务器，有主动打开状态进入SYN_SENT状态，等待服务器确认。</li>
+<li>第二次握手：服务器收到SYN包，必须确认客户的SYN（ack=x+1）,同时自己也发送一个SYN包（syn=y），即SYN+ACK包，服务器进入SYN_RECV状态。</li>
+<li>第三次握手：客户端收到服务器的SYN+ACK包，想服务器发送确认ACK包（ACK=y+1）,发送完毕，客户端和服务器进入ESTABLISHED状态，完成握手。</li>
+</ul>
+<h2 id="4-四次挥手"><a href="#4-四次挥手" class="headerlink" title="4 四次挥手"></a>4 四次挥手</h2>]]></content>
+  </entry>
+  <entry>
+    <title>操作系统知识</title>
+    <url>/2020/05/12/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+<p><strong>操作系统</strong></p>
+<ul>
+<li><a href="#操作系统">操作系统</a><ul>
+<li><a href="#1-selectpoll和epoll">1 select,poll和epoll</a></li>
+<li><a href="#2-调度算法">2 调度算法</a></li>
+<li><a href="#3-死锁">3 死锁</a></li>
+</ul>
+</li>
+<li><a href="#Linux">Linux</a><ul>
+<li><a href="#1-linux常用命令">2 linux常用命令</a></li>
+</ul>
+</li>
+</ul>
+<!-- markdown-toc end -->
+]]></content>
+  </entry>
+  <entry>
+    <title>算法与编程</title>
+    <url>/2020/05/12/%E7%AE%97%E6%B3%95%E4%B8%8E%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+<p><strong>算法编程</strong></p>
+<ul>
+<li><a href="#算法编程">算法编程</a><ul>
+<li><a href="#1-反转链表">1 反转链表</a></li>
+<li><a href="#2-DFS">2 DFS</a></li>
+<li><a href="#3-BFS">3 BFS</a></li>
+<li><a href="#4-二分查找">4 二分查找</a></li>
+<li><a href="#5-快排">5 快排</a></li>
+<li><a href="#6-求最大树深">6 求最大树深</a></li>
+<li><a href="#9-动态规划问题">7 动态规划问题</a></li>
+<li><a href="#10-01背包问题">8 01背包问题</a></li>
+</ul>
+</li>
+</ul>
+<!-- markdown-toc end -->
+]]></content>
+  </entry>
+  <entry>
+    <title>数据库知识</title>
+    <url>/2020/05/12/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+<p><strong>数据库知识</strong></p>
+<ul>
+<li><a href="#数据库常识">数据库常识</a></li>
+<li><a href="#Mysql数据库">Mysql数据库</a></li>
+<li><a href="#Redis数据库">Redis数据库</a></li>
+<li><a href="#MongoDB数据库">MongoDB数据库</a></li>
+</ul>
+<!-- markdown-toc end -->
+]]></content>
+  </entry>
+  <entry>
     <title>Python语言基础</title>
     <url>/2020/05/12/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="Python语言知识点"><a href="#Python语言知识点" class="headerlink" title="Python语言知识点"></a>Python语言知识点</h1><h2 id="1-Python语言的特性"><a href="#1-Python语言的特性" class="headerlink" title="1 Python语言的特性"></a>1 Python语言的特性</h2><p>   Python是一种解释型语言，不需要再运行之前进行编译。<br>   Python是一种动态语言，不需要声明变量的类型。<br>   python适合面向对象编程，允许类的定义以及组合和继承。  </p>
@@ -90,85 +338,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Web与前端</title>
-    <url>/2020/05/12/Web%E4%B8%8E%E5%89%8D%E7%AB%AF/</url>
-    <content><![CDATA[<p><strong>前端知识</strong></p>
-<ul>
-<li><a href="#Web基础">Web基础</a><ul>
-<li><a href="#1-常用的网络传输协议">1.常用的网络传输协议</a></li>
-<li><a href="#2-常见的状态码">2.常见的状态码</a></li>
-<li><a href="#3-三次握手">3.三次握手</a></li>
-<li><a href="#4-四次挥手">4.四次挥手</a></li>
-</ul>
-</li>
-<li><a href="#Django">Django</a></li>
-<li><a href="#Flask">Flask</a></li>
-<li><a href="#Vue">Vue</a></li>
-<li><a href="#AngularJS">AngularJS</a></li>
-<li><a href="#React">React</a></li>
-<li><a href="#jQuery">jQuery</a></li>
-</ul>
-<h1 id="Web基础"><a href="#Web基础" class="headerlink" title="Web基础"></a>Web基础</h1><h2 id="1-常用的网络传输协议"><a href="#1-常用的网络传输协议" class="headerlink" title="1 常用的网络传输协议"></a>1 常用的网络传输协议</h2><ul>
-<li>TCP：传输控制协议，可靠传输，面向连接</li>
-<li>UDP：用户数据包协议，不可靠传输，面向无连接</li>
-<li>FTP：文件传输协议,用于上传和下载文件</li>
-<li>HTTP：超文本传输协议，基于TCP/IP通信协议，面向对象</li>
-<li>SMTP：邮件传输协议</li>
-<li>TELNET：Internet远程登录服务的标准协议和主要方式</li>
-<li>DNS：域名系统，将域名解析为ip地址</li>
-</ul>
-<h2 id="2-常见的状态码"><a href="#2-常见的状态码" class="headerlink" title="2 常见的状态码"></a>2 常见的状态码</h2><table>
-<thead>
-<tr>
-<th align="center">状态码</th>
-<th align="left">状态</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">200</td>
-<td align="left">Ok</td>
-<td align="left">请求成功</td>
-</tr>
-<tr>
-<td align="center">400</td>
-<td align="left">Bad Request</td>
-<td align="left">请求语法错误，不能被服务器解析</td>
-</tr>
-<tr>
-<td align="center">401</td>
-<td align="left">Unauthorized</td>
-<td align="left">未经授权，需与www-Authenticate一起用</td>
-</tr>
-<tr>
-<td align="center">403</td>
-<td align="left">Forbidden</td>
-<td align="left">服务器收到请求，但拒绝提供服务</td>
-</tr>
-<tr>
-<td align="center">404</td>
-<td align="left">Not Found</td>
-<td align="left">请求资源不存在</td>
-</tr>
-<tr>
-<td align="center">500</td>
-<td align="left">Internal Server Error</td>
-<td align="left">服务器发生不可预期的错误</td>
-</tr>
-<tr>
-<td align="center">503</td>
-<td align="left">Server Unavailable</td>
-<td align="left">服务器当前请求不可用</td>
-</tr>
-</tbody></table>
-<h2 id="3-三次握手"><a href="#3-三次握手" class="headerlink" title="3 三次握手"></a>3 三次握手</h2><ul>
-<li>第一次握手：建立连接时，客户端发送SYN（SYN=x）到服务器，有主动打开状态进入SYN_SENT状态，等待服务器确认。</li>
-<li>第二次握手：服务器收到SYN包，必须确认客户的SYN（ack=x+1）,同时自己也发送一个SYN包（syn=y），即SYN+ACK包，服务器进入SYN_RECV状态。</li>
-<li>第三次握手：客户端收到服务器的SYN+ACK包，想服务器发送确认ACK包（ACK=y+1）,发送完毕，客户端和服务器进入ESTABLISHED状态，完成握手。</li>
-</ul>
-<h2 id="4-四次挥手"><a href="#4-四次挥手" class="headerlink" title="4 四次挥手"></a>4 四次挥手</h2>]]></content>
-  </entry>
-  <entry>
     <title>hexo 简介</title>
     <url>/2020/05/08/hexo%E7%AE%80%E4%BB%8B/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -184,175 +353,6 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>操作系统知识</title>
-    <url>/2020/05/12/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
-<p><strong>操作系统</strong></p>
-<ul>
-<li><a href="#操作系统">操作系统</a><ul>
-<li><a href="#1-selectpoll和epoll">1 select,poll和epoll</a></li>
-<li><a href="#2-调度算法">2 调度算法</a></li>
-<li><a href="#3-死锁">3 死锁</a></li>
-</ul>
-</li>
-<li><a href="#Linux">Linux</a><ul>
-<li><a href="#1-linux常用命令">2 linux常用命令</a></li>
-</ul>
-</li>
-</ul>
-<!-- markdown-toc end -->
-]]></content>
-  </entry>
-  <entry>
-    <title>数据库知识</title>
-    <url>/2020/05/12/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
-<p><strong>数据库知识</strong></p>
-<ul>
-<li><a href="#数据库常识">数据库常识</a></li>
-<li><a href="#Mysql数据库">Mysql数据库</a></li>
-<li><a href="#Redis数据库">Redis数据库</a></li>
-<li><a href="#MongoDB数据库">MongoDB数据库</a></li>
-</ul>
-<!-- markdown-toc end -->
-]]></content>
-  </entry>
-  <entry>
-    <title>数据结构</title>
-    <url>/2020/05/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
-    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
-<p><strong>数据结构</strong></p>
-<ul>
-<li><a href="#数据结构">数据结构</a><ul>
-<li><a href="#1-字符串(String)">1 字符串(String)</a></li>
-<li><a href="#2-数组(Array)">2 数组(Array)</a></li>
-<li><a href="#3-堆(Heap)">3 堆(Heap)</a></li>
-<li><a href="#4-栈(Stack)">4 栈(Stack)</a></li>
-<li><a href="#5-队列(Queue)">5 队列(Queue)</a></li>
-<li><a href="#6-链表(Linked-List)">6 链表(Linked-List)</a></li>
-<li><a href="#7-树(Tree)">7 树(Tree)</a></li>
-<li><a href="#8-图(Graph)">8 图(Graph)</a></li>
-<li><a href="#9-哈希表(Hash)">9 哈希表(Hash)</a></li>
-</ul>
-</li>
-</ul>
-<!-- markdown-toc end -->
-]]></content>
-  </entry>
-  <entry>
-    <title>机器学习知识</title>
-    <url>/2020/05/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
-<p><strong>机器学习</strong></p>
-<ul>
-<li><a href="#机器学习基础">机器学习基础</a><ul>
-<li><a href="#1-机器学习概述">1 机器学习概述</a></li>
-<li><a href="#2-监督学习">2 监督学习</a></li>
-<li><a href="#3-非监督学习">3 非监督学习</a></li>
-<li><a href="#4-增强学习">4 增强学习</a></li>
-<li><a href="#5-深度学习">5 深度学习</a></li>
-</ul>
-</li>
-<li><a href="#分类问题">分类问题</a><ul>
-<li><a href="#1-KNN">1 KNN</a></li>
-<li><a href="#2-NB">2 NB</a></li>
-<li><a href="#3-SVM">3 SVM</a></li>
-<li><a href="#4-AdaBoost">4 AdaBoost</a></li>
-<li><a href="#5-DT">5 DT</a></li>
-</ul>
-</li>
-<li><a href="#聚类分析">聚类分析</a><ul>
-<li><a href="#1-K-means">1 K-means</a></li>
-<li><a href="#2-DBSCAN">2 DBSCAN</a></li>
-<li><a href="#3-LDA">3 LDA</a></li>
-</ul>
-</li>
-<li><a href="#预测分析">预测分析</a><ul>
-<li><a href="#1-时间序列">1 时间序列</a></li>
-<li><a href="#2-BP神经网络">2 BP神经网络</a></li>
-</ul>
-</li>
-<li><a href="#关联分析">关联分析</a><ul>
-<li><a href="#1-Apriori">1 Apriori</a></li>
-<li><a href="#2-FP-Growth">2 FP-Growth</a></li>
-</ul>
-</li>
-<li><a href="#回归分析">回归分析</a><ul>
-<li><a href="#1-一元回归">1 一元回归</a></li>
-<li><a href="#2-多元回归">2 多元回归</a></li>
-<li><a href="#3-逻辑回归">3 逻辑回归</a></li>
-</ul>
-</li>
-<li><a href="#集成学习">集成学习</a><ul>
-<li><a href="#1-Bagging">1 Bagging</a></li>
-<li><a href="#2-随机森林">2 随机森林</a></li>
-<li><a href="#3-Boosting">3 Boosting</a></li>
-<li><a href="#4-AdaBoost">4 AdaBoost</a></li>
-</ul>
-</li>
-<li><a href="#深度学习">深度学习</a><ul>
-<li><a href="#1-有监督">1 有监督</a></li>
-<li><a href="#2-无监督">2 无监督</a></li>
-<li><a href="#3-TensorFlow">3 TensorFlow</a></li>
-<li><a href="#4-Theano">4 Theano</a></li>
-</ul>
-</li>
-<li><a href="#数据预处理">数据预处理</a><ul>
-<li><a href="#1-数据清洗">1 数据清洗</a><ul>
-<li><a href="#1-异常值处理">1 异常值处理</a></li>
-<li><a href="#2-缺失值处理">2 缺失值处理</a></li>
-<li><a href="#3-噪声处理">3 噪声处理</a></li>
-<li><a href="#4-倾斜数据处理">4 倾斜数据处理</a></li>
-</ul>
-</li>
-<li><a href="#2-数据集成">2 数据集成</a></li>
-<li><a href="#3-数据变换">3 数据变换</a></li>
-<li><a href="#4-数据归约">4 数据归约</a></li>
-</ul>
-</li>
-<li><a href="#数据降维">数据降维</a><ul>
-<li><a href="#1-PCA">1 主成份分析</a></li>
-<li><a href="#2-奇异值分解">2 奇异值分解</a></li>
-</ul>
-</li>
-</ul>
-<!-- markdown-toc end -->
-]]></content>
-  </entry>
-  <entry>
-    <title>算法与编程</title>
-    <url>/2020/05/12/%E7%AE%97%E6%B3%95%E4%B8%8E%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
-<p><strong>算法编程</strong></p>
-<ul>
-<li><a href="#算法编程">算法编程</a><ul>
-<li><a href="#1-反转链表">1 反转链表</a></li>
-<li><a href="#2-DFS">2 DFS</a></li>
-<li><a href="#3-BFS">3 BFS</a></li>
-<li><a href="#4-二分查找">4 二分查找</a></li>
-<li><a href="#5-快排">5 快排</a></li>
-<li><a href="#6-求最大树深">6 求最大树深</a></li>
-<li><a href="#9-动态规划问题">7 动态规划问题</a></li>
-<li><a href="#10-01背包问题">8 01背包问题</a></li>
-</ul>
-</li>
-</ul>
-<!-- markdown-toc end -->
-]]></content>
-  </entry>
-  <entry>
-    <title>自然语言处理</title>
-    <url>/2020/05/12/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
-<p><strong>自然语言处理</strong></p>
-<ul>
-<li><a href="#文本分析">文本挖掘</a></li>
-<li><a href="#情感分析">情感分析</a></li>
-</ul>
-<!-- markdown-toc end -->
 ]]></content>
   </entry>
 </search>
