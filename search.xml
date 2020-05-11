@@ -1,23 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Python语言知识点</title>
-    <url>/2020/05/09/Python%E8%AF%AD%E8%A8%80%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
-    <content><![CDATA[<p>[TOC]</p>
-<h1 id="Python语言知识点"><a href="#Python语言知识点" class="headerlink" title="Python语言知识点"></a>Python语言知识点</h1><h2 id="1、Python-语言特性"><a href="#1、Python-语言特性" class="headerlink" title="1、Python 语言特性"></a>1、Python 语言特性</h2><h2 id="2、Python的函数参数传递"><a href="#2、Python的函数参数传递" class="headerlink" title="2、Python的函数参数传递"></a>2、Python的函数参数传递</h2><h2 id="3、Python中的元类"><a href="#3、Python中的元类" class="headerlink" title="3、Python中的元类"></a>3、Python中的元类</h2><h2 id="4、Python中的静态方法和类方法"><a href="#4、Python中的静态方法和类方法" class="headerlink" title="4、Python中的静态方法和类方法"></a>4、Python中的静态方法和类方法</h2><h2 id="5、Python中单例模式"><a href="#5、Python中单例模式" class="headerlink" title="5、Python中单例模式"></a>5、Python中单例模式</h2><ul>
-<li>__new__方法</li>
-<li>共享属性方法</li>
-<li>装饰器方法</li>
-<li>import方法</li>
+    <title>Web与前端</title>
+    <url>/2020/05/12/Web%E4%B8%8E%E5%89%8D%E7%AB%AF/</url>
+    <content><![CDATA[<p><strong>前端知识</strong></p>
+<ul>
+<li><a href="#Web基础">Web基础</a><ul>
+<li><a href="#1-常用的网络传输协议">1.常用的网络传输协议</a></li>
+<li><a href="#2-常见的状态码">2.常见的状态码</a></li>
+<li><a href="#3-三次握手">3.三次握手</a></li>
+<li><a href="#4-四次挥手">4.四次挥手</a></li>
 </ul>
+</li>
+<li><a href="#Django">Django</a></li>
+<li><a href="#Flask">Flask</a></li>
+<li><a href="#Vue">Vue</a></li>
+<li><a href="#AngularJS">AngularJS</a></li>
+<li><a href="#React">React</a></li>
+<li><a href="#jQuery">jQuery</a></li>
+</ul>
+<h1 id="Web基础"><a href="#Web基础" class="headerlink" title="Web基础"></a>Web基础</h1><h2 id="1-常用的网络传输协议"><a href="#1-常用的网络传输协议" class="headerlink" title="1 常用的网络传输协议"></a>1 常用的网络传输协议</h2><ul>
+<li>TCP：传输控制协议，可靠传输，面向连接</li>
+<li>UDP：用户数据包协议，不可靠传输，面向无连接</li>
+<li>FTP：文件传输协议,用于上传和下载文件</li>
+<li>HTTP：超文本传输协议，基于TCP/IP通信协议，面向对象</li>
+<li>SMTP：邮件传输协议</li>
+<li>TELNET：Internet远程登录服务的标准协议和主要方式</li>
+<li>DNS：域名系统，将域名解析为ip地址</li>
+</ul>
+<h2 id="2-常见的状态码"><a href="#2-常见的状态码" class="headerlink" title="2 常见的状态码"></a>2 常见的状态码</h2><table>
+<thead>
+<tr>
+<th align="center">状态码</th>
+<th align="left">状态</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">200</td>
+<td align="left">Ok</td>
+<td align="left">请求成功</td>
+</tr>
+<tr>
+<td align="center">400</td>
+<td align="left">Bad Request</td>
+<td align="left">请求语法错误，不能被服务器解析</td>
+</tr>
+<tr>
+<td align="center">401</td>
+<td align="left">Unauthorized</td>
+<td align="left">未经授权，需与www-Authenticate一起用</td>
+</tr>
+<tr>
+<td align="center">403</td>
+<td align="left">Forbidden</td>
+<td align="left">服务器收到请求，但拒绝提供服务</td>
+</tr>
+<tr>
+<td align="center">404</td>
+<td align="left">Not Found</td>
+<td align="left">请求资源不存在</td>
+</tr>
+<tr>
+<td align="center">500</td>
+<td align="left">Internal Server Error</td>
+<td align="left">服务器发生不可预期的错误</td>
+</tr>
+<tr>
+<td align="center">503</td>
+<td align="left">Server Unavailable</td>
+<td align="left">服务器当前请求不可用</td>
+</tr>
+</tbody></table>
+<h2 id="3-三次握手"><a href="#3-三次握手" class="headerlink" title="3 三次握手"></a>3 三次握手</h2><ul>
+<li>第一次握手：建立连接时，客户端发送SYN（SYN=x）到服务器，有主动打开状态进入SYN_SENT状态，等待服务器确认。</li>
+<li>第二次握手：服务器收到SYN包，必须确认客户的SYN（ack=x+1）,同时自己也发送一个SYN包（syn=y），即SYN+ACK包，服务器进入SYN_RECV状态。</li>
+<li>第三次握手：客户端收到服务器的SYN+ACK包，想服务器发送确认ACK包（ACK=y+1）,发送完毕，客户端和服务器进入ESTABLISHED状态，完成握手。</li>
+</ul>
+<h2 id="4-四次挥手"><a href="#4-四次挥手" class="headerlink" title="4 四次挥手"></a>4 四次挥手</h2>]]></content>
+  </entry>
+  <entry>
+    <title>Python语言基础</title>
+    <url>/2020/05/12/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+<p><strong>Python语言知识点总结归纳</strong></p>
+<ul>
+<li><a href="#python语言知识点">Python语言知识点</a><ul>
+<li><a href="#1-Python语言的特性">1 Python语言的特性</a></li>
+<li><a href="#2-python的函数参数传递">2 Python的函数参数传递</a></li>
+<li><a href="#3-python中的元类metaclass">3 Python中的元类(metaclass)</a></li>
+<li><a href="#4-staticmethod和classmethod">4 @staticmethod和@classmethod</a></li>
+<li><a href="#5-单例模式">5 单例模式</a><ul>
+<li><a href="#1-使用__new__方法">1 使用<strong>new</strong>方法</a></li>
+<li><a href="#2-共享属性">2 共享属性</a></li>
+<li><a href="#3-装饰器版本">3 装饰器版本</a></li>
+<li><a href="#4-import方法">4 import方法</a></li>
+</ul>
+</li>
+<li><a href="#6-python常用库">6 python常用库</a><ul>
+<li><a href="#1-标准库">1 标准库</a></li>
+<li><a href="#1-科学计算库">2 科学计算库</a></li>
+<li><a href="#1-第三方库">3 第三方库</a></li>
+</ul>
+</li>
+<li><a href="#7-python中的类型转换">7 python中的类型转换</a></li>
+<li><a href="#8-文件流操作">8 文件流操作</a></li>
+</ul>
+</li>
+</ul>
+<!-- markdown-toc end -->
+
+
+
+
+
+<h1 id="Python语言知识点"><a href="#Python语言知识点" class="headerlink" title="Python语言知识点"></a>Python语言知识点</h1><h2 id="1-Python语言的特性"><a href="#1-Python语言的特性" class="headerlink" title="1 Python语言的特性"></a>1 Python语言的特性</h2><p>   Python是一种解释型语言，不需要再运行之前进行编译。<br>   Python是一种动态语言，不需要声明变量的类型。<br>   python适合面向对象编程，允许类的定义以及组合和继承。  </p>
+<h2 id="2-Python的函数参数传递"><a href="#2-Python的函数参数传递" class="headerlink" title="2 Python的函数参数传递"></a>2 Python的函数参数传递</h2><p>看两个例子:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span><span class="params">(a)</span>:</span></span><br><span class="line">    a = <span class="number">2</span></span><br><span class="line">fun(a)</span><br><span class="line"><span class="keyword">print</span> a  <span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-python中的元类metaclass"><a href="#3-python中的元类metaclass" class="headerlink" title="3 python中的元类metaclass"></a>3 python中的元类metaclass</h2><h2 id="4-staticmethod和classmethod"><a href="#4-staticmethod和classmethod" class="headerlink" title="4 staticmethod和classmethod"></a>4 staticmethod和classmethod</h2><h2 id="5-单例模式"><a href="#5-单例模式" class="headerlink" title="5 单例模式"></a>5 单例模式</h2><h3 id="1-使用-new-方法"><a href="#1-使用-new-方法" class="headerlink" title="1 使用__new__方法"></a>1 使用<code>__new__</code>方法</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kw)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> hasattr(cls, <span class="string">'_instance'</span>):</span><br><span class="line">            orig = super(Singleton, cls)</span><br><span class="line">            cls._instance = orig.__new__(cls, *args, **kw)</span><br><span class="line">        <span class="keyword">return</span> cls._instance</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span><span class="params">(Singleton)</span>:</span></span><br><span class="line">    a = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-共享属性"><a href="#2-共享属性" class="headerlink" title="2 共享属性"></a>2 共享属性</h3><p>创建实例时把所有实例的<code>__dict__</code>指向同一个字典,这样它们具有相同的属性和方法.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Borg</span><span class="params">(object)</span>:</span></span><br><span class="line">    _state = &#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kw)</span>:</span></span><br><span class="line">        ob = super(Borg, cls).__new__(cls, *args, **kw)</span><br><span class="line">        ob.__dict__ = cls._state</span><br><span class="line">        <span class="keyword">return</span> ob</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass2</span><span class="params">(Borg)</span>:</span></span><br><span class="line">    a = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-装饰器版本"><a href="#3-装饰器版本" class="headerlink" title="3 装饰器版本"></a>3 装饰器版本</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">singleton</span><span class="params">(cls)</span>:</span></span><br><span class="line">    instances = &#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getinstance</span><span class="params">(*args, **kw)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> cls <span class="keyword">not</span> <span class="keyword">in</span> instances:</span><br><span class="line">            instances[cls] = cls(*args, **kw)</span><br><span class="line">        <span class="keyword">return</span> instances[cls]</span><br><span class="line">    <span class="keyword">return</span> getinstance</span><br><span class="line"></span><br><span class="line"><span class="meta">@singleton</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span>:</span></span><br><span class="line">  ...</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-import方法"><a href="#4-import方法" class="headerlink" title="4 import方法"></a>4 import方法</h3><p>作为python的模块是天然的单例模式</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># mysingleton.py</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">My_Singleton</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">my_singleton = My_Singleton()</span><br><span class="line"></span><br><span class="line"><span class="comment"># to use</span></span><br><span class="line"><span class="keyword">from</span> mysingleton <span class="keyword">import</span> my_singleton</span><br><span class="line"></span><br><span class="line">my_singleton.foo()</span><br></pre></td></tr></table></figure>
+<p><strong><a href="http://python.jobbole.com/87294/" target="_blank" rel="noopener">单例模式伯乐在线详细解释</a></strong></p>
+<h2 id="6-python常用库"><a href="#6-python常用库" class="headerlink" title="6 python常用库"></a>6 python常用库</h2><h3 id="1-标准库"><a href="#1-标准库" class="headerlink" title="1 标准库"></a>1 标准库</h3><p><strong><a href="https://www.cnblogs.com/haochengdu/p/8855028.html" target="_blank" rel="noopener">网友总结参考</a></strong><br><strong><a href="https://docs.python.org/zh-cn/3.8/library/index.html" target="_blank" rel="noopener">官网中文参考</a></strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">os：提供了不少于操作系统相关联的函数</span><br><span class="line">sys：通常用于命令行参数</span><br><span class="line">res：正则表达式操作</span><br><span class="line">math：数学运算</span><br><span class="line">decimal：十进制定点和浮点运算</span><br><span class="line">datetime：日期时间</span><br><span class="line">collections：容器数据类型</span><br><span class="line">json：JSON 编码和解码器</span><br><span class="line">base64：Base16, Base32, Base64, Base85 数据编码</span><br><span class="line">heapq：堆队列算法</span><br><span class="line">copy：复制</span><br><span class="line">threading：基于线程的并行</span><br><span class="line">multiprocessing：基于进程的并行</span><br><span class="line">subprocess：子进程管理</span><br><span class="line">queue：一个同步的队列类</span><br><span class="line">random：生成伪随机数</span><br><span class="line">pprint：数据美化输出</span><br><span class="line">itertools：为高效循环而创建迭代器的函数</span><br><span class="line">functools：高阶函数和可调用对象上的操作</span><br><span class="line">operator：标准运算符替代函数</span><br><span class="line">logging：Python 的日志记录工具</span><br><span class="line">hashlib：安全哈希与消息摘要</span><br><span class="line">pickle：Python 对象序列化</span><br><span class="line">html.parser：简单的 HTML 和 XHTML 解析器</span><br><span class="line">urllib：URL 处理模块</span><br><span class="line">traceback：打印或检索堆栈回溯</span><br><span class="line">__future__：Future 语句定义</span><br><span class="line">gc：垃圾回收器接口</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-科学计算库"><a href="#2-科学计算库" class="headerlink" title="2 科学计算库"></a>2 科学计算库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">numpy</span><br><span class="line">scipy</span><br><span class="line">pandas</span><br><span class="line">statistics：数学统计函数</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-第三方库"><a href="#3-第三方库" class="headerlink" title="3 第三方库"></a>3 第三方库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pymysql：连接数据库</span><br><span class="line">djano</span><br><span class="line">flask</span><br><span class="line">requests</span><br><span class="line">selenium</span><br><span class="line">scrapy</span><br><span class="line">celery</span><br><span class="line">md5</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-python中的类型转换"><a href="#7-python中的类型转换" class="headerlink" title="7 python中的类型转换"></a>7 python中的类型转换</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+<th></th>
+<th>函数</th>
+<th>作用</th>
+<th></th>
+<th>函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int()</td>
+<td>转整型</td>
+<td></td>
+<td>list()</td>
+<td>转列表</td>
+<td></td>
+<td>bin()</td>
+<td>整数转2进制</td>
+</tr>
+<tr>
+<td>float()</td>
+<td>转浮点型</td>
+<td></td>
+<td>dict()</td>
+<td>转字典</td>
+<td></td>
+<td>oct()</td>
+<td>整数转6进制</td>
+</tr>
+<tr>
+<td>str()</td>
+<td>转字符串</td>
+<td></td>
+<td>set()</td>
+<td>转集合</td>
+<td></td>
+<td>hex()</td>
+<td>整数转16进制</td>
+</tr>
+<tr>
+<td>ord()</td>
+<td>字符转整数</td>
+<td></td>
+<td>tuple()</td>
+<td>转元组</td>
+<td></td>
+<td>complex()</td>
+<td>实数转复数</td>
+</tr>
+</tbody></table>
+<h2 id="8-文件流操作"><a href="#8-文件流操作" class="headerlink" title="8 文件流操作"></a>8 文件流操作</h2><h3 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">f&#x3D;open(&#39;文件名&#39;, &#39;访问模式&#39;)</span><br><span class="line">if f:  # 判断文件是否打开</span><br><span class="line"></span><br><span class="line">with open(&#39;文件名&#39;, &#39;访问模式&#39;) as f:</span><br></pre></td></tr></table></figure>
+<h3 id="访问模式"><a href="#访问模式" class="headerlink" title="访问模式"></a>访问模式</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">w: 只写</span><br><span class="line"></span><br><span class="line">r：只读</span><br><span class="line"></span><br><span class="line">a: 追加写入</span><br><span class="line">rb: 二进制只读</span><br><span class="line"></span><br><span class="line">wb：二进制写入</span><br><span class="line"></span><br><span class="line">ab：二进制追加写入</span><br><span class="line"></span><br><span class="line">r+：打开一个文件用于读写，文件指针将会放在文件的开头。</span><br><span class="line"></span><br><span class="line">w+：打开一个文件用于读写，如果文件已经存在则将其覆盖，如果文件不存在，则创建新文件。</span><br><span class="line"></span><br><span class="line">a+：打开一个文件用于读写，追加模式。如果文件存在，文件指针将会放在文件的结尾；如果该文件不存在，穿件新文件用于读写。</span><br><span class="line"></span><br><span class="line">rb+: 以二进制格式打开一个文件用于读写，文件指正将会放在文件的开头，一般用于非文本文件如图片等。</span><br><span class="line"></span><br><span class="line">wb+:以二进制格式打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件，一般用于非文本文件如图片等。</span><br><span class="line"></span><br><span class="line">ab+:以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾；如果文件不存在，创建新文件用于读写。</span><br></pre></td></tr></table></figure>
+
+<h3 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">f.write(写入的内容)  # 打开文件后，将制定内容写入文件中</span><br></pre></td></tr></table></figure>
+
+<h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">f.read(读取数据的长度)  # 使用read可以从文件中读取制定长度的数据，并将指针移到这条数据之后。如果为空，则默认读取全部数据。</span><br><span class="line"></span><br><span class="line">f.readline()  # 读取文件中一行数据的信息，指针移动到下一行。</span><br><span class="line"></span><br><span class="line">f.readlines() # 读取整个文件的数据信息，返回一个列表，列表中每个元素为一行数据信息。</span><br></pre></td></tr></table></figure>
+<h3 id="查看指针位置"><a href="#查看指针位置" class="headerlink" title="查看指针位置"></a>查看指针位置</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">f.tell()  # 查看单签位置，就是指针对应的位置</span><br></pre></td></tr></table></figure>
+
+<h3 id="指针定位"><a href="#指针定位" class="headerlink" title="指针定位"></a>指针定位</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">seek(offset, from)  # 将指针定位到某个位置</span><br><span class="line"></span><br><span class="line">from: 方向，0表示文件开头；1表示文件当前位置；2表示文件的末尾</span><br><span class="line">offset: 偏移量</span><br><span class="line"></span><br><span class="line">eg:</span><br><span class="line">  f.seek(5,0)  # 文件开头，向后偏移5个位置</span><br><span class="line">  f.seek(-3,2)  # 文件结尾，向前偏移3个位置</span><br></pre></td></tr></table></figure>
 ]]></content>
-      <categories>
-        <category>面试相关</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>基础知识</tag>
-      </tags>
   </entry>
   <entry>
     <title>hexo 简介</title>
@@ -35,6 +216,175 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>操作系统知识</title>
+    <url>/2020/05/12/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+<p><strong>操作系统</strong></p>
+<ul>
+<li><a href="#操作系统">操作系统</a><ul>
+<li><a href="#1-selectpoll和epoll">1 select,poll和epoll</a></li>
+<li><a href="#2-调度算法">2 调度算法</a></li>
+<li><a href="#3-死锁">3 死锁</a></li>
+</ul>
+</li>
+<li><a href="#Linux">Linux</a><ul>
+<li><a href="#1-linux常用命令">2 linux常用命令</a></li>
+</ul>
+</li>
+</ul>
+<!-- markdown-toc end -->
+]]></content>
+  </entry>
+  <entry>
+    <title>数据库知识</title>
+    <url>/2020/05/12/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+<p><strong>数据库知识</strong></p>
+<ul>
+<li><a href="#数据库常识">数据库常识</a></li>
+<li><a href="#Mysql数据库">Mysql数据库</a></li>
+<li><a href="#Redis数据库">Redis数据库</a></li>
+<li><a href="#MongoDB数据库">MongoDB数据库</a></li>
+</ul>
+<!-- markdown-toc end -->
+]]></content>
+  </entry>
+  <entry>
+    <title>数据结构</title>
+    <url>/2020/05/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+<p><strong>数据结构</strong></p>
+<ul>
+<li><a href="#数据结构">数据结构</a><ul>
+<li><a href="#1-字符串(String)">1 字符串(String)</a></li>
+<li><a href="#2-数组(Array)">2 数组(Array)</a></li>
+<li><a href="#3-堆(Heap)">3 堆(Heap)</a></li>
+<li><a href="#4-栈(Stack)">4 栈(Stack)</a></li>
+<li><a href="#5-队列(Queue)">5 队列(Queue)</a></li>
+<li><a href="#6-链表(Linked-List)">6 链表(Linked-List)</a></li>
+<li><a href="#7-树(Tree)">7 树(Tree)</a></li>
+<li><a href="#8-图(Graph)">8 图(Graph)</a></li>
+<li><a href="#9-哈希表(Hash)">9 哈希表(Hash)</a></li>
+</ul>
+</li>
+</ul>
+<!-- markdown-toc end -->
+]]></content>
+  </entry>
+  <entry>
+    <title>机器学习知识</title>
+    <url>/2020/05/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+<p><strong>机器学习</strong></p>
+<ul>
+<li><a href="#机器学习基础">机器学习基础</a><ul>
+<li><a href="#1-机器学习概述">1 机器学习概述</a></li>
+<li><a href="#2-监督学习">2 监督学习</a></li>
+<li><a href="#3-非监督学习">3 非监督学习</a></li>
+<li><a href="#4-增强学习">4 增强学习</a></li>
+<li><a href="#5-深度学习">5 深度学习</a></li>
+</ul>
+</li>
+<li><a href="#分类问题">分类问题</a><ul>
+<li><a href="#1-KNN">1 KNN</a></li>
+<li><a href="#2-NB">2 NB</a></li>
+<li><a href="#3-SVM">3 SVM</a></li>
+<li><a href="#4-AdaBoost">4 AdaBoost</a></li>
+<li><a href="#5-DT">5 DT</a></li>
+</ul>
+</li>
+<li><a href="#聚类分析">聚类分析</a><ul>
+<li><a href="#1-K-means">1 K-means</a></li>
+<li><a href="#2-DBSCAN">2 DBSCAN</a></li>
+<li><a href="#3-LDA">3 LDA</a></li>
+</ul>
+</li>
+<li><a href="#预测分析">预测分析</a><ul>
+<li><a href="#1-时间序列">1 时间序列</a></li>
+<li><a href="#2-BP神经网络">2 BP神经网络</a></li>
+</ul>
+</li>
+<li><a href="#关联分析">关联分析</a><ul>
+<li><a href="#1-Apriori">1 Apriori</a></li>
+<li><a href="#2-FP-Growth">2 FP-Growth</a></li>
+</ul>
+</li>
+<li><a href="#回归分析">回归分析</a><ul>
+<li><a href="#1-一元回归">1 一元回归</a></li>
+<li><a href="#2-多元回归">2 多元回归</a></li>
+<li><a href="#3-逻辑回归">3 逻辑回归</a></li>
+</ul>
+</li>
+<li><a href="#集成学习">集成学习</a><ul>
+<li><a href="#1-Bagging">1 Bagging</a></li>
+<li><a href="#2-随机森林">2 随机森林</a></li>
+<li><a href="#3-Boosting">3 Boosting</a></li>
+<li><a href="#4-AdaBoost">4 AdaBoost</a></li>
+</ul>
+</li>
+<li><a href="#深度学习">深度学习</a><ul>
+<li><a href="#1-有监督">1 有监督</a></li>
+<li><a href="#2-无监督">2 无监督</a></li>
+<li><a href="#3-TensorFlow">3 TensorFlow</a></li>
+<li><a href="#4-Theano">4 Theano</a></li>
+</ul>
+</li>
+<li><a href="#数据预处理">数据预处理</a><ul>
+<li><a href="#1-数据清洗">1 数据清洗</a><ul>
+<li><a href="#1-异常值处理">1 异常值处理</a></li>
+<li><a href="#2-缺失值处理">2 缺失值处理</a></li>
+<li><a href="#3-噪声处理">3 噪声处理</a></li>
+<li><a href="#4-倾斜数据处理">4 倾斜数据处理</a></li>
+</ul>
+</li>
+<li><a href="#2-数据集成">2 数据集成</a></li>
+<li><a href="#3-数据变换">3 数据变换</a></li>
+<li><a href="#4-数据归约">4 数据归约</a></li>
+</ul>
+</li>
+<li><a href="#数据降维">数据降维</a><ul>
+<li><a href="#1-PCA">1 主成份分析</a></li>
+<li><a href="#2-奇异值分解">2 奇异值分解</a></li>
+</ul>
+</li>
+</ul>
+<!-- markdown-toc end -->
+]]></content>
+  </entry>
+  <entry>
+    <title>算法与编程</title>
+    <url>/2020/05/12/%E7%AE%97%E6%B3%95%E4%B8%8E%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+<p><strong>算法编程</strong></p>
+<ul>
+<li><a href="#算法编程">算法编程</a><ul>
+<li><a href="#1-反转链表">1 反转链表</a></li>
+<li><a href="#2-DFS">2 DFS</a></li>
+<li><a href="#3-BFS">3 BFS</a></li>
+<li><a href="#4-二分查找">4 二分查找</a></li>
+<li><a href="#5-快排">5 快排</a></li>
+<li><a href="#6-求最大树深">6 求最大树深</a></li>
+<li><a href="#9-动态规划问题">7 动态规划问题</a></li>
+<li><a href="#10-01背包问题">8 01背包问题</a></li>
+</ul>
+</li>
+</ul>
+<!-- markdown-toc end -->
+]]></content>
+  </entry>
+  <entry>
+    <title>自然语言处理</title>
+    <url>/2020/05/12/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+<p><strong>自然语言处理</strong></p>
+<ul>
+<li><a href="#文本分析">文本挖掘</a></li>
+<li><a href="#情感分析">情感分析</a></li>
+</ul>
+<!-- markdown-toc end -->
 ]]></content>
   </entry>
 </search>
