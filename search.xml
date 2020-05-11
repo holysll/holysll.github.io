@@ -1,120 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Web与前端</title>
-    <url>/2020/05/12/Web%E4%B8%8E%E5%89%8D%E7%AB%AF/</url>
-    <content><![CDATA[<p><strong>前端知识</strong></p>
-<ul>
-<li><a href="#Web基础">Web基础</a><ul>
-<li><a href="#1-常用的网络传输协议">1.常用的网络传输协议</a></li>
-<li><a href="#2-常见的状态码">2.常见的状态码</a></li>
-<li><a href="#3-三次握手">3.三次握手</a></li>
-<li><a href="#4-四次挥手">4.四次挥手</a></li>
-</ul>
-</li>
-<li><a href="#Django">Django</a></li>
-<li><a href="#Flask">Flask</a></li>
-<li><a href="#Vue">Vue</a></li>
-<li><a href="#AngularJS">AngularJS</a></li>
-<li><a href="#React">React</a></li>
-<li><a href="#jQuery">jQuery</a></li>
-</ul>
-<h1 id="Web基础"><a href="#Web基础" class="headerlink" title="Web基础"></a>Web基础</h1><h2 id="1-常用的网络传输协议"><a href="#1-常用的网络传输协议" class="headerlink" title="1 常用的网络传输协议"></a>1 常用的网络传输协议</h2><ul>
-<li>TCP：传输控制协议，可靠传输，面向连接</li>
-<li>UDP：用户数据包协议，不可靠传输，面向无连接</li>
-<li>FTP：文件传输协议,用于上传和下载文件</li>
-<li>HTTP：超文本传输协议，基于TCP/IP通信协议，面向对象</li>
-<li>SMTP：邮件传输协议</li>
-<li>TELNET：Internet远程登录服务的标准协议和主要方式</li>
-<li>DNS：域名系统，将域名解析为ip地址</li>
-</ul>
-<h2 id="2-常见的状态码"><a href="#2-常见的状态码" class="headerlink" title="2 常见的状态码"></a>2 常见的状态码</h2><table>
-<thead>
-<tr>
-<th align="center">状态码</th>
-<th align="left">状态</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">200</td>
-<td align="left">Ok</td>
-<td align="left">请求成功</td>
-</tr>
-<tr>
-<td align="center">400</td>
-<td align="left">Bad Request</td>
-<td align="left">请求语法错误，不能被服务器解析</td>
-</tr>
-<tr>
-<td align="center">401</td>
-<td align="left">Unauthorized</td>
-<td align="left">未经授权，需与www-Authenticate一起用</td>
-</tr>
-<tr>
-<td align="center">403</td>
-<td align="left">Forbidden</td>
-<td align="left">服务器收到请求，但拒绝提供服务</td>
-</tr>
-<tr>
-<td align="center">404</td>
-<td align="left">Not Found</td>
-<td align="left">请求资源不存在</td>
-</tr>
-<tr>
-<td align="center">500</td>
-<td align="left">Internal Server Error</td>
-<td align="left">服务器发生不可预期的错误</td>
-</tr>
-<tr>
-<td align="center">503</td>
-<td align="left">Server Unavailable</td>
-<td align="left">服务器当前请求不可用</td>
-</tr>
-</tbody></table>
-<h2 id="3-三次握手"><a href="#3-三次握手" class="headerlink" title="3 三次握手"></a>3 三次握手</h2><ul>
-<li>第一次握手：建立连接时，客户端发送SYN（SYN=x）到服务器，有主动打开状态进入SYN_SENT状态，等待服务器确认。</li>
-<li>第二次握手：服务器收到SYN包，必须确认客户的SYN（ack=x+1）,同时自己也发送一个SYN包（syn=y），即SYN+ACK包，服务器进入SYN_RECV状态。</li>
-<li>第三次握手：客户端收到服务器的SYN+ACK包，想服务器发送确认ACK包（ACK=y+1）,发送完毕，客户端和服务器进入ESTABLISHED状态，完成握手。</li>
-</ul>
-<h2 id="4-四次挥手"><a href="#4-四次挥手" class="headerlink" title="4 四次挥手"></a>4 四次挥手</h2>]]></content>
-  </entry>
-  <entry>
     <title>Python语言基础</title>
     <url>/2020/05/12/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
-<p><strong>Python语言知识点总结归纳</strong></p>
-<ul>
-<li><a href="#python语言知识点">Python语言知识点</a><ul>
-<li><a href="#1-Python语言的特性">1 Python语言的特性</a></li>
-<li><a href="#2-python的函数参数传递">2 Python的函数参数传递</a></li>
-<li><a href="#3-python中的元类metaclass">3 Python中的元类(metaclass)</a></li>
-<li><a href="#4-staticmethod和classmethod">4 @staticmethod和@classmethod</a></li>
-<li><a href="#5-单例模式">5 单例模式</a><ul>
-<li><a href="#1-使用__new__方法">1 使用<strong>new</strong>方法</a></li>
-<li><a href="#2-共享属性">2 共享属性</a></li>
-<li><a href="#3-装饰器版本">3 装饰器版本</a></li>
-<li><a href="#4-import方法">4 import方法</a></li>
-</ul>
-</li>
-<li><a href="#6-python常用库">6 python常用库</a><ul>
-<li><a href="#1-标准库">1 标准库</a></li>
-<li><a href="#1-科学计算库">2 科学计算库</a></li>
-<li><a href="#1-第三方库">3 第三方库</a></li>
-</ul>
-</li>
-<li><a href="#7-python中的类型转换">7 python中的类型转换</a></li>
-<li><a href="#8-文件流操作">8 文件流操作</a></li>
-</ul>
-</li>
-</ul>
-<!-- markdown-toc end -->
-
-
-
-
-
-<h1 id="Python语言知识点"><a href="#Python语言知识点" class="headerlink" title="Python语言知识点"></a>Python语言知识点</h1><h2 id="1-Python语言的特性"><a href="#1-Python语言的特性" class="headerlink" title="1 Python语言的特性"></a>1 Python语言的特性</h2><p>   Python是一种解释型语言，不需要再运行之前进行编译。<br>   Python是一种动态语言，不需要声明变量的类型。<br>   python适合面向对象编程，允许类的定义以及组合和继承。  </p>
+    <content><![CDATA[<h1 id="Python语言知识点"><a href="#Python语言知识点" class="headerlink" title="Python语言知识点"></a>Python语言知识点</h1><h2 id="1-Python语言的特性"><a href="#1-Python语言的特性" class="headerlink" title="1 Python语言的特性"></a>1 Python语言的特性</h2><p>   Python是一种解释型语言，不需要再运行之前进行编译。<br>   Python是一种动态语言，不需要声明变量的类型。<br>   python适合面向对象编程，允许类的定义以及组合和继承。  </p>
 <h2 id="2-Python的函数参数传递"><a href="#2-Python的函数参数传递" class="headerlink" title="2 Python的函数参数传递"></a>2 Python的函数参数传递</h2><p>看两个例子:</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span><span class="params">(a)</span>:</span></span><br><span class="line">    a = <span class="number">2</span></span><br><span class="line">fun(a)</span><br><span class="line"><span class="keyword">print</span> a  <span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
 
@@ -217,6 +106,85 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Web与前端</title>
+    <url>/2020/05/12/Web%E4%B8%8E%E5%89%8D%E7%AB%AF/</url>
+    <content><![CDATA[<p><strong>前端知识</strong></p>
+<ul>
+<li><a href="#Web基础">Web基础</a><ul>
+<li><a href="#1-常用的网络传输协议">1.常用的网络传输协议</a></li>
+<li><a href="#2-常见的状态码">2.常见的状态码</a></li>
+<li><a href="#3-三次握手">3.三次握手</a></li>
+<li><a href="#4-四次挥手">4.四次挥手</a></li>
+</ul>
+</li>
+<li><a href="#Django">Django</a></li>
+<li><a href="#Flask">Flask</a></li>
+<li><a href="#Vue">Vue</a></li>
+<li><a href="#AngularJS">AngularJS</a></li>
+<li><a href="#React">React</a></li>
+<li><a href="#jQuery">jQuery</a></li>
+</ul>
+<h1 id="Web基础"><a href="#Web基础" class="headerlink" title="Web基础"></a>Web基础</h1><h2 id="1-常用的网络传输协议"><a href="#1-常用的网络传输协议" class="headerlink" title="1 常用的网络传输协议"></a>1 常用的网络传输协议</h2><ul>
+<li>TCP：传输控制协议，可靠传输，面向连接</li>
+<li>UDP：用户数据包协议，不可靠传输，面向无连接</li>
+<li>FTP：文件传输协议,用于上传和下载文件</li>
+<li>HTTP：超文本传输协议，基于TCP/IP通信协议，面向对象</li>
+<li>SMTP：邮件传输协议</li>
+<li>TELNET：Internet远程登录服务的标准协议和主要方式</li>
+<li>DNS：域名系统，将域名解析为ip地址</li>
+</ul>
+<h2 id="2-常见的状态码"><a href="#2-常见的状态码" class="headerlink" title="2 常见的状态码"></a>2 常见的状态码</h2><table>
+<thead>
+<tr>
+<th align="center">状态码</th>
+<th align="left">状态</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">200</td>
+<td align="left">Ok</td>
+<td align="left">请求成功</td>
+</tr>
+<tr>
+<td align="center">400</td>
+<td align="left">Bad Request</td>
+<td align="left">请求语法错误，不能被服务器解析</td>
+</tr>
+<tr>
+<td align="center">401</td>
+<td align="left">Unauthorized</td>
+<td align="left">未经授权，需与www-Authenticate一起用</td>
+</tr>
+<tr>
+<td align="center">403</td>
+<td align="left">Forbidden</td>
+<td align="left">服务器收到请求，但拒绝提供服务</td>
+</tr>
+<tr>
+<td align="center">404</td>
+<td align="left">Not Found</td>
+<td align="left">请求资源不存在</td>
+</tr>
+<tr>
+<td align="center">500</td>
+<td align="left">Internal Server Error</td>
+<td align="left">服务器发生不可预期的错误</td>
+</tr>
+<tr>
+<td align="center">503</td>
+<td align="left">Server Unavailable</td>
+<td align="left">服务器当前请求不可用</td>
+</tr>
+</tbody></table>
+<h2 id="3-三次握手"><a href="#3-三次握手" class="headerlink" title="3 三次握手"></a>3 三次握手</h2><ul>
+<li>第一次握手：建立连接时，客户端发送SYN（SYN=x）到服务器，有主动打开状态进入SYN_SENT状态，等待服务器确认。</li>
+<li>第二次握手：服务器收到SYN包，必须确认客户的SYN（ack=x+1）,同时自己也发送一个SYN包（syn=y），即SYN+ACK包，服务器进入SYN_RECV状态。</li>
+<li>第三次握手：客户端收到服务器的SYN+ACK包，想服务器发送确认ACK包（ACK=y+1）,发送完毕，客户端和服务器进入ESTABLISHED状态，完成握手。</li>
+</ul>
+<h2 id="4-四次挥手"><a href="#4-四次挥手" class="headerlink" title="4 四次挥手"></a>4 四次挥手</h2>]]></content>
   </entry>
   <entry>
     <title>操作系统知识</title>
