@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    hexo使用教程与常用命令 |  holysll
+    机器学习知识点总结归纳 |  holysll
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -46,7 +46,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="post-Hexo使用教程" class="article article-type-post" itemscope
+  <article id="post-机器学习知识" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -54,7 +54,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  hexo使用教程与常用命令
+  机器学习知识点总结归纳
 </h1>
  
 
@@ -63,12 +63,12 @@
 
     
     <div class="article-meta">
-      <a href="/2020/05/12/Hexo%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="article-date">
-  <time datetime="2020-05-12T15:34:02.000Z" itemprop="datePublished">2020-05-12</time>
+      <a href="/2020/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86/" class="article-date">
+  <time datetime="2020-05-08T15:05:08.000Z" itemprop="datePublished">2020-05-08</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a>
+    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
   </div>
 
       
@@ -78,7 +78,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">204</span>
+            <span class="post-count">530</span>
         </span>
     </span>
 
@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
+            <span class="post-count">2 min</span>
         </span>
     </span>
 </div>
@@ -112,28 +112,93 @@
       
 
       
-      <p>欢迎使用<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! 更多信息可以查看<a href="https://hexo.io/docs/" target="_blank" rel="noopener">Hexo官方文档</a> 。如果你在使用过程中遇到任何问题，可以在这<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">提问</a> 或者在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a> 上留言，这篇文章简单介绍下Hexo的使用以及常用的命令。</p>
+      <blockquote>
+<p>本文主要对机器学习基础知识进行梳理、回顾，把一些需要记住的概念原理，和容易混淆，晦涩的知识点进行归纳。</p>
+</blockquote>
 <a id="more"></a>
 
-<h2 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h2><h3 id="创建一篇文章"><a href="#创建一篇文章" class="headerlink" title="创建一篇文章"></a>创建一篇文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"文章标题"</span></span><br><span class="line">或者</span><br><span class="line">$ hexo n <span class="string">"文章标题"</span></span><br></pre></td></tr></table></figure>
+<div style='display: none'>
 
-<p>更多信息: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">writing</a></p>
-<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">或者</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<!-- TOC -->
 
-<p>更多信息: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">或者</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="#1-机器学习基础">1 机器学习基础</a><ul>
+<li><a href="#11-机器学习概述">1.1 机器学习概述</a></li>
+<li><a href="#12-监督学习">1.2 监督学习</a></li>
+<li><a href="#13-非监督学习">1.3 非监督学习</a></li>
+<li><a href="#14-增强学习">1.4 增强学习</a></li>
+<li><a href="#15-深度学习">1.5 深度学习</a></li>
+</ul>
+</li>
+<li><a href="#2-分类问题">2 分类问题</a><ul>
+<li><a href="#21-knn">2.1 KNN</a></li>
+<li><a href="#22-nb">2.2 NB</a></li>
+<li><a href="#23-svm">2.3 SVM</a></li>
+<li><a href="#24-adaboost">2.4 AdaBoost</a></li>
+<li><a href="#25-dt">2.5 DT</a></li>
+</ul>
+</li>
+<li><a href="#3-聚类分析">3 聚类分析</a><ul>
+<li><a href="#31-k-means">3.1 K-means</a></li>
+<li><a href="#32-dbscan">3.2 DBSCAN</a></li>
+<li><a href="#33-lda">3.3 LDA</a></li>
+</ul>
+</li>
+<li><a href="#4-预测分析">4 预测分析</a><ul>
+<li><a href="#41-时间序列">4.1 时间序列</a></li>
+<li><a href="#42-bp神经网络">4.2 BP神经网络</a></li>
+</ul>
+</li>
+<li><a href="#5-关联分析">5 关联分析</a><ul>
+<li><a href="#51-apriori">5.1 Apriori</a></li>
+<li><a href="#52-fp-growth">5.2 FP-Growth</a></li>
+</ul>
+</li>
+<li><a href="#6-回归分析">6 回归分析</a><ul>
+<li><a href="#61-一元回归">6.1 一元回归</a></li>
+<li><a href="#62-多元回归">6.2 多元回归</a></li>
+<li><a href="#63-逻辑回归">6.3 逻辑回归</a></li>
+</ul>
+</li>
+<li><a href="#7-集成学习">7 集成学习</a><ul>
+<li><a href="#71-bagging">7.1 Bagging</a></li>
+<li><a href="#72-随机森林">7.2. 随机森林</a></li>
+<li><a href="#73-boosting">7.3 Boosting</a></li>
+<li><a href="#74-adaboost">7.4 AdaBoost</a></li>
+</ul>
+</li>
+<li><a href="#8-深度学习">8 深度学习</a><ul>
+<li><a href="#81-有监督">8.1 有监督</a></li>
+<li><a href="#82-无监督">8.2 无监督</a></li>
+<li><a href="#83-tensorflow">8.3 TensorFlow</a></li>
+<li><a href="#84-theano">8.4 Theano</a></li>
+</ul>
+</li>
+<li><a href="#9-数据预处理">9 数据预处理</a><ul>
+<li><a href="#91-数据清洗">9.1 数据清洗</a><ul>
+<li><a href="#911-异常值处理">9.1.1 异常值处理</a></li>
+<li><a href="#912-缺失值处理">9.1.2 缺失值处理</a></li>
+<li><a href="#913-噪声处理">9.1.3 噪声处理</a></li>
+<li><a href="#914-倾斜数据处理">9.1.4 倾斜数据处理</a></li>
+</ul>
+</li>
+<li><a href="#92-数据集成">9.2 数据集成</a></li>
+<li><a href="#93-数据变换">9.3 数据变换</a></li>
+<li><a href="#94-数据归约">9.4 数据归约</a></li>
+</ul>
+</li>
+<li><a href="#10-数据降维">10 数据降维</a><ul>
+<li><a href="#101-主成份分析">10.1 主成份分析</a></li>
+<li><a href="#102-奇异值分解">10.2 奇异值分解</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
 
-<p>更多信息: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="部署到远端"><a href="#部署到远端" class="headerlink" title="部署到远端"></a>部署到远端</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">或者</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-
-<p>更多信息:: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<h2 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h2><h3 id="获取主题"><a href="#获取主题" class="headerlink" title="获取主题"></a>获取主题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/holysll/hexo-theme-ayer</span><br></pre></td></tr></table></figure>
-
-<h3 id="修改主题配置"><a href="#修改主题配置" class="headerlink" title="修改主题配置"></a>修改主题配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">vi _config.yml</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: hexo-theme-ayer</span><br></pre></td></tr></table></figure>
-
-<h3 id="清除缓存并部署"><a href="#清除缓存并部署" class="headerlink" title="清除缓存并部署"></a>清除缓存并部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
+</div>
 
 
+<h1 id="1-机器学习基础"><a href="#1-机器学习基础" class="headerlink" title="1 机器学习基础"></a>1 机器学习基础</h1><h2 id="1-1-机器学习概述"><a href="#1-1-机器学习概述" class="headerlink" title="1.1 机器学习概述"></a>1.1 机器学习概述</h2><h2 id="1-2-监督学习"><a href="#1-2-监督学习" class="headerlink" title="1.2 监督学习"></a>1.2 监督学习</h2><h2 id="1-3-非监督学习"><a href="#1-3-非监督学习" class="headerlink" title="1.3 非监督学习"></a>1.3 非监督学习</h2><h2 id="1-4-增强学习"><a href="#1-4-增强学习" class="headerlink" title="1.4 增强学习"></a>1.4 增强学习</h2><h2 id="1-5-深度学习"><a href="#1-5-深度学习" class="headerlink" title="1.5 深度学习"></a>1.5 深度学习</h2><h1 id="2-分类问题"><a href="#2-分类问题" class="headerlink" title="2 分类问题"></a>2 分类问题</h1><h2 id="2-1-KNN"><a href="#2-1-KNN" class="headerlink" title="2.1 KNN"></a>2.1 KNN</h2><h2 id="2-2-NB"><a href="#2-2-NB" class="headerlink" title="2.2 NB"></a>2.2 NB</h2><h2 id="2-3-SVM"><a href="#2-3-SVM" class="headerlink" title="2.3 SVM"></a>2.3 SVM</h2><h2 id="2-4-AdaBoost"><a href="#2-4-AdaBoost" class="headerlink" title="2.4 AdaBoost"></a>2.4 AdaBoost</h2><h2 id="2-5-DT"><a href="#2-5-DT" class="headerlink" title="2.5 DT"></a>2.5 DT</h2><h1 id="3-聚类分析"><a href="#3-聚类分析" class="headerlink" title="3 聚类分析"></a>3 聚类分析</h1><h2 id="3-1-K-means"><a href="#3-1-K-means" class="headerlink" title="3.1 K-means"></a>3.1 K-means</h2><h2 id="3-2-DBSCAN"><a href="#3-2-DBSCAN" class="headerlink" title="3.2 DBSCAN"></a>3.2 DBSCAN</h2><h2 id="3-3-LDA"><a href="#3-3-LDA" class="headerlink" title="3.3 LDA"></a>3.3 LDA</h2><h1 id="4-预测分析"><a href="#4-预测分析" class="headerlink" title="4 预测分析"></a>4 预测分析</h1><h2 id="4-1-时间序列"><a href="#4-1-时间序列" class="headerlink" title="4.1 时间序列"></a>4.1 时间序列</h2><h2 id="4-2-BP神经网络"><a href="#4-2-BP神经网络" class="headerlink" title="4.2 BP神经网络"></a>4.2 BP神经网络</h2><h1 id="5-关联分析"><a href="#5-关联分析" class="headerlink" title="5 关联分析"></a>5 关联分析</h1><h2 id="5-1-Apriori"><a href="#5-1-Apriori" class="headerlink" title="5.1 Apriori"></a>5.1 Apriori</h2><h2 id="5-2-FP-Growth"><a href="#5-2-FP-Growth" class="headerlink" title="5.2 FP-Growth"></a>5.2 FP-Growth</h2><h1 id="6-回归分析"><a href="#6-回归分析" class="headerlink" title="6 回归分析"></a>6 回归分析</h1><h2 id="6-1-一元回归"><a href="#6-1-一元回归" class="headerlink" title="6.1 一元回归"></a>6.1 一元回归</h2><h2 id="6-2-多元回归"><a href="#6-2-多元回归" class="headerlink" title="6.2 多元回归"></a>6.2 多元回归</h2><h2 id="6-3-逻辑回归"><a href="#6-3-逻辑回归" class="headerlink" title="6.3 逻辑回归"></a>6.3 逻辑回归</h2><h1 id="7-集成学习"><a href="#7-集成学习" class="headerlink" title="7 集成学习"></a>7 集成学习</h1><h2 id="7-1-Bagging"><a href="#7-1-Bagging" class="headerlink" title="7.1 Bagging"></a>7.1 Bagging</h2><h2 id="7-2-随机森林"><a href="#7-2-随机森林" class="headerlink" title="7.2. 随机森林"></a>7.2. 随机森林</h2><h2 id="7-3-Boosting"><a href="#7-3-Boosting" class="headerlink" title="7.3 Boosting"></a>7.3 Boosting</h2><h2 id="7-4-AdaBoost"><a href="#7-4-AdaBoost" class="headerlink" title="7.4 AdaBoost"></a>7.4 AdaBoost</h2><h1 id="8-深度学习"><a href="#8-深度学习" class="headerlink" title="8 深度学习"></a>8 深度学习</h1><h2 id="8-1-有监督"><a href="#8-1-有监督" class="headerlink" title="8.1 有监督"></a>8.1 有监督</h2><h2 id="8-2-无监督"><a href="#8-2-无监督" class="headerlink" title="8.2 无监督"></a>8.2 无监督</h2><h2 id="8-3-TensorFlow"><a href="#8-3-TensorFlow" class="headerlink" title="8.3 TensorFlow"></a>8.3 TensorFlow</h2><h2 id="8-4-Theano"><a href="#8-4-Theano" class="headerlink" title="8.4 Theano"></a>8.4 Theano</h2><h1 id="9-数据预处理"><a href="#9-数据预处理" class="headerlink" title="9 数据预处理"></a>9 数据预处理</h1><h2 id="9-1-数据清洗"><a href="#9-1-数据清洗" class="headerlink" title="9.1 数据清洗"></a>9.1 数据清洗</h2><h3 id="9-1-1-异常值处理"><a href="#9-1-1-异常值处理" class="headerlink" title="9.1.1 异常值处理"></a>9.1.1 异常值处理</h3><h3 id="9-1-2-缺失值处理"><a href="#9-1-2-缺失值处理" class="headerlink" title="9.1.2 缺失值处理"></a>9.1.2 缺失值处理</h3><h3 id="9-1-3-噪声处理"><a href="#9-1-3-噪声处理" class="headerlink" title="9.1.3 噪声处理"></a>9.1.3 噪声处理</h3><h3 id="9-1-4-倾斜数据处理"><a href="#9-1-4-倾斜数据处理" class="headerlink" title="9.1.4 倾斜数据处理"></a>9.1.4 倾斜数据处理</h3><h2 id="9-2-数据集成"><a href="#9-2-数据集成" class="headerlink" title="9.2 数据集成"></a>9.2 数据集成</h2><h2 id="9-3-数据变换"><a href="#9-3-数据变换" class="headerlink" title="9.3 数据变换"></a>9.3 数据变换</h2><h2 id="9-4-数据归约"><a href="#9-4-数据归约" class="headerlink" title="9.4 数据归约"></a>9.4 数据归约</h2><h1 id="10-数据降维"><a href="#10-数据降维" class="headerlink" title="10 数据降维"></a>10 数据降维</h1><h2 id="10-1-主成份分析"><a href="#10-1-主成份分析" class="headerlink" title="10.1 主成份分析"></a>10.1 主成份分析</h2><h2 id="10-2-奇异值分解"><a href="#10-2-奇异值分解" class="headerlink" title="10.2 奇异值分解"></a>10.2 奇异值分解</h2>
       
       <!-- reward -->
       
@@ -197,14 +262,14 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/05/12/Hexo%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%B3%E8%81%94%E5%88%86%E6%9E%90/" rel="tag">关联分析</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%86%E7%B1%BB%E9%97%AE%E9%A2%98/" rel="tag">分类问题</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/" rel="tag">回归分析</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90/" rel="tag">聚类分析</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/" rel="tag">集成学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%84%E6%B5%8B%E5%88%86%E6%9E%90/" rel="tag">预测分析</a></li></ul>
 
 
     </footer>
@@ -215,19 +280,19 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/05/14/README/" class="article-nav-link">
+      <a href="/2020/05/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            README
+            数据结构知识点总结归纳
           
         </div>
       </a>
     
     
-      <a href="/2020/05/08/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" class="article-nav-link">
+      <a href="/2020/05/08/%E7%AE%97%E6%B3%95%E4%B8%8E%E7%BC%96%E7%A8%8B/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Python语言知识点总结归纳</div>
+        <div class="article-nav-title">算法编程知识点总结归纳</div>
       </a>
     
   </nav>

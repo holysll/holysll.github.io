@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    hexo使用教程与常用命令 |  holysll
+    数据库知识点总结归纳 |  holysll
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -46,7 +46,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="post-Hexo使用教程" class="article article-type-post" itemscope
+  <article id="post-数据库知识" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -54,7 +54,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  hexo使用教程与常用命令
+  数据库知识点总结归纳
 </h1>
  
 
@@ -63,12 +63,12 @@
 
     
     <div class="article-meta">
-      <a href="/2020/05/12/Hexo%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="article-date">
-  <time datetime="2020-05-12T15:34:02.000Z" itemprop="datePublished">2020-05-12</time>
+      <a href="/2020/05/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9F%A5%E8%AF%86/" class="article-date">
+  <time datetime="2020-05-08T15:05:08.000Z" itemprop="datePublished">2020-05-08</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a>
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
   </div>
 
       
@@ -78,7 +78,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">204</span>
+            <span class="post-count">541</span>
         </span>
     </span>
 
@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
+            <span class="post-count">2 min</span>
         </span>
     </span>
 </div>
@@ -112,28 +112,79 @@
       
 
       
-      <p>欢迎使用<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! 更多信息可以查看<a href="https://hexo.io/docs/" target="_blank" rel="noopener">Hexo官方文档</a> 。如果你在使用过程中遇到任何问题，可以在这<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">提问</a> 或者在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a> 上留言，这篇文章简单介绍下Hexo的使用以及常用的命令。</p>
+      <blockquote>
+<p>本文主要对数据库基础知识进行梳理、回顾，把一些需要记住的概念原理，和容易混淆，晦涩的知识点进行归纳。</p>
+</blockquote>
 <a id="more"></a>
 
-<h2 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h2><h3 id="创建一篇文章"><a href="#创建一篇文章" class="headerlink" title="创建一篇文章"></a>创建一篇文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"文章标题"</span></span><br><span class="line">或者</span><br><span class="line">$ hexo n <span class="string">"文章标题"</span></span><br></pre></td></tr></table></figure>
+<div style='display: none'>
 
-<p>更多信息: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">writing</a></p>
-<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">或者</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<!-- TOC -->
 
-<p>更多信息: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">或者</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="#数据库常识">数据库常识</a><ul>
+<li><a href="#1-什么是索引">1. 什么是索引</a></li>
+<li><a href="#2-事务的特性">2. 事务的特性</a></li>
+<li><a href="#3-存储过程">3. 存储过程</a></li>
+<li><a href="#4-数据库怎么优化查询效率">4. 数据库怎么优化查询效率</a></li>
+<li><a href="#5-数据库优化方案">5. 数据库优化方案</a></li>
+<li><a href="#6-什么是悲观锁">6. 什么是悲观锁</a></li>
+<li><a href="#7-什么是乐观锁">7. 什么是乐观锁</a></li>
+<li><a href="#8-什么是缓存穿透">8. 什么是缓存穿透</a></li>
+<li><a href="#9-什么是缓存击穿">9. 什么是缓存击穿</a></li>
+<li><a href="#10-什么是缓存雪崩">10. 什么是缓存雪崩</a></li>
+</ul>
+</li>
+<li><a href="#mysql数据库">Mysql数据库</a><ul>
+<li><a href="#1-mysql-常用数据类型">1. mysql 常用数据类型</a></li>
+<li><a href="#2-mysql数据库引擎">2. mysql数据库引擎</a></li>
+<li><a href="#3-mysql的索引类型">3. mysql的索引类型</a></li>
+<li><a href="#4-mysql-几种锁的区别">4. Mysql 几种锁的区别</a></li>
+<li><a href="#5-mysql事务原理特性事务并发控制">5. mysql事务原理、特性、事务并发控制</a></li>
+</ul>
+</li>
+<li><a href="#redis数据库">Redis数据库</a><ul>
+<li><a href="#1-redis的原理">1. redis的原理</a></li>
+<li><a href="#2-持久化机制">2. 持久化机制</a></li>
+<li><a href="#3-redis-和-memcached-的主要区别">3. redis 和 memcached 的主要区别</a></li>
+<li><a href="#4-redis-高可用">4. Redis 高可用</a></li>
+<li><a href="#5-redis-高并发">5. Redis 高并发</a></li>
+</ul>
+</li>
+<li><a href="#mongodb数据库">MongoDB数据库</a></li>
+<li><a href="#hive数据库">Hive数据库</a></li>
+<li><a href="#hbase数据库">Hbase数据库</a></li>
+<li><a href="#hadoop生态">Hadoop生态</a></li>
+</ul>
+<!-- /TOC -->
 
-<p>更多信息: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="部署到远端"><a href="#部署到远端" class="headerlink" title="部署到远端"></a>部署到远端</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">或者</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+</div>
 
-<p>更多信息:: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<h2 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h2><h3 id="获取主题"><a href="#获取主题" class="headerlink" title="获取主题"></a>获取主题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/holysll/hexo-theme-ayer</span><br></pre></td></tr></table></figure>
-
-<h3 id="修改主题配置"><a href="#修改主题配置" class="headerlink" title="修改主题配置"></a>修改主题配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">vi _config.yml</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: hexo-theme-ayer</span><br></pre></td></tr></table></figure>
-
-<h3 id="清除缓存并部署"><a href="#清除缓存并部署" class="headerlink" title="清除缓存并部署"></a>清除缓存并部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
-
-
+<h1 id="数据库常识"><a href="#数据库常识" class="headerlink" title="数据库常识"></a>数据库常识</h1><h2 id="1-什么是索引"><a href="#1-什么是索引" class="headerlink" title="1. 什么是索引"></a>1. 什么是索引</h2><h2 id="2-事务的特性"><a href="#2-事务的特性" class="headerlink" title="2. 事务的特性"></a>2. 事务的特性</h2><ul>
+<li>原子性(Atomicity)</li>
+</ul>
+<blockquote>
+<p>事务中的全部操作在数据库中是不可分割的，要么全部完成，要么均不执行。</p>
+</blockquote>
+<ul>
+<li>一致性(Consistency)</li>
+</ul>
+<blockquote>
+<p>几个并行执行的事务，其执行结果必须与按某一顺序串行执行的结果相一致。</p>
+</blockquote>
+<ul>
+<li>隔离性(Isolation)</li>
+</ul>
+<blockquote>
+<p>事务的执行不受其他事务的干扰，事务执行的中间结果对其他事务必须是透明的。</p>
+</blockquote>
+<ul>
+<li>持久性(Durability)</li>
+</ul>
+<blockquote>
+<p>对于任意已交事务，系统必须保证该事务对数据库的改变不被丢失，即使数据库出现异常。</p>
+</blockquote>
+<h2 id="3-存储过程"><a href="#3-存储过程" class="headerlink" title="3. 存储过程"></a>3. 存储过程</h2><h2 id="4-数据库怎么优化查询效率"><a href="#4-数据库怎么优化查询效率" class="headerlink" title="4. 数据库怎么优化查询效率"></a>4. 数据库怎么优化查询效率</h2><h2 id="5-数据库优化方案"><a href="#5-数据库优化方案" class="headerlink" title="5. 数据库优化方案"></a>5. 数据库优化方案</h2><h2 id="6-什么是悲观锁"><a href="#6-什么是悲观锁" class="headerlink" title="6. 什么是悲观锁"></a>6. 什么是悲观锁</h2><h2 id="7-什么是乐观锁"><a href="#7-什么是乐观锁" class="headerlink" title="7. 什么是乐观锁"></a>7. 什么是乐观锁</h2><h2 id="8-什么是缓存穿透"><a href="#8-什么是缓存穿透" class="headerlink" title="8. 什么是缓存穿透"></a>8. 什么是缓存穿透</h2><h2 id="9-什么是缓存击穿"><a href="#9-什么是缓存击穿" class="headerlink" title="9. 什么是缓存击穿"></a>9. 什么是缓存击穿</h2><h2 id="10-什么是缓存雪崩"><a href="#10-什么是缓存雪崩" class="headerlink" title="10. 什么是缓存雪崩"></a>10. 什么是缓存雪崩</h2><h1 id="Mysql数据库"><a href="#Mysql数据库" class="headerlink" title="Mysql数据库"></a>Mysql数据库</h1><h2 id="1-mysql-常用数据类型"><a href="#1-mysql-常用数据类型" class="headerlink" title="1. mysql 常用数据类型"></a>1. mysql 常用数据类型</h2><h2 id="2-mysql数据库引擎"><a href="#2-mysql数据库引擎" class="headerlink" title="2. mysql数据库引擎"></a>2. mysql数据库引擎</h2><h2 id="3-mysql的索引类型"><a href="#3-mysql的索引类型" class="headerlink" title="3. mysql的索引类型"></a>3. mysql的索引类型</h2><h2 id="4-Mysql-几种锁的区别"><a href="#4-Mysql-几种锁的区别" class="headerlink" title="4. Mysql 几种锁的区别"></a>4. Mysql 几种锁的区别</h2><h2 id="5-mysql事务原理、特性、事务并发控制"><a href="#5-mysql事务原理、特性、事务并发控制" class="headerlink" title="5. mysql事务原理、特性、事务并发控制"></a>5. mysql事务原理、特性、事务并发控制</h2><h1 id="Redis数据库"><a href="#Redis数据库" class="headerlink" title="Redis数据库"></a>Redis数据库</h1><h2 id="1-redis的原理"><a href="#1-redis的原理" class="headerlink" title="1. redis的原理"></a>1. redis的原理</h2><h2 id="2-持久化机制"><a href="#2-持久化机制" class="headerlink" title="2. 持久化机制"></a>2. 持久化机制</h2><h2 id="3-redis-和-memcached-的主要区别"><a href="#3-redis-和-memcached-的主要区别" class="headerlink" title="3. redis 和 memcached 的主要区别"></a>3. redis 和 memcached 的主要区别</h2><h2 id="4-Redis-高可用"><a href="#4-Redis-高可用" class="headerlink" title="4. Redis 高可用"></a>4. Redis 高可用</h2><h2 id="5-Redis-高并发"><a href="#5-Redis-高并发" class="headerlink" title="5. Redis 高并发"></a>5. Redis 高并发</h2><h1 id="MongoDB数据库"><a href="#MongoDB数据库" class="headerlink" title="MongoDB数据库"></a>MongoDB数据库</h1><h1 id="Hive数据库"><a href="#Hive数据库" class="headerlink" title="Hive数据库"></a>Hive数据库</h1><h1 id="Hbase数据库"><a href="#Hbase数据库" class="headerlink" title="Hbase数据库"></a>Hbase数据库</h1><h1 id="Hadoop生态"><a href="#Hadoop生态" class="headerlink" title="Hadoop生态"></a>Hadoop生态</h1>
       
       <!-- reward -->
       
@@ -197,14 +248,14 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/05/12/Hexo%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/05/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9F%A5%E8%AF%86/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li></ul>
 
 
     </footer>
@@ -215,19 +266,19 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/05/14/README/" class="article-nav-link">
+      <a href="/2020/05/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            README
+            操作系统知识点总结归纳
           
         </div>
       </a>
     
     
-      <a href="/2020/05/08/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" class="article-nav-link">
+      <a href="/2020/05/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Python语言知识点总结归纳</div>
+        <div class="article-nav-title">数据结构知识点总结归纳</div>
       </a>
     
   </nav>
