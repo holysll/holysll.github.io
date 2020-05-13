@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-12T14:53:16.684Z</updated>
+  <updated>2020-05-12T16:37:29.045Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,28 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>README</title>
-    <link href="http://yoursite.com/2020/05/14/README/"/>
-    <id>http://yoursite.com/2020/05/14/README/</id>
-    <published>2020-05-13T18:50:55.227Z</published>
-    <updated>2020-05-12T14:53:16.684Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Prepare-for-interview"><a href="#Prepare-for-interview" class="headerlink" title="Prepare_for_interview"></a>Prepare_for_interview</h1><p>knowledge review and learn more, remark some new thing.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Prepare-for-interview&quot;&gt;&lt;a href=&quot;#Prepare-for-interview&quot; class=&quot;headerlink&quot; title=&quot;Prepare_for_interview&quot;&gt;&lt;/a&gt;Prepare_for_interview&lt;/
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
   
   <entry>
     <title>hexo使用教程与常用命令</title>

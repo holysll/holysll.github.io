@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>README</title>
-    <url>/2020/05/14/README/</url>
-    <content><![CDATA[<h1 id="Prepare-for-interview"><a href="#Prepare-for-interview" class="headerlink" title="Prepare_for_interview"></a>Prepare_for_interview</h1><p>knowledge review and learn more, remark some new thing.</p>
-]]></content>
-  </entry>
-  <entry>
     <title>hexo使用教程与常用命令</title>
     <url>/2020/05/12/Hexo%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<p>欢迎使用<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! 更多信息可以查看<a href="https://hexo.io/docs/" target="_blank" rel="noopener">Hexo官方文档</a> 。如果你在使用过程中遇到任何问题，可以在这<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">提问</a> 或者在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a> 上留言，这篇文章简单介绍下Hexo的使用以及常用的命令。</p>
