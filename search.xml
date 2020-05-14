@@ -35,6 +35,106 @@
       </tags>
   </entry>
   <entry>
+    <title>Web与前端知识点总结归纳</title>
+    <url>/2020/05/08/Web%E4%B8%8E%E5%89%8D%E7%AB%AF/</url>
+    <content><![CDATA[<blockquote>
+<p>本文主要对Web基础和前端框架知识进行梳理、回顾，把一些需要记住的概念原理，和容易混淆，晦涩的知识点进行归纳。</p>
+</blockquote>
+<a id="more"></a>
+
+<div style='display: none'>
+
+<!-- TOC -->
+
+<ul>
+<li><a href="#web基础">Web基础</a><ul>
+<li><a href="#1-常用的网络传输协议">1. 常用的网络传输协议</a></li>
+<li><a href="#2-常见的状态码">2. 常见的状态码</a></li>
+<li><a href="#3-三次握手">3. 三次握手</a></li>
+<li><a href="#4-四次挥手">4. 四次挥手</a></li>
+</ul>
+</li>
+<li><a href="#django">Django</a></li>
+<li><a href="#flask">Flask</a></li>
+<li><a href="#tornado">Tornado</a></li>
+<li><a href="#jquery">jQuery</a></li>
+<li><a href="#vue">Vue</a></li>
+<li><a href="#angularjs">AngularJS</a></li>
+<li><a href="#react">React</a></li>
+</ul>
+<!-- /TOC -->
+
+</div>
+
+<h1 id="Web基础"><a href="#Web基础" class="headerlink" title="Web基础"></a>Web基础</h1><h2 id="1-常用的网络传输协议"><a href="#1-常用的网络传输协议" class="headerlink" title="1. 常用的网络传输协议"></a>1. 常用的网络传输协议</h2><ul>
+<li>TCP：传输控制协议，可靠传输，面向连接</li>
+<li>UDP：用户数据包协议，不可靠传输，面向无连接</li>
+<li>FTP：文件传输协议,用于上传和下载文件</li>
+<li>HTTP：超文本传输协议，基于TCP/IP通信协议，面向对象</li>
+<li>SMTP：邮件传输协议</li>
+<li>TELNET：Internet远程登录服务的标准协议和主要方式</li>
+<li>DNS：域名系统，将域名解析为ip地址</li>
+</ul>
+<h2 id="2-常见的状态码"><a href="#2-常见的状态码" class="headerlink" title="2. 常见的状态码"></a>2. 常见的状态码</h2><table>
+<thead>
+<tr>
+<th align="center">状态码</th>
+<th align="left">状态</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">200</td>
+<td align="left">Ok</td>
+<td align="left">请求成功</td>
+</tr>
+<tr>
+<td align="center">400</td>
+<td align="left">Bad Request</td>
+<td align="left">请求语法错误，不能被服务器解析</td>
+</tr>
+<tr>
+<td align="center">401</td>
+<td align="left">Unauthorized</td>
+<td align="left">未经授权，需与www-Authenticate一起用</td>
+</tr>
+<tr>
+<td align="center">403</td>
+<td align="left">Forbidden</td>
+<td align="left">服务器收到请求，但拒绝提供服务</td>
+</tr>
+<tr>
+<td align="center">404</td>
+<td align="left">Not Found</td>
+<td align="left">请求资源不存在</td>
+</tr>
+<tr>
+<td align="center">500</td>
+<td align="left">Internal Server Error</td>
+<td align="left">服务器发生不可预期的错误</td>
+</tr>
+<tr>
+<td align="center">503</td>
+<td align="left">Server Unavailable</td>
+<td align="left">服务器当前请求不可用</td>
+</tr>
+</tbody></table>
+<h2 id="3-三次握手"><a href="#3-三次握手" class="headerlink" title="3. 三次握手"></a>3. 三次握手</h2><ul>
+<li>第一次握手：建立连接时，客户端发送SYN（SYN=x）到服务器，有主动打开状态进入SYN_SENT状态，等待服务器确认。</li>
+<li>第二次握手：服务器收到SYN包，必须确认客户的SYN（ack=x+1）,同时自己也发送一个SYN包（syn=y），即SYN+ACK包，服务器进入SYN_RECV状态。</li>
+<li>第三次握手：客户端收到服务器的SYN+ACK包，想服务器发送确认ACK包（ACK=y+1）,发送完毕，客户端和服务器进入ESTABLISHED状态，完成握手。</li>
+</ul>
+<h2 id="4-四次挥手"><a href="#4-四次挥手" class="headerlink" title="4. 四次挥手"></a>4. 四次挥手</h2><h1 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h1><h1 id="Flask"><a href="#Flask" class="headerlink" title="Flask"></a>Flask</h1><h1 id="Tornado"><a href="#Tornado" class="headerlink" title="Tornado"></a>Tornado</h1><h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h1 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h1><h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1>]]></content>
+      <categories>
+        <category>前端知识</category>
+      </categories>
+      <tags>
+        <tag>Web基础</tag>
+        <tag>前端框架</tag>
+        <tag>知识回顾</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python语言知识点总结归纳</title>
     <url>/2020/05/08/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<blockquote>
@@ -56,6 +156,62 @@
 <li><a href="#7-python中的类型转换">7. python中的类型转换</a></li>
 <li><a href="#8-文件流操作">8. 文件流操作</a></li>
 <li><a href="#9-__new__-和-__init__的区别">9. <strong>new</strong> 和 <strong>init</strong>的区别</a></li>
+<li><a href="#10-python内存管理与垃圾回收机制">10. python内存管理与垃圾回收机制</a></li>
+<li><a href="#11-python2x-与python3x的主要区别">11. python2.x 与python3.x的主要区别</a></li>
+<li><a href="#12-如何将python2的代码迁移到python3">12. 如何将python2的代码迁移到python3</a></li>
+<li><a href="#13-python新式类和旧式类的区别">13. python新式类和旧式类的区别</a></li>
+<li><a href="#14-鸭子类型">14. 鸭子类型</a></li>
+<li><a href="#15-python自省">15. python自省</a></li>
+<li><a href="#16-猴子补丁技术">16. 猴子补丁技术</a></li>
+<li><a href="#17-python语法糖有哪些">17. python语法糖有哪些</a></li>
+<li><a href="#18-迭代器和生成器">18. 迭代器和生成器</a></li>
+<li><a href="#19-闭包">19. 闭包</a></li>
+<li><a href="#10-装饰器">10. 装饰器</a></li>
+<li><a href="#21-浅拷贝与深拷贝">21. 浅拷贝与深拷贝</a></li>
+<li><a href="#22-设计模式">22. 设计模式</a></li>
+<li><a href="#23-gil全局解释器锁">23. GIL全局解释器锁</a></li>
+<li><a href="#24-python新式类和旧式类的区别">24. python新式类和旧式类的区别</a></li>
+<li><a href="#25-函数与方法的区别">25. 函数与方法的区别</a></li>
+<li><a href="#26-range与xrange的区别">26. range与Xrange的区别</a></li>
+<li><a href="#27-search与match的区别">27. search与match的区别</a></li>
+<li><a href="#28-继承">28. 继承</a></li>
+<li><a href="#29-多态与多态性">29. 多态与多态性</a></li>
+<li><a href="#30-numpy与scipy的区别">30. Numpy与Scipy的区别</a></li>
+<li><a href="#31-函数式编程">31. 函数式编程</a></li>
+<li><a href="#32-面向对象编程oop">32. 面向对象编程OOP</a></li>
+<li><a href="#33-面向切面编程aop">33. 面向切面编程AOP</a></li>
+<li><a href="#34-元编程">34. 元编程</a></li>
+<li><a href="#35-捕获异常">35. 捕获异常</a></li>
+<li><a href="#36-python中如何进行异常处理如何自定义一个异常类">36. python中如何进行异常处理，如何自定义一个异常类</a></li>
+<li><a href="#37-python内置数据结构">37. python内置数据结构</a></li>
+<li><a href="#38-python中函数和方法有什么区别">38. python中函数和方法有什么区别</a></li>
+<li><a href="#39-python中参数类型有哪些">39. python中参数类型有哪些</a></li>
+<li><a href="#40-python中函数传参过程">40. python中函数传参过程</a></li>
+<li><a href="#41-args和kwargs">41. <em>args和*</em>kwargs</a></li>
+<li><a href="#42-实参和形参的区别">42. 实参和形参的区别</a></li>
+<li><a href="#43-python中可变对象和不可变对象">43. python中可变对象和不可变对象</a></li>
+<li><a href="#44-lambda函数">44. lambda函数</a></li>
+<li><a href="#45-python中正则使用方式">45. python中正则使用方式</a></li>
+<li><a href="#46-python中重载">46. python中重载</a></li>
+<li><a href="#47-python中反射机制">47. python中反射机制</a></li>
+<li><a href="#48-python中如何管理依赖">48. python中如何管理依赖</a></li>
+<li><a href="#49-如何分析python代码性能">49. 如何分析python代码性能</a></li>
+<li><a href="#50-列表的线性访问和随机访问">50. 列表的线性访问和随机访问</a></li>
+<li><a href="#51-python中的高阶函数">51. python中的高阶函数</a></li>
+<li><a href="#52-python中单下划线和双下划线">52. Python中单下划线和双下划线</a></li>
+<li><a href="#53-python的作用域以及python搜索变量的顺序">53. Python的作用域以及Python搜索变量的顺序</a></li>
+<li><a href="#54-编码与解码">54. 编码与解码</a></li>
+<li><a href="#55-字符串格式化">55. 字符串格式化</a></li>
+<li><a href="#56-增量赋值">56. 增量赋值</a></li>
+<li><a href="#57-字典推导式">57. 字典推导式</a></li>
+<li><a href="#58-exec对字符串执行和eval对字符串求值">58. exec对字符串执行和eval对字符串求值</a></li>
+<li><a href="#59-raise语句的作用">59. raise语句的作用</a></li>
+<li><a href="#60-yeild语句的作用">60. yeild语句的作用</a></li>
+<li><a href="#61-socket编程">61. socket编程</a></li>
+<li><a href="#62-urllib和urllib2">62. urllib和urllib2</a></li>
+<li><a href="#63-requests">63. requests</a></li>
+<li><a href="#64-beautiful-soup">64. Beautiful Soup</a></li>
+<li><a href="#65-selectpoll和epoll">65. select,poll和epoll</a></li>
 </ul>
 <!-- /TOC -->
 
@@ -386,114 +542,90 @@
 <li>只有在<strong>new</strong>返回一个cls的实例时，后面的<strong>init</strong>才能被调用</li>
 <li>创建一个新实例时调用<strong>new</strong>方法，初始化一个实例时调用<strong>init</strong>方法</li>
 </ul>
-]]></content>
+<h2 id="10-python内存管理与垃圾回收机制"><a href="#10-python内存管理与垃圾回收机制" class="headerlink" title="10. python内存管理与垃圾回收机制"></a>10. python内存管理与垃圾回收机制</h2><h2 id="11-python2-x-与python3-x的主要区别"><a href="#11-python2-x-与python3-x的主要区别" class="headerlink" title="11. python2.x 与python3.x的主要区别"></a>11. python2.x 与python3.x的主要区别</h2><h2 id="12-如何将python2的代码迁移到python3"><a href="#12-如何将python2的代码迁移到python3" class="headerlink" title="12. 如何将python2的代码迁移到python3"></a>12. 如何将python2的代码迁移到python3</h2><h2 id="13-python新式类和旧式类的区别"><a href="#13-python新式类和旧式类的区别" class="headerlink" title="13. python新式类和旧式类的区别"></a>13. python新式类和旧式类的区别</h2><h2 id="14-鸭子类型"><a href="#14-鸭子类型" class="headerlink" title="14. 鸭子类型"></a>14. 鸭子类型</h2><h2 id="15-python自省"><a href="#15-python自省" class="headerlink" title="15. python自省"></a>15. python自省</h2><h2 id="16-猴子补丁技术"><a href="#16-猴子补丁技术" class="headerlink" title="16. 猴子补丁技术"></a>16. 猴子补丁技术</h2><h2 id="17-python语法糖有哪些"><a href="#17-python语法糖有哪些" class="headerlink" title="17. python语法糖有哪些"></a>17. python语法糖有哪些</h2><h2 id="18-迭代器和生成器"><a href="#18-迭代器和生成器" class="headerlink" title="18. 迭代器和生成器"></a>18. 迭代器和生成器</h2><h2 id="19-闭包"><a href="#19-闭包" class="headerlink" title="19. 闭包"></a>19. 闭包</h2><h2 id="10-装饰器"><a href="#10-装饰器" class="headerlink" title="10. 装饰器"></a>10. 装饰器</h2><h2 id="21-浅拷贝与深拷贝"><a href="#21-浅拷贝与深拷贝" class="headerlink" title="21. 浅拷贝与深拷贝"></a>21. 浅拷贝与深拷贝</h2><h2 id="22-设计模式"><a href="#22-设计模式" class="headerlink" title="22. 设计模式"></a>22. 设计模式</h2><ul>
+<li>工厂模式</li>
+<li>构造模式</li>
+<li>原型模式</li>
+<li>单例模式</li>
+<li>装饰器模式</li>
+<li>代理模式</li>
+<li>适配器模式</li>
+<li>外观模式</li>
+<li>享元模式</li>
+<li>MVC模式</li>
+<li>惰性计算模式</li>
+<li>迭代器模式</li>
+<li>观察者模式</li>
+<li>策略模式</li>
+</ul>
+<h2 id="23-GIL全局解释器锁"><a href="#23-GIL全局解释器锁" class="headerlink" title="23. GIL全局解释器锁"></a>23. GIL全局解释器锁</h2><h2 id="24-python新式类和旧式类的区别"><a href="#24-python新式类和旧式类的区别" class="headerlink" title="24. python新式类和旧式类的区别"></a>24. python新式类和旧式类的区别</h2><h2 id="25-函数与方法的区别"><a href="#25-函数与方法的区别" class="headerlink" title="25. 函数与方法的区别"></a>25. 函数与方法的区别</h2><h2 id="26-range与Xrange的区别"><a href="#26-range与Xrange的区别" class="headerlink" title="26. range与Xrange的区别"></a>26. range与Xrange的区别</h2><h2 id="27-search与match的区别"><a href="#27-search与match的区别" class="headerlink" title="27. search与match的区别"></a>27. search与match的区别</h2><h2 id="28-继承"><a href="#28-继承" class="headerlink" title="28. 继承"></a>28. 继承</h2><h2 id="29-多态与多态性"><a href="#29-多态与多态性" class="headerlink" title="29. 多态与多态性"></a>29. 多态与多态性</h2><h2 id="30-Numpy与Scipy的区别"><a href="#30-Numpy与Scipy的区别" class="headerlink" title="30. Numpy与Scipy的区别"></a>30. Numpy与Scipy的区别</h2><h2 id="31-函数式编程"><a href="#31-函数式编程" class="headerlink" title="31. 函数式编程"></a>31. 函数式编程</h2><h2 id="32-面向对象编程OOP"><a href="#32-面向对象编程OOP" class="headerlink" title="32. 面向对象编程OOP"></a>32. 面向对象编程OOP</h2><h2 id="33-面向切面编程AOP"><a href="#33-面向切面编程AOP" class="headerlink" title="33. 面向切面编程AOP"></a>33. 面向切面编程AOP</h2><h2 id="34-元编程"><a href="#34-元编程" class="headerlink" title="34. 元编程"></a>34. 元编程</h2><blockquote>
+<p>元编程是一种可以将程序当作数据来操作的技术，元编程能够读取，生成，分析或转换其他的程序代码，甚至可以在运行时修改自身 。</p>
+</blockquote>
+<h2 id="35-捕获异常"><a href="#35-捕获异常" class="headerlink" title="35. 捕获异常"></a>35. 捕获异常</h2><h2 id="36-python中如何进行异常处理，如何自定义一个异常类"><a href="#36-python中如何进行异常处理，如何自定义一个异常类" class="headerlink" title="36. python中如何进行异常处理，如何自定义一个异常类"></a>36. python中如何进行异常处理，如何自定义一个异常类</h2><h2 id="37-python内置数据结构"><a href="#37-python内置数据结构" class="headerlink" title="37. python内置数据结构"></a>37. python内置数据结构</h2><h2 id="38-python中函数和方法有什么区别"><a href="#38-python中函数和方法有什么区别" class="headerlink" title="38. python中函数和方法有什么区别"></a>38. python中函数和方法有什么区别</h2><h2 id="39-python中参数类型有哪些"><a href="#39-python中参数类型有哪些" class="headerlink" title="39. python中参数类型有哪些"></a>39. python中参数类型有哪些</h2><h2 id="40-python中函数传参过程"><a href="#40-python中函数传参过程" class="headerlink" title="40. python中函数传参过程"></a>40. python中函数传参过程</h2><h2 id="41-args和-kwargs"><a href="#41-args和-kwargs" class="headerlink" title="41. args和*kwargs"></a>41. <em>args和*</em>kwargs</h2><h2 id="42-实参和形参的区别"><a href="#42-实参和形参的区别" class="headerlink" title="42. 实参和形参的区别"></a>42. 实参和形参的区别</h2><h2 id="43-python中可变对象和不可变对象"><a href="#43-python中可变对象和不可变对象" class="headerlink" title="43. python中可变对象和不可变对象"></a>43. python中可变对象和不可变对象</h2><h2 id="44-lambda函数"><a href="#44-lambda函数" class="headerlink" title="44. lambda函数"></a>44. lambda函数</h2><h2 id="45-python中正则使用方式"><a href="#45-python中正则使用方式" class="headerlink" title="45. python中正则使用方式"></a>45. python中正则使用方式</h2><blockquote>
+<p>手写正则邮箱地址</p>
+</blockquote>
+<h2 id="46-python中重载"><a href="#46-python中重载" class="headerlink" title="46. python中重载"></a>46. python中重载</h2><h2 id="47-python中反射机制"><a href="#47-python中反射机制" class="headerlink" title="47. python中反射机制"></a>47. python中反射机制</h2><h2 id="48-python中如何管理依赖"><a href="#48-python中如何管理依赖" class="headerlink" title="48. python中如何管理依赖"></a>48. python中如何管理依赖</h2><blockquote>
+<p>每个项目创建独立的虚拟环境</p>
+</blockquote>
+<h2 id="49-如何分析python代码性能"><a href="#49-如何分析python代码性能" class="headerlink" title="49. 如何分析python代码性能"></a>49. 如何分析python代码性能</h2><h2 id="50-列表的线性访问和随机访问"><a href="#50-列表的线性访问和随机访问" class="headerlink" title="50. 列表的线性访问和随机访问"></a>50. 列表的线性访问和随机访问</h2><blockquote>
+<p>random.random()用于生成一个0到1的随机符点数: 0 &lt;= n &lt; 1.0 。</p>
+</blockquote>
+<blockquote>
+<p>random.uniform(a, b)，用于生成一个指定范围内的随机符点数，两个参数其中一个是上限，一个是下限。如果a &gt; b，则生成的随机数n: a &lt;= n &lt;= b。如果 a &lt;b， 则 b &lt;= n &lt;= a 。</p>
+</blockquote>
+<blockquote>
+<p>random.randint(a, b)，用于生成一个指定范围内的整数。其中参数a是下限，参数b是上限，生成的随机数n: a &lt;= n &lt;= b。</p>
+</blockquote>
+<blockquote>
+<p>random.randrange([start], stop[, step])，从指定范围内，按指定基数递增的集合中 获取一个随机数。</p>
+</blockquote>
+<blockquote>
+<p>random.choice(sequence)从序列中获取一个随机元素，参数sequence表示一个有序类型。</p>
+</blockquote>
+<blockquote>
+<p>random.shuffle(x[, random])，用于将一个列表中的元素打乱。</p>
+</blockquote>
+<blockquote>
+<p>random.sample(sequence, k)，从指定序列中随机获取指定长度的片断。sample函数不会修改原有序列。</p>
+</blockquote>
+<h2 id="51-python中的高阶函数"><a href="#51-python中的高阶函数" class="headerlink" title="51. python中的高阶函数"></a>51. python中的高阶函数</h2><blockquote>
+<p>高阶函数：一个函数可以作为参数传给另外一个函数，或者一个函数的返回值为另外一个函数（若返回值为该函数本身，则为递归），满足其一则为高阶函数。</p>
+</blockquote>
+<ul>
+<li><p>map</p>
+</li>
+<li><p>filter</p>
+</li>
+<li><p>reduce</p>
+</li>
+<li><p>sorted</p>
+</li>
+</ul>
+<blockquote>
+<p>sort 是应用在 list 上的方法，sorted 可以对所有可迭代的对象进行排序操作。</p>
+</blockquote>
+<ul>
+<li>abs </li>
+</ul>
+<h2 id="52-Python中单下划线和双下划线"><a href="#52-Python中单下划线和双下划线" class="headerlink" title="52. Python中单下划线和双下划线"></a>52. Python中单下划线和双下划线</h2><h2 id="53-Python的作用域以及Python搜索变量的顺序"><a href="#53-Python的作用域以及Python搜索变量的顺序" class="headerlink" title="53. Python的作用域以及Python搜索变量的顺序"></a>53. Python的作用域以及Python搜索变量的顺序</h2><blockquote>
+<p>Python作用域简单说就是一个变量的命名空间。代码中变量被赋值的位置，就决定了哪些范围的对象可以访问这个变量，这个范围就是变量的作用域。<br>在Python中，只有模块（module），类（class）以及函数（def、lambda）才会引入新的作用域。<br>Python的变量名解析机制也称为 LEGB 法则：本地作用域（Local）→当前作用域被嵌入的本地作用域（Enclosing locals）→全局/模块作用域（Global）→内置作用域（Built-in）</p>
+</blockquote>
+<h2 id="54-编码与解码"><a href="#54-编码与解码" class="headerlink" title="54. 编码与解码"></a>54. 编码与解码</h2><h2 id="55-字符串格式化"><a href="#55-字符串格式化" class="headerlink" title="55. 字符串格式化"></a>55. 字符串格式化</h2><h2 id="56-增量赋值"><a href="#56-增量赋值" class="headerlink" title="56. 增量赋值"></a>56. 增量赋值</h2><ul>
+<li><p>x += 1</p>
+</li>
+<li><p>x *= 1</p>
+</li>
+<li><p>x = x + 1</p>
+</li>
+</ul>
+<h2 id="57-字典推导式"><a href="#57-字典推导式" class="headerlink" title="57. 字典推导式"></a>57. 字典推导式</h2><h2 id="58-exec对字符串执行和eval对字符串求值"><a href="#58-exec对字符串执行和eval对字符串求值" class="headerlink" title="58. exec对字符串执行和eval对字符串求值"></a>58. exec对字符串执行和eval对字符串求值</h2><h2 id="59-raise语句的作用"><a href="#59-raise语句的作用" class="headerlink" title="59. raise语句的作用"></a>59. raise语句的作用</h2><h2 id="60-yeild语句的作用"><a href="#60-yeild语句的作用" class="headerlink" title="60. yeild语句的作用"></a>60. yeild语句的作用</h2><h2 id="61-socket编程"><a href="#61-socket编程" class="headerlink" title="61. socket编程"></a>61. socket编程</h2><h2 id="62-urllib和urllib2"><a href="#62-urllib和urllib2" class="headerlink" title="62. urllib和urllib2"></a>62. urllib和urllib2</h2><h2 id="63-requests"><a href="#63-requests" class="headerlink" title="63. requests"></a>63. requests</h2><h2 id="64-Beautiful-Soup"><a href="#64-Beautiful-Soup" class="headerlink" title="64. Beautiful Soup"></a>64. Beautiful Soup</h2><h2 id="65-select-poll和epoll"><a href="#65-select-poll和epoll" class="headerlink" title="65. select,poll和epoll"></a>65. select,poll和epoll</h2>]]></content>
       <categories>
         <category>编程语言-python</category>
       </categories>
       <tags>
+        <tag>知识回顾</tag>
         <tag>python</tag>
         <tag>后端</tag>
-        <tag>知识回顾</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Web与前端知识点总结归纳</title>
-    <url>/2020/05/08/Web%E4%B8%8E%E5%89%8D%E7%AB%AF/</url>
-    <content><![CDATA[<blockquote>
-<p>本文主要对Web基础和前端框架知识进行梳理、回顾，把一些需要记住的概念原理，和容易混淆，晦涩的知识点进行归纳。</p>
-</blockquote>
-<a id="more"></a>
-
-<div style='display: none'>
-
-<!-- TOC -->
-
-<ul>
-<li><a href="#web基础">Web基础</a><ul>
-<li><a href="#1-常用的网络传输协议">1. 常用的网络传输协议</a></li>
-<li><a href="#2-常见的状态码">2. 常见的状态码</a></li>
-<li><a href="#3-三次握手">3. 三次握手</a></li>
-<li><a href="#4-四次挥手">4. 四次挥手</a></li>
-</ul>
-</li>
-<li><a href="#django">Django</a></li>
-<li><a href="#flask">Flask</a></li>
-<li><a href="#tornado">Tornado</a></li>
-<li><a href="#jquery">jQuery</a></li>
-<li><a href="#vue">Vue</a></li>
-<li><a href="#angularjs">AngularJS</a></li>
-<li><a href="#react">React</a></li>
-</ul>
-<!-- /TOC -->
-
-</div>
-
-<h1 id="Web基础"><a href="#Web基础" class="headerlink" title="Web基础"></a>Web基础</h1><h2 id="1-常用的网络传输协议"><a href="#1-常用的网络传输协议" class="headerlink" title="1. 常用的网络传输协议"></a>1. 常用的网络传输协议</h2><ul>
-<li>TCP：传输控制协议，可靠传输，面向连接</li>
-<li>UDP：用户数据包协议，不可靠传输，面向无连接</li>
-<li>FTP：文件传输协议,用于上传和下载文件</li>
-<li>HTTP：超文本传输协议，基于TCP/IP通信协议，面向对象</li>
-<li>SMTP：邮件传输协议</li>
-<li>TELNET：Internet远程登录服务的标准协议和主要方式</li>
-<li>DNS：域名系统，将域名解析为ip地址</li>
-</ul>
-<h2 id="2-常见的状态码"><a href="#2-常见的状态码" class="headerlink" title="2. 常见的状态码"></a>2. 常见的状态码</h2><table>
-<thead>
-<tr>
-<th align="center">状态码</th>
-<th align="left">状态</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">200</td>
-<td align="left">Ok</td>
-<td align="left">请求成功</td>
-</tr>
-<tr>
-<td align="center">400</td>
-<td align="left">Bad Request</td>
-<td align="left">请求语法错误，不能被服务器解析</td>
-</tr>
-<tr>
-<td align="center">401</td>
-<td align="left">Unauthorized</td>
-<td align="left">未经授权，需与www-Authenticate一起用</td>
-</tr>
-<tr>
-<td align="center">403</td>
-<td align="left">Forbidden</td>
-<td align="left">服务器收到请求，但拒绝提供服务</td>
-</tr>
-<tr>
-<td align="center">404</td>
-<td align="left">Not Found</td>
-<td align="left">请求资源不存在</td>
-</tr>
-<tr>
-<td align="center">500</td>
-<td align="left">Internal Server Error</td>
-<td align="left">服务器发生不可预期的错误</td>
-</tr>
-<tr>
-<td align="center">503</td>
-<td align="left">Server Unavailable</td>
-<td align="left">服务器当前请求不可用</td>
-</tr>
-</tbody></table>
-<h2 id="3-三次握手"><a href="#3-三次握手" class="headerlink" title="3. 三次握手"></a>3. 三次握手</h2><ul>
-<li>第一次握手：建立连接时，客户端发送SYN（SYN=x）到服务器，有主动打开状态进入SYN_SENT状态，等待服务器确认。</li>
-<li>第二次握手：服务器收到SYN包，必须确认客户的SYN（ack=x+1）,同时自己也发送一个SYN包（syn=y），即SYN+ACK包，服务器进入SYN_RECV状态。</li>
-<li>第三次握手：客户端收到服务器的SYN+ACK包，想服务器发送确认ACK包（ACK=y+1）,发送完毕，客户端和服务器进入ESTABLISHED状态，完成握手。</li>
-</ul>
-<h2 id="4-四次挥手"><a href="#4-四次挥手" class="headerlink" title="4. 四次挥手"></a>4. 四次挥手</h2><h1 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h1><h1 id="Flask"><a href="#Flask" class="headerlink" title="Flask"></a>Flask</h1><h1 id="Tornado"><a href="#Tornado" class="headerlink" title="Tornado"></a>Tornado</h1><h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h1 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h1><h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1>]]></content>
-      <categories>
-        <category>前端知识</category>
-      </categories>
-      <tags>
-        <tag>知识回顾</tag>
-        <tag>Web基础</tag>
-        <tag>前端框架</tag>
       </tags>
   </entry>
   <entry>
@@ -513,9 +645,16 @@
 <li><a href="#1-进程线程以及协程间的区别">1. 进程、线程以及协程间的区别</a></li>
 <li><a href="#2-线程间通信的方式">2. 线程间通信的方式</a></li>
 <li><a href="#3-进程间通信的方式">3. 进程间通信的方式</a></li>
-<li><a href="#4-selectpoll和epoll">4. select,poll和epoll</a></li>
-<li><a href="#5-调度算法">5. 调度算法</a></li>
-<li><a href="#6-死锁">6. 死锁</a></li>
+<li><a href="#4-如何实现协程">4. 如何实现协程</a></li>
+<li><a href="#5-并行与并发">5. 并行与并发</a></li>
+<li><a href="#6-同步与异步">6. 同步与异步</a></li>
+<li><a href="#7-阻塞与非阻塞">7. 阻塞与非阻塞</a></li>
+<li><a href="#8-僵尸进程孤儿进程守护进程">8. 僵尸进程、孤儿进程、守护进程</a></li>
+<li><a href="#9-线程安全">9. 线程安全</a></li>
+<li><a href="#10-多线程资源竞争怎么解决">10. 多线程资源竞争，怎么解决</a></li>
+<li><a href="#11-有几种锁">11. 有几种锁</a></li>
+<li><a href="#12-线程池原理与实现">12. 线程池原理与实现</a></li>
+<li><a href="#13-调度算法">13. 调度算法</a></li>
 </ul>
 </li>
 <li><a href="#linux">Linux</a><ul>
@@ -528,7 +667,16 @@
 
 </div>
 
-<h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><h2 id="1-进程、线程以及协程间的区别"><a href="#1-进程、线程以及协程间的区别" class="headerlink" title="1. 进程、线程以及协程间的区别"></a>1. 进程、线程以及协程间的区别</h2><h2 id="2-线程间通信的方式"><a href="#2-线程间通信的方式" class="headerlink" title="2. 线程间通信的方式"></a>2. 线程间通信的方式</h2><h2 id="3-进程间通信的方式"><a href="#3-进程间通信的方式" class="headerlink" title="3. 进程间通信的方式"></a>3. 进程间通信的方式</h2><h2 id="4-select-poll和epoll"><a href="#4-select-poll和epoll" class="headerlink" title="4. select,poll和epoll"></a>4. select,poll和epoll</h2><h2 id="5-调度算法"><a href="#5-调度算法" class="headerlink" title="5. 调度算法"></a>5. 调度算法</h2><h2 id="6-死锁"><a href="#6-死锁" class="headerlink" title="6. 死锁"></a>6. 死锁</h2><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="1-linux常用命令"><a href="#1-linux常用命令" class="headerlink" title="1. linux常用命令"></a>1. linux常用命令</h2><h2 id="2-Linux内存管理机制"><a href="#2-Linux内存管理机制" class="headerlink" title="2. Linux内存管理机制"></a>2. Linux内存管理机制</h2>]]></content>
+<h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><h2 id="1-进程、线程以及协程间的区别"><a href="#1-进程、线程以及协程间的区别" class="headerlink" title="1. 进程、线程以及协程间的区别"></a>1. 进程、线程以及协程间的区别</h2><p><strong><a href="https://blog.csdn.net/holysll/article/details/89344794" target="_blank" rel="noopener">线程、进程、协程、锁的总结</a></strong></p>
+<h2 id="2-线程间通信的方式"><a href="#2-线程间通信的方式" class="headerlink" title="2. 线程间通信的方式"></a>2. 线程间通信的方式</h2><h2 id="3-进程间通信的方式"><a href="#3-进程间通信的方式" class="headerlink" title="3. 进程间通信的方式"></a>3. 进程间通信的方式</h2><h2 id="4-如何实现协程"><a href="#4-如何实现协程" class="headerlink" title="4. 如何实现协程"></a>4. 如何实现协程</h2><h2 id="5-并行与并发"><a href="#5-并行与并发" class="headerlink" title="5. 并行与并发"></a>5. 并行与并发</h2><h2 id="6-同步与异步"><a href="#6-同步与异步" class="headerlink" title="6. 同步与异步"></a>6. 同步与异步</h2><h2 id="7-阻塞与非阻塞"><a href="#7-阻塞与非阻塞" class="headerlink" title="7. 阻塞与非阻塞"></a>7. 阻塞与非阻塞</h2><h2 id="8-僵尸进程、孤儿进程、守护进程"><a href="#8-僵尸进程、孤儿进程、守护进程" class="headerlink" title="8. 僵尸进程、孤儿进程、守护进程"></a>8. 僵尸进程、孤儿进程、守护进程</h2><h2 id="9-线程安全"><a href="#9-线程安全" class="headerlink" title="9. 线程安全"></a>9. 线程安全</h2><h2 id="10-多线程资源竞争，怎么解决"><a href="#10-多线程资源竞争，怎么解决" class="headerlink" title="10. 多线程资源竞争，怎么解决"></a>10. 多线程资源竞争，怎么解决</h2><h2 id="11-有几种锁"><a href="#11-有几种锁" class="headerlink" title="11. 有几种锁"></a>11. 有几种锁</h2><ul>
+<li><p>互斥锁</p>
+</li>
+<li><p>可重入锁</p>
+</li>
+<li><p>死锁</p>
+</li>
+</ul>
+<h2 id="12-线程池原理与实现"><a href="#12-线程池原理与实现" class="headerlink" title="12. 线程池原理与实现"></a>12. 线程池原理与实现</h2><h2 id="13-调度算法"><a href="#13-调度算法" class="headerlink" title="13. 调度算法"></a>13. 调度算法</h2><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="1-linux常用命令"><a href="#1-linux常用命令" class="headerlink" title="1. linux常用命令"></a>1. linux常用命令</h2><h2 id="2-Linux内存管理机制"><a href="#2-Linux内存管理机制" class="headerlink" title="2. Linux内存管理机制"></a>2. Linux内存管理机制</h2>]]></content>
       <categories>
         <category>操作系统</category>
       </categories>
@@ -538,6 +686,44 @@
         <tag>进程</tag>
         <tag>线程</tag>
         <tag>锁</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构知识点总结归纳</title>
+    <url>/2020/05/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<blockquote>
+<p>本文主要对数据结构基础知识进行梳理、回顾，解析原理，并通过实际例子深刻理解。</p>
+</blockquote>
+<a id="more"></a>
+
+<div style='display: none'>
+
+<!-- TOC -->
+
+<ul>
+<li><a href="#数据结构">数据结构</a><ul>
+<li><a href="#1-字符串string">1. 字符串(String)</a></li>
+<li><a href="#2-数组array">2. 数组(Array)</a></li>
+<li><a href="#3-堆heap">3. 堆(Heap)</a></li>
+<li><a href="#4-栈stack">4. 栈(Stack)</a></li>
+<li><a href="#5-队列queue">5. 队列(Queue)</a></li>
+<li><a href="#6-链表linked-list">6. 链表(Linked-List)</a></li>
+<li><a href="#7-树tree">7. 树(Tree)</a></li>
+<li><a href="#8-图graph">8. 图(Graph)</a></li>
+<li><a href="#9-哈希表hash">9. 哈希表(Hash)</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+
+</div>
+
+<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="1-字符串-String"><a href="#1-字符串-String" class="headerlink" title="1. 字符串(String)"></a>1. 字符串(String)</h2><h2 id="2-数组-Array"><a href="#2-数组-Array" class="headerlink" title="2. 数组(Array)"></a>2. 数组(Array)</h2><h2 id="3-堆-Heap"><a href="#3-堆-Heap" class="headerlink" title="3. 堆(Heap)"></a>3. 堆(Heap)</h2><h2 id="4-栈-Stack"><a href="#4-栈-Stack" class="headerlink" title="4. 栈(Stack)"></a>4. 栈(Stack)</h2><h2 id="5-队列-Queue"><a href="#5-队列-Queue" class="headerlink" title="5. 队列(Queue)"></a>5. 队列(Queue)</h2><h2 id="6-链表-Linked-List"><a href="#6-链表-Linked-List" class="headerlink" title="6. 链表(Linked-List)"></a>6. 链表(Linked-List)</h2><h2 id="7-树-Tree"><a href="#7-树-Tree" class="headerlink" title="7. 树(Tree)"></a>7. 树(Tree)</h2><h2 id="8-图-Graph"><a href="#8-图-Graph" class="headerlink" title="8. 图(Graph)"></a>8. 图(Graph)</h2><h2 id="9-哈希表-Hash"><a href="#9-哈希表-Hash" class="headerlink" title="9. 哈希表(Hash)"></a>9. 哈希表(Hash)</h2>]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -626,10 +812,10 @@
       </tags>
   </entry>
   <entry>
-    <title>数据结构知识点总结归纳</title>
-    <url>/2020/05/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    <title>算法编程知识点总结归纳</title>
+    <url>/2020/05/08/%E7%AE%97%E6%B3%95%E4%B8%8E%E7%BC%96%E7%A8%8B/</url>
     <content><![CDATA[<blockquote>
-<p>本文主要对数据结构基础知识进行梳理、回顾，解析原理，并通过实际例子深刻理解。</p>
+<p>本文主要对算法编程基础知识进行梳理、回顾，以及一些常见的算法掌握。</p>
 </blockquote>
 <a id="more"></a>
 
@@ -638,16 +824,18 @@
 <!-- TOC -->
 
 <ul>
-<li><a href="#数据结构">数据结构</a><ul>
-<li><a href="#1-字符串string">1. 字符串(String)</a></li>
-<li><a href="#2-数组array">2. 数组(Array)</a></li>
-<li><a href="#3-堆heap">3. 堆(Heap)</a></li>
-<li><a href="#4-栈stack">4. 栈(Stack)</a></li>
-<li><a href="#5-队列queue">5. 队列(Queue)</a></li>
-<li><a href="#6-链表linked-list">6. 链表(Linked-List)</a></li>
-<li><a href="#7-树tree">7. 树(Tree)</a></li>
-<li><a href="#8-图graph">8. 图(Graph)</a></li>
-<li><a href="#9-哈希表hash">9. 哈希表(Hash)</a></li>
+<li><a href="#算法编程">算法编程</a><ul>
+<li><a href="#1-反转链表">1. 反转链表</a></li>
+<li><a href="#2-dfs">2. DFS</a></li>
+<li><a href="#3-bfs">3. BFS</a></li>
+<li><a href="#4-冒泡排序">4. 冒泡排序</a></li>
+<li><a href="#5-快排">5. 快排</a></li>
+<li><a href="#6-堆排序">6. 堆排序</a></li>
+<li><a href="#7-二叉树">7. 二叉树</a></li>
+<li><a href="#8-二分查找">8. 二分查找</a></li>
+<li><a href="#9-求最大树深">9. 求最大树深</a></li>
+<li><a href="#10-动态规划问题">10. 动态规划问题</a></li>
+<li><a href="#11-01背包问题">11. 01背包问题</a></li>
 </ul>
 </li>
 </ul>
@@ -655,12 +843,12 @@
 
 </div>
 
-<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="1-字符串-String"><a href="#1-字符串-String" class="headerlink" title="1. 字符串(String)"></a>1. 字符串(String)</h2><h2 id="2-数组-Array"><a href="#2-数组-Array" class="headerlink" title="2. 数组(Array)"></a>2. 数组(Array)</h2><h2 id="3-堆-Heap"><a href="#3-堆-Heap" class="headerlink" title="3. 堆(Heap)"></a>3. 堆(Heap)</h2><h2 id="4-栈-Stack"><a href="#4-栈-Stack" class="headerlink" title="4. 栈(Stack)"></a>4. 栈(Stack)</h2><h2 id="5-队列-Queue"><a href="#5-队列-Queue" class="headerlink" title="5. 队列(Queue)"></a>5. 队列(Queue)</h2><h2 id="6-链表-Linked-List"><a href="#6-链表-Linked-List" class="headerlink" title="6. 链表(Linked-List)"></a>6. 链表(Linked-List)</h2><h2 id="7-树-Tree"><a href="#7-树-Tree" class="headerlink" title="7. 树(Tree)"></a>7. 树(Tree)</h2><h2 id="8-图-Graph"><a href="#8-图-Graph" class="headerlink" title="8. 图(Graph)"></a>8. 图(Graph)</h2><h2 id="9-哈希表-Hash"><a href="#9-哈希表-Hash" class="headerlink" title="9. 哈希表(Hash)"></a>9. 哈希表(Hash)</h2>]]></content>
+<h1 id="算法编程"><a href="#算法编程" class="headerlink" title="算法编程"></a>算法编程</h1><h2 id="1-反转链表"><a href="#1-反转链表" class="headerlink" title="1. 反转链表"></a>1. 反转链表</h2><h2 id="2-DFS"><a href="#2-DFS" class="headerlink" title="2. DFS"></a>2. DFS</h2><h2 id="3-BFS"><a href="#3-BFS" class="headerlink" title="3. BFS"></a>3. BFS</h2><h2 id="4-冒泡排序"><a href="#4-冒泡排序" class="headerlink" title="4. 冒泡排序"></a>4. 冒泡排序</h2><h2 id="5-快排"><a href="#5-快排" class="headerlink" title="5. 快排"></a>5. 快排</h2><h2 id="6-堆排序"><a href="#6-堆排序" class="headerlink" title="6. 堆排序"></a>6. 堆排序</h2><h2 id="7-二叉树"><a href="#7-二叉树" class="headerlink" title="7. 二叉树"></a>7. 二叉树</h2><h2 id="8-二分查找"><a href="#8-二分查找" class="headerlink" title="8. 二分查找"></a>8. 二分查找</h2><h2 id="9-求最大树深"><a href="#9-求最大树深" class="headerlink" title="9. 求最大树深"></a>9. 求最大树深</h2><h2 id="10-动态规划问题"><a href="#10-动态规划问题" class="headerlink" title="10. 动态规划问题"></a>10. 动态规划问题</h2><h2 id="11-01背包问题"><a href="#11-01背包问题" class="headerlink" title="11. 01背包问题"></a>11. 01背包问题</h2>]]></content>
       <categories>
-        <category>数据结构</category>
+        <category>算法编程</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -765,43 +953,6 @@
         <tag>关联分析</tag>
         <tag>集成学习</tag>
         <tag>深度学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>算法编程知识点总结归纳</title>
-    <url>/2020/05/08/%E7%AE%97%E6%B3%95%E4%B8%8E%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<blockquote>
-<p>本文主要对算法编程基础知识进行梳理、回顾，以及一些常见的算法掌握。</p>
-</blockquote>
-<a id="more"></a>
-
-<div style='display: none'>
-
-<!-- TOC -->
-
-<ul>
-<li><a href="#算法编程">算法编程</a><ul>
-<li><a href="#1-反转链表">1. 反转链表</a></li>
-<li><a href="#2-dfs">2. DFS</a></li>
-<li><a href="#3-bfs">3. BFS</a></li>
-<li><a href="#4-二分查找">4. 二分查找</a></li>
-<li><a href="#5-快排">5. 快排</a></li>
-<li><a href="#6-求最大树深">6. 求最大树深</a></li>
-<li><a href="#7-动态规划问题">7. 动态规划问题</a></li>
-<li><a href="#8-01背包问题">8. 01背包问题</a></li>
-</ul>
-</li>
-</ul>
-<!-- /TOC -->
-
-</div>
-
-<h1 id="算法编程"><a href="#算法编程" class="headerlink" title="算法编程"></a>算法编程</h1><h2 id="1-反转链表"><a href="#1-反转链表" class="headerlink" title="1. 反转链表"></a>1. 反转链表</h2><h2 id="2-DFS"><a href="#2-DFS" class="headerlink" title="2. DFS"></a>2. DFS</h2><h2 id="3-BFS"><a href="#3-BFS" class="headerlink" title="3. BFS"></a>3. BFS</h2><h2 id="4-二分查找"><a href="#4-二分查找" class="headerlink" title="4. 二分查找"></a>4. 二分查找</h2><h2 id="5-快排"><a href="#5-快排" class="headerlink" title="5. 快排"></a>5. 快排</h2><h2 id="6-求最大树深"><a href="#6-求最大树深" class="headerlink" title="6. 求最大树深"></a>6. 求最大树深</h2><h2 id="7-动态规划问题"><a href="#7-动态规划问题" class="headerlink" title="7. 动态规划问题"></a>7. 动态规划问题</h2><h2 id="8-01背包问题"><a href="#8-01背包问题" class="headerlink" title="8. 01背包问题"></a>8. 01背包问题</h2>]]></content>
-      <categories>
-        <category>算法编程</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
       </tags>
   </entry>
   <entry>

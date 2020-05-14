@@ -78,7 +78,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">169</span>
+            <span class="post-count">315</span>
         </span>
     </span>
 
@@ -126,9 +126,16 @@
 <li><a href="#1-进程线程以及协程间的区别">1. 进程、线程以及协程间的区别</a></li>
 <li><a href="#2-线程间通信的方式">2. 线程间通信的方式</a></li>
 <li><a href="#3-进程间通信的方式">3. 进程间通信的方式</a></li>
-<li><a href="#4-selectpoll和epoll">4. select,poll和epoll</a></li>
-<li><a href="#5-调度算法">5. 调度算法</a></li>
-<li><a href="#6-死锁">6. 死锁</a></li>
+<li><a href="#4-如何实现协程">4. 如何实现协程</a></li>
+<li><a href="#5-并行与并发">5. 并行与并发</a></li>
+<li><a href="#6-同步与异步">6. 同步与异步</a></li>
+<li><a href="#7-阻塞与非阻塞">7. 阻塞与非阻塞</a></li>
+<li><a href="#8-僵尸进程孤儿进程守护进程">8. 僵尸进程、孤儿进程、守护进程</a></li>
+<li><a href="#9-线程安全">9. 线程安全</a></li>
+<li><a href="#10-多线程资源竞争怎么解决">10. 多线程资源竞争，怎么解决</a></li>
+<li><a href="#11-有几种锁">11. 有几种锁</a></li>
+<li><a href="#12-线程池原理与实现">12. 线程池原理与实现</a></li>
+<li><a href="#13-调度算法">13. 调度算法</a></li>
 </ul>
 </li>
 <li><a href="#linux">Linux</a><ul>
@@ -141,7 +148,16 @@
 
 </div>
 
-<h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><h2 id="1-进程、线程以及协程间的区别"><a href="#1-进程、线程以及协程间的区别" class="headerlink" title="1. 进程、线程以及协程间的区别"></a>1. 进程、线程以及协程间的区别</h2><h2 id="2-线程间通信的方式"><a href="#2-线程间通信的方式" class="headerlink" title="2. 线程间通信的方式"></a>2. 线程间通信的方式</h2><h2 id="3-进程间通信的方式"><a href="#3-进程间通信的方式" class="headerlink" title="3. 进程间通信的方式"></a>3. 进程间通信的方式</h2><h2 id="4-select-poll和epoll"><a href="#4-select-poll和epoll" class="headerlink" title="4. select,poll和epoll"></a>4. select,poll和epoll</h2><h2 id="5-调度算法"><a href="#5-调度算法" class="headerlink" title="5. 调度算法"></a>5. 调度算法</h2><h2 id="6-死锁"><a href="#6-死锁" class="headerlink" title="6. 死锁"></a>6. 死锁</h2><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="1-linux常用命令"><a href="#1-linux常用命令" class="headerlink" title="1. linux常用命令"></a>1. linux常用命令</h2><h2 id="2-Linux内存管理机制"><a href="#2-Linux内存管理机制" class="headerlink" title="2. Linux内存管理机制"></a>2. Linux内存管理机制</h2>
+<h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><h2 id="1-进程、线程以及协程间的区别"><a href="#1-进程、线程以及协程间的区别" class="headerlink" title="1. 进程、线程以及协程间的区别"></a>1. 进程、线程以及协程间的区别</h2><p><strong><a href="https://blog.csdn.net/holysll/article/details/89344794" target="_blank" rel="noopener">线程、进程、协程、锁的总结</a></strong></p>
+<h2 id="2-线程间通信的方式"><a href="#2-线程间通信的方式" class="headerlink" title="2. 线程间通信的方式"></a>2. 线程间通信的方式</h2><h2 id="3-进程间通信的方式"><a href="#3-进程间通信的方式" class="headerlink" title="3. 进程间通信的方式"></a>3. 进程间通信的方式</h2><h2 id="4-如何实现协程"><a href="#4-如何实现协程" class="headerlink" title="4. 如何实现协程"></a>4. 如何实现协程</h2><h2 id="5-并行与并发"><a href="#5-并行与并发" class="headerlink" title="5. 并行与并发"></a>5. 并行与并发</h2><h2 id="6-同步与异步"><a href="#6-同步与异步" class="headerlink" title="6. 同步与异步"></a>6. 同步与异步</h2><h2 id="7-阻塞与非阻塞"><a href="#7-阻塞与非阻塞" class="headerlink" title="7. 阻塞与非阻塞"></a>7. 阻塞与非阻塞</h2><h2 id="8-僵尸进程、孤儿进程、守护进程"><a href="#8-僵尸进程、孤儿进程、守护进程" class="headerlink" title="8. 僵尸进程、孤儿进程、守护进程"></a>8. 僵尸进程、孤儿进程、守护进程</h2><h2 id="9-线程安全"><a href="#9-线程安全" class="headerlink" title="9. 线程安全"></a>9. 线程安全</h2><h2 id="10-多线程资源竞争，怎么解决"><a href="#10-多线程资源竞争，怎么解决" class="headerlink" title="10. 多线程资源竞争，怎么解决"></a>10. 多线程资源竞争，怎么解决</h2><h2 id="11-有几种锁"><a href="#11-有几种锁" class="headerlink" title="11. 有几种锁"></a>11. 有几种锁</h2><ul>
+<li><p>互斥锁</p>
+</li>
+<li><p>可重入锁</p>
+</li>
+<li><p>死锁</p>
+</li>
+</ul>
+<h2 id="12-线程池原理与实现"><a href="#12-线程池原理与实现" class="headerlink" title="12. 线程池原理与实现"></a>12. 线程池原理与实现</h2><h2 id="13-调度算法"><a href="#13-调度算法" class="headerlink" title="13. 调度算法"></a>13. 调度算法</h2><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="1-linux常用命令"><a href="#1-linux常用命令" class="headerlink" title="1. linux常用命令"></a>1. linux常用命令</h2><h2 id="2-Linux内存管理机制"><a href="#2-Linux内存管理机制" class="headerlink" title="2. Linux内存管理机制"></a>2. Linux内存管理机制</h2>
       
       <!-- reward -->
       
@@ -223,19 +239,19 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/05/08/Web%E4%B8%8E%E5%89%8D%E7%AB%AF/" class="article-nav-link">
+      <a href="/2020/05/08/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            Web与前端知识点总结归纳
+            Python语言知识点总结归纳
           
         </div>
       </a>
     
     
-      <a href="/2020/05/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9F%A5%E8%AF%86/" class="article-nav-link">
+      <a href="/2020/05/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">数据库知识点总结归纳</div>
+        <div class="article-nav-title">数据结构知识点总结归纳</div>
       </a>
     
   </nav>
