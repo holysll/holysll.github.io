@@ -120,14 +120,16 @@
 </div>
 
 <h2 id="1-Python语言的特性"><a href="#1-Python语言的特性" class="headerlink" title="1. Python语言的特性"></a>1. Python语言的特性</h2><p>   Python是一种解释型语言，不需要再运行之前进行编译。<br>   Python是一种动态类型语言，不需要声明变量的类型。<br>   python适合面向对象编程，允许类的定义以及组合和继承。  </p>
-<h2 id="2-python语言相比其他语言的优点和缺点"><a href="#2-python语言相比其他语言的优点和缺点" class="headerlink" title="2. python语言相比其他语言的优点和缺点"></a>2. python语言相比其他语言的优点和缺点</h2><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a><strong>优点</strong></h2><ul>
+<h2 id="2-python语言相比其他语言的优点和缺点"><a href="#2-python语言相比其他语言的优点和缺点" class="headerlink" title="2. python语言相比其他语言的优点和缺点"></a>2. python语言相比其他语言的优点和缺点</h2><p><strong>优点</strong>  </p>
+<ul>
 <li>简单易懂，灵活简洁</li>
 <li>强大的标准库和三方库</li>
 <li>活跃的社区，许多开源项目</li>
 <li>开发效率高，迭代便捷</li>
 <li>应用领域广泛，Web开发、网络编程、自动化运维、Linux系统管理、数据分析、科学计算、人工智能、机器学习</li>
 </ul>
-<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a><strong>缺点</strong></h2><ul>
+<p><strong>缺点</strong>  </p>
+<ul>
 <li>执行效率较差,</li>
 <li>异步生态不完善，相关的库较少(tornado)</li>
 <li>GIL的存在，无法充分利用多核的特性</li>
@@ -695,17 +697,36 @@
 </blockquote>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">line_conf</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">line</span><span class="params">(x)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> a*x +b</span><br><span class="line">    <span class="keyword">return</span> line</span><br><span class="line"></span><br><span class="line">line1 = line_conf(<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">line2 = line_conf(<span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line">print(line1(<span class="number">5</span>), line2(<span class="number">5</span>))  <span class="comment"># (6, 25)</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="20-装饰器"><a href="#20-装饰器" class="headerlink" title="20. 装饰器"></a>20. 装饰器</h2><p><strong><a href="https://blog.csdn.net/tryhardsilently/article/details/90767627" target="_blank" rel="noopener">python装饰器</a></strong></p>
+<h2 id="20-装饰器"><a href="#20-装饰器" class="headerlink" title="20. 装饰器"></a>20. 装饰器</h2><p><strong><a href="https://blog.csdn.net/tryhardsilently/article/details/90767627" target="_blank" rel="noopener">python装饰器</a></strong><br><strong><a href="https://blog.csdn.net/yhy1271927580/article/details/72758577" target="_blank" rel="noopener">Python装饰器各种类型详解</a></strong><br><strong><a href="https://blog.csdn.net/five3/article/details/83447467" target="_blank" rel="noopener">Python各种类型装饰器详解说明</a></strong><br><strong><a href="https://blog.csdn.net/xiemanr/article/details/72510885" target="_blank" rel="noopener">python装饰器的4种类型</a></strong><br><a href="https://blog.csdn.net/five3/article/details/83447467" target="_blank" rel="noopener">https://blog.csdn.net/five3/article/details/83447467</a><br><a href="https://blog.csdn.net/xiemanr/article/details/72510885" target="_blank" rel="noopener">https://blog.csdn.net/xiemanr/article/details/72510885</a><br><a href="https://blog.csdn.net/yhy1271927580/article/details/72758577" target="_blank" rel="noopener">https://blog.csdn.net/yhy1271927580/article/details/72758577</a></p>
+<p><a href="https://blog.csdn.net/weixin_42134789/article/details/84635252?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase" target="_blank" rel="noopener">https://blog.csdn.net/weixin_42134789/article/details/84635252?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase</a></p>
+<p><a href="https://blog.csdn.net/u010358168/article/details/77773199?utm_medium=distribute.pc_relevant_right.none-task-blog-BlogCommendFromMachineLearnPai2-29.nonecase&amp;depth_1-utm_source=distribute.pc_relevant_right.none-task-blog-BlogCommendFromMachineLearnPai2-29.nonecase" target="_blank" rel="noopener">https://blog.csdn.net/u010358168/article/details/77773199?utm_medium=distribute.pc_relevant_right.none-task-blog-BlogCommendFromMachineLearnPai2-29.nonecase&amp;depth_1-utm_source=distribute.pc_relevant_right.none-task-blog-BlogCommendFromMachineLearnPai2-29.nonecase</a></p>
 <blockquote>
-<p>装饰器本质上是一个函数，可以让其他函数在不需要做任何代码处理的前提下增加额外的功能，装饰器的返回值也是一个函数对象。它经常用于有切面需求的场景，比如：插入日志、性能测试、事务处理、缓存、权限校验等场景，装饰器是解决这类问题的绝佳设计。有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码到装饰器中并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。</p>
+<p>装饰器本质上是一个函数，可以让其他函数在不需要做任何代码处理的前提下增加额外的功能，装饰器的返回值也是一个函数对象。它经常用于有切面需求的场景，比如：<strong>插入日志、性能测试、事务处理、缓存、权限校验等场景</strong>，装饰器是解决这类问题的绝佳设计。有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码到装饰器中并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。</p>
 </blockquote>
 <ul>
-<li>无参装饰器</li>
-<li>有参装饰器</li>
-<li>类装饰器</li>
-<li>特殊的装饰器</li>
-<li>装饰器顺序</li>
+<li>装饰器自身为函数<br>(1). 被装饰的对象为函数，且不带参数  </li>
 </ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器为函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">time_decorator</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">"Hello inner"</span>)</span><br><span class="line">        start = time.time()</span><br><span class="line">        func()</span><br><span class="line">        end = time.time()</span><br><span class="line">        print(<span class="string">'方法&#123;&#125;用时:&#123;&#125;秒'</span>.format(func.__name__, end - start))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被装饰的对象为函数，且不带参数</span></span><br><span class="line"><span class="meta">@time_decorator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">"foo is running."</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用装饰后的foo函数</span></span><br><span class="line">print(foo.__name__)</span><br><span class="line">foo()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">inner</span></span><br><span class="line"><span class="string">Hello inner</span></span><br><span class="line"><span class="string">func1 is running.</span></span><br><span class="line"><span class="string">方法foo用时:3.01444411277771秒</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在以上代码中，@time_decorator装饰器对foo函数进行了装饰，这是一个不带参数的装饰器，当python解释器执行到@time_decorator时，回去调用time_decorator函数，同时将被装饰的对象的函数名foo作为参数传入，这时time_decorator函数接受到一个参数(即方法名foo)，然后进入内嵌函数inner，计算开始时间，调用传进来的foo方法，再计算结束时间，打印函数foo的耗时，最后将结果用内部函数inner返回，其实就是一个闭包函数。</p>
+</blockquote>
+<blockquote>
+<p>首先打印的是foo.<strong>name</strong>，这里是inner而不是foo，本质上是调用inner函数<br>其次打印的是inner的内容”Hello inner”，然后开始调用foo函数，打印”func1 is running.”<br>最后打印”方法foo用时:3.01444411277771秒”</p>
+</blockquote>
+<p>(2). 被装饰的对象为函数，且带参数<br>(3). 被装饰的对象为类，且不带参数<br>(4). 被装饰的对象为类，且带参数</p>
+<ul>
+<li><p>装饰器自身为类<br>(1). 被装饰的对象为函数，且不带参数<br>(2). 被装饰的对象为函数，且带参数<br>(3). 被装饰的对象为类，且不带参数<br>(4). 被装饰的对象为类，且带参数</p>
+</li>
+<li><p>特殊的装饰器</p>
+</li>
+<li><p>装饰器顺序</p>
+</li>
+<li><p>通用万能装饰</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decorator_all</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">"万能装饰器"</span>)</span><br><span class="line">        <span class="keyword">return</span> func(*args, **kwargs)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
+
 <h2 id="21-浅拷贝与深拷贝"><a href="#21-浅拷贝与深拷贝" class="headerlink" title="21. 浅拷贝与深拷贝"></a>21. 浅拷贝与深拷贝</h2><h2 id="22-设计模式"><a href="#22-设计模式" class="headerlink" title="22. 设计模式"></a>22. 设计模式</h2><ul>
 <li>工厂模式</li>
 <li>构造模式</li>
