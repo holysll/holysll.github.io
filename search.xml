@@ -1,37 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo使用教程与常用命令</title>
-    <url>/2020/05/12/Hexo%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p>欢迎使用<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! 更多信息可以查看<a href="https://hexo.io/docs/" target="_blank" rel="noopener">Hexo官方文档</a> 。如果你在使用过程中遇到任何问题，可以在这<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">提问</a> 或者在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a> 上留言，这篇文章简单介绍下Hexo的使用以及常用的命令。</p>
+    <title>Web与前端知识点总结归纳</title>
+    <url>/2020/05/08/Web%E4%B8%8E%E5%89%8D%E7%AB%AF/</url>
+    <content><![CDATA[<blockquote>
+<p>本文主要对Web基础和前端框架知识进行梳理、回顾，把一些需要记住的概念原理，和容易混淆，晦涩的知识点进行归纳。</p>
+</blockquote>
 <a id="more"></a>
 
-<h2 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h2><h3 id="创建一篇文章"><a href="#创建一篇文章" class="headerlink" title="创建一篇文章"></a>创建一篇文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"文章标题"</span></span><br><span class="line">或者</span><br><span class="line">$ hexo n <span class="string">"文章标题"</span></span><br></pre></td></tr></table></figure>
+<div style='display: none'>
 
-<p>更多信息: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">writing</a></p>
-<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">或者</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<!-- TOC -->
 
-<p>更多信息: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">或者</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="#web基础">Web基础</a><ul>
+<li><a href="#1-常用的网络传输协议">1. 常用的网络传输协议</a></li>
+<li><a href="#2-常见的状态码">2. 常见的状态码</a></li>
+<li><a href="#3-三次握手">3. 三次握手</a></li>
+<li><a href="#4-四次挥手">4. 四次挥手</a></li>
+</ul>
+</li>
+<li><a href="#django">Django</a></li>
+<li><a href="#flask">Flask</a></li>
+<li><a href="#tornado">Tornado</a></li>
+<li><a href="#jquery">jQuery</a></li>
+<li><a href="#vue">Vue</a></li>
+<li><a href="#angularjs">AngularJS</a></li>
+<li><a href="#react">React</a></li>
+</ul>
+<!-- /TOC -->
 
-<p>更多信息: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="部署到远端"><a href="#部署到远端" class="headerlink" title="部署到远端"></a>部署到远端</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">或者</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+</div>
 
-<p>更多信息:: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<h2 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h2><h3 id="获取主题"><a href="#获取主题" class="headerlink" title="获取主题"></a>获取主题</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/holysll/hexo-theme-ayer</span><br></pre></td></tr></table></figure>
-
-<h3 id="修改主题配置"><a href="#修改主题配置" class="headerlink" title="修改主题配置"></a>修改主题配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">vi _config.yml</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: hexo-theme-ayer</span><br></pre></td></tr></table></figure>
-
-<h3 id="清除缓存并部署"><a href="#清除缓存并部署" class="headerlink" title="清除缓存并部署"></a>清除缓存并部署</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
-
-]]></content>
+<h1 id="Web基础"><a href="#Web基础" class="headerlink" title="Web基础"></a>Web基础</h1><h2 id="1-常用的网络传输协议"><a href="#1-常用的网络传输协议" class="headerlink" title="1. 常用的网络传输协议"></a>1. 常用的网络传输协议</h2><ul>
+<li>TCP：传输控制协议，可靠传输，面向连接</li>
+<li>UDP：用户数据包协议，不可靠传输，面向无连接</li>
+<li>FTP：文件传输协议,用于上传和下载文件</li>
+<li>HTTP：超文本传输协议，基于TCP/IP通信协议，面向对象</li>
+<li>SMTP：邮件传输协议</li>
+<li>TELNET：Internet远程登录服务的标准协议和主要方式</li>
+<li>DNS：域名系统，将域名解析为ip地址</li>
+</ul>
+<h2 id="2-常见的状态码"><a href="#2-常见的状态码" class="headerlink" title="2. 常见的状态码"></a>2. 常见的状态码</h2><table>
+<thead>
+<tr>
+<th align="center">状态码</th>
+<th align="left">状态</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">200</td>
+<td align="left">Ok</td>
+<td align="left">请求成功</td>
+</tr>
+<tr>
+<td align="center">400</td>
+<td align="left">Bad Request</td>
+<td align="left">请求语法错误，不能被服务器解析</td>
+</tr>
+<tr>
+<td align="center">401</td>
+<td align="left">Unauthorized</td>
+<td align="left">未经授权，需与www-Authenticate一起用</td>
+</tr>
+<tr>
+<td align="center">403</td>
+<td align="left">Forbidden</td>
+<td align="left">服务器收到请求，但拒绝提供服务</td>
+</tr>
+<tr>
+<td align="center">404</td>
+<td align="left">Not Found</td>
+<td align="left">请求资源不存在</td>
+</tr>
+<tr>
+<td align="center">500</td>
+<td align="left">Internal Server Error</td>
+<td align="left">服务器发生不可预期的错误</td>
+</tr>
+<tr>
+<td align="center">503</td>
+<td align="left">Server Unavailable</td>
+<td align="left">服务器当前请求不可用</td>
+</tr>
+</tbody></table>
+<h2 id="3-三次握手"><a href="#3-三次握手" class="headerlink" title="3. 三次握手"></a>3. 三次握手</h2><ul>
+<li>第一次握手：建立连接时，客户端发送SYN（SYN=x）到服务器，有主动打开状态进入SYN_SENT状态，等待服务器确认。</li>
+<li>第二次握手：服务器收到SYN包，必须确认客户的SYN（ack=x+1）,同时自己也发送一个SYN包（syn=y），即SYN+ACK包，服务器进入SYN_RECV状态。</li>
+<li>第三次握手：客户端收到服务器的SYN+ACK包，想服务器发送确认ACK包（ACK=y+1）,发送完毕，客户端和服务器进入ESTABLISHED状态，完成握手。</li>
+</ul>
+<h2 id="4-四次挥手"><a href="#4-四次挥手" class="headerlink" title="4. 四次挥手"></a>4. 四次挥手</h2><h1 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h1><h1 id="Flask"><a href="#Flask" class="headerlink" title="Flask"></a>Flask</h1><h1 id="Tornado"><a href="#Tornado" class="headerlink" title="Tornado"></a>Tornado</h1><h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h1 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h1><h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1>]]></content>
       <categories>
-        <category>个人博客</category>
+        <category>前端知识</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
-        <tag>GitHub</tag>
-        <tag>blog</tag>
+        <tag>Web基础</tag>
+        <tag>前端框架</tag>
+        <tag>知识回顾</tag>
       </tags>
   </entry>
   <entry>
@@ -605,6 +671,7 @@
 <ul>
 <li>切片操作</li>
 </ul>
+<p><strong><a href="https://www.jianshu.com/p/15715d6f4dad" target="_blank" rel="noopener">Python切片操作详细例子</a></strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s = <span class="string">'123456'</span></span><br><span class="line">s[:<span class="number">3</span>]  <span class="comment"># 结果为'123'，取索引索引小于3的值，或叫“取前3位”</span></span><br><span class="line">s[<span class="number">3</span>:]  <span class="comment"># 结果为'456', 取索引大于等于3的值，或叫“从第4位取到最后”</span></span><br><span class="line">s[<span class="number">2</span>:<span class="number">4</span>]  <span class="comment"># 结果为'34', 取索引大于等2，小于4的值，或叫“取第3位到第4位”</span></span><br><span class="line">s[:]  <span class="comment"># 结果为'123456', 取索引全部</span></span><br><span class="line">s[:<span class="number">-1</span>]  <span class="comment"># 结果为'654321' 取倒序</span></span><br><span class="line">s[::<span class="number">2</span>]  <span class="comment"># 结果为'135' 步长为2取值</span></span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -714,7 +781,10 @@
 <blockquote>
 <p>首先打印的是foo.<strong>name</strong>，这里是inner而不是foo，本质上是调用inner函数<br>其次打印的是inner的内容”Hello inner”，然后开始调用foo函数，打印”func1 is running.”<br>最后打印”方法foo用时:3.01444411277771秒”</p>
 </blockquote>
-<p>(2). 被装饰的对象为函数，且带参数<br>(3). 被装饰的对象为类，且不带参数<br>(4). 被装饰的对象为类，且带参数</p>
+<p>(2). 被装饰的对象为函数，且带参数  </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>(3). 被装饰的对象为类，且不带参数<br>(4). 被装饰的对象为类，且带参数</p>
 <ul>
 <li><p>装饰器自身为类<br>(1). 被装饰的对象为函数，且不带参数<br>(2). 被装饰的对象为函数，且带参数<br>(3). 被装饰的对象为类，且不带参数<br>(4). 被装饰的对象为类，且带参数</p>
 </li>
@@ -822,109 +892,9 @@
         <category>编程语言-python</category>
       </categories>
       <tags>
+        <tag>知识回顾</tag>
         <tag>python</tag>
         <tag>后端</tag>
-        <tag>知识回顾</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Web与前端知识点总结归纳</title>
-    <url>/2020/05/08/Web%E4%B8%8E%E5%89%8D%E7%AB%AF/</url>
-    <content><![CDATA[<blockquote>
-<p>本文主要对Web基础和前端框架知识进行梳理、回顾，把一些需要记住的概念原理，和容易混淆，晦涩的知识点进行归纳。</p>
-</blockquote>
-<a id="more"></a>
-
-<div style='display: none'>
-
-<!-- TOC -->
-
-<ul>
-<li><a href="#web基础">Web基础</a><ul>
-<li><a href="#1-常用的网络传输协议">1. 常用的网络传输协议</a></li>
-<li><a href="#2-常见的状态码">2. 常见的状态码</a></li>
-<li><a href="#3-三次握手">3. 三次握手</a></li>
-<li><a href="#4-四次挥手">4. 四次挥手</a></li>
-</ul>
-</li>
-<li><a href="#django">Django</a></li>
-<li><a href="#flask">Flask</a></li>
-<li><a href="#tornado">Tornado</a></li>
-<li><a href="#jquery">jQuery</a></li>
-<li><a href="#vue">Vue</a></li>
-<li><a href="#angularjs">AngularJS</a></li>
-<li><a href="#react">React</a></li>
-</ul>
-<!-- /TOC -->
-
-</div>
-
-<h1 id="Web基础"><a href="#Web基础" class="headerlink" title="Web基础"></a>Web基础</h1><h2 id="1-常用的网络传输协议"><a href="#1-常用的网络传输协议" class="headerlink" title="1. 常用的网络传输协议"></a>1. 常用的网络传输协议</h2><ul>
-<li>TCP：传输控制协议，可靠传输，面向连接</li>
-<li>UDP：用户数据包协议，不可靠传输，面向无连接</li>
-<li>FTP：文件传输协议,用于上传和下载文件</li>
-<li>HTTP：超文本传输协议，基于TCP/IP通信协议，面向对象</li>
-<li>SMTP：邮件传输协议</li>
-<li>TELNET：Internet远程登录服务的标准协议和主要方式</li>
-<li>DNS：域名系统，将域名解析为ip地址</li>
-</ul>
-<h2 id="2-常见的状态码"><a href="#2-常见的状态码" class="headerlink" title="2. 常见的状态码"></a>2. 常见的状态码</h2><table>
-<thead>
-<tr>
-<th align="center">状态码</th>
-<th align="left">状态</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">200</td>
-<td align="left">Ok</td>
-<td align="left">请求成功</td>
-</tr>
-<tr>
-<td align="center">400</td>
-<td align="left">Bad Request</td>
-<td align="left">请求语法错误，不能被服务器解析</td>
-</tr>
-<tr>
-<td align="center">401</td>
-<td align="left">Unauthorized</td>
-<td align="left">未经授权，需与www-Authenticate一起用</td>
-</tr>
-<tr>
-<td align="center">403</td>
-<td align="left">Forbidden</td>
-<td align="left">服务器收到请求，但拒绝提供服务</td>
-</tr>
-<tr>
-<td align="center">404</td>
-<td align="left">Not Found</td>
-<td align="left">请求资源不存在</td>
-</tr>
-<tr>
-<td align="center">500</td>
-<td align="left">Internal Server Error</td>
-<td align="left">服务器发生不可预期的错误</td>
-</tr>
-<tr>
-<td align="center">503</td>
-<td align="left">Server Unavailable</td>
-<td align="left">服务器当前请求不可用</td>
-</tr>
-</tbody></table>
-<h2 id="3-三次握手"><a href="#3-三次握手" class="headerlink" title="3. 三次握手"></a>3. 三次握手</h2><ul>
-<li>第一次握手：建立连接时，客户端发送SYN（SYN=x）到服务器，有主动打开状态进入SYN_SENT状态，等待服务器确认。</li>
-<li>第二次握手：服务器收到SYN包，必须确认客户的SYN（ack=x+1）,同时自己也发送一个SYN包（syn=y），即SYN+ACK包，服务器进入SYN_RECV状态。</li>
-<li>第三次握手：客户端收到服务器的SYN+ACK包，想服务器发送确认ACK包（ACK=y+1）,发送完毕，客户端和服务器进入ESTABLISHED状态，完成握手。</li>
-</ul>
-<h2 id="4-四次挥手"><a href="#4-四次挥手" class="headerlink" title="4. 四次挥手"></a>4. 四次挥手</h2><h1 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h1><h1 id="Flask"><a href="#Flask" class="headerlink" title="Flask"></a>Flask</h1><h1 id="Tornado"><a href="#Tornado" class="headerlink" title="Tornado"></a>Tornado</h1><h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h1 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h1><h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1>]]></content>
-      <categories>
-        <category>前端知识</category>
-      </categories>
-      <tags>
-        <tag>知识回顾</tag>
-        <tag>Web基础</tag>
-        <tag>前端框架</tag>
       </tags>
   </entry>
   <entry>
@@ -985,91 +955,6 @@
         <tag>进程</tag>
         <tag>线程</tag>
         <tag>锁</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据库知识点总结归纳</title>
-    <url>/2020/05/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<blockquote>
-<p>本文主要对数据库基础知识进行梳理、回顾，把一些需要记住的概念原理，和容易混淆，晦涩的知识点进行归纳。</p>
-</blockquote>
-<a id="more"></a>
-
-<div style='display: none'>
-
-<!-- TOC -->
-
-<ul>
-<li><a href="#数据库常识">数据库常识</a><ul>
-<li><a href="#1-什么是索引">1. 什么是索引</a></li>
-<li><a href="#2-事务的特性">2. 事务的特性</a></li>
-<li><a href="#3-存储过程">3. 存储过程</a></li>
-<li><a href="#4-数据库怎么优化查询效率">4. 数据库怎么优化查询效率</a></li>
-<li><a href="#5-数据库优化方案">5. 数据库优化方案</a></li>
-<li><a href="#6-什么是悲观锁">6. 什么是悲观锁</a></li>
-<li><a href="#7-什么是乐观锁">7. 什么是乐观锁</a></li>
-<li><a href="#8-什么是缓存穿透">8. 什么是缓存穿透</a></li>
-<li><a href="#9-什么是缓存击穿">9. 什么是缓存击穿</a></li>
-<li><a href="#10-什么是缓存雪崩">10. 什么是缓存雪崩</a></li>
-</ul>
-</li>
-<li><a href="#mysql数据库">Mysql数据库</a><ul>
-<li><a href="#1-mysql-常用数据类型">1. mysql 常用数据类型</a></li>
-<li><a href="#2-mysql数据库引擎">2. mysql数据库引擎</a></li>
-<li><a href="#3-mysql的索引类型">3. mysql的索引类型</a></li>
-<li><a href="#4-mysql-几种锁的区别">4. Mysql 几种锁的区别</a></li>
-<li><a href="#5-mysql事务原理特性事务并发控制">5. mysql事务原理、特性、事务并发控制</a></li>
-</ul>
-</li>
-<li><a href="#redis数据库">Redis数据库</a><ul>
-<li><a href="#1-redis的原理">1. redis的原理</a></li>
-<li><a href="#2-持久化机制">2. 持久化机制</a></li>
-<li><a href="#3-redis-和-memcached-的主要区别">3. redis 和 memcached 的主要区别</a></li>
-<li><a href="#4-redis-高可用">4. Redis 高可用</a></li>
-<li><a href="#5-redis-高并发">5. Redis 高并发</a></li>
-</ul>
-</li>
-<li><a href="#mongodb数据库">MongoDB数据库</a></li>
-<li><a href="#hive数据库">Hive数据库</a></li>
-<li><a href="#hbase数据库">Hbase数据库</a></li>
-<li><a href="#hadoop生态">Hadoop生态</a></li>
-</ul>
-<!-- /TOC -->
-
-</div>
-
-<h1 id="数据库常识"><a href="#数据库常识" class="headerlink" title="数据库常识"></a>数据库常识</h1><h2 id="1-什么是索引"><a href="#1-什么是索引" class="headerlink" title="1. 什么是索引"></a>1. 什么是索引</h2><h2 id="2-事务的特性"><a href="#2-事务的特性" class="headerlink" title="2. 事务的特性"></a>2. 事务的特性</h2><ul>
-<li>原子性(Atomicity)</li>
-</ul>
-<blockquote>
-<p>事务中的全部操作在数据库中是不可分割的，要么全部完成，要么均不执行。</p>
-</blockquote>
-<ul>
-<li>一致性(Consistency)</li>
-</ul>
-<blockquote>
-<p>几个并行执行的事务，其执行结果必须与按某一顺序串行执行的结果相一致。</p>
-</blockquote>
-<ul>
-<li>隔离性(Isolation)</li>
-</ul>
-<blockquote>
-<p>事务的执行不受其他事务的干扰，事务执行的中间结果对其他事务必须是透明的。</p>
-</blockquote>
-<ul>
-<li>持久性(Durability)</li>
-</ul>
-<blockquote>
-<p>对于任意已交事务，系统必须保证该事务对数据库的改变不被丢失，即使数据库出现异常。</p>
-</blockquote>
-<h2 id="3-存储过程"><a href="#3-存储过程" class="headerlink" title="3. 存储过程"></a>3. 存储过程</h2><h2 id="4-数据库怎么优化查询效率"><a href="#4-数据库怎么优化查询效率" class="headerlink" title="4. 数据库怎么优化查询效率"></a>4. 数据库怎么优化查询效率</h2><h2 id="5-数据库优化方案"><a href="#5-数据库优化方案" class="headerlink" title="5. 数据库优化方案"></a>5. 数据库优化方案</h2><h2 id="6-什么是悲观锁"><a href="#6-什么是悲观锁" class="headerlink" title="6. 什么是悲观锁"></a>6. 什么是悲观锁</h2><h2 id="7-什么是乐观锁"><a href="#7-什么是乐观锁" class="headerlink" title="7. 什么是乐观锁"></a>7. 什么是乐观锁</h2><h2 id="8-什么是缓存穿透"><a href="#8-什么是缓存穿透" class="headerlink" title="8. 什么是缓存穿透"></a>8. 什么是缓存穿透</h2><h2 id="9-什么是缓存击穿"><a href="#9-什么是缓存击穿" class="headerlink" title="9. 什么是缓存击穿"></a>9. 什么是缓存击穿</h2><h2 id="10-什么是缓存雪崩"><a href="#10-什么是缓存雪崩" class="headerlink" title="10. 什么是缓存雪崩"></a>10. 什么是缓存雪崩</h2><h1 id="Mysql数据库"><a href="#Mysql数据库" class="headerlink" title="Mysql数据库"></a>Mysql数据库</h1><h2 id="1-mysql-常用数据类型"><a href="#1-mysql-常用数据类型" class="headerlink" title="1. mysql 常用数据类型"></a>1. mysql 常用数据类型</h2><h2 id="2-mysql数据库引擎"><a href="#2-mysql数据库引擎" class="headerlink" title="2. mysql数据库引擎"></a>2. mysql数据库引擎</h2><h2 id="3-mysql的索引类型"><a href="#3-mysql的索引类型" class="headerlink" title="3. mysql的索引类型"></a>3. mysql的索引类型</h2><h2 id="4-Mysql-几种锁的区别"><a href="#4-Mysql-几种锁的区别" class="headerlink" title="4. Mysql 几种锁的区别"></a>4. Mysql 几种锁的区别</h2><h2 id="5-mysql事务原理、特性、事务并发控制"><a href="#5-mysql事务原理、特性、事务并发控制" class="headerlink" title="5. mysql事务原理、特性、事务并发控制"></a>5. mysql事务原理、特性、事务并发控制</h2><h1 id="Redis数据库"><a href="#Redis数据库" class="headerlink" title="Redis数据库"></a>Redis数据库</h1><h2 id="1-redis的原理"><a href="#1-redis的原理" class="headerlink" title="1. redis的原理"></a>1. redis的原理</h2><h2 id="2-持久化机制"><a href="#2-持久化机制" class="headerlink" title="2. 持久化机制"></a>2. 持久化机制</h2><h2 id="3-redis-和-memcached-的主要区别"><a href="#3-redis-和-memcached-的主要区别" class="headerlink" title="3. redis 和 memcached 的主要区别"></a>3. redis 和 memcached 的主要区别</h2><h2 id="4-Redis-高可用"><a href="#4-Redis-高可用" class="headerlink" title="4. Redis 高可用"></a>4. Redis 高可用</h2><h2 id="5-Redis-高并发"><a href="#5-Redis-高并发" class="headerlink" title="5. Redis 高并发"></a>5. Redis 高并发</h2><h1 id="MongoDB数据库"><a href="#MongoDB数据库" class="headerlink" title="MongoDB数据库"></a>MongoDB数据库</h1><h1 id="Hive数据库"><a href="#Hive数据库" class="headerlink" title="Hive数据库"></a>Hive数据库</h1><h1 id="Hbase数据库"><a href="#Hbase数据库" class="headerlink" title="Hbase数据库"></a>Hbase数据库</h1><h1 id="Hadoop生态"><a href="#Hadoop生态" class="headerlink" title="Hadoop生态"></a>Hadoop生态</h1>]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-        <tag>Mysql</tag>
-        <tag>Redis</tag>
       </tags>
   </entry>
   <entry>
@@ -1215,6 +1100,276 @@
       </tags>
   </entry>
   <entry>
+    <title>数据库知识点总结归纳</title>
+    <url>/2020/05/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<blockquote>
+<p>本文主要对数据库基础知识进行梳理、回顾，把一些需要记住的概念原理，和容易混淆，晦涩的知识点进行归纳。</p>
+</blockquote>
+<a id="more"></a>
+
+<div style='display: none'>
+
+<!-- TOC -->
+
+<ul>
+<li><a href="#数据库常识">数据库常识</a><ul>
+<li><a href="#1-什么是索引">1. 什么是索引</a></li>
+<li><a href="#2-事务的特性">2. 事务的特性</a></li>
+<li><a href="#3-存储过程">3. 存储过程</a></li>
+<li><a href="#4-数据库怎么优化查询效率">4. 数据库怎么优化查询效率</a></li>
+<li><a href="#5-数据库优化方案">5. 数据库优化方案</a></li>
+<li><a href="#6-什么是悲观锁">6. 什么是悲观锁</a></li>
+<li><a href="#7-什么是乐观锁">7. 什么是乐观锁</a></li>
+<li><a href="#8-什么是缓存穿透">8. 什么是缓存穿透</a></li>
+<li><a href="#9-什么是缓存击穿">9. 什么是缓存击穿</a></li>
+<li><a href="#10-什么是缓存雪崩">10. 什么是缓存雪崩</a></li>
+<li><a href="#11-sql查询基础">11. SQL查询基础</a></li>
+<li><a href="#12-排序">12. 排序</a></li>
+<li><a href="#13-聚合函数">13. 聚合函数</a></li>
+<li><a href="#14-分组">14. 分组</a></li>
+<li><a href="#15-关联查询">15. 关联查询</a></li>
+<li><a href="#16-limit的用法">16. LIMIT的用法</a></li>
+<li><a href="#17-case-when">17. case when</a></li>
+</ul>
+</li>
+<li><a href="#mysql数据库">Mysql数据库</a><ul>
+<li><a href="#1-mysql-常用数据类型">1. mysql 常用数据类型</a></li>
+<li><a href="#2-mysql数据库引擎">2. mysql数据库引擎</a></li>
+<li><a href="#3-mysql的索引类型">3. mysql的索引类型</a></li>
+<li><a href="#4-mysql-几种锁的区别">4. Mysql 几种锁的区别</a></li>
+<li><a href="#5-mysql事务原理特性事务并发控制">5. mysql事务原理、特性、事务并发控制</a></li>
+</ul>
+</li>
+<li><a href="#redis数据库">Redis数据库</a><ul>
+<li><a href="#1-redis的原理">1. redis的原理</a></li>
+<li><a href="#2-持久化机制">2. 持久化机制</a></li>
+<li><a href="#3-redis-和-memcached-的主要区别">3. redis 和 memcached 的主要区别</a></li>
+<li><a href="#4-redis-高可用">4. Redis 高可用</a></li>
+<li><a href="#5-redis-高并发">5. Redis 高并发</a></li>
+</ul>
+</li>
+<li><a href="#mongodb数据库">MongoDB数据库</a></li>
+<li><a href="#hive数据库">Hive数据库</a></li>
+<li><a href="#hbase数据库">Hbase数据库</a></li>
+<li><a href="#hadoop生态">Hadoop生态</a></li>
+</ul>
+<!-- /TOC -->
+
+</div>
+
+<h1 id="数据库常识"><a href="#数据库常识" class="headerlink" title="数据库常识"></a>数据库常识</h1><h2 id="1-什么是索引"><a href="#1-什么是索引" class="headerlink" title="1. 什么是索引"></a>1. 什么是索引</h2><h2 id="2-事务的特性"><a href="#2-事务的特性" class="headerlink" title="2. 事务的特性"></a>2. 事务的特性</h2><ul>
+<li>原子性(Atomicity)</li>
+</ul>
+<blockquote>
+<p>事务中的全部操作在数据库中是不可分割的，要么全部完成，要么均不执行。</p>
+</blockquote>
+<ul>
+<li>一致性(Consistency)</li>
+</ul>
+<blockquote>
+<p>几个并行执行的事务，其执行结果必须与按某一顺序串行执行的结果相一致。</p>
+</blockquote>
+<ul>
+<li>隔离性(Isolation)</li>
+</ul>
+<blockquote>
+<p>事务的执行不受其他事务的干扰，事务执行的中间结果对其他事务必须是透明的。</p>
+</blockquote>
+<ul>
+<li>持久性(Durability)</li>
+</ul>
+<blockquote>
+<p>对于任意已交事务，系统必须保证该事务对数据库的改变不被丢失，即使数据库出现异常。</p>
+</blockquote>
+<h2 id="3-存储过程"><a href="#3-存储过程" class="headerlink" title="3. 存储过程"></a>3. 存储过程</h2><h2 id="4-数据库怎么优化查询效率"><a href="#4-数据库怎么优化查询效率" class="headerlink" title="4. 数据库怎么优化查询效率"></a>4. 数据库怎么优化查询效率</h2><h2 id="5-数据库优化方案"><a href="#5-数据库优化方案" class="headerlink" title="5. 数据库优化方案"></a>5. 数据库优化方案</h2><h2 id="6-什么是悲观锁"><a href="#6-什么是悲观锁" class="headerlink" title="6. 什么是悲观锁"></a>6. 什么是悲观锁</h2><h2 id="7-什么是乐观锁"><a href="#7-什么是乐观锁" class="headerlink" title="7. 什么是乐观锁"></a>7. 什么是乐观锁</h2><h2 id="8-什么是缓存穿透"><a href="#8-什么是缓存穿透" class="headerlink" title="8. 什么是缓存穿透"></a>8. 什么是缓存穿透</h2><h2 id="9-什么是缓存击穿"><a href="#9-什么是缓存击穿" class="headerlink" title="9. 什么是缓存击穿"></a>9. 什么是缓存击穿</h2><h2 id="10-什么是缓存雪崩"><a href="#10-什么是缓存雪崩" class="headerlink" title="10. 什么是缓存雪崩"></a>10. 什么是缓存雪崩</h2><h2 id="11-SQL查询基础"><a href="#11-SQL查询基础" class="headerlink" title="11. SQL查询基础"></a>11. SQL查询基础</h2><p><strong><a href="https://www.runoob.com/sql/sql-tutorial.html" target="_blank" rel="noopener">SQL基础知识</a></strong></p>
+<ul>
+<li>select语句</li>
+</ul>
+<blockquote>
+<p>格式：select 字段 from 表名； # 全部字段可以用 *</p>
+</blockquote>
+<ul>
+<li>where 用于限制查询的结果</li>
+</ul>
+<blockquote>
+<p>格式：where 字段=’xxx’;  # 查询条件&gt; &lt; &gt;= &lt;= = !=</p>
+</blockquote>
+<ul>
+<li><p>与(AND)或(OR)</p>
+</li>
+<li><p>在(IN)不在(NOT IN)</p>
+</li>
+<li><p>空(NULL)非空(NOT NULL)</p>
+</li>
+<li><p>全部(ALL) 任一(ANY)</p>
+</li>
+<li><p>在[a,b]之间</p>
+</li>
+</ul>
+<blockquote>
+<p>格式：between a and b</p>
+</blockquote>
+<ul>
+<li>排重DISTINCT</li>
+</ul>
+<blockquote>
+<p>格式：select DISTINCT 字段 from 表名；</p>
+</blockquote>
+<h2 id="12-排序"><a href="#12-排序" class="headerlink" title="12. 排序"></a>12. 排序</h2><ul>
+<li>ORDER BY语句</li>
+</ul>
+<blockquote>
+<p>格式：select 字段 from 表名 where 条件 ORDER BY 字段；</p>
+</blockquote>
+<ul>
+<li>升序(ASC)与降序(DESC)</li>
+</ul>
+<blockquote>
+<p>格式：select 字段 from 表名 where 条件 ORDER BY 字段 ASC;<br>格式：select 字段 from 表名 where 条件 ORDER BY 字段 DESC;  </p>
+</blockquote>
+<ul>
+<li>多项排序</li>
+</ul>
+<blockquote>
+<p>格式：select 字段 from 表名 where 条件 ORDER BY 字段 ASC|DESC，字段ASC|DESC;</p>
+</blockquote>
+<h2 id="13-聚合函数"><a href="#13-聚合函数" class="headerlink" title="13. 聚合函数"></a>13. 聚合函数</h2><blockquote>
+<p>把 select 语句的查询结果汇聚成一个结果，这样的函数叫聚合函数。</p>
+</blockquote>
+<ul>
+<li><p>最大值(MAX)</p>
+</li>
+<li><p>最小值(MIN)</p>
+</li>
+<li><p>平均值(SVG)</p>
+</li>
+<li><p>求和(SUM)</p>
+</li>
+<li><p>统计数量(COUNT)</p>
+</li>
+</ul>
+<h2 id="14-分组"><a href="#14-分组" class="headerlink" title="14. 分组"></a>14. 分组</h2><ul>
+<li>GROUP BY</li>
+</ul>
+<blockquote>
+<p>格式：select 组函数 from 表 where 条件 group by 字段;</p>
+</blockquote>
+<ul>
+<li>HAVING 组判断条件，它的真假决定一组数据是否返回</li>
+</ul>
+<blockquote>
+<p>格式：select 组函数 from 表 where 条件 group by 字段 having 组判断条件;</p>
+</blockquote>
+<h2 id="15-关联查询"><a href="#15-关联查询" class="headerlink" title="15. 关联查询"></a>15. 关联查询</h2><ul>
+<li>JOIN：如果表中有至少一个匹配，则返回行  </li>
+</ul>
+<blockquote>
+<p>格式：select * from a join b on a.id=b.id;</p>
+</blockquote>
+<ul>
+<li>内连接(INNER JOIN)：只返回两个表中联结字段相等的行</li>
+</ul>
+<blockquote>
+<p>格式：select * from a inner join b on a.id=b.id;  # 其中inner可以省略，等同于JOIN的用法</p>
+</blockquote>
+<ul>
+<li>左外连接(LEFT JOIN 或 LEFT OUTER JOIN)：即使右表中没有匹配，也从左表返回所有的行</li>
+</ul>
+<blockquote>
+<p>格式：select * from a left outer join b on a.id=b.aid;  # 其中outer可忽略</p>
+</blockquote>
+<ul>
+<li>右外连接(RIGHT JOIN 或 RIGHT OUTER JOIN)：即使左表中没有匹配，也从右表返回所有的行</li>
+</ul>
+<blockquote>
+<p>格式：select * from a right outer join b on a.id=b.aid;  # 其中outer可忽略</p>
+</blockquote>
+<ul>
+<li>全连接(FULL JOIN 或 FULL OUTER JOIN): 只要其中一个表中存在匹配，就返回行。相当于左外连接+右外链接，注意mysql不支持全连接</li>
+</ul>
+<blockquote>
+<p>格式：select * from a full outer join b on a.id=b.id。# 其中outer可忽略</p>
+</blockquote>
+<ul>
+<li>自连接：自连接意思是把自身表当成另外一张表看待，互相关联查询，连接方式可以使用以上的内外连接，这种连接方式可以解决很多奇怪的问题。</li>
+</ul>
+<blockquote>
+<p>格式：SELECT ab.* from a ab,a ac where ab.id&gt;ac.id</p>
+</blockquote>
+<h2 id="16-LIMIT的用法"><a href="#16-LIMIT的用法" class="headerlink" title="16. LIMIT的用法"></a>16. LIMIT的用法</h2><blockquote>
+<p>格式：select * from student limit 10;  # 查询前10条数据，显示1-10条数据</p>
+</blockquote>
+<blockquote>
+<p>格式：select * from student limit 1,10;  # 查询从第2行开始，累加10条id记录，共显示id为2….11</p>
+</blockquote>
+<blockquote>
+<p>格式：select * from student limit 5,10;  # 查询从第6行开始向前加10条数据，共显示id为6,7….15  </p>
+</blockquote>
+<blockquote>
+<p>格式：select * from student limit i,n;  # i: 为查询结果的索引值(默认从0开始),当i=0时可省略i; n: 为查询结果返回的数量</p>
+</blockquote>
+<h2 id="17-case-when"><a href="#17-case-when" class="headerlink" title="17. case when"></a>17. case when</h2><p><strong><a href="https://www.cnblogs.com/aipan/p/7770611.html" target="_blank" rel="noopener">CASE WHEN 及 SELECT CASE WHEN的用法</a></strong><br><strong><a href="https://www.cnblogs.com/cx-zyq/archive/2013/05/16/3082295.html" target="_blank" rel="noopener">SQL Case when 的使用方法</a></strong></p>
+<ul>
+<li>简单Case函数</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CASE sex</span><br><span class="line">WHEN '1' THEN '男'</span><br><span class="line">WHEN '2' THEN '女'</span><br><span class="line">ELSE '其他' <span class="keyword">END</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Case搜索函数</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CASE WHEN sex = '1' THEN '男'</span><br><span class="line">WHEN sex = '2' THEN '女'</span><br><span class="line">ELSE '其他' <span class="keyword">END</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>两种方式，可以实现相同的功能。简单Case函数的写法相对比较简洁，但是和Case搜索函数相比，功能方面会有些限制，比如写判断式。还有一个需要注意的问题，Case函数只返回第一个符合条件的值，剩下的Case部分将会被自动忽略。</p>
+</blockquote>
+<p><strong>实例分析：</strong></p>
+<p>(1). 已知数据按照另外一种方式进行分组，分析</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*根据这个国家人口数据，统计亚洲和北美洲的人口数量*/</span></span><br><span class="line"><span class="keyword">SELECT</span>  <span class="keyword">SUM</span>(population),</span><br><span class="line"><span class="keyword">CASE</span> country  <span class="keyword">WHEN</span> <span class="string">'中国'</span> <span class="keyword">THEN</span> <span class="string">'亚洲'</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="string">'印度'</span> <span class="keyword">THEN</span> <span class="string">'亚洲'</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="string">'日本'</span> <span class="keyword">THEN</span> <span class="string">'亚洲'</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="string">'美国'</span> <span class="keyword">THEN</span> <span class="string">'北美洲'</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="string">'加拿大'</span>  <span class="keyword">THEN</span> <span class="string">'北美洲'</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="string">'墨西哥'</span>  <span class="keyword">THEN</span> <span class="string">'北美洲'</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span></span><br><span class="line"><span class="keyword">FROM</span>    Table_A</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line"><span class="keyword">CASE</span> country </span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">'中国'</span> <span class="keyword">THEN</span> <span class="string">'亚洲'</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">'印度'</span> <span class="keyword">THEN</span> <span class="string">'亚洲'</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">'日本'</span> <span class="keyword">THEN</span> <span class="string">'亚洲'</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">'美国'</span> <span class="keyword">THEN</span> <span class="string">'北美洲'</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">'加拿大'</span>   <span class="keyword">THEN</span> <span class="string">'北美洲'</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">'墨西哥'</span>   <span class="keyword">THEN</span> <span class="string">'北美洲'</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*判断工资的等级，并统计每一等级的人数*/</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">WHEN</span> salary &lt;= <span class="number">500</span> <span class="keyword">THEN</span> <span class="string">'1'</span></span><br><span class="line"><span class="keyword">WHEN</span> salary &gt; <span class="number">500</span> <span class="keyword">AND</span> salary &lt;= <span class="number">600</span>  <span class="keyword">THEN</span> <span class="string">'2'</span></span><br><span class="line"><span class="keyword">WHEN</span> salary &gt; <span class="number">600</span> <span class="keyword">AND</span> salary &lt;= <span class="number">800</span>  <span class="keyword">THEN</span> <span class="string">'3'</span></span><br><span class="line"><span class="keyword">WHEN</span> salary &gt; <span class="number">800</span> <span class="keyword">AND</span> salary &lt;= <span class="number">1000</span> <span class="keyword">THEN</span> <span class="string">'4'</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="literal">NULL</span> <span class="keyword">END</span> salary_class, <span class="comment">-- 别名命名</span></span><br><span class="line"><span class="keyword">COUNT</span>(*)  <span class="keyword">FROM</span>    Table_A</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">WHEN</span> salary &lt;= <span class="number">500</span> <span class="keyword">THEN</span> <span class="string">'1'</span></span><br><span class="line"><span class="keyword">WHEN</span> salary &gt; <span class="number">500</span> <span class="keyword">AND</span> salary &lt;= <span class="number">600</span>  <span class="keyword">THEN</span> <span class="string">'2'</span></span><br><span class="line"><span class="keyword">WHEN</span> salary &gt; <span class="number">600</span> <span class="keyword">AND</span> salary &lt;= <span class="number">800</span>  <span class="keyword">THEN</span> <span class="string">'3'</span></span><br><span class="line"><span class="keyword">WHEN</span> salary &gt; <span class="number">800</span> <span class="keyword">AND</span> salary &lt;= <span class="number">1000</span> <span class="keyword">THEN</span> <span class="string">'4'</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="literal">NULL</span> <span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+
+<p>(2). 用一个SQL语句完成不同条件的分组</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*按照国家和性别进行分组*/</span></span><br><span class="line"><span class="keyword">SELECT</span> country, </span><br><span class="line"><span class="keyword">SUM</span>( <span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="string">'1'</span> <span class="keyword">THEN</span>  population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>),  <span class="comment">--男性人口</span></span><br><span class="line"><span class="keyword">SUM</span>( <span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="string">'2'</span> <span class="keyword">THEN</span>  population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>)   <span class="comment">--女性人口</span></span><br><span class="line"><span class="keyword">FROM</span>  Table_A  <span class="keyword">GROUP</span> <span class="keyword">BY</span> country;</span><br></pre></td></tr></table></figure>
+
+<p>(3). 在Check中使用Case函数</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*公司A，这个公司有个规定，女职员的工资必须高于1000块*/</span></span><br><span class="line">CONSTRAINT check_salary <span class="keyword">CHECK</span></span><br><span class="line">( <span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="string">'2'</span></span><br><span class="line"><span class="keyword">THEN</span> <span class="keyword">CASE</span> <span class="keyword">WHEN</span> salary &gt; <span class="number">1000</span></span><br><span class="line"><span class="keyword">THEN</span> <span class="number">1</span> <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="number">1</span> <span class="keyword">END</span> = <span class="number">1</span> )</span><br></pre></td></tr></table></figure>
+
+<p>(4). 根据条件有选择的UPDATE</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 1.工资5000以上的职员，工资减少10% */</span></span><br><span class="line"><span class="keyword">UPDATE</span> Personnel  <span class="keyword">SET</span> salary = salary * <span class="number">0.9</span>  <span class="keyword">WHERE</span> salary &gt;= <span class="number">5000</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 2.工资在2000到4600之间的职员，工资增加15% */</span></span><br><span class="line"><span class="keyword">UPDATE</span> Personnel  <span class="keyword">SET</span> salary = salary * <span class="number">1.15</span> <span class="keyword">WHERE</span> salary &gt;= <span class="number">2000</span> <span class="keyword">AND</span> salary &lt; <span class="number">4600</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 3.如果满足条件1和条件2，顺序执行则会出现问题。</span></span><br><span class="line"><span class="comment">假设有个人工资5000块。首先，按照条件1，工资减少10%，变成工资4500。</span></span><br><span class="line"><span class="comment">接下来运行第二个SQL时候，因为这个人的工资是4500在2000到4600的范围之内，需增加15%，</span></span><br><span class="line"><span class="comment">最后这个人的工资结果是5175,不但没有减少，反而增加了。</span></span><br><span class="line"><span class="comment">如果要是反过来执行，那么工资4600的人相反会变成减少工资。 </span></span><br><span class="line"><span class="comment">这里用到case when 进行不同条件的更新*/</span></span><br><span class="line"><span class="keyword">UPDATE</span> Personnel</span><br><span class="line"><span class="keyword">SET</span> salary =</span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">WHEN</span> salary &gt;= <span class="number">5000</span>  　                <span class="keyword">THEN</span> salary * <span class="number">0.9</span></span><br><span class="line">     <span class="keyword">WHEN</span> salary &gt;= <span class="number">2000</span> <span class="keyword">AND</span> salary &lt; <span class="number">4600</span>  <span class="keyword">THEN</span> salary * <span class="number">1.15</span></span><br><span class="line"><span class="keyword">ELSE</span> salary <span class="keyword">END</span>;  <span class="comment">-- 这行else必须写，不写会导致不符合这两个条件的工资会变成NULL</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 把主键a和b相互交换 */</span></span><br><span class="line"><span class="keyword">UPDATE</span> SomeTable</span><br><span class="line"><span class="keyword">SET</span> p_key = <span class="keyword">CASE</span> <span class="keyword">WHEN</span> p_key = <span class="string">'a'</span>  <span class="keyword">THEN</span> <span class="string">'b'</span></span><br><span class="line"><span class="keyword">WHEN</span> p_key = <span class="string">'b'</span>  <span class="keyword">THEN</span> <span class="string">'a'</span>  <span class="keyword">ELSE</span> p_key <span class="keyword">END</span></span><br><span class="line"><span class="keyword">WHERE</span> p_key <span class="keyword">IN</span> (<span class="string">'a'</span>, <span class="string">'b'</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>检查两个表数据是否一致</li>
+</ul>
+<blockquote>
+<p>Case函数不同于DECODE函数。在Case函数中，可以使用BETWEEN,LIKE,IS NULL,IN,EXISTS等等。比如说使用IN,EXISTS，可以进行子查询，从而 实现更多的功能。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--使用IN的时候</span></span><br><span class="line"><span class="keyword">SELECT</span> keyCol,</span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">WHEN</span> keyCol <span class="keyword">IN</span> ( <span class="keyword">SELECT</span> keyCol <span class="keyword">FROM</span> tbl_B )  <span class="keyword">THEN</span> <span class="string">'Matched'</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="string">'Unmatched'</span> <span class="keyword">END</span> Label</span><br><span class="line"><span class="keyword">FROM</span> tbl_A;</span><br><span class="line"></span><br><span class="line"><span class="comment">--使用EXISTS的时候</span></span><br><span class="line"><span class="keyword">SELECT</span> keyCol,</span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">EXISTS</span> ( <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tbl_B  <span class="keyword">WHERE</span> tbl_A.keyCol = tbl_B.keyCol )  <span class="keyword">THEN</span> <span class="string">'Matched'</span>  <span class="keyword">ELSE</span> <span class="string">'Unmatched'</span> <span class="keyword">END</span> Label</span><br><span class="line"><span class="keyword">FROM</span> tbl_A;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在Case函数中使用合计函数</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Studentclass</span></span><br><span class="line"><span class="comment">+------+----------+--------------+-----------------+</span></span><br><span class="line"><span class="comment">|std_id| class_id |  class_name  |  main_class_flg |</span></span><br><span class="line"><span class="comment">+------+----------+--------------+-----------------+</span></span><br><span class="line"><span class="comment">| 100  |    1     |     经济学    |        Y        |</span></span><br><span class="line"><span class="comment">| 100  |    2     |     历史学    |        N        |</span></span><br><span class="line"><span class="comment">| 200  |    2     |     历史学    |        N        |</span></span><br><span class="line"><span class="comment">| 200  |    3     |     考古学    |        Y        |</span></span><br><span class="line"><span class="comment">| 200  |    4     |     计算机    |        N        |</span></span><br><span class="line"><span class="comment">| 300  |    4     |     计算机    |        N        |</span></span><br><span class="line"><span class="comment">| 400  |    5     |      化学     |        N        |</span></span><br><span class="line"><span class="comment">| 500  |    6     |      数学     |        N        |</span></span><br><span class="line"><span class="comment">+------+----------+---------------+----------------+</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--条件1：只选择了一门课程的学生, 返回那门课程的ID</span></span><br><span class="line"><span class="keyword">SELECT</span> std_id, <span class="keyword">MAX</span>(class_id) <span class="keyword">AS</span> main_class  <span class="keyword">FROM</span> Studentclass  <span class="keyword">GROUP</span> <span class="keyword">BY</span> std_id  <span class="keyword">HAVING</span> <span class="keyword">COUNT</span>(*) = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--条件2：选择多门课程的学生, 返回所选的主课程ID</span></span><br><span class="line"><span class="keyword">SELECT</span> std_id, class_id <span class="keyword">AS</span> main_class  <span class="keyword">FROM</span> Studentclass  <span class="keyword">WHERE</span> main_class_flg = <span class="string">'Y'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--使用Case函数,满足以上两个条件</span></span><br><span class="line"><span class="keyword">SELECT</span>  std_id, </span><br><span class="line"><span class="keyword">CASE</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="keyword">COUNT</span>(*) = <span class="number">1</span>                   <span class="keyword">THEN</span> <span class="keyword">MAX</span>(class_id)</span><br><span class="line"><span class="keyword">ELSE</span></span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> main_class_flg = <span class="string">'Y'</span>  <span class="keyword">THEN</span> class_id  <span class="keyword">ELSE</span> <span class="literal">NULL</span> <span class="keyword">END</span>)</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">AS</span> main_class</span><br><span class="line"><span class="keyword">FROM</span> Studentclass  <span class="keyword">GROUP</span> <span class="keyword">BY</span> std_id;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>select case when</li>
+</ul>
+<blockquote>
+<p>select 与 case结合使用最大的好处有两点，一是在显示查询结果时可以灵活的组织格式，二是有效避免了多次对同一个表或几个表的访问。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 例如表 students(id, name ,birthday, sex, grade)，要求按每个年级统计男生和女生的数量各是多少，统计结果的表头为，年级，男生数量，女生数量。如果不用select case when，为了将男女数量并列显示，统计起来非常麻烦，先确定年级信息，再根据年级取男生数和女生数，而且很容易出错。*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> grade, <span class="keyword">COUNT</span> (<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="number">1</span> <span class="keyword">THEN</span> <span class="number">1</span></span><br><span class="line">                            <span class="keyword">ELSE</span> <span class="literal">NULL</span></span><br><span class="line">                        <span class="keyword">END</span>) 男生数,</span><br><span class="line">               <span class="keyword">COUNT</span> (<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="number">2</span> <span class="keyword">THEN</span> <span class="number">1</span></span><br><span class="line">                            <span class="keyword">ELSE</span> <span class="literal">NULL</span></span><br><span class="line">                       <span class="keyword">END</span>) 女生数</span><br><span class="line"><span class="keyword">FROM</span> students</span><br><span class="line"></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> grade;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Mysql数据库"><a href="#Mysql数据库" class="headerlink" title="Mysql数据库"></a>Mysql数据库</h1><h2 id="1-mysql-常用数据类型"><a href="#1-mysql-常用数据类型" class="headerlink" title="1. mysql 常用数据类型"></a>1. mysql 常用数据类型</h2><h2 id="2-mysql数据库引擎"><a href="#2-mysql数据库引擎" class="headerlink" title="2. mysql数据库引擎"></a>2. mysql数据库引擎</h2><h2 id="3-mysql的索引类型"><a href="#3-mysql的索引类型" class="headerlink" title="3. mysql的索引类型"></a>3. mysql的索引类型</h2><h2 id="4-Mysql-几种锁的区别"><a href="#4-Mysql-几种锁的区别" class="headerlink" title="4. Mysql 几种锁的区别"></a>4. Mysql 几种锁的区别</h2><h2 id="5-mysql事务原理、特性、事务并发控制"><a href="#5-mysql事务原理、特性、事务并发控制" class="headerlink" title="5. mysql事务原理、特性、事务并发控制"></a>5. mysql事务原理、特性、事务并发控制</h2><h1 id="Redis数据库"><a href="#Redis数据库" class="headerlink" title="Redis数据库"></a>Redis数据库</h1><h2 id="1-redis的原理"><a href="#1-redis的原理" class="headerlink" title="1. redis的原理"></a>1. redis的原理</h2><h2 id="2-持久化机制"><a href="#2-持久化机制" class="headerlink" title="2. 持久化机制"></a>2. 持久化机制</h2><h2 id="3-redis-和-memcached-的主要区别"><a href="#3-redis-和-memcached-的主要区别" class="headerlink" title="3. redis 和 memcached 的主要区别"></a>3. redis 和 memcached 的主要区别</h2><h2 id="4-Redis-高可用"><a href="#4-Redis-高可用" class="headerlink" title="4. Redis 高可用"></a>4. Redis 高可用</h2><h2 id="5-Redis-高并发"><a href="#5-Redis-高并发" class="headerlink" title="5. Redis 高并发"></a>5. Redis 高并发</h2><h1 id="MongoDB数据库"><a href="#MongoDB数据库" class="headerlink" title="MongoDB数据库"></a>MongoDB数据库</h1><h1 id="Hive数据库"><a href="#Hive数据库" class="headerlink" title="Hive数据库"></a>Hive数据库</h1><h1 id="Hbase数据库"><a href="#Hbase数据库" class="headerlink" title="Hbase数据库"></a>Hbase数据库</h1><h1 id="Hadoop生态"><a href="#Hadoop生态" class="headerlink" title="Hadoop生态"></a>Hadoop生态</h1>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>Mysql</tag>
+        <tag>Redis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>算法编程知识点总结归纳</title>
     <url>/2020/05/08/%E7%AE%97%E6%B3%95%E4%B8%8E%E7%BC%96%E7%A8%8B/</url>
     <content><![CDATA[<blockquote>
@@ -1299,6 +1454,40 @@
         <tag>NLP</tag>
         <tag>情感分析</tag>
         <tag>文本分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo使用教程与常用命令</title>
+    <url>/2020/05/12/Hexo%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>欢迎使用<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! 更多信息可以查看<a href="https://hexo.io/docs/" target="_blank" rel="noopener">Hexo官方文档</a> 。如果你在使用过程中遇到任何问题，可以在这<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">提问</a> 或者在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a> 上留言，这篇文章简单介绍下Hexo的使用以及常用的命令。</p>
+<a id="more"></a>
+
+<h2 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h2><h3 id="创建一篇文章"><a href="#创建一篇文章" class="headerlink" title="创建一篇文章"></a>创建一篇文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"文章标题"</span></span><br><span class="line">或者</span><br><span class="line">$ hexo n <span class="string">"文章标题"</span></span><br></pre></td></tr></table></figure>
+
+<p>更多信息: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">writing</a></p>
+<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">或者</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<p>更多信息: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">或者</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+
+<p>更多信息: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="部署到远端"><a href="#部署到远端" class="headerlink" title="部署到远端"></a>部署到远端</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">或者</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<p>更多信息:: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h2 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h2><h3 id="获取主题"><a href="#获取主题" class="headerlink" title="获取主题"></a>获取主题</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/holysll/hexo-theme-ayer</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改主题配置"><a href="#修改主题配置" class="headerlink" title="修改主题配置"></a>修改主题配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">vi _config.yml</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: hexo-theme-ayer</span><br></pre></td></tr></table></figure>
+
+<h3 id="清除缓存并部署"><a href="#清除缓存并部署" class="headerlink" title="清除缓存并部署"></a>清除缓存并部署</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>个人博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>GitHub</tag>
+        <tag>blog</tag>
       </tags>
   </entry>
 </search>
