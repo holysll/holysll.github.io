@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo使用教程与常用命令</title>
+    <url>/2020/05/12/Hexo%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>欢迎使用<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! 更多信息可以查看<a href="https://hexo.io/docs/" target="_blank" rel="noopener">Hexo官方文档</a> 。如果你在使用过程中遇到任何问题，可以在这<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">提问</a> 或者在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a> 上留言，这篇文章简单介绍下Hexo的使用以及常用的命令。</p>
+<a id="more"></a>
+
+<h2 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h2><h3 id="创建一篇文章"><a href="#创建一篇文章" class="headerlink" title="创建一篇文章"></a>创建一篇文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"文章标题"</span></span><br><span class="line">或者</span><br><span class="line">$ hexo n <span class="string">"文章标题"</span></span><br></pre></td></tr></table></figure>
+
+<p>更多信息: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">writing</a></p>
+<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">或者</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<p>更多信息: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">或者</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+
+<p>更多信息: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="部署到远端"><a href="#部署到远端" class="headerlink" title="部署到远端"></a>部署到远端</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">或者</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<p>更多信息:: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h2 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h2><h3 id="获取主题"><a href="#获取主题" class="headerlink" title="获取主题"></a>获取主题</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/holysll/hexo-theme-ayer</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改主题配置"><a href="#修改主题配置" class="headerlink" title="修改主题配置"></a>修改主题配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">vi _config.yml</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: hexo-theme-ayer</span><br></pre></td></tr></table></figure>
+
+<h3 id="清除缓存并部署"><a href="#清除缓存并部署" class="headerlink" title="清除缓存并部署"></a>清除缓存并部署</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>个人博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>GitHub</tag>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Web与前端知识点总结归纳</title>
     <url>/2020/05/08/Web%E4%B8%8E%E5%89%8D%E7%AB%AF/</url>
     <content><![CDATA[<blockquote>
@@ -98,6 +132,565 @@
         <tag>Web基础</tag>
         <tag>前端框架</tag>
         <tag>知识回顾</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作系统知识点总结归纳</title>
+    <url>/2020/05/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<blockquote>
+<p>本文主要对操作系统和Linux基础知识进行梳理、回顾，把一些需要记住的概念原理，和容易混淆，晦涩的知识点进行归纳。</p>
+</blockquote>
+<a id="more"></a>
+
+<div style='display: none'>
+
+<!-- TOC -->
+
+<ul>
+<li><a href="#操作系统">操作系统</a><ul>
+<li><a href="#1-进程线程以及协程间的区别">1. 进程、线程以及协程间的区别</a></li>
+<li><a href="#2-线程间通信的方式">2. 线程间通信的方式</a></li>
+<li><a href="#3-进程间通信的方式">3. 进程间通信的方式</a></li>
+<li><a href="#4-如何实现协程">4. 如何实现协程</a></li>
+<li><a href="#5-并行与并发">5. 并行与并发</a></li>
+<li><a href="#6-同步与异步">6. 同步与异步</a></li>
+<li><a href="#7-阻塞与非阻塞">7. 阻塞与非阻塞</a></li>
+<li><a href="#8-僵尸进程孤儿进程守护进程">8. 僵尸进程、孤儿进程、守护进程</a></li>
+<li><a href="#9-线程安全">9. 线程安全</a></li>
+<li><a href="#10-多线程资源竞争怎么解决">10. 多线程资源竞争，怎么解决</a></li>
+<li><a href="#11-有几种锁">11. 有几种锁</a></li>
+<li><a href="#12-线程池原理与实现">12. 线程池原理与实现</a></li>
+<li><a href="#13-调度算法">13. 调度算法</a></li>
+</ul>
+</li>
+<li><a href="#linux">Linux</a><ul>
+<li><a href="#1-linux常用命令">1. linux常用命令</a></li>
+<li><a href="#2-linux内存管理机制">2. Linux内存管理机制</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+
+</div>
+
+<h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><h2 id="1-进程、线程以及协程间的区别"><a href="#1-进程、线程以及协程间的区别" class="headerlink" title="1. 进程、线程以及协程间的区别"></a>1. 进程、线程以及协程间的区别</h2><p><strong><a href="https://blog.csdn.net/holysll/article/details/89344794" target="_blank" rel="noopener">线程、进程、协程、锁的总结</a></strong></p>
+<h2 id="2-线程间通信的方式"><a href="#2-线程间通信的方式" class="headerlink" title="2. 线程间通信的方式"></a>2. 线程间通信的方式</h2><h2 id="3-进程间通信的方式"><a href="#3-进程间通信的方式" class="headerlink" title="3. 进程间通信的方式"></a>3. 进程间通信的方式</h2><h2 id="4-如何实现协程"><a href="#4-如何实现协程" class="headerlink" title="4. 如何实现协程"></a>4. 如何实现协程</h2><h2 id="5-并行与并发"><a href="#5-并行与并发" class="headerlink" title="5. 并行与并发"></a>5. 并行与并发</h2><h2 id="6-同步与异步"><a href="#6-同步与异步" class="headerlink" title="6. 同步与异步"></a>6. 同步与异步</h2><h2 id="7-阻塞与非阻塞"><a href="#7-阻塞与非阻塞" class="headerlink" title="7. 阻塞与非阻塞"></a>7. 阻塞与非阻塞</h2><h2 id="8-僵尸进程、孤儿进程、守护进程"><a href="#8-僵尸进程、孤儿进程、守护进程" class="headerlink" title="8. 僵尸进程、孤儿进程、守护进程"></a>8. 僵尸进程、孤儿进程、守护进程</h2><h2 id="9-线程安全"><a href="#9-线程安全" class="headerlink" title="9. 线程安全"></a>9. 线程安全</h2><h2 id="10-多线程资源竞争，怎么解决"><a href="#10-多线程资源竞争，怎么解决" class="headerlink" title="10. 多线程资源竞争，怎么解决"></a>10. 多线程资源竞争，怎么解决</h2><h2 id="11-有几种锁"><a href="#11-有几种锁" class="headerlink" title="11. 有几种锁"></a>11. 有几种锁</h2><ul>
+<li><p>互斥锁</p>
+</li>
+<li><p>可重入锁</p>
+</li>
+<li><p>死锁</p>
+</li>
+</ul>
+<h2 id="12-线程池原理与实现"><a href="#12-线程池原理与实现" class="headerlink" title="12. 线程池原理与实现"></a>12. 线程池原理与实现</h2><h2 id="13-调度算法"><a href="#13-调度算法" class="headerlink" title="13. 调度算法"></a>13. 调度算法</h2><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="1-linux常用命令"><a href="#1-linux常用命令" class="headerlink" title="1. linux常用命令"></a>1. linux常用命令</h2><h2 id="2-Linux内存管理机制"><a href="#2-Linux内存管理机制" class="headerlink" title="2. Linux内存管理机制"></a>2. Linux内存管理机制</h2>]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+        <tag>Linux</tag>
+        <tag>进程</tag>
+        <tag>线程</tag>
+        <tag>锁</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据库知识点总结归纳</title>
+    <url>/2020/05/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<blockquote>
+<p>本文主要对数据库基础知识进行梳理、回顾，把一些需要记住的概念原理，和容易混淆，晦涩的知识点进行归纳。</p>
+</blockquote>
+<a id="more"></a>
+
+<div style='display: none'>
+
+<!-- TOC -->
+
+<ul>
+<li><a href="#数据库常识">数据库常识</a><ul>
+<li><a href="#1-什么是索引">1. 什么是索引</a></li>
+<li><a href="#2-事务的特性">2. 事务的特性</a></li>
+<li><a href="#3-存储过程">3. 存储过程</a></li>
+<li><a href="#4-数据库怎么优化查询效率">4. 数据库怎么优化查询效率</a></li>
+<li><a href="#5-数据库优化方案">5. 数据库优化方案</a></li>
+<li><a href="#6-什么是悲观锁">6. 什么是悲观锁</a></li>
+<li><a href="#7-什么是乐观锁">7. 什么是乐观锁</a></li>
+<li><a href="#8-什么是缓存穿透">8. 什么是缓存穿透</a></li>
+<li><a href="#9-什么是缓存击穿">9. 什么是缓存击穿</a></li>
+<li><a href="#10-什么是缓存雪崩">10. 什么是缓存雪崩</a></li>
+<li><a href="#11-sql查询基础">11. SQL查询基础</a></li>
+<li><a href="#12-排序">12. 排序</a></li>
+<li><a href="#13-聚合函数">13. 聚合函数</a></li>
+<li><a href="#14-分组">14. 分组</a></li>
+<li><a href="#15-关联查询">15. 关联查询</a></li>
+<li><a href="#16-limit的用法">16. LIMIT的用法</a></li>
+<li><a href="#17-case-when">17. case when</a></li>
+</ul>
+</li>
+<li><a href="#mysql数据库">Mysql数据库</a><ul>
+<li><a href="#1-mysql-常用数据类型">1. mysql 常用数据类型</a></li>
+<li><a href="#2-mysql数据库引擎">2. mysql数据库引擎</a></li>
+<li><a href="#3-mysql的索引类型">3. mysql的索引类型</a></li>
+<li><a href="#4-mysql-几种锁的区别">4. Mysql 几种锁的区别</a></li>
+<li><a href="#5-mysql事务原理特性事务并发控制">5. mysql事务原理、特性、事务并发控制</a></li>
+</ul>
+</li>
+<li><a href="#redis数据库">Redis数据库</a><ul>
+<li><a href="#1-redis的原理">1. redis的原理</a></li>
+<li><a href="#2-持久化机制">2. 持久化机制</a></li>
+<li><a href="#3-redis-和-memcached-的主要区别">3. redis 和 memcached 的主要区别</a></li>
+<li><a href="#4-redis-高可用">4. Redis 高可用</a></li>
+<li><a href="#5-redis-高并发">5. Redis 高并发</a></li>
+</ul>
+</li>
+<li><a href="#mongodb数据库">MongoDB数据库</a></li>
+<li><a href="#hive数据库">Hive数据库</a></li>
+<li><a href="#hbase数据库">Hbase数据库</a></li>
+<li><a href="#hadoop生态">Hadoop生态</a></li>
+</ul>
+<!-- /TOC -->
+
+</div>
+
+<h1 id="数据库常识"><a href="#数据库常识" class="headerlink" title="数据库常识"></a>数据库常识</h1><h2 id="1-什么是索引"><a href="#1-什么是索引" class="headerlink" title="1. 什么是索引"></a>1. 什么是索引</h2><h2 id="2-事务的特性"><a href="#2-事务的特性" class="headerlink" title="2. 事务的特性"></a>2. 事务的特性</h2><ul>
+<li>原子性(Atomicity)</li>
+</ul>
+<blockquote>
+<p>事务中的全部操作在数据库中是不可分割的，要么全部完成，要么均不执行。</p>
+</blockquote>
+<ul>
+<li>一致性(Consistency)</li>
+</ul>
+<blockquote>
+<p>几个并行执行的事务，其执行结果必须与按某一顺序串行执行的结果相一致。</p>
+</blockquote>
+<ul>
+<li>隔离性(Isolation)</li>
+</ul>
+<blockquote>
+<p>事务的执行不受其他事务的干扰，事务执行的中间结果对其他事务必须是透明的。</p>
+</blockquote>
+<ul>
+<li>持久性(Durability)</li>
+</ul>
+<blockquote>
+<p>对于任意已交事务，系统必须保证该事务对数据库的改变不被丢失，即使数据库出现异常。</p>
+</blockquote>
+<h2 id="3-存储过程"><a href="#3-存储过程" class="headerlink" title="3. 存储过程"></a>3. 存储过程</h2><h2 id="4-数据库怎么优化查询效率"><a href="#4-数据库怎么优化查询效率" class="headerlink" title="4. 数据库怎么优化查询效率"></a>4. 数据库怎么优化查询效率</h2><h2 id="5-数据库优化方案"><a href="#5-数据库优化方案" class="headerlink" title="5. 数据库优化方案"></a>5. 数据库优化方案</h2><h2 id="6-什么是悲观锁"><a href="#6-什么是悲观锁" class="headerlink" title="6. 什么是悲观锁"></a>6. 什么是悲观锁</h2><h2 id="7-什么是乐观锁"><a href="#7-什么是乐观锁" class="headerlink" title="7. 什么是乐观锁"></a>7. 什么是乐观锁</h2><h2 id="8-什么是缓存穿透"><a href="#8-什么是缓存穿透" class="headerlink" title="8. 什么是缓存穿透"></a>8. 什么是缓存穿透</h2><h2 id="9-什么是缓存击穿"><a href="#9-什么是缓存击穿" class="headerlink" title="9. 什么是缓存击穿"></a>9. 什么是缓存击穿</h2><h2 id="10-什么是缓存雪崩"><a href="#10-什么是缓存雪崩" class="headerlink" title="10. 什么是缓存雪崩"></a>10. 什么是缓存雪崩</h2><h2 id="11-SQL查询基础"><a href="#11-SQL查询基础" class="headerlink" title="11. SQL查询基础"></a>11. SQL查询基础</h2><p><strong><a href="https://www.runoob.com/sql/sql-tutorial.html" target="_blank" rel="noopener">SQL基础知识</a></strong></p>
+<ul>
+<li>select语句</li>
+</ul>
+<blockquote>
+<p>格式：select 字段 from 表名； # 全部字段可以用 *</p>
+</blockquote>
+<ul>
+<li>where 用于限制查询的结果</li>
+</ul>
+<blockquote>
+<p>格式：where 字段=’xxx’;  # 查询条件&gt; &lt; &gt;= &lt;= = !=</p>
+</blockquote>
+<ul>
+<li><p>与(AND)或(OR)</p>
+</li>
+<li><p>在(IN)不在(NOT IN)</p>
+</li>
+<li><p>空(NULL)非空(NOT NULL)</p>
+</li>
+<li><p>全部(ALL) 任一(ANY)</p>
+</li>
+<li><p>在[a,b]之间</p>
+</li>
+</ul>
+<blockquote>
+<p>格式：between a and b</p>
+</blockquote>
+<ul>
+<li>排重DISTINCT</li>
+</ul>
+<blockquote>
+<p>格式：select DISTINCT 字段 from 表名；</p>
+</blockquote>
+<h2 id="12-排序"><a href="#12-排序" class="headerlink" title="12. 排序"></a>12. 排序</h2><ul>
+<li>ORDER BY语句</li>
+</ul>
+<blockquote>
+<p>格式：select 字段 from 表名 where 条件 ORDER BY 字段；</p>
+</blockquote>
+<ul>
+<li>升序(ASC)与降序(DESC)</li>
+</ul>
+<blockquote>
+<p>格式：select 字段 from 表名 where 条件 ORDER BY 字段 ASC;<br>格式：select 字段 from 表名 where 条件 ORDER BY 字段 DESC;  </p>
+</blockquote>
+<ul>
+<li>多项排序</li>
+</ul>
+<blockquote>
+<p>格式：select 字段 from 表名 where 条件 ORDER BY 字段 ASC|DESC，字段ASC|DESC;</p>
+</blockquote>
+<h2 id="13-聚合函数"><a href="#13-聚合函数" class="headerlink" title="13. 聚合函数"></a>13. 聚合函数</h2><blockquote>
+<p>把 select 语句的查询结果汇聚成一个结果，这样的函数叫聚合函数。</p>
+</blockquote>
+<ul>
+<li><p>最大值(MAX)</p>
+</li>
+<li><p>最小值(MIN)</p>
+</li>
+<li><p>平均值(SVG)</p>
+</li>
+<li><p>求和(SUM)</p>
+</li>
+<li><p>统计数量(COUNT)</p>
+</li>
+</ul>
+<h2 id="14-分组"><a href="#14-分组" class="headerlink" title="14. 分组"></a>14. 分组</h2><ul>
+<li>GROUP BY</li>
+</ul>
+<blockquote>
+<p>格式：select 组函数 from 表 where 条件 group by 字段;</p>
+</blockquote>
+<ul>
+<li>HAVING 组判断条件，它的真假决定一组数据是否返回</li>
+</ul>
+<blockquote>
+<p>格式：select 组函数 from 表 where 条件 group by 字段 having 组判断条件;</p>
+</blockquote>
+<h2 id="15-关联查询"><a href="#15-关联查询" class="headerlink" title="15. 关联查询"></a>15. 关联查询</h2><ul>
+<li>JOIN：如果表中有至少一个匹配，则返回行  </li>
+</ul>
+<blockquote>
+<p>格式：select * from a join b on a.id=b.id;</p>
+</blockquote>
+<ul>
+<li>内连接(INNER JOIN)：只返回两个表中联结字段相等的行</li>
+</ul>
+<blockquote>
+<p>格式：select * from a inner join b on a.id=b.id;  # 其中inner可以省略，等同于JOIN的用法</p>
+</blockquote>
+<ul>
+<li>左外连接(LEFT JOIN 或 LEFT OUTER JOIN)：即使右表中没有匹配，也从左表返回所有的行</li>
+</ul>
+<blockquote>
+<p>格式：select * from a left outer join b on a.id=b.aid;  # 其中outer可忽略</p>
+</blockquote>
+<ul>
+<li>右外连接(RIGHT JOIN 或 RIGHT OUTER JOIN)：即使左表中没有匹配，也从右表返回所有的行</li>
+</ul>
+<blockquote>
+<p>格式：select * from a right outer join b on a.id=b.aid;  # 其中outer可忽略</p>
+</blockquote>
+<ul>
+<li>全连接(FULL JOIN 或 FULL OUTER JOIN): 只要其中一个表中存在匹配，就返回行。相当于左外连接+右外链接，注意mysql不支持全连接</li>
+</ul>
+<blockquote>
+<p>格式：select * from a full outer join b on a.id=b.id。# 其中outer可忽略</p>
+</blockquote>
+<ul>
+<li>自连接：自连接意思是把自身表当成另外一张表看待，互相关联查询，连接方式可以使用以上的内外连接，这种连接方式可以解决很多奇怪的问题。</li>
+</ul>
+<blockquote>
+<p>格式：SELECT ab.* from a ab,a ac where ab.id&gt;ac.id</p>
+</blockquote>
+<h2 id="16-LIMIT的用法"><a href="#16-LIMIT的用法" class="headerlink" title="16. LIMIT的用法"></a>16. LIMIT的用法</h2><blockquote>
+<p>格式：select * from student limit 10;  # 查询前10条数据，显示1-10条数据</p>
+</blockquote>
+<blockquote>
+<p>格式：select * from student limit 1,10;  # 查询从第2行开始，累加10条id记录，共显示id为2….11</p>
+</blockquote>
+<blockquote>
+<p>格式：select * from student limit 5,10;  # 查询从第6行开始向前加10条数据，共显示id为6,7….15  </p>
+</blockquote>
+<blockquote>
+<p>格式：select * from student limit i,n;  # i: 为查询结果的索引值(默认从0开始),当i=0时可省略i; n: 为查询结果返回的数量</p>
+</blockquote>
+<h2 id="17-case-when"><a href="#17-case-when" class="headerlink" title="17. case when"></a>17. case when</h2><p><strong><a href="https://www.cnblogs.com/aipan/p/7770611.html" target="_blank" rel="noopener">CASE WHEN 及 SELECT CASE WHEN的用法</a></strong><br><strong><a href="https://www.cnblogs.com/cx-zyq/archive/2013/05/16/3082295.html" target="_blank" rel="noopener">SQL Case when 的使用方法</a></strong></p>
+<ul>
+<li>简单Case函数</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CASE sex</span><br><span class="line">WHEN '1' THEN '男'</span><br><span class="line">WHEN '2' THEN '女'</span><br><span class="line">ELSE '其他' <span class="keyword">END</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Case搜索函数</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CASE WHEN sex = '1' THEN '男'</span><br><span class="line">WHEN sex = '2' THEN '女'</span><br><span class="line">ELSE '其他' <span class="keyword">END</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>两种方式，可以实现相同的功能。简单Case函数的写法相对比较简洁，但是和Case搜索函数相比，功能方面会有些限制，比如写判断式。还有一个需要注意的问题，Case函数只返回第一个符合条件的值，剩下的Case部分将会被自动忽略。</p>
+</blockquote>
+<p><strong>实例分析：</strong></p>
+<p>(1). 已知数据按照另外一种方式进行分组，分析</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*根据这个国家人口数据，统计亚洲和北美洲的人口数量*/</span></span><br><span class="line"><span class="keyword">SELECT</span>  <span class="keyword">SUM</span>(population),</span><br><span class="line"><span class="keyword">CASE</span> country  <span class="keyword">WHEN</span> <span class="string">'中国'</span> <span class="keyword">THEN</span> <span class="string">'亚洲'</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="string">'印度'</span> <span class="keyword">THEN</span> <span class="string">'亚洲'</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="string">'日本'</span> <span class="keyword">THEN</span> <span class="string">'亚洲'</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="string">'美国'</span> <span class="keyword">THEN</span> <span class="string">'北美洲'</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="string">'加拿大'</span>  <span class="keyword">THEN</span> <span class="string">'北美洲'</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="string">'墨西哥'</span>  <span class="keyword">THEN</span> <span class="string">'北美洲'</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span></span><br><span class="line"><span class="keyword">FROM</span>    Table_A</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line"><span class="keyword">CASE</span> country </span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">'中国'</span> <span class="keyword">THEN</span> <span class="string">'亚洲'</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">'印度'</span> <span class="keyword">THEN</span> <span class="string">'亚洲'</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">'日本'</span> <span class="keyword">THEN</span> <span class="string">'亚洲'</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">'美国'</span> <span class="keyword">THEN</span> <span class="string">'北美洲'</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">'加拿大'</span>   <span class="keyword">THEN</span> <span class="string">'北美洲'</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">'墨西哥'</span>   <span class="keyword">THEN</span> <span class="string">'北美洲'</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*判断工资的等级，并统计每一等级的人数*/</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">WHEN</span> salary &lt;= <span class="number">500</span> <span class="keyword">THEN</span> <span class="string">'1'</span></span><br><span class="line"><span class="keyword">WHEN</span> salary &gt; <span class="number">500</span> <span class="keyword">AND</span> salary &lt;= <span class="number">600</span>  <span class="keyword">THEN</span> <span class="string">'2'</span></span><br><span class="line"><span class="keyword">WHEN</span> salary &gt; <span class="number">600</span> <span class="keyword">AND</span> salary &lt;= <span class="number">800</span>  <span class="keyword">THEN</span> <span class="string">'3'</span></span><br><span class="line"><span class="keyword">WHEN</span> salary &gt; <span class="number">800</span> <span class="keyword">AND</span> salary &lt;= <span class="number">1000</span> <span class="keyword">THEN</span> <span class="string">'4'</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="literal">NULL</span> <span class="keyword">END</span> salary_class, <span class="comment">-- 别名命名</span></span><br><span class="line"><span class="keyword">COUNT</span>(*)  <span class="keyword">FROM</span>    Table_A</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">WHEN</span> salary &lt;= <span class="number">500</span> <span class="keyword">THEN</span> <span class="string">'1'</span></span><br><span class="line"><span class="keyword">WHEN</span> salary &gt; <span class="number">500</span> <span class="keyword">AND</span> salary &lt;= <span class="number">600</span>  <span class="keyword">THEN</span> <span class="string">'2'</span></span><br><span class="line"><span class="keyword">WHEN</span> salary &gt; <span class="number">600</span> <span class="keyword">AND</span> salary &lt;= <span class="number">800</span>  <span class="keyword">THEN</span> <span class="string">'3'</span></span><br><span class="line"><span class="keyword">WHEN</span> salary &gt; <span class="number">800</span> <span class="keyword">AND</span> salary &lt;= <span class="number">1000</span> <span class="keyword">THEN</span> <span class="string">'4'</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="literal">NULL</span> <span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+
+<p>(2). 用一个SQL语句完成不同条件的分组</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*按照国家和性别进行分组*/</span></span><br><span class="line"><span class="keyword">SELECT</span> country, </span><br><span class="line"><span class="keyword">SUM</span>( <span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="string">'1'</span> <span class="keyword">THEN</span>  population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>),  <span class="comment">--男性人口</span></span><br><span class="line"><span class="keyword">SUM</span>( <span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="string">'2'</span> <span class="keyword">THEN</span>  population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>)   <span class="comment">--女性人口</span></span><br><span class="line"><span class="keyword">FROM</span>  Table_A  <span class="keyword">GROUP</span> <span class="keyword">BY</span> country;</span><br></pre></td></tr></table></figure>
+
+<p>(3). 在Check中使用Case函数</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*公司A，这个公司有个规定，女职员的工资必须高于1000块*/</span></span><br><span class="line">CONSTRAINT check_salary <span class="keyword">CHECK</span></span><br><span class="line">( <span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="string">'2'</span></span><br><span class="line"><span class="keyword">THEN</span> <span class="keyword">CASE</span> <span class="keyword">WHEN</span> salary &gt; <span class="number">1000</span></span><br><span class="line"><span class="keyword">THEN</span> <span class="number">1</span> <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="number">1</span> <span class="keyword">END</span> = <span class="number">1</span> )</span><br></pre></td></tr></table></figure>
+
+<p>(4). 根据条件有选择的UPDATE</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 1.工资5000以上的职员，工资减少10% */</span></span><br><span class="line"><span class="keyword">UPDATE</span> Personnel  <span class="keyword">SET</span> salary = salary * <span class="number">0.9</span>  <span class="keyword">WHERE</span> salary &gt;= <span class="number">5000</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 2.工资在2000到4600之间的职员，工资增加15% */</span></span><br><span class="line"><span class="keyword">UPDATE</span> Personnel  <span class="keyword">SET</span> salary = salary * <span class="number">1.15</span> <span class="keyword">WHERE</span> salary &gt;= <span class="number">2000</span> <span class="keyword">AND</span> salary &lt; <span class="number">4600</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 3.如果满足条件1和条件2，顺序执行则会出现问题。</span></span><br><span class="line"><span class="comment">假设有个人工资5000块。首先，按照条件1，工资减少10%，变成工资4500。</span></span><br><span class="line"><span class="comment">接下来运行第二个SQL时候，因为这个人的工资是4500在2000到4600的范围之内，需增加15%，</span></span><br><span class="line"><span class="comment">最后这个人的工资结果是5175,不但没有减少，反而增加了。</span></span><br><span class="line"><span class="comment">如果要是反过来执行，那么工资4600的人相反会变成减少工资。 </span></span><br><span class="line"><span class="comment">这里用到case when 进行不同条件的更新*/</span></span><br><span class="line"><span class="keyword">UPDATE</span> Personnel</span><br><span class="line"><span class="keyword">SET</span> salary =</span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">WHEN</span> salary &gt;= <span class="number">5000</span>  　                <span class="keyword">THEN</span> salary * <span class="number">0.9</span></span><br><span class="line">     <span class="keyword">WHEN</span> salary &gt;= <span class="number">2000</span> <span class="keyword">AND</span> salary &lt; <span class="number">4600</span>  <span class="keyword">THEN</span> salary * <span class="number">1.15</span></span><br><span class="line"><span class="keyword">ELSE</span> salary <span class="keyword">END</span>;  <span class="comment">-- 这行else必须写，不写会导致不符合这两个条件的工资会变成NULL</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 把主键a和b相互交换 */</span></span><br><span class="line"><span class="keyword">UPDATE</span> SomeTable</span><br><span class="line"><span class="keyword">SET</span> p_key = <span class="keyword">CASE</span> <span class="keyword">WHEN</span> p_key = <span class="string">'a'</span>  <span class="keyword">THEN</span> <span class="string">'b'</span></span><br><span class="line"><span class="keyword">WHEN</span> p_key = <span class="string">'b'</span>  <span class="keyword">THEN</span> <span class="string">'a'</span>  <span class="keyword">ELSE</span> p_key <span class="keyword">END</span></span><br><span class="line"><span class="keyword">WHERE</span> p_key <span class="keyword">IN</span> (<span class="string">'a'</span>, <span class="string">'b'</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>检查两个表数据是否一致</li>
+</ul>
+<blockquote>
+<p>Case函数不同于DECODE函数。在Case函数中，可以使用BETWEEN,LIKE,IS NULL,IN,EXISTS等等。比如说使用IN,EXISTS，可以进行子查询，从而 实现更多的功能。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--使用IN的时候</span></span><br><span class="line"><span class="keyword">SELECT</span> keyCol,</span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">WHEN</span> keyCol <span class="keyword">IN</span> ( <span class="keyword">SELECT</span> keyCol <span class="keyword">FROM</span> tbl_B )  <span class="keyword">THEN</span> <span class="string">'Matched'</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="string">'Unmatched'</span> <span class="keyword">END</span> Label</span><br><span class="line"><span class="keyword">FROM</span> tbl_A;</span><br><span class="line"></span><br><span class="line"><span class="comment">--使用EXISTS的时候</span></span><br><span class="line"><span class="keyword">SELECT</span> keyCol,</span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">EXISTS</span> ( <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tbl_B  <span class="keyword">WHERE</span> tbl_A.keyCol = tbl_B.keyCol )  <span class="keyword">THEN</span> <span class="string">'Matched'</span>  <span class="keyword">ELSE</span> <span class="string">'Unmatched'</span> <span class="keyword">END</span> Label</span><br><span class="line"><span class="keyword">FROM</span> tbl_A;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在Case函数中使用合计函数</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Studentclass</span></span><br><span class="line"><span class="comment">+------+----------+--------------+-----------------+</span></span><br><span class="line"><span class="comment">|std_id| class_id |  class_name  |  main_class_flg |</span></span><br><span class="line"><span class="comment">+------+----------+--------------+-----------------+</span></span><br><span class="line"><span class="comment">| 100  |    1     |     经济学    |        Y        |</span></span><br><span class="line"><span class="comment">| 100  |    2     |     历史学    |        N        |</span></span><br><span class="line"><span class="comment">| 200  |    2     |     历史学    |        N        |</span></span><br><span class="line"><span class="comment">| 200  |    3     |     考古学    |        Y        |</span></span><br><span class="line"><span class="comment">| 200  |    4     |     计算机    |        N        |</span></span><br><span class="line"><span class="comment">| 300  |    4     |     计算机    |        N        |</span></span><br><span class="line"><span class="comment">| 400  |    5     |      化学     |        N        |</span></span><br><span class="line"><span class="comment">| 500  |    6     |      数学     |        N        |</span></span><br><span class="line"><span class="comment">+------+----------+---------------+----------------+</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--条件1：只选择了一门课程的学生, 返回那门课程的ID</span></span><br><span class="line"><span class="keyword">SELECT</span> std_id, <span class="keyword">MAX</span>(class_id) <span class="keyword">AS</span> main_class  <span class="keyword">FROM</span> Studentclass  <span class="keyword">GROUP</span> <span class="keyword">BY</span> std_id  <span class="keyword">HAVING</span> <span class="keyword">COUNT</span>(*) = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--条件2：选择多门课程的学生, 返回所选的主课程ID</span></span><br><span class="line"><span class="keyword">SELECT</span> std_id, class_id <span class="keyword">AS</span> main_class  <span class="keyword">FROM</span> Studentclass  <span class="keyword">WHERE</span> main_class_flg = <span class="string">'Y'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--使用Case函数,满足以上两个条件</span></span><br><span class="line"><span class="keyword">SELECT</span>  std_id, </span><br><span class="line"><span class="keyword">CASE</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="keyword">COUNT</span>(*) = <span class="number">1</span>                   <span class="keyword">THEN</span> <span class="keyword">MAX</span>(class_id)</span><br><span class="line"><span class="keyword">ELSE</span></span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> main_class_flg = <span class="string">'Y'</span>  <span class="keyword">THEN</span> class_id  <span class="keyword">ELSE</span> <span class="literal">NULL</span> <span class="keyword">END</span>)</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">AS</span> main_class</span><br><span class="line"><span class="keyword">FROM</span> Studentclass  <span class="keyword">GROUP</span> <span class="keyword">BY</span> std_id;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>select case when</li>
+</ul>
+<blockquote>
+<p>select 与 case结合使用最大的好处有两点，一是在显示查询结果时可以灵活的组织格式，二是有效避免了多次对同一个表或几个表的访问。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 例如表 students(id, name ,birthday, sex, grade)，要求按每个年级统计男生和女生的数量各是多少，统计结果的表头为，年级，男生数量，女生数量。如果不用select case when，为了将男女数量并列显示，统计起来非常麻烦，先确定年级信息，再根据年级取男生数和女生数，而且很容易出错。*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> grade, <span class="keyword">COUNT</span> (<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="number">1</span> <span class="keyword">THEN</span> <span class="number">1</span></span><br><span class="line">                            <span class="keyword">ELSE</span> <span class="literal">NULL</span></span><br><span class="line">                        <span class="keyword">END</span>) 男生数,</span><br><span class="line">               <span class="keyword">COUNT</span> (<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="number">2</span> <span class="keyword">THEN</span> <span class="number">1</span></span><br><span class="line">                            <span class="keyword">ELSE</span> <span class="literal">NULL</span></span><br><span class="line">                       <span class="keyword">END</span>) 女生数</span><br><span class="line"><span class="keyword">FROM</span> students</span><br><span class="line"></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> grade;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Mysql数据库"><a href="#Mysql数据库" class="headerlink" title="Mysql数据库"></a>Mysql数据库</h1><h2 id="1-mysql-常用数据类型"><a href="#1-mysql-常用数据类型" class="headerlink" title="1. mysql 常用数据类型"></a>1. mysql 常用数据类型</h2><h2 id="2-mysql数据库引擎"><a href="#2-mysql数据库引擎" class="headerlink" title="2. mysql数据库引擎"></a>2. mysql数据库引擎</h2><h2 id="3-mysql的索引类型"><a href="#3-mysql的索引类型" class="headerlink" title="3. mysql的索引类型"></a>3. mysql的索引类型</h2><h2 id="4-Mysql-几种锁的区别"><a href="#4-Mysql-几种锁的区别" class="headerlink" title="4. Mysql 几种锁的区别"></a>4. Mysql 几种锁的区别</h2><h2 id="5-mysql事务原理、特性、事务并发控制"><a href="#5-mysql事务原理、特性、事务并发控制" class="headerlink" title="5. mysql事务原理、特性、事务并发控制"></a>5. mysql事务原理、特性、事务并发控制</h2><h1 id="Redis数据库"><a href="#Redis数据库" class="headerlink" title="Redis数据库"></a>Redis数据库</h1><h2 id="1-redis的原理"><a href="#1-redis的原理" class="headerlink" title="1. redis的原理"></a>1. redis的原理</h2><h2 id="2-持久化机制"><a href="#2-持久化机制" class="headerlink" title="2. 持久化机制"></a>2. 持久化机制</h2><h2 id="3-redis-和-memcached-的主要区别"><a href="#3-redis-和-memcached-的主要区别" class="headerlink" title="3. redis 和 memcached 的主要区别"></a>3. redis 和 memcached 的主要区别</h2><h2 id="4-Redis-高可用"><a href="#4-Redis-高可用" class="headerlink" title="4. Redis 高可用"></a>4. Redis 高可用</h2><h2 id="5-Redis-高并发"><a href="#5-Redis-高并发" class="headerlink" title="5. Redis 高并发"></a>5. Redis 高并发</h2><h1 id="MongoDB数据库"><a href="#MongoDB数据库" class="headerlink" title="MongoDB数据库"></a>MongoDB数据库</h1><h1 id="Hive数据库"><a href="#Hive数据库" class="headerlink" title="Hive数据库"></a>Hive数据库</h1><h1 id="Hbase数据库"><a href="#Hbase数据库" class="headerlink" title="Hbase数据库"></a>Hbase数据库</h1><h1 id="Hadoop生态"><a href="#Hadoop生态" class="headerlink" title="Hadoop生态"></a>Hadoop生态</h1>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>Mysql</tag>
+        <tag>Redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构知识点总结归纳</title>
+    <url>/2020/05/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<blockquote>
+<p>本文主要对数据结构基础知识进行梳理、回顾，解析原理，并通过实际例子深刻理解。</p>
+</blockquote>
+<a id="more"></a>
+
+<div style='display: none'>
+
+<!-- TOC -->
+
+<ul>
+<li><a href="#数据结构">数据结构</a><ul>
+<li><a href="#1-字符串string">1. 字符串(String)</a></li>
+<li><a href="#2-数组array">2. 数组(Array)</a></li>
+<li><a href="#3-堆heap">3. 堆(Heap)</a></li>
+<li><a href="#4-栈stack">4. 栈(Stack)</a></li>
+<li><a href="#5-队列queue">5. 队列(Queue)</a></li>
+<li><a href="#6-链表linked-list">6. 链表(Linked-List)</a></li>
+<li><a href="#7-树tree">7. 树(Tree)</a></li>
+<li><a href="#8-图graph">8. 图(Graph)</a></li>
+<li><a href="#9-哈希表hash">9. 哈希表(Hash)</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+
+</div>
+
+<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="1-字符串-String"><a href="#1-字符串-String" class="headerlink" title="1. 字符串(String)"></a>1. 字符串(String)</h2><h2 id="2-数组-Array"><a href="#2-数组-Array" class="headerlink" title="2. 数组(Array)"></a>2. 数组(Array)</h2><h2 id="3-堆-Heap"><a href="#3-堆-Heap" class="headerlink" title="3. 堆(Heap)"></a>3. 堆(Heap)</h2><h2 id="4-栈-Stack"><a href="#4-栈-Stack" class="headerlink" title="4. 栈(Stack)"></a>4. 栈(Stack)</h2><h2 id="5-队列-Queue"><a href="#5-队列-Queue" class="headerlink" title="5. 队列(Queue)"></a>5. 队列(Queue)</h2><h2 id="6-链表-Linked-List"><a href="#6-链表-Linked-List" class="headerlink" title="6. 链表(Linked-List)"></a>6. 链表(Linked-List)</h2><h2 id="7-树-Tree"><a href="#7-树-Tree" class="headerlink" title="7. 树(Tree)"></a>7. 树(Tree)</h2><h2 id="8-图-Graph"><a href="#8-图-Graph" class="headerlink" title="8. 图(Graph)"></a>8. 图(Graph)</h2><h2 id="9-哈希表-Hash"><a href="#9-哈希表-Hash" class="headerlink" title="9. 哈希表(Hash)"></a>9. 哈希表(Hash)</h2>]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习知识点总结归纳</title>
+    <url>/2020/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<blockquote>
+<p>本文主要对机器学习基础知识进行梳理、回顾，把一些需要记住的概念原理，和容易混淆，晦涩的知识点进行归纳。</p>
+</blockquote>
+<a id="more"></a>
+
+<div style='display: none'>
+
+<!-- TOC -->
+
+<ul>
+<li><a href="#1-机器学习基础">1 机器学习基础</a><ul>
+<li><a href="#11-机器学习概述">1.1 机器学习概述</a></li>
+<li><a href="#12-监督学习">1.2 监督学习</a></li>
+<li><a href="#13-非监督学习">1.3 非监督学习</a></li>
+<li><a href="#14-增强学习">1.4 增强学习</a></li>
+<li><a href="#15-深度学习">1.5 深度学习</a></li>
+</ul>
+</li>
+<li><a href="#2-分类问题">2 分类问题</a><ul>
+<li><a href="#21-knn">2.1 KNN</a></li>
+<li><a href="#22-nb">2.2 NB</a></li>
+<li><a href="#23-svm">2.3 SVM</a></li>
+<li><a href="#24-adaboost">2.4 AdaBoost</a></li>
+<li><a href="#25-dt">2.5 DT</a></li>
+</ul>
+</li>
+<li><a href="#3-聚类分析">3 聚类分析</a><ul>
+<li><a href="#31-k-means">3.1 K-means</a></li>
+<li><a href="#32-dbscan">3.2 DBSCAN</a></li>
+<li><a href="#33-lda">3.3 LDA</a></li>
+</ul>
+</li>
+<li><a href="#4-预测分析">4 预测分析</a><ul>
+<li><a href="#41-时间序列">4.1 时间序列</a></li>
+<li><a href="#42-bp神经网络">4.2 BP神经网络</a></li>
+</ul>
+</li>
+<li><a href="#5-关联分析">5 关联分析</a><ul>
+<li><a href="#51-apriori">5.1 Apriori</a></li>
+<li><a href="#52-fp-growth">5.2 FP-Growth</a></li>
+</ul>
+</li>
+<li><a href="#6-回归分析">6 回归分析</a><ul>
+<li><a href="#61-一元回归">6.1 一元回归</a></li>
+<li><a href="#62-多元回归">6.2 多元回归</a></li>
+<li><a href="#63-逻辑回归">6.3 逻辑回归</a></li>
+</ul>
+</li>
+<li><a href="#7-集成学习">7 集成学习</a><ul>
+<li><a href="#71-bagging">7.1 Bagging</a></li>
+<li><a href="#72-随机森林">7.2. 随机森林</a></li>
+<li><a href="#73-boosting">7.3 Boosting</a></li>
+<li><a href="#74-adaboost">7.4 AdaBoost</a></li>
+</ul>
+</li>
+<li><a href="#8-深度学习">8 深度学习</a><ul>
+<li><a href="#81-有监督">8.1 有监督</a></li>
+<li><a href="#82-无监督">8.2 无监督</a></li>
+<li><a href="#83-tensorflow">8.3 TensorFlow</a></li>
+<li><a href="#84-theano">8.4 Theano</a></li>
+</ul>
+</li>
+<li><a href="#9-数据预处理">9 数据预处理</a><ul>
+<li><a href="#91-数据清洗">9.1 数据清洗</a><ul>
+<li><a href="#911-异常值处理">9.1.1 异常值处理</a></li>
+<li><a href="#912-缺失值处理">9.1.2 缺失值处理</a></li>
+<li><a href="#913-噪声处理">9.1.3 噪声处理</a></li>
+<li><a href="#914-倾斜数据处理">9.1.4 倾斜数据处理</a></li>
+</ul>
+</li>
+<li><a href="#92-数据集成">9.2 数据集成</a></li>
+<li><a href="#93-数据变换">9.3 数据变换</a></li>
+<li><a href="#94-数据归约">9.4 数据归约</a></li>
+</ul>
+</li>
+<li><a href="#10-数据降维">10 数据降维</a><ul>
+<li><a href="#101-主成份分析">10.1 主成份分析</a></li>
+<li><a href="#102-奇异值分解">10.2 奇异值分解</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+
+</div>
+
+
+<h1 id="1-机器学习基础"><a href="#1-机器学习基础" class="headerlink" title="1 机器学习基础"></a>1 机器学习基础</h1><h2 id="1-1-机器学习概述"><a href="#1-1-机器学习概述" class="headerlink" title="1.1 机器学习概述"></a>1.1 机器学习概述</h2><h2 id="1-2-监督学习"><a href="#1-2-监督学习" class="headerlink" title="1.2 监督学习"></a>1.2 监督学习</h2><h2 id="1-3-非监督学习"><a href="#1-3-非监督学习" class="headerlink" title="1.3 非监督学习"></a>1.3 非监督学习</h2><h2 id="1-4-增强学习"><a href="#1-4-增强学习" class="headerlink" title="1.4 增强学习"></a>1.4 增强学习</h2><h2 id="1-5-深度学习"><a href="#1-5-深度学习" class="headerlink" title="1.5 深度学习"></a>1.5 深度学习</h2><h1 id="2-分类问题"><a href="#2-分类问题" class="headerlink" title="2 分类问题"></a>2 分类问题</h1><h2 id="2-1-KNN"><a href="#2-1-KNN" class="headerlink" title="2.1 KNN"></a>2.1 KNN</h2><h2 id="2-2-NB"><a href="#2-2-NB" class="headerlink" title="2.2 NB"></a>2.2 NB</h2><h2 id="2-3-SVM"><a href="#2-3-SVM" class="headerlink" title="2.3 SVM"></a>2.3 SVM</h2><h2 id="2-4-AdaBoost"><a href="#2-4-AdaBoost" class="headerlink" title="2.4 AdaBoost"></a>2.4 AdaBoost</h2><h2 id="2-5-DT"><a href="#2-5-DT" class="headerlink" title="2.5 DT"></a>2.5 DT</h2><h1 id="3-聚类分析"><a href="#3-聚类分析" class="headerlink" title="3 聚类分析"></a>3 聚类分析</h1><h2 id="3-1-K-means"><a href="#3-1-K-means" class="headerlink" title="3.1 K-means"></a>3.1 K-means</h2><h2 id="3-2-DBSCAN"><a href="#3-2-DBSCAN" class="headerlink" title="3.2 DBSCAN"></a>3.2 DBSCAN</h2><h2 id="3-3-LDA"><a href="#3-3-LDA" class="headerlink" title="3.3 LDA"></a>3.3 LDA</h2><h1 id="4-预测分析"><a href="#4-预测分析" class="headerlink" title="4 预测分析"></a>4 预测分析</h1><h2 id="4-1-时间序列"><a href="#4-1-时间序列" class="headerlink" title="4.1 时间序列"></a>4.1 时间序列</h2><h2 id="4-2-BP神经网络"><a href="#4-2-BP神经网络" class="headerlink" title="4.2 BP神经网络"></a>4.2 BP神经网络</h2><h1 id="5-关联分析"><a href="#5-关联分析" class="headerlink" title="5 关联分析"></a>5 关联分析</h1><h2 id="5-1-Apriori"><a href="#5-1-Apriori" class="headerlink" title="5.1 Apriori"></a>5.1 Apriori</h2><h2 id="5-2-FP-Growth"><a href="#5-2-FP-Growth" class="headerlink" title="5.2 FP-Growth"></a>5.2 FP-Growth</h2><h1 id="6-回归分析"><a href="#6-回归分析" class="headerlink" title="6 回归分析"></a>6 回归分析</h1><h2 id="6-1-一元回归"><a href="#6-1-一元回归" class="headerlink" title="6.1 一元回归"></a>6.1 一元回归</h2><h2 id="6-2-多元回归"><a href="#6-2-多元回归" class="headerlink" title="6.2 多元回归"></a>6.2 多元回归</h2><h2 id="6-3-逻辑回归"><a href="#6-3-逻辑回归" class="headerlink" title="6.3 逻辑回归"></a>6.3 逻辑回归</h2><h1 id="7-集成学习"><a href="#7-集成学习" class="headerlink" title="7 集成学习"></a>7 集成学习</h1><h2 id="7-1-Bagging"><a href="#7-1-Bagging" class="headerlink" title="7.1 Bagging"></a>7.1 Bagging</h2><h2 id="7-2-随机森林"><a href="#7-2-随机森林" class="headerlink" title="7.2. 随机森林"></a>7.2. 随机森林</h2><h2 id="7-3-Boosting"><a href="#7-3-Boosting" class="headerlink" title="7.3 Boosting"></a>7.3 Boosting</h2><h2 id="7-4-AdaBoost"><a href="#7-4-AdaBoost" class="headerlink" title="7.4 AdaBoost"></a>7.4 AdaBoost</h2><h1 id="8-深度学习"><a href="#8-深度学习" class="headerlink" title="8 深度学习"></a>8 深度学习</h1><h2 id="8-1-有监督"><a href="#8-1-有监督" class="headerlink" title="8.1 有监督"></a>8.1 有监督</h2><h2 id="8-2-无监督"><a href="#8-2-无监督" class="headerlink" title="8.2 无监督"></a>8.2 无监督</h2><h2 id="8-3-TensorFlow"><a href="#8-3-TensorFlow" class="headerlink" title="8.3 TensorFlow"></a>8.3 TensorFlow</h2><h2 id="8-4-Theano"><a href="#8-4-Theano" class="headerlink" title="8.4 Theano"></a>8.4 Theano</h2><h1 id="9-数据预处理"><a href="#9-数据预处理" class="headerlink" title="9 数据预处理"></a>9 数据预处理</h1><h2 id="9-1-数据清洗"><a href="#9-1-数据清洗" class="headerlink" title="9.1 数据清洗"></a>9.1 数据清洗</h2><h3 id="9-1-1-异常值处理"><a href="#9-1-1-异常值处理" class="headerlink" title="9.1.1 异常值处理"></a>9.1.1 异常值处理</h3><h3 id="9-1-2-缺失值处理"><a href="#9-1-2-缺失值处理" class="headerlink" title="9.1.2 缺失值处理"></a>9.1.2 缺失值处理</h3><h3 id="9-1-3-噪声处理"><a href="#9-1-3-噪声处理" class="headerlink" title="9.1.3 噪声处理"></a>9.1.3 噪声处理</h3><h3 id="9-1-4-倾斜数据处理"><a href="#9-1-4-倾斜数据处理" class="headerlink" title="9.1.4 倾斜数据处理"></a>9.1.4 倾斜数据处理</h3><h2 id="9-2-数据集成"><a href="#9-2-数据集成" class="headerlink" title="9.2 数据集成"></a>9.2 数据集成</h2><h2 id="9-3-数据变换"><a href="#9-3-数据变换" class="headerlink" title="9.3 数据变换"></a>9.3 数据变换</h2><h2 id="9-4-数据归约"><a href="#9-4-数据归约" class="headerlink" title="9.4 数据归约"></a>9.4 数据归约</h2><h1 id="10-数据降维"><a href="#10-数据降维" class="headerlink" title="10 数据降维"></a>10 数据降维</h1><h2 id="10-1-主成份分析"><a href="#10-1-主成份分析" class="headerlink" title="10.1 主成份分析"></a>10.1 主成份分析</h2><h2 id="10-2-奇异值分解"><a href="#10-2-奇异值分解" class="headerlink" title="10.2 奇异值分解"></a>10.2 奇异值分解</h2>]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>分类问题</tag>
+        <tag>聚类分析</tag>
+        <tag>预测分析</tag>
+        <tag>回归分析</tag>
+        <tag>关联分析</tag>
+        <tag>集成学习</tag>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法编程知识点总结归纳</title>
+    <url>/2020/05/08/%E7%AE%97%E6%B3%95%E4%B8%8E%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<blockquote>
+<p>本文主要对算法编程基础知识进行梳理、回顾，以及一些常见的算法掌握。</p>
+</blockquote>
+<a id="more"></a>
+
+<div style='display: none'>
+
+<!-- TOC -->
+
+<ul>
+<li><a href="#算法编程">算法编程</a><ul>
+<li><a href="#1-反转链表">1. 反转链表</a></li>
+<li><a href="#2-dfs">2. DFS</a></li>
+<li><a href="#3-bfs">3. BFS</a></li>
+<li><a href="#4-冒泡排序">4. 冒泡排序</a></li>
+<li><a href="#5-快排">5. 快排</a></li>
+<li><a href="#6-堆排序">6. 堆排序</a></li>
+<li><a href="#7-二叉树">7. 二叉树</a></li>
+<li><a href="#8-二分查找">8. 二分查找</a></li>
+<li><a href="#9-求最大树深">9. 求最大树深</a></li>
+<li><a href="#10-动态规划问题">10. 动态规划问题</a></li>
+<li><a href="#11-01背包问题">11. 01背包问题</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+
+</div>
+
+<h1 id="算法编程"><a href="#算法编程" class="headerlink" title="算法编程"></a>算法编程</h1><h2 id="1-反转链表"><a href="#1-反转链表" class="headerlink" title="1. 反转链表"></a>1. 反转链表</h2><h2 id="2-DFS"><a href="#2-DFS" class="headerlink" title="2. DFS"></a>2. DFS</h2><h2 id="3-BFS"><a href="#3-BFS" class="headerlink" title="3. BFS"></a>3. BFS</h2><h2 id="4-冒泡排序"><a href="#4-冒泡排序" class="headerlink" title="4. 冒泡排序"></a>4. 冒泡排序</h2><h2 id="5-快排"><a href="#5-快排" class="headerlink" title="5. 快排"></a>5. 快排</h2><h2 id="6-堆排序"><a href="#6-堆排序" class="headerlink" title="6. 堆排序"></a>6. 堆排序</h2><h2 id="7-二叉树"><a href="#7-二叉树" class="headerlink" title="7. 二叉树"></a>7. 二叉树</h2><h2 id="8-二分查找"><a href="#8-二分查找" class="headerlink" title="8. 二分查找"></a>8. 二分查找</h2><h2 id="9-求最大树深"><a href="#9-求最大树深" class="headerlink" title="9. 求最大树深"></a>9. 求最大树深</h2><h2 id="10-动态规划问题"><a href="#10-动态规划问题" class="headerlink" title="10. 动态规划问题"></a>10. 动态规划问题</h2><h2 id="11-01背包问题"><a href="#11-01背包问题" class="headerlink" title="11. 01背包问题"></a>11. 01背包问题</h2><h2 id="12-两个栈实现一个队列"><a href="#12-两个栈实现一个队列" class="headerlink" title="12. 两个栈实现一个队列"></a>12. 两个栈实现一个队列</h2><h2 id="13-二叉树的直径"><a href="#13-二叉树的直径" class="headerlink" title="13. 二叉树的直径"></a>13. 二叉树的直径</h2><h2 id="14-全排列"><a href="#14-全排列" class="headerlink" title="14. 全排列"></a>14. 全排列</h2><ul>
+<li>itertools内置permutations方法实现</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> permutations</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            n = int(input().strip())</span><br><span class="line">            s = [str(i + <span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line">            res = list(permutations(s))</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> res:</span><br><span class="line">                print(<span class="string">" "</span>.join(i))</span><br><span class="line">            print(len(res))</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    func()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>递归实现</li>
+</ul>
+<p>具体详细的思路参考：</p>
+<p><strong><a href="https://blog.csdn.net/weixin_39910711/article/details/100692318" target="_blank" rel="noopener">递归实现全排列（回溯思想）</a></strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">permutations</span><span class="params">(s, begin, end)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> count</span><br><span class="line">    <span class="keyword">if</span> begin == end:</span><br><span class="line">        print(<span class="string">" "</span>.join(s))</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(begin, end):</span><br><span class="line">            s[i], s[begin] = s[begin], s[i]</span><br><span class="line">            permutations(s, begin + <span class="number">1</span>, end)</span><br><span class="line">            s[i], s[begin] = s[begin], s[i]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    s = [str(i + <span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(int(input().strip()))]</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    permutations(s, <span class="number">0</span>, len(s))</span><br><span class="line">    print(count)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>DFS实现</li>
+</ul>
+<p><strong><a href="https://blog.csdn.net/weixin_39910711/article/details/100692318" target="_blank" rel="noopener">深度优先搜索（DFS）实现全排列</a></strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">permutations</span><span class="params">(s, position, visit, num)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> position == len(s):</span><br><span class="line">        print(<span class="string">" "</span>.join(num))</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> index <span class="keyword">in</span> range(len(s)):</span><br><span class="line">            <span class="keyword">if</span> visit[index] == <span class="literal">True</span>:</span><br><span class="line">                num[position] = s[index]</span><br><span class="line">                visit[index] = <span class="literal">False</span></span><br><span class="line">                permutations(s, position + <span class="number">1</span>, visit, num)</span><br><span class="line">                visit[index] = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    n = int(input().strip())</span><br><span class="line">    s = [str(i + <span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line">    visit = [<span class="literal">True</span>] * n</span><br><span class="line">    num = [<span class="string">""</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line">    permutations(s, <span class="number">0</span>, visit, num)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法编程</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自然语言处理知识点总结归纳</title>
+    <url>/2020/05/08/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<blockquote>
+<p>本文主要对自然语言处理基础知识进行梳理、回顾，把一些需要记住的概念原理，和容易混淆，晦涩的知识点进行归纳。</p>
+</blockquote>
+<a id="more"></a>
+
+<div style='display: none'>
+
+<!-- TOC -->
+
+<ul>
+<li><a href="#1-情感分析">1. 情感分析</a></li>
+<li><a href="#2-文本挖掘">2. 文本挖掘</a></li>
+<li><a href="#3-语义分析">3. 语义分析</a></li>
+</ul>
+<!-- /TOC -->
+
+</div>
+
+<h2 id="1-情感分析"><a href="#1-情感分析" class="headerlink" title="1. 情感分析"></a>1. 情感分析</h2><h2 id="2-文本挖掘"><a href="#2-文本挖掘" class="headerlink" title="2. 文本挖掘"></a>2. 文本挖掘</h2><h2 id="3-语义分析"><a href="#3-语义分析" class="headerlink" title="3. 语义分析"></a>3. 语义分析</h2>]]></content>
+      <categories>
+        <category>自然语言处理</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>情感分析</tag>
+        <tag>文本分析</tag>
       </tags>
   </entry>
   <entry>
@@ -764,16 +1357,23 @@
 </blockquote>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">line_conf</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">line</span><span class="params">(x)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> a*x +b</span><br><span class="line">    <span class="keyword">return</span> line</span><br><span class="line"></span><br><span class="line">line1 = line_conf(<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">line2 = line_conf(<span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line">print(line1(<span class="number">5</span>), line2(<span class="number">5</span>))  <span class="comment"># (6, 25)</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="20-装饰器"><a href="#20-装饰器" class="headerlink" title="20. 装饰器"></a>20. 装饰器</h2><p><strong><a href="https://blog.csdn.net/tryhardsilently/article/details/90767627" target="_blank" rel="noopener">python装饰器</a></strong><br><strong><a href="https://blog.csdn.net/yhy1271927580/article/details/72758577" target="_blank" rel="noopener">Python装饰器各种类型详解</a></strong><br><strong><a href="https://blog.csdn.net/five3/article/details/83447467" target="_blank" rel="noopener">Python各种类型装饰器详解说明</a></strong><br><strong><a href="https://blog.csdn.net/xiemanr/article/details/72510885" target="_blank" rel="noopener">python装饰器的4种类型</a></strong><br><a href="https://blog.csdn.net/five3/article/details/83447467" target="_blank" rel="noopener">https://blog.csdn.net/five3/article/details/83447467</a><br><a href="https://blog.csdn.net/xiemanr/article/details/72510885" target="_blank" rel="noopener">https://blog.csdn.net/xiemanr/article/details/72510885</a><br><a href="https://blog.csdn.net/yhy1271927580/article/details/72758577" target="_blank" rel="noopener">https://blog.csdn.net/yhy1271927580/article/details/72758577</a></p>
-<p><a href="https://blog.csdn.net/weixin_42134789/article/details/84635252?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase" target="_blank" rel="noopener">https://blog.csdn.net/weixin_42134789/article/details/84635252?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase</a></p>
-<p><a href="https://blog.csdn.net/u010358168/article/details/77773199?utm_medium=distribute.pc_relevant_right.none-task-blog-BlogCommendFromMachineLearnPai2-29.nonecase&amp;depth_1-utm_source=distribute.pc_relevant_right.none-task-blog-BlogCommendFromMachineLearnPai2-29.nonecase" target="_blank" rel="noopener">https://blog.csdn.net/u010358168/article/details/77773199?utm_medium=distribute.pc_relevant_right.none-task-blog-BlogCommendFromMachineLearnPai2-29.nonecase&amp;depth_1-utm_source=distribute.pc_relevant_right.none-task-blog-BlogCommendFromMachineLearnPai2-29.nonecase</a></p>
+<h2 id="20-装饰器"><a href="#20-装饰器" class="headerlink" title="20. 装饰器"></a>20. 装饰器</h2><blockquote>
+<p><strong>以下是一些前人的总结参考：</strong></p>
+</blockquote>
+<p><strong><a href="https://blog.csdn.net/tryhardsilently/article/details/90767627" target="_blank" rel="noopener">python装饰器</a></strong></p>
+<p><strong><a href="https://blog.csdn.net/yhy1271927580/article/details/72758577" target="_blank" rel="noopener">Python装饰器各种类型详解</a></strong></p>
+<p><strong><a href="https://blog.csdn.net/five3/article/details/83447467" target="_blank" rel="noopener">Python各种类型装饰器详解说明</a></strong></p>
+<p><strong><a href="https://blog.csdn.net/xiemanr/article/details/72510885" target="_blank" rel="noopener">python装饰器的4种类型</a></strong></p>
+<p><strong><a href="https://blog.csdn.net/weixin_42134789/article/details/84635252?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase" target="_blank" rel="noopener">一文看懂Python系列之装饰器</a></strong></p>
+<p><strong><a href="https://blog.csdn.net/u010358168/article/details/77773199?utm_medium=distribute.pc_relevant_right.none-task-blog-BlogCommendFromMachineLearnPai2-29.nonecase&depth_1-utm_source=distribute.pc_relevant_right.none-task-blog-BlogCommendFromMachineLearnPai2-29.nonecase" target="_blank" rel="noopener">python装饰器简介</a></strong></p>
 <blockquote>
-<p>装饰器本质上是一个函数，可以让其他函数在不需要做任何代码处理的前提下增加额外的功能，装饰器的返回值也是一个函数对象。它经常用于有切面需求的场景，比如：<strong>插入日志、性能测试、事务处理、缓存、权限校验等场景</strong>，装饰器是解决这类问题的绝佳设计。有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码到装饰器中并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。</p>
+<p>装饰器本质上是一个函数，可以让其他函数在不需要做任何代码处理的前提下增加额外的功能，装饰器的返回值也是一个函数对象(函数的引用)。它经常用于有切面需求的场景，比如：<strong>插入日志、性能测试、事务处理、缓存、权限校验等场景</strong>，装饰器是解决这类问题的绝佳设计。有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码到装饰器中并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。</p>
 </blockquote>
 <ul>
-<li>装饰器自身为函数<br>(1). 被装饰的对象为函数，且不带参数  </li>
+<li><strong>装饰器自身为函数</strong></li>
 </ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器为函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">time_decorator</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">"Hello inner"</span>)</span><br><span class="line">        start = time.time()</span><br><span class="line">        func()</span><br><span class="line">        end = time.time()</span><br><span class="line">        print(<span class="string">'方法&#123;&#125;用时:&#123;&#125;秒'</span>.format(func.__name__, end - start))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被装饰的对象为函数，且不带参数</span></span><br><span class="line"><span class="meta">@time_decorator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">"foo is running."</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用装饰后的foo函数</span></span><br><span class="line">print(foo.__name__)</span><br><span class="line">foo()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">inner</span></span><br><span class="line"><span class="string">Hello inner</span></span><br><span class="line"><span class="string">func1 is running.</span></span><br><span class="line"><span class="string">方法foo用时:3.01444411277771秒</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<p>(1). 被装饰的对象为函数，且不带参数  </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器为函数，且不带参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">time_decorator</span><span class="params">(func)</span>:</span></span><br><span class="line"><span class="meta">    @wraps(func)  # 保证装饰过的函数__name__属性不变</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">"Hello inner"</span>)</span><br><span class="line">        start = time.time()</span><br><span class="line">        func()</span><br><span class="line">        end = time.time()</span><br><span class="line">        print(<span class="string">'方法&#123;&#125;用时:&#123;&#125;秒'</span>.format(func.__name__, end - start))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被装饰的对象为函数，且不带参数</span></span><br><span class="line"><span class="meta">@time_decorator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">"foo is running."</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用装饰后的foo函数</span></span><br><span class="line">print(foo.__name__)</span><br><span class="line">foo()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">inner</span></span><br><span class="line"><span class="string">Hello inner</span></span><br><span class="line"><span class="string">foo is running.</span></span><br><span class="line"><span class="string">方法foo用时:3.01444411277771秒</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>在以上代码中，@time_decorator装饰器对foo函数进行了装饰，这是一个不带参数的装饰器，当python解释器执行到@time_decorator时，回去调用time_decorator函数，同时将被装饰的对象的函数名foo作为参数传入，这时time_decorator函数接受到一个参数(即方法名foo)，然后进入内嵌函数inner，计算开始时间，调用传进来的foo方法，再计算结束时间，打印函数foo的耗时，最后将结果用内部函数inner返回，其实就是一个闭包函数。</p>
@@ -782,20 +1382,137 @@
 <p>首先打印的是foo.<strong>name</strong>，这里是inner而不是foo，本质上是调用inner函数<br>其次打印的是inner的内容”Hello inner”，然后开始调用foo函数，打印”func1 is running.”<br>最后打印”方法foo用时:3.01444411277771秒”</p>
 </blockquote>
 <p>(2). 被装饰的对象为函数，且带参数  </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器为函数，且不带参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">time_decorator</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    如果原函数有参数，那闭包函数必须保持参数个数一直，并且将参数传递给原方法</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"><span class="meta">    @wraps(func)  # 保证装饰过的函数__name__属性不变</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(name)</span>:</span>  <span class="comment"># 如果被装饰的函数有形参，那么闭包函数必须有参数，且一致</span></span><br><span class="line">        print(<span class="string">"Hello inner"</span>)</span><br><span class="line">        start = time.time()</span><br><span class="line">        func(name)</span><br><span class="line">        end = time.time()</span><br><span class="line">        print(<span class="string">'方法&#123;&#125;用时:&#123;&#125;秒'</span>.format(func.__name__, end - start))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用装饰后的foo函数，且带参数</span></span><br><span class="line"><span class="meta">@time_decorator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(name)</span>:</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">"hello "</span> + name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用装饰后的foo函数</span></span><br><span class="line">print(foo.__name__)</span><br><span class="line">foo(<span class="string">'lucy'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">foo</span></span><br><span class="line"><span class="string">Hello inner</span></span><br><span class="line"><span class="string">hello lucy</span></span><br><span class="line"><span class="string">方法foo用时:3.000863790512085秒</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
 
-<p>(3). 被装饰的对象为类，且不带参数<br>(4). 被装饰的对象为类，且带参数</p>
+<blockquote>
+<p>当被装饰的函数，带参数时，需要在装饰器的闭包函数inner函数中添加一致的参数name，调用func对象时也需要加上一致的参数name，并且返回了以reurn inner形式返回闭包函数，具体调用过程看结果应该不难理解。</p>
+</blockquote>
+<blockquote>
+<p>当然，如果被装饰函数存在多个参数时，这里使用了python中动态参数的概念，利用<code>(*args, **kwargs)</code>来接收可变参数和关键字参数，这样装饰器就可以支持任意的组合参数的函数了。装饰器修改如下：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器为函数，且不带参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">time_decorator</span><span class="params">(func)</span>:</span></span><br><span class="line"><span class="meta">    @wraps(func)  # 保证装饰过的函数__name__属性不变</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args, **kwargs)</span>:</span>  <span class="comment"># 接收可变参数和关键字参数</span></span><br><span class="line">        print(<span class="string">"Hello inner"</span>)</span><br><span class="line">        start = time.time()</span><br><span class="line">        func(*args, **kwargs)</span><br><span class="line">        end = time.time()</span><br><span class="line">        print(<span class="string">'方法&#123;&#125;用时:&#123;&#125;秒'</span>.format(func.__name__, end - start))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用装饰后的foo函数，且带参数</span></span><br><span class="line"><span class="meta">@time_decorator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(name)</span>:</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">"hello "</span> + name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用装饰后的foo函数</span></span><br><span class="line">print(foo.__name__)</span><br><span class="line">foo(<span class="string">'lucy'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">foo</span></span><br><span class="line"><span class="string">Hello inner</span></span><br><span class="line"><span class="string">hello lucy</span></span><br><span class="line"><span class="string">方法foo用时:3.000807762145996秒</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<p>(3). 被装饰的对象为函数，且带返回值</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器为函数，且不带参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">time_decorator</span><span class="params">(func)</span>:</span></span><br><span class="line"><span class="meta">    @wraps(func)  # 保证装饰过的函数__name__属性不变</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">"Hello inner"</span>)</span><br><span class="line">        start = time.time()</span><br><span class="line">        res = func()</span><br><span class="line">        end = time.time()</span><br><span class="line">        print(<span class="string">'方法&#123;&#125;用时:&#123;&#125;秒'</span>.format(func.__name__, end - start))</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被装饰的对象为函数，且带返回值</span></span><br><span class="line"><span class="meta">@time_decorator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">"foo is running."</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"this is foo's return value"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用装饰后的foo函数</span></span><br><span class="line">print(foo.__name__)</span><br><span class="line">res = foo()</span><br><span class="line">print(<span class="string">'返回值：%s'</span> % res)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">foo</span></span><br><span class="line"><span class="string">Hello inner</span></span><br><span class="line"><span class="string">foo is running.</span></span><br><span class="line"><span class="string">方法foo用时:3.000837802886963秒</span></span><br><span class="line"><span class="string">返回值：this is foo's return value</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>若被装饰的函数是带返回值的，闭包函数inner中，调用func()时必须相应的带返回值，不然装饰函数时，也不进行返回，默认为None。</p>
+</blockquote>
+<p>(4). 被装饰的对象为函数，且装饰器带参数也有返回值</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器为函数，且带参数带返回值</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">time_decorator</span><span class="params">(arg=None)</span>:</span>  <span class="comment"># 如果在调用装饰器时为给传参数，则默认值为None</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(func)</span>:</span></span><br><span class="line"><span class="meta">        @wraps(func)  # 保证装饰过的函数__name__属性不变</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args,**kwargs)</span>:</span></span><br><span class="line">            print(<span class="string">"Hello inner"</span>)</span><br><span class="line">            print(<span class="string">"装饰器的参数为：&#123;&#125;"</span>.format(arg))</span><br><span class="line">            start = time.time()</span><br><span class="line">            res = func(*args,**kwargs)</span><br><span class="line">            end = time.time()</span><br><span class="line">            print(<span class="string">'方法&#123;&#125;用时:&#123;&#125;秒'</span>.format(func.__name__, end - start))</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> inner</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被装饰的对象为函数，且不定参数</span></span><br><span class="line"><span class="meta">@time_decorator('hello')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">"foo is running."</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"this is foo's return value"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用装饰后的foo函数</span></span><br><span class="line">print(foo.__name__)</span><br><span class="line">res = foo()</span><br><span class="line">print(<span class="string">'返回值：%s'</span> % res)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">foo</span></span><br><span class="line"><span class="string">Hello inner</span></span><br><span class="line"><span class="string">装饰器的参数为：hello</span></span><br><span class="line"><span class="string">foo is running.</span></span><br><span class="line"><span class="string">方法foo用时:3.000739336013794秒</span></span><br><span class="line"><span class="string">返回值：this is foo's return value</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>带有参数的装饰器，需要写三层嵌套函数，最外一层用来传递装饰器的参数。上面的装饰器即带参数也带返回值，先执行time_decorator(‘hello’)，返回wrapper函数的应用，然后使用wrapper对函数foo进行装饰，内层inner使用的是<code>*args,**kwargs</code>接收可变参数和关键字参数，具体运行顺序看结果应该不难理解。</p>
+</blockquote>
+<p>(5). 被装饰的对象为类，且不带参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器为函数，且不带参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">singleton</span><span class="params">(cls)</span>:</span></span><br><span class="line">    <span class="comment"># 在装饰器中声明一个变量，用于保存类的实例，那么这个实例对象将始终是通过一个实例对象</span></span><br><span class="line">    instances = &#123;&#125;</span><br><span class="line"><span class="meta">    @wraps(cls)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">'Hello inner'</span>)</span><br><span class="line">        print(<span class="string">'class name: &#123;&#125;'</span>.format(cls.__name__))</span><br><span class="line">        <span class="keyword">if</span> cls <span class="keyword">not</span> <span class="keyword">in</span> instances:</span><br><span class="line">            instances[cls] = cls()</span><br><span class="line">        <span class="keyword">return</span> instances[cls]</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被装饰的对象是类，且不带参数</span></span><br><span class="line"><span class="meta">@singleton</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.name = <span class="string">'lucy'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"her name is &#123;&#125;"</span>.format(self.name))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化装饰后的类</span></span><br><span class="line">print(Foo.__name__)</span><br><span class="line">foo = Foo()</span><br><span class="line">foo.say()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Foo</span></span><br><span class="line"><span class="string">Hello inner</span></span><br><span class="line"><span class="string">class name: Foo</span></span><br><span class="line"><span class="string">her name is lucy</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>上面的例子是基于装饰器的单例模式，通过装饰器装饰这个类，是的类在初始化时候始终将初始化实例赋值给instances，而instances是装饰器的一个实例对象，通过实例赋值，instances始终占有同一个内存空间，也就实现了单例模式设计。</p>
+</blockquote>
+<blockquote>
+<p>当然，如果用这个装饰器对类里面方法say进行装饰的话，此时装饰器single接收到的参数cls=say，所以打印”class name”是say，因为cls__name__就是say，这里等同于函数装饰器给函数进行装饰，于是装饰器的内层函数inner需要接受say带来的参数name，不加参数则会报错，其他与前面一样。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器为函数，且不带参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">singleton</span><span class="params">(cls)</span>:</span></span><br><span class="line">    <span class="comment"># 在装饰器中声明一个变量，用于保存类的实例，那么这个实例对象将始终是通过一个实例对象</span></span><br><span class="line">    instances = &#123;&#125;</span><br><span class="line"><span class="meta">    @wraps(cls)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(name)</span>:</span>  <span class="comment"># 必须和所修饰类里面的函数参数个数一致，否则会报错</span></span><br><span class="line">        print(<span class="string">'Hello inner'</span>)</span><br><span class="line">        print(<span class="string">'class name: &#123;&#125;'</span>.format(cls.__name__))</span><br><span class="line">        <span class="keyword">if</span> cls <span class="keyword">not</span> <span class="keyword">in</span> instances:</span><br><span class="line">            instances[cls] = cls(name)</span><br><span class="line">        <span class="keyword">return</span> instances[cls]</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被装饰的对象是类中的函数，调用类中的初始化参数</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.name = <span class="string">'lucy'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @singleton</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"her name is &#123;&#125;"</span>.format(self.name))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化装饰后的类</span></span><br><span class="line">print(Foo.__name__)</span><br><span class="line">foo = Foo()</span><br><span class="line">foo.say()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Foo</span></span><br><span class="line"><span class="string">Hello inner</span></span><br><span class="line"><span class="string">class name: say</span></span><br><span class="line"><span class="string">her name is lucy</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<p>(6). 被装饰的对象为类，且带参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器为函数，且不带参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">singleton</span><span class="params">(cls)</span>:</span></span><br><span class="line">    <span class="comment"># 在装饰器中声明一个变量，用于保存类的实例，那么这个实例对象将始终是通过一个实例对象</span></span><br><span class="line">    instances = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">    @wraps(cls)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">'Hello inner'</span>)</span><br><span class="line">        print(<span class="string">'class name: &#123;&#125;'</span>.format(cls.__name__))</span><br><span class="line">        <span class="keyword">if</span> cls <span class="keyword">not</span> <span class="keyword">in</span> instances:</span><br><span class="line">            instances[cls] = cls(*args, **kwargs)</span><br><span class="line">        <span class="keyword">return</span> instances[cls]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被装饰的对象是类，且带参数</span></span><br><span class="line"><span class="meta">@singleton</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        self.id = args[<span class="number">0</span>]</span><br><span class="line">        self.name = kwargs.get(<span class="string">'name_dict'</span>).get(self.id)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"her name is &#123;&#125;"</span>.format(self.name))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化装饰后的类</span></span><br><span class="line">print(Foo.__name__)</span><br><span class="line">foo = Foo(<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, name_dict=&#123;<span class="string">'1'</span>: <span class="string">'Lucy'</span>, <span class="string">'2'</span>: <span class="string">'Linda'</span>, <span class="string">'3'</span>: <span class="string">'Mary'</span>&#125;)</span><br><span class="line">foo.say()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Foo</span></span><br><span class="line"><span class="string">Hello inner</span></span><br><span class="line"><span class="string">class name: Foo</span></span><br><span class="line"><span class="string">her name is Lucy</span></span><br></pre></td></tr></table></figure>
+
+<p>(7). 被装饰的对象为类，且装饰器带参数也有返回值</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器为函数，且带参数带返回值</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">singleton</span><span class="params">(arg=None)</span>:</span> <span class="comment"># 如果在调用装饰器时为给传参数，则默认值为None</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(cls)</span>:</span></span><br><span class="line">        <span class="comment"># 在装饰器中声明一个变量，用于保存类的实例，那么这个实例对象将始终是通过一个实例对象</span></span><br><span class="line">        instances = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">        @wraps(cls)</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">            print(<span class="string">'Hello inner'</span>)</span><br><span class="line">            print(<span class="string">"装饰器的参数为：&#123;&#125;"</span>.format(arg))</span><br><span class="line">            print(<span class="string">'class name: &#123;&#125;'</span>.format(cls.__name__))</span><br><span class="line">            <span class="keyword">if</span> cls <span class="keyword">not</span> <span class="keyword">in</span> instances:</span><br><span class="line">                instances[cls] = cls(*args, **kwargs)</span><br><span class="line">            <span class="keyword">return</span> instances[cls]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> inner</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被装饰的对象是类，且带参数</span></span><br><span class="line"><span class="meta">@singleton('hello')</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        self.id = args[<span class="number">0</span>]</span><br><span class="line">        self.name = kwargs.get(<span class="string">'name_dict'</span>).get(self.id)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"her name is &#123;&#125;"</span>.format(self.name))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化装饰后的类</span></span><br><span class="line">print(Foo.__name__)</span><br><span class="line">foo = Foo(<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, name_dict=&#123;<span class="string">'1'</span>: <span class="string">'Lucy'</span>, <span class="string">'2'</span>: <span class="string">'Linda'</span>, <span class="string">'3'</span>: <span class="string">'Mary'</span>&#125;)</span><br><span class="line">foo.say()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Foo</span></span><br><span class="line"><span class="string">Hello inner</span></span><br><span class="line"><span class="string">装饰器的参数为：hello</span></span><br><span class="line"><span class="string">class name: Foo</span></span><br><span class="line"><span class="string">her name is Lucy</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这里与（4）类似，都是带有参数的装饰器，且装饰器为函数，需要写三层嵌套函数，最外一层用来传递装饰器的参数。上面的装饰器即带参数也带返回值，先执行time_decorator(‘hello’)，返回wrapper函数的应用，然后使用wrapper对函数foo进行装饰，内层inner使用的是<code>*args,**kwargs</code>接收可变参数和关键字参数，具体运行顺序看结果应该不难理解。</p>
+</blockquote>
 <ul>
-<li><p>装饰器自身为类<br>(1). 被装饰的对象为函数，且不带参数<br>(2). 被装饰的对象为函数，且带参数<br>(3). 被装饰的对象为类，且不带参数<br>(4). 被装饰的对象为类，且带参数</p>
-</li>
-<li><p>特殊的装饰器</p>
-</li>
-<li><p>装饰器顺序</p>
-</li>
-<li><p>通用万能装饰</p>
-</li>
+<li><strong>装饰器自身为类</strong></li>
 </ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decorator_all</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">"万能装饰器"</span>)</span><br><span class="line">        <span class="keyword">return</span> func(*args, **kwargs)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>类装饰器本质上和函数装饰器原理、作用相同，都是为其它函数增加额外的功能。但是相比于函数装饰器，类装饰器具有灵活度大、高内聚、封装性等优点。使用类装饰器可以直接依靠类内部的<strong>call</strong>方法来实现，当使用 @ 形式将类装饰器附加到函数上时，就会调用类装饰器的<strong>call</strong>方法。而不需要向函数装饰器那样，在装饰器函数中定义嵌套函数，来实现装饰功能。</p>
+</blockquote>
+<p>(1). 被装饰的对象为函数，且不带参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器是类，且不带参数</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Decorator</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,func)</span>:</span></span><br><span class="line">        <span class="comment"># 初始化函数只会调用一次，当第二次装饰的时候，这一步就滤过了</span></span><br><span class="line">        print(<span class="string">'decorator init'</span>)</span><br><span class="line">        print(<span class="string">'func name is &#123;&#125;'</span>.format(func.__name__))</span><br><span class="line">        self.func = func</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'装饰器中的功能：&#123;&#125; 睡眠3秒'</span>.format(self.func.__name__))</span><br><span class="line">        start = time.time()</span><br><span class="line">        res = self.func()</span><br><span class="line">        end = time.time()</span><br><span class="line">        print(<span class="string">'方法&#123;&#125;用时:&#123;&#125;秒'</span>.format(self.func.__name__, end - start))</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被装饰的对象为函数，且不带参数</span></span><br><span class="line"><span class="meta">@Decorator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">"foo is running."</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用装饰后的foo函数</span></span><br><span class="line">print(foo.func.__name__)</span><br><span class="line">foo()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">decorator init</span></span><br><span class="line"><span class="string">func name is foo</span></span><br><span class="line"><span class="string">foo</span></span><br><span class="line"><span class="string">装饰器中的功能：foo 睡眠3秒</span></span><br><span class="line"><span class="string">foo is running.</span></span><br><span class="line"><span class="string">方法foo用时:3.000671863555908秒</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>装饰器为类时，调用<strong>init</strong>方法创建实例、传递参数，并调用<strong>call</strong>方法实现对被装饰函数功能的添加。</p>
+</blockquote>
+<p>(2). 被装饰的对象为函数，且带参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器是类，且不带参数</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Decorator</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,func)</span>:</span></span><br><span class="line">        <span class="comment"># 初始化函数只会调用一次，当第二次装饰的时候，这一步就滤过了</span></span><br><span class="line">        print(<span class="string">'decorator init'</span>)</span><br><span class="line">        print(<span class="string">'func name is &#123;&#125;'</span>.format(func.__name__))</span><br><span class="line">        self.func = func</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        print(<span class="string">'装饰器中的功能：&#123;&#125; 睡眠3秒'</span>.format(self.func.__name__))</span><br><span class="line">        start = time.time()</span><br><span class="line">        res = self.func(name)</span><br><span class="line">        end = time.time()</span><br><span class="line">        print(<span class="string">'方法&#123;&#125;用时:&#123;&#125;秒'</span>.format(self.func.__name__, end - start))</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被装饰的对象为函数，且带参数</span></span><br><span class="line"><span class="meta">@Decorator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(name)</span>:</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">"hello "</span> + name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用装饰后的foo函数</span></span><br><span class="line">print(foo.func.__name__)</span><br><span class="line">foo(<span class="string">'lucy'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">decorator init</span></span><br><span class="line"><span class="string">func name is foo</span></span><br><span class="line"><span class="string">foo</span></span><br><span class="line"><span class="string">装饰器中的功能：foo 睡眠3秒</span></span><br><span class="line"><span class="string">hello lucy</span></span><br><span class="line"><span class="string">方法foo用时:3.0009634494781494秒</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>当被装饰的函数，且带参数时，需要在装饰器类的<strong>call</strong>中添加一致的参数name，调用func对象时也需要加上一致的参数name，并且返回了以reurn inner形式返回闭包函数，具体调用过程看结果应该不难理解。</p>
+</blockquote>
+<blockquote>
+<p>当然，如果被装饰函数存在多个参数时，这里使用了python中动态参数的概念，利用<code>(*args, **kwargs)</code>来接收可变参数和关键字参数，这样装饰器就可以支持任意的组合参数的函数了。装饰器修改如下：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器是类，且不带参数</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Decorator</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,func)</span>:</span></span><br><span class="line">        <span class="comment"># 初始化函数只会调用一次，当第二次装饰的时候，这一步就滤过了</span></span><br><span class="line">        print(<span class="string">'decorator init'</span>)</span><br><span class="line">        print(<span class="string">'func name is &#123;&#125;'</span>.format(func.__name__))</span><br><span class="line">        self.func = func</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">'装饰器中的功能：&#123;&#125; 睡眠3秒'</span>.format(self.func.__name__))</span><br><span class="line">        start = time.time()</span><br><span class="line">        res = self.func(*args, **kwargs)</span><br><span class="line">        end = time.time()</span><br><span class="line">        print(<span class="string">'方法&#123;&#125;用时:&#123;&#125;秒'</span>.format(self.func.__name__, end - start))</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被装饰的对象为函数，且带参数</span></span><br><span class="line"><span class="meta">@Decorator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(name)</span>:</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">"hello "</span> + name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用装饰后的foo函数</span></span><br><span class="line">print(foo.func.__name__)</span><br><span class="line">foo(<span class="string">'lucy'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">decorator init</span></span><br><span class="line"><span class="string">func name is foo</span></span><br><span class="line"><span class="string">foo</span></span><br><span class="line"><span class="string">装饰器中的功能：foo 睡眠3秒</span></span><br><span class="line"><span class="string">hello lucy</span></span><br><span class="line"><span class="string">方法foo用时:3.000622510910034秒</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<p>(3). 被装饰的对象为函数，且带返回值  </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器是类，且不带参数</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Decorator</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,func)</span>:</span></span><br><span class="line">        <span class="comment"># 初始化函数只会调用一次，当第二次装饰的时候，这一步就滤过了</span></span><br><span class="line">        print(<span class="string">'decorator init'</span>)</span><br><span class="line">        print(<span class="string">'func name is &#123;&#125;'</span>.format(func.__name__))</span><br><span class="line">        self.func = func</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'装饰器中的功能：&#123;&#125; 睡眠3秒'</span>.format(self.func.__name__))</span><br><span class="line">        start = time.time()</span><br><span class="line">        res = self.func()</span><br><span class="line">        end = time.time()</span><br><span class="line">        print(<span class="string">'方法&#123;&#125;用时:&#123;&#125;秒'</span>.format(self.func.__name__, end - start))</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被装饰的对象为函数，且带返回值</span></span><br><span class="line"><span class="meta">@Decorator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">"foo is running."</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"this is foo's return value"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用装饰后的foo函数</span></span><br><span class="line">print(foo.func.__name__)</span><br><span class="line">res = foo()</span><br><span class="line">print(<span class="string">'返回值：%s'</span> % res)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">decorator init</span></span><br><span class="line"><span class="string">func name is foo</span></span><br><span class="line"><span class="string">foo</span></span><br><span class="line"><span class="string">装饰器中的功能：foo 睡眠3秒</span></span><br><span class="line"><span class="string">foo is running.</span></span><br><span class="line"><span class="string">方法foo用时:3.0008039474487305秒</span></span><br><span class="line"><span class="string">返回值：this is foo's return value</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>和之前装饰器是函数一样，若被装饰的函数是带返回值的，闭包函数inner中，调用func()时必须相应的带返回值，不然装饰函数时，也不进行返回，默认为None。</p>
+</blockquote>
+<p>(4). 被装饰的对象为函数，且装饰器带参数也有返回值</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器是类，且带参数带返回值</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Decorator</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, arg=None)</span>:</span>  <span class="comment"># 如果在调用装饰器时为给传参数，则默认值为None</span></span><br><span class="line">        print(<span class="string">'decorator init'</span>)</span><br><span class="line">        self.arg = arg</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, func)</span>:</span></span><br><span class="line"><span class="meta">        @wraps(func)  # 保证装饰过的函数__name__属性不变</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">            print(<span class="string">"Hello inner"</span>)</span><br><span class="line">            print(<span class="string">'装饰器的参数为：&#123;&#125;'</span>.format(self.arg))</span><br><span class="line">            print(<span class="string">'装饰器中的功能：&#123;&#125; 睡眠3秒'</span>.format(func.__name__))</span><br><span class="line">            start = time.time()</span><br><span class="line">            res = func(*args, **kwargs)</span><br><span class="line">            end = time.time()</span><br><span class="line">            print(<span class="string">'方法&#123;&#125;用时:&#123;&#125;秒'</span>.format(func.__name__, end - start))</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被装饰的对象为函数，且不带参数</span></span><br><span class="line"><span class="meta">@Decorator('hello')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">"foo is running."</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"this is foo's return value"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用装饰后的foo函数</span></span><br><span class="line">print(foo.__name__)</span><br><span class="line">res = foo()</span><br><span class="line">print(<span class="string">'返回值：%s'</span> % res)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">decorator init</span></span><br><span class="line"><span class="string">foo</span></span><br><span class="line"><span class="string">Hello inner</span></span><br><span class="line"><span class="string">装饰器的参数为：hello</span></span><br><span class="line"><span class="string">装饰器中的功能：foo 睡眠3秒</span></span><br><span class="line"><span class="string">foo is running.</span></span><br><span class="line"><span class="string">类foo用时:3.000250816345215秒</span></span><br><span class="line"><span class="string">返回值：this is foo's return value</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>和之前装饰器是函数一样，带有参数的装饰器类，会把被装饰函数所带的参数传递给装饰器<strong>init</strong>进行初始化，而<strong>call</strong>作为外层函数接收被装饰函数的函数名，作为参数传递给内层函数inner，这里需要注意的是func传入，不需要在前面加self了，其他的跟函数装饰函数很相似，可以通过结果去理解整个装饰器的运行过程。</p>
+</blockquote>
+<p>(5). 被装饰的对象为类，且不带参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器是类，且不带参数</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Decorator</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,func)</span>:</span></span><br><span class="line">        <span class="comment"># 初始化函数只会调用一次，当第二次装饰的时候，这一步就滤过了</span></span><br><span class="line">        print(<span class="string">'decorator init'</span>)</span><br><span class="line">        print(<span class="string">'class name is &#123;&#125;'</span>.format(func.__name__))</span><br><span class="line">        self.func = func</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">'装饰器中的功能：&#123;&#125; 睡眠3秒'</span>.format(self.func.__name__))</span><br><span class="line">        start = time.time()</span><br><span class="line">        res = self.func(*args, **kwargs)</span><br><span class="line">        end = time.time()</span><br><span class="line">        print(<span class="string">'类&#123;&#125;用时:&#123;&#125;秒'</span>.format(self.func.__name__, end - start))</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被装饰的对象为函数，且不带参数</span></span><br><span class="line"><span class="meta">@Decorator</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.name = <span class="string">'lucy'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(self)</span>:</span></span><br><span class="line">        time.sleep(<span class="number">3</span>)</span><br><span class="line">        print(<span class="string">"her name is &#123;&#125;"</span>.format(self.name))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化装饰后的类</span></span><br><span class="line">print(<span class="string">"类名：&#123;&#125;"</span>.format(Foo.func.__name__))</span><br><span class="line">foo = Foo()</span><br><span class="line">foo.say()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">decorator init</span></span><br><span class="line"><span class="string">func name is Foo</span></span><br><span class="line"><span class="string">类名：Foo</span></span><br><span class="line"><span class="string">装饰器中的功能：Foo 睡眠3秒</span></span><br><span class="line"><span class="string">类Foo用时:0.0秒</span></span><br><span class="line"><span class="string">her name is lucy</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>跟函数装饰器装饰类一样，这里把类Foo通过@Decorator类装饰器传递给参数func，但这个类装饰器没有<strong>get</strong>方法，无法返回装饰后的类，而是进行初始化。第二次调用，这时类Foo()就相当于调用了装饰器的<strong>call</strong>方法，在里面调用self.func()方法</p>
+</blockquote>
+<p>(6). 被装饰的对象为类，且带参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器是类，且不带参数</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Decorator</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,func)</span>:</span></span><br><span class="line">        <span class="comment"># 初始化函数只会调用一次，当第二次装饰的时候，这一步就滤过了</span></span><br><span class="line">        print(<span class="string">'decorator init'</span>)</span><br><span class="line">        print(<span class="string">'class name is &#123;&#125;'</span>.format(func.__name__))</span><br><span class="line">        self.func = func</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">'装饰器中的功能：&#123;&#125; 睡眠3秒'</span>.format(self.func.__name__))</span><br><span class="line">        start = time.time()</span><br><span class="line">        res = self.func(*args, **kwargs)</span><br><span class="line">        end = time.time()</span><br><span class="line">        print(<span class="string">'类&#123;&#125;用时:&#123;&#125;秒'</span>.format(self.func.__name__, end - start))</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被装饰的对象为类，且带参数</span></span><br><span class="line"><span class="meta">@Decorator</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        self.id = args[<span class="number">0</span>]</span><br><span class="line">        self.name = kwargs.get(<span class="string">'name_dict'</span>).get(self.id)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"her name is &#123;&#125;"</span>.format(self.name))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化装饰后的类</span></span><br><span class="line">print(<span class="string">"类名：&#123;&#125;"</span>.format(Foo.func.__name__))</span><br><span class="line">foo = Foo(<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, name_dict=&#123;<span class="string">'1'</span>: <span class="string">'Lucy'</span>, <span class="string">'2'</span>: <span class="string">'Linda'</span>, <span class="string">'3'</span>: <span class="string">'Mary'</span>&#125;)</span><br><span class="line">foo.say()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">decorator init</span></span><br><span class="line"><span class="string">class name is Foo</span></span><br><span class="line"><span class="string">类名：Foo</span></span><br><span class="line"><span class="string">装饰器中的功能：Foo 睡眠3秒</span></span><br><span class="line"><span class="string">方法Foo用时:0.0秒</span></span><br><span class="line"><span class="string">her name is Lucy</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<p>(7). 被装饰的对象为类，且装饰器带参数也有返回值</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器是类，且带参数带返回值</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Decorator</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, arg=None)</span>:</span>  <span class="comment"># 如果在调用装饰器时为给传参数，则默认值为None</span></span><br><span class="line">        print(<span class="string">'decorator init'</span>)</span><br><span class="line">        self.arg = arg</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, func)</span>:</span></span><br><span class="line"><span class="meta">        @wraps(func)  # 保证装饰过的函数__name__属性不变</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">            print(<span class="string">"Hello inner"</span>)</span><br><span class="line">            print(<span class="string">'装饰器的参数为：&#123;&#125;'</span>.format(self.arg))</span><br><span class="line">            print(<span class="string">'装饰器中的功能：&#123;&#125; 睡眠3秒'</span>.format(func.__name__))</span><br><span class="line">            start = time.time()</span><br><span class="line">            res = func(*args, **kwargs)</span><br><span class="line">            end = time.time()</span><br><span class="line">            print(<span class="string">'类&#123;&#125;用时:&#123;&#125;秒'</span>.format(func.__name__, end - start))</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被装饰的对象为类，且带参数</span></span><br><span class="line"><span class="meta">@Decorator('hello')</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        self.id = args[<span class="number">0</span>]</span><br><span class="line">        self.name = kwargs.get(<span class="string">'name_dict'</span>).get(self.id)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"her name is &#123;&#125;"</span>.format(self.name))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化装饰后的类</span></span><br><span class="line">print(<span class="string">"类名：&#123;&#125;"</span>.format(Foo.func.__name__))</span><br><span class="line">foo = Foo(<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, name_dict=&#123;<span class="string">'1'</span>: <span class="string">'Lucy'</span>, <span class="string">'2'</span>: <span class="string">'Linda'</span>, <span class="string">'3'</span>: <span class="string">'Mary'</span>&#125;)</span><br><span class="line">foo.say()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">decorator init</span></span><br><span class="line"><span class="string">类名：Foo</span></span><br><span class="line"><span class="string">Hello inner</span></span><br><span class="line"><span class="string">装饰器的参数为：hello</span></span><br><span class="line"><span class="string">装饰器中的功能：Foo 睡眠3秒</span></span><br><span class="line"><span class="string">类Foo用时:0.0秒</span></span><br><span class="line"><span class="string">her name is Lucy</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>特殊的装饰器(类静态属性装饰器)</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 类静态属性装饰器</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, height, weigth)</span>:</span></span><br><span class="line">        self.height = height</span><br><span class="line">        self.weigth = weigth</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">ratio</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.height / self.weigth</span><br><span class="line"></span><br><span class="line">foo = Foo(<span class="number">176</span>, <span class="number">120</span>)</span><br><span class="line">print(foo.ratio)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果为：1.4666666666666666</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其中，@property是一个特殊的装饰器，把ratio方法变成一个属性，所以调用的时候是foo.ratio而不是foo.ratio()。这类特殊装饰器需要python的特定的属性和机制的支持才可以实现，不同特性的装饰器所需机制不同。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 实现@property装饰器效果</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Prop</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, arg)</span>:</span></span><br><span class="line">        self.arg = arg</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__get__</span><span class="params">(self, instance, owner)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.arg(instance)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用效果与原生的@property装饰器的一样</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, height, weigth)</span>:</span></span><br><span class="line">        self.height = height</span><br><span class="line">        self.weigth = weigth</span><br><span class="line"></span><br><span class="line"><span class="meta">    @Prop</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">ratio</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.height / self.weigth</span><br><span class="line"></span><br><span class="line">foo = Foo(<span class="number">176</span>, <span class="number">120</span>)</span><br><span class="line">print(foo.ratio)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果为：1.4666666666666666</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>经典的装饰器装饰类，通过setattr魔术方法，对Person类进行修改，name作为类属性，<code>name = TypeCheck(name,required_type)</code>，这样修改了Person类，使得Person类有了两个类变量，一个是<code>name = TypeCheck(&#39;name&#39;, required_type)</code>，另一个是<code>age = TypeCheck(&#39;age&#39;, required_type)</code>。</p>
+</blockquote>
+<blockquote>
+<p>因此实例化时<code>Person(&#39;lucy&#39;, 18)</code>，self.name中name不是实例变量而是类变量，会调用描述器TypeCheck，赋值的时候，就会调用<strong>set</strong>方法，取值的时候会调用<strong>get</strong>方法。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 经典的装饰器装饰类</span></span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TypeCheck</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, srcType, dstType)</span>:</span></span><br><span class="line">        self.srcType = srcType</span><br><span class="line">        self.dstType = dstType</span><br><span class="line"></span><br><span class="line">    <span class="comment"># instance == a, cls == A</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__get__</span><span class="params">(self, instance, cls)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> instance <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> self</span><br><span class="line">        <span class="keyword">return</span> instance.__dict__[self.srcType]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__set__</span><span class="params">(self, instance, value)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> isinstance(value, self, dstType):</span><br><span class="line">            instance.__dict__[self.srcType] = value</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">raise</span> TypeError(<span class="string">'&#123;&#125; should be &#123;&#125;'</span>.format(value, self.dstType))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器自身是一个函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">type_assert</span><span class="params">(**kwargs)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dec</span><span class="params">(cls)</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">wraps</span><span class="params">(*args)</span>:</span></span><br><span class="line">            <span class="keyword">for</span> name, required_type <span class="keyword">in</span> kwargs.items():</span><br><span class="line">                setattr(cls, name, TypeCheck(name, required_type))</span><br><span class="line">            <span class="keyword">return</span> cls(*args)  <span class="comment"># 这里是实例化新的Person类后返回实例对象，也就是p</span></span><br><span class="line">        <span class="keyword">return</span> wraps</span><br><span class="line">    <span class="keyword">return</span> dec</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰对象是一个类，且带参数</span></span><br><span class="line"><span class="meta">@type_assert(name=str, age=int)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化新的Person类，这里相对于调用的是wraps函数</span></span><br><span class="line">p = Person(<span class="string">'lucy'</span>, <span class="number">18</span>)</span><br><span class="line">print(p.name)</span><br><span class="line">print(p.age)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器修改后的Person类为下面这个新的Person类，因此实例化Person的时候，调用的是下面这个新的Person</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    name = TypeCheck(<span class="string">'name'</span>, str)</span><br><span class="line">    age = TypeCheck(<span class="string">'age'</span>, int)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name:str, age:int)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>装饰器顺序</li>
+</ul>
+<blockquote>
+<p>当有两个或两个以上装饰器装饰一个函数时，那么语法糖语句执行流程的顺序是从下往上（就近原则，靠近函数定义的先执行）。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 第一个装饰器wrapper1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wrapper1</span><span class="params">(func)</span>:</span></span><br><span class="line">    print(<span class="string">"wapper1"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">"inner1"</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'&lt;b&gt;'</span> + func() + <span class="string">'&lt;/b&gt;'</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二个装饰器wrapper2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wrapper2</span><span class="params">(func)</span>:</span></span><br><span class="line">    print(<span class="string">"wapper2"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">"inner2"</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'&lt;i&gt;'</span> + func() + <span class="string">'&lt;/i&gt;'</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="comment"># 两个装饰器</span></span><br><span class="line"><span class="meta">@wrapper1</span></span><br><span class="line"><span class="meta">@wrapper2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"foo"</span>)</span><br><span class="line">    print(<span class="string">"end"</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"hello"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用装饰后的foo函数</span></span><br><span class="line">res = foo()</span><br><span class="line">print(res)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">wapper2</span></span><br><span class="line"><span class="string">wapper1</span></span><br><span class="line"><span class="string">inner1</span></span><br><span class="line"><span class="string">inner2</span></span><br><span class="line"><span class="string">foo</span></span><br><span class="line"><span class="string">end</span></span><br><span class="line"><span class="string">&lt;b&gt;&lt;i&gt;hello&lt;/i&gt;&lt;/b&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>根据结果，函数foo先用wapper2装饰器进行装饰，接着是用wrapper1再进行装饰，但是在调用过程中又是先执行第一个装饰器wrapper1，然后在执行第二个装饰器wrapper2。</p>
+</blockquote>
+<blockquote>
+<p>具体分析其过程，就近原则先用第二个装饰器wrapper2进行装饰，@wrapper2等价于<code>foo = wrapper2(foo)</code>，此时括号内的foo即是函数名，而外部的foo实际指向的是wrapper2的inner。<br>@wrapper1等价于<code>foo = wrapper1(foo)</code>，此时括号内的foo指向的是<code>wrapper2.inner</code>，而外部的foo指向wrapper1的inner。</p>
+</blockquote>
+<blockquote>
+<p>当执行到@wrapper1时要对下面的函数进行装饰，此时解释器继续往下走，发现并不是一个函数名，而又是一个装饰器，这时@wrapper1装饰器暂停执行，而接着执行接下来的装饰器@wrapper2，接着把foo函数名传入到装饰器wrapper2函数func，从而打印”wrapper2”，在wrapper2装饰完后，此时的foo指向wrapper2的inner函数地址，这是又返回来执行@wrapper1，接着把新的foo（即wrapper2.inner）传入wrapper装饰器函数中，因此打印”wrapper1”，在wrapper1装饰完后，此时的foo指向wrapper1的inner函数地址。</p>
+</blockquote>
+<blockquote>
+<p>在调用foo函数的时候，根据上述分析，此时foo指向wrapper1的inner函数地址，故打印”inner1”，接下来调用func()的时候，实际上调用的是wrapper2.inner()函数，所以会打印”inner2”，而wrapper2.inner()函数中，调用的func()才是最初传入的foo函数，所以打印”foo”和”end”，最后一层层调用完后打印的”<code>&lt;b&gt;&lt;i&gt;hello&lt;/i&gt;&lt;/b&gt;</code>“。</p>
+</blockquote>
+<ul>
+<li>通用万能装饰</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decorator_all</span><span class="params">(func)</span>:</span></span><br><span class="line"><span class="meta">    @wraps(func)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">"万能装饰器"</span>)</span><br><span class="line">        <span class="keyword">return</span> func(*args, **kwargs)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
 
 <h2 id="21-浅拷贝与深拷贝"><a href="#21-浅拷贝与深拷贝" class="headerlink" title="21. 浅拷贝与深拷贝"></a>21. 浅拷贝与深拷贝</h2><h2 id="22-设计模式"><a href="#22-设计模式" class="headerlink" title="22. 设计模式"></a>22. 设计模式</h2><ul>
 <li>工厂模式</li>
@@ -895,599 +1612,6 @@
         <tag>知识回顾</tag>
         <tag>python</tag>
         <tag>后端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>操作系统知识点总结归纳</title>
-    <url>/2020/05/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<blockquote>
-<p>本文主要对操作系统和Linux基础知识进行梳理、回顾，把一些需要记住的概念原理，和容易混淆，晦涩的知识点进行归纳。</p>
-</blockquote>
-<a id="more"></a>
-
-<div style='display: none'>
-
-<!-- TOC -->
-
-<ul>
-<li><a href="#操作系统">操作系统</a><ul>
-<li><a href="#1-进程线程以及协程间的区别">1. 进程、线程以及协程间的区别</a></li>
-<li><a href="#2-线程间通信的方式">2. 线程间通信的方式</a></li>
-<li><a href="#3-进程间通信的方式">3. 进程间通信的方式</a></li>
-<li><a href="#4-如何实现协程">4. 如何实现协程</a></li>
-<li><a href="#5-并行与并发">5. 并行与并发</a></li>
-<li><a href="#6-同步与异步">6. 同步与异步</a></li>
-<li><a href="#7-阻塞与非阻塞">7. 阻塞与非阻塞</a></li>
-<li><a href="#8-僵尸进程孤儿进程守护进程">8. 僵尸进程、孤儿进程、守护进程</a></li>
-<li><a href="#9-线程安全">9. 线程安全</a></li>
-<li><a href="#10-多线程资源竞争怎么解决">10. 多线程资源竞争，怎么解决</a></li>
-<li><a href="#11-有几种锁">11. 有几种锁</a></li>
-<li><a href="#12-线程池原理与实现">12. 线程池原理与实现</a></li>
-<li><a href="#13-调度算法">13. 调度算法</a></li>
-</ul>
-</li>
-<li><a href="#linux">Linux</a><ul>
-<li><a href="#1-linux常用命令">1. linux常用命令</a></li>
-<li><a href="#2-linux内存管理机制">2. Linux内存管理机制</a></li>
-</ul>
-</li>
-</ul>
-<!-- /TOC -->
-
-</div>
-
-<h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><h2 id="1-进程、线程以及协程间的区别"><a href="#1-进程、线程以及协程间的区别" class="headerlink" title="1. 进程、线程以及协程间的区别"></a>1. 进程、线程以及协程间的区别</h2><p><strong><a href="https://blog.csdn.net/holysll/article/details/89344794" target="_blank" rel="noopener">线程、进程、协程、锁的总结</a></strong></p>
-<h2 id="2-线程间通信的方式"><a href="#2-线程间通信的方式" class="headerlink" title="2. 线程间通信的方式"></a>2. 线程间通信的方式</h2><h2 id="3-进程间通信的方式"><a href="#3-进程间通信的方式" class="headerlink" title="3. 进程间通信的方式"></a>3. 进程间通信的方式</h2><h2 id="4-如何实现协程"><a href="#4-如何实现协程" class="headerlink" title="4. 如何实现协程"></a>4. 如何实现协程</h2><h2 id="5-并行与并发"><a href="#5-并行与并发" class="headerlink" title="5. 并行与并发"></a>5. 并行与并发</h2><h2 id="6-同步与异步"><a href="#6-同步与异步" class="headerlink" title="6. 同步与异步"></a>6. 同步与异步</h2><h2 id="7-阻塞与非阻塞"><a href="#7-阻塞与非阻塞" class="headerlink" title="7. 阻塞与非阻塞"></a>7. 阻塞与非阻塞</h2><h2 id="8-僵尸进程、孤儿进程、守护进程"><a href="#8-僵尸进程、孤儿进程、守护进程" class="headerlink" title="8. 僵尸进程、孤儿进程、守护进程"></a>8. 僵尸进程、孤儿进程、守护进程</h2><h2 id="9-线程安全"><a href="#9-线程安全" class="headerlink" title="9. 线程安全"></a>9. 线程安全</h2><h2 id="10-多线程资源竞争，怎么解决"><a href="#10-多线程资源竞争，怎么解决" class="headerlink" title="10. 多线程资源竞争，怎么解决"></a>10. 多线程资源竞争，怎么解决</h2><h2 id="11-有几种锁"><a href="#11-有几种锁" class="headerlink" title="11. 有几种锁"></a>11. 有几种锁</h2><ul>
-<li><p>互斥锁</p>
-</li>
-<li><p>可重入锁</p>
-</li>
-<li><p>死锁</p>
-</li>
-</ul>
-<h2 id="12-线程池原理与实现"><a href="#12-线程池原理与实现" class="headerlink" title="12. 线程池原理与实现"></a>12. 线程池原理与实现</h2><h2 id="13-调度算法"><a href="#13-调度算法" class="headerlink" title="13. 调度算法"></a>13. 调度算法</h2><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="1-linux常用命令"><a href="#1-linux常用命令" class="headerlink" title="1. linux常用命令"></a>1. linux常用命令</h2><h2 id="2-Linux内存管理机制"><a href="#2-Linux内存管理机制" class="headerlink" title="2. Linux内存管理机制"></a>2. Linux内存管理机制</h2>]]></content>
-      <categories>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>操作系统</tag>
-        <tag>Linux</tag>
-        <tag>进程</tag>
-        <tag>线程</tag>
-        <tag>锁</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构知识点总结归纳</title>
-    <url>/2020/05/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
-    <content><![CDATA[<blockquote>
-<p>本文主要对数据结构基础知识进行梳理、回顾，解析原理，并通过实际例子深刻理解。</p>
-</blockquote>
-<a id="more"></a>
-
-<div style='display: none'>
-
-<!-- TOC -->
-
-<ul>
-<li><a href="#数据结构">数据结构</a><ul>
-<li><a href="#1-字符串string">1. 字符串(String)</a></li>
-<li><a href="#2-数组array">2. 数组(Array)</a></li>
-<li><a href="#3-堆heap">3. 堆(Heap)</a></li>
-<li><a href="#4-栈stack">4. 栈(Stack)</a></li>
-<li><a href="#5-队列queue">5. 队列(Queue)</a></li>
-<li><a href="#6-链表linked-list">6. 链表(Linked-List)</a></li>
-<li><a href="#7-树tree">7. 树(Tree)</a></li>
-<li><a href="#8-图graph">8. 图(Graph)</a></li>
-<li><a href="#9-哈希表hash">9. 哈希表(Hash)</a></li>
-</ul>
-</li>
-</ul>
-<!-- /TOC -->
-
-</div>
-
-<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="1-字符串-String"><a href="#1-字符串-String" class="headerlink" title="1. 字符串(String)"></a>1. 字符串(String)</h2><h2 id="2-数组-Array"><a href="#2-数组-Array" class="headerlink" title="2. 数组(Array)"></a>2. 数组(Array)</h2><h2 id="3-堆-Heap"><a href="#3-堆-Heap" class="headerlink" title="3. 堆(Heap)"></a>3. 堆(Heap)</h2><h2 id="4-栈-Stack"><a href="#4-栈-Stack" class="headerlink" title="4. 栈(Stack)"></a>4. 栈(Stack)</h2><h2 id="5-队列-Queue"><a href="#5-队列-Queue" class="headerlink" title="5. 队列(Queue)"></a>5. 队列(Queue)</h2><h2 id="6-链表-Linked-List"><a href="#6-链表-Linked-List" class="headerlink" title="6. 链表(Linked-List)"></a>6. 链表(Linked-List)</h2><h2 id="7-树-Tree"><a href="#7-树-Tree" class="headerlink" title="7. 树(Tree)"></a>7. 树(Tree)</h2><h2 id="8-图-Graph"><a href="#8-图-Graph" class="headerlink" title="8. 图(Graph)"></a>8. 图(Graph)</h2><h2 id="9-哈希表-Hash"><a href="#9-哈希表-Hash" class="headerlink" title="9. 哈希表(Hash)"></a>9. 哈希表(Hash)</h2>]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习知识点总结归纳</title>
-    <url>/2020/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<blockquote>
-<p>本文主要对机器学习基础知识进行梳理、回顾，把一些需要记住的概念原理，和容易混淆，晦涩的知识点进行归纳。</p>
-</blockquote>
-<a id="more"></a>
-
-<div style='display: none'>
-
-<!-- TOC -->
-
-<ul>
-<li><a href="#1-机器学习基础">1 机器学习基础</a><ul>
-<li><a href="#11-机器学习概述">1.1 机器学习概述</a></li>
-<li><a href="#12-监督学习">1.2 监督学习</a></li>
-<li><a href="#13-非监督学习">1.3 非监督学习</a></li>
-<li><a href="#14-增强学习">1.4 增强学习</a></li>
-<li><a href="#15-深度学习">1.5 深度学习</a></li>
-</ul>
-</li>
-<li><a href="#2-分类问题">2 分类问题</a><ul>
-<li><a href="#21-knn">2.1 KNN</a></li>
-<li><a href="#22-nb">2.2 NB</a></li>
-<li><a href="#23-svm">2.3 SVM</a></li>
-<li><a href="#24-adaboost">2.4 AdaBoost</a></li>
-<li><a href="#25-dt">2.5 DT</a></li>
-</ul>
-</li>
-<li><a href="#3-聚类分析">3 聚类分析</a><ul>
-<li><a href="#31-k-means">3.1 K-means</a></li>
-<li><a href="#32-dbscan">3.2 DBSCAN</a></li>
-<li><a href="#33-lda">3.3 LDA</a></li>
-</ul>
-</li>
-<li><a href="#4-预测分析">4 预测分析</a><ul>
-<li><a href="#41-时间序列">4.1 时间序列</a></li>
-<li><a href="#42-bp神经网络">4.2 BP神经网络</a></li>
-</ul>
-</li>
-<li><a href="#5-关联分析">5 关联分析</a><ul>
-<li><a href="#51-apriori">5.1 Apriori</a></li>
-<li><a href="#52-fp-growth">5.2 FP-Growth</a></li>
-</ul>
-</li>
-<li><a href="#6-回归分析">6 回归分析</a><ul>
-<li><a href="#61-一元回归">6.1 一元回归</a></li>
-<li><a href="#62-多元回归">6.2 多元回归</a></li>
-<li><a href="#63-逻辑回归">6.3 逻辑回归</a></li>
-</ul>
-</li>
-<li><a href="#7-集成学习">7 集成学习</a><ul>
-<li><a href="#71-bagging">7.1 Bagging</a></li>
-<li><a href="#72-随机森林">7.2. 随机森林</a></li>
-<li><a href="#73-boosting">7.3 Boosting</a></li>
-<li><a href="#74-adaboost">7.4 AdaBoost</a></li>
-</ul>
-</li>
-<li><a href="#8-深度学习">8 深度学习</a><ul>
-<li><a href="#81-有监督">8.1 有监督</a></li>
-<li><a href="#82-无监督">8.2 无监督</a></li>
-<li><a href="#83-tensorflow">8.3 TensorFlow</a></li>
-<li><a href="#84-theano">8.4 Theano</a></li>
-</ul>
-</li>
-<li><a href="#9-数据预处理">9 数据预处理</a><ul>
-<li><a href="#91-数据清洗">9.1 数据清洗</a><ul>
-<li><a href="#911-异常值处理">9.1.1 异常值处理</a></li>
-<li><a href="#912-缺失值处理">9.1.2 缺失值处理</a></li>
-<li><a href="#913-噪声处理">9.1.3 噪声处理</a></li>
-<li><a href="#914-倾斜数据处理">9.1.4 倾斜数据处理</a></li>
-</ul>
-</li>
-<li><a href="#92-数据集成">9.2 数据集成</a></li>
-<li><a href="#93-数据变换">9.3 数据变换</a></li>
-<li><a href="#94-数据归约">9.4 数据归约</a></li>
-</ul>
-</li>
-<li><a href="#10-数据降维">10 数据降维</a><ul>
-<li><a href="#101-主成份分析">10.1 主成份分析</a></li>
-<li><a href="#102-奇异值分解">10.2 奇异值分解</a></li>
-</ul>
-</li>
-</ul>
-<!-- /TOC -->
-
-</div>
-
-
-<h1 id="1-机器学习基础"><a href="#1-机器学习基础" class="headerlink" title="1 机器学习基础"></a>1 机器学习基础</h1><h2 id="1-1-机器学习概述"><a href="#1-1-机器学习概述" class="headerlink" title="1.1 机器学习概述"></a>1.1 机器学习概述</h2><h2 id="1-2-监督学习"><a href="#1-2-监督学习" class="headerlink" title="1.2 监督学习"></a>1.2 监督学习</h2><h2 id="1-3-非监督学习"><a href="#1-3-非监督学习" class="headerlink" title="1.3 非监督学习"></a>1.3 非监督学习</h2><h2 id="1-4-增强学习"><a href="#1-4-增强学习" class="headerlink" title="1.4 增强学习"></a>1.4 增强学习</h2><h2 id="1-5-深度学习"><a href="#1-5-深度学习" class="headerlink" title="1.5 深度学习"></a>1.5 深度学习</h2><h1 id="2-分类问题"><a href="#2-分类问题" class="headerlink" title="2 分类问题"></a>2 分类问题</h1><h2 id="2-1-KNN"><a href="#2-1-KNN" class="headerlink" title="2.1 KNN"></a>2.1 KNN</h2><h2 id="2-2-NB"><a href="#2-2-NB" class="headerlink" title="2.2 NB"></a>2.2 NB</h2><h2 id="2-3-SVM"><a href="#2-3-SVM" class="headerlink" title="2.3 SVM"></a>2.3 SVM</h2><h2 id="2-4-AdaBoost"><a href="#2-4-AdaBoost" class="headerlink" title="2.4 AdaBoost"></a>2.4 AdaBoost</h2><h2 id="2-5-DT"><a href="#2-5-DT" class="headerlink" title="2.5 DT"></a>2.5 DT</h2><h1 id="3-聚类分析"><a href="#3-聚类分析" class="headerlink" title="3 聚类分析"></a>3 聚类分析</h1><h2 id="3-1-K-means"><a href="#3-1-K-means" class="headerlink" title="3.1 K-means"></a>3.1 K-means</h2><h2 id="3-2-DBSCAN"><a href="#3-2-DBSCAN" class="headerlink" title="3.2 DBSCAN"></a>3.2 DBSCAN</h2><h2 id="3-3-LDA"><a href="#3-3-LDA" class="headerlink" title="3.3 LDA"></a>3.3 LDA</h2><h1 id="4-预测分析"><a href="#4-预测分析" class="headerlink" title="4 预测分析"></a>4 预测分析</h1><h2 id="4-1-时间序列"><a href="#4-1-时间序列" class="headerlink" title="4.1 时间序列"></a>4.1 时间序列</h2><h2 id="4-2-BP神经网络"><a href="#4-2-BP神经网络" class="headerlink" title="4.2 BP神经网络"></a>4.2 BP神经网络</h2><h1 id="5-关联分析"><a href="#5-关联分析" class="headerlink" title="5 关联分析"></a>5 关联分析</h1><h2 id="5-1-Apriori"><a href="#5-1-Apriori" class="headerlink" title="5.1 Apriori"></a>5.1 Apriori</h2><h2 id="5-2-FP-Growth"><a href="#5-2-FP-Growth" class="headerlink" title="5.2 FP-Growth"></a>5.2 FP-Growth</h2><h1 id="6-回归分析"><a href="#6-回归分析" class="headerlink" title="6 回归分析"></a>6 回归分析</h1><h2 id="6-1-一元回归"><a href="#6-1-一元回归" class="headerlink" title="6.1 一元回归"></a>6.1 一元回归</h2><h2 id="6-2-多元回归"><a href="#6-2-多元回归" class="headerlink" title="6.2 多元回归"></a>6.2 多元回归</h2><h2 id="6-3-逻辑回归"><a href="#6-3-逻辑回归" class="headerlink" title="6.3 逻辑回归"></a>6.3 逻辑回归</h2><h1 id="7-集成学习"><a href="#7-集成学习" class="headerlink" title="7 集成学习"></a>7 集成学习</h1><h2 id="7-1-Bagging"><a href="#7-1-Bagging" class="headerlink" title="7.1 Bagging"></a>7.1 Bagging</h2><h2 id="7-2-随机森林"><a href="#7-2-随机森林" class="headerlink" title="7.2. 随机森林"></a>7.2. 随机森林</h2><h2 id="7-3-Boosting"><a href="#7-3-Boosting" class="headerlink" title="7.3 Boosting"></a>7.3 Boosting</h2><h2 id="7-4-AdaBoost"><a href="#7-4-AdaBoost" class="headerlink" title="7.4 AdaBoost"></a>7.4 AdaBoost</h2><h1 id="8-深度学习"><a href="#8-深度学习" class="headerlink" title="8 深度学习"></a>8 深度学习</h1><h2 id="8-1-有监督"><a href="#8-1-有监督" class="headerlink" title="8.1 有监督"></a>8.1 有监督</h2><h2 id="8-2-无监督"><a href="#8-2-无监督" class="headerlink" title="8.2 无监督"></a>8.2 无监督</h2><h2 id="8-3-TensorFlow"><a href="#8-3-TensorFlow" class="headerlink" title="8.3 TensorFlow"></a>8.3 TensorFlow</h2><h2 id="8-4-Theano"><a href="#8-4-Theano" class="headerlink" title="8.4 Theano"></a>8.4 Theano</h2><h1 id="9-数据预处理"><a href="#9-数据预处理" class="headerlink" title="9 数据预处理"></a>9 数据预处理</h1><h2 id="9-1-数据清洗"><a href="#9-1-数据清洗" class="headerlink" title="9.1 数据清洗"></a>9.1 数据清洗</h2><h3 id="9-1-1-异常值处理"><a href="#9-1-1-异常值处理" class="headerlink" title="9.1.1 异常值处理"></a>9.1.1 异常值处理</h3><h3 id="9-1-2-缺失值处理"><a href="#9-1-2-缺失值处理" class="headerlink" title="9.1.2 缺失值处理"></a>9.1.2 缺失值处理</h3><h3 id="9-1-3-噪声处理"><a href="#9-1-3-噪声处理" class="headerlink" title="9.1.3 噪声处理"></a>9.1.3 噪声处理</h3><h3 id="9-1-4-倾斜数据处理"><a href="#9-1-4-倾斜数据处理" class="headerlink" title="9.1.4 倾斜数据处理"></a>9.1.4 倾斜数据处理</h3><h2 id="9-2-数据集成"><a href="#9-2-数据集成" class="headerlink" title="9.2 数据集成"></a>9.2 数据集成</h2><h2 id="9-3-数据变换"><a href="#9-3-数据变换" class="headerlink" title="9.3 数据变换"></a>9.3 数据变换</h2><h2 id="9-4-数据归约"><a href="#9-4-数据归约" class="headerlink" title="9.4 数据归约"></a>9.4 数据归约</h2><h1 id="10-数据降维"><a href="#10-数据降维" class="headerlink" title="10 数据降维"></a>10 数据降维</h1><h2 id="10-1-主成份分析"><a href="#10-1-主成份分析" class="headerlink" title="10.1 主成份分析"></a>10.1 主成份分析</h2><h2 id="10-2-奇异值分解"><a href="#10-2-奇异值分解" class="headerlink" title="10.2 奇异值分解"></a>10.2 奇异值分解</h2>]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>分类问题</tag>
-        <tag>聚类分析</tag>
-        <tag>预测分析</tag>
-        <tag>回归分析</tag>
-        <tag>关联分析</tag>
-        <tag>集成学习</tag>
-        <tag>深度学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据库知识点总结归纳</title>
-    <url>/2020/05/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<blockquote>
-<p>本文主要对数据库基础知识进行梳理、回顾，把一些需要记住的概念原理，和容易混淆，晦涩的知识点进行归纳。</p>
-</blockquote>
-<a id="more"></a>
-
-<div style='display: none'>
-
-<!-- TOC -->
-
-<ul>
-<li><a href="#数据库常识">数据库常识</a><ul>
-<li><a href="#1-什么是索引">1. 什么是索引</a></li>
-<li><a href="#2-事务的特性">2. 事务的特性</a></li>
-<li><a href="#3-存储过程">3. 存储过程</a></li>
-<li><a href="#4-数据库怎么优化查询效率">4. 数据库怎么优化查询效率</a></li>
-<li><a href="#5-数据库优化方案">5. 数据库优化方案</a></li>
-<li><a href="#6-什么是悲观锁">6. 什么是悲观锁</a></li>
-<li><a href="#7-什么是乐观锁">7. 什么是乐观锁</a></li>
-<li><a href="#8-什么是缓存穿透">8. 什么是缓存穿透</a></li>
-<li><a href="#9-什么是缓存击穿">9. 什么是缓存击穿</a></li>
-<li><a href="#10-什么是缓存雪崩">10. 什么是缓存雪崩</a></li>
-<li><a href="#11-sql查询基础">11. SQL查询基础</a></li>
-<li><a href="#12-排序">12. 排序</a></li>
-<li><a href="#13-聚合函数">13. 聚合函数</a></li>
-<li><a href="#14-分组">14. 分组</a></li>
-<li><a href="#15-关联查询">15. 关联查询</a></li>
-<li><a href="#16-limit的用法">16. LIMIT的用法</a></li>
-<li><a href="#17-case-when">17. case when</a></li>
-</ul>
-</li>
-<li><a href="#mysql数据库">Mysql数据库</a><ul>
-<li><a href="#1-mysql-常用数据类型">1. mysql 常用数据类型</a></li>
-<li><a href="#2-mysql数据库引擎">2. mysql数据库引擎</a></li>
-<li><a href="#3-mysql的索引类型">3. mysql的索引类型</a></li>
-<li><a href="#4-mysql-几种锁的区别">4. Mysql 几种锁的区别</a></li>
-<li><a href="#5-mysql事务原理特性事务并发控制">5. mysql事务原理、特性、事务并发控制</a></li>
-</ul>
-</li>
-<li><a href="#redis数据库">Redis数据库</a><ul>
-<li><a href="#1-redis的原理">1. redis的原理</a></li>
-<li><a href="#2-持久化机制">2. 持久化机制</a></li>
-<li><a href="#3-redis-和-memcached-的主要区别">3. redis 和 memcached 的主要区别</a></li>
-<li><a href="#4-redis-高可用">4. Redis 高可用</a></li>
-<li><a href="#5-redis-高并发">5. Redis 高并发</a></li>
-</ul>
-</li>
-<li><a href="#mongodb数据库">MongoDB数据库</a></li>
-<li><a href="#hive数据库">Hive数据库</a></li>
-<li><a href="#hbase数据库">Hbase数据库</a></li>
-<li><a href="#hadoop生态">Hadoop生态</a></li>
-</ul>
-<!-- /TOC -->
-
-</div>
-
-<h1 id="数据库常识"><a href="#数据库常识" class="headerlink" title="数据库常识"></a>数据库常识</h1><h2 id="1-什么是索引"><a href="#1-什么是索引" class="headerlink" title="1. 什么是索引"></a>1. 什么是索引</h2><h2 id="2-事务的特性"><a href="#2-事务的特性" class="headerlink" title="2. 事务的特性"></a>2. 事务的特性</h2><ul>
-<li>原子性(Atomicity)</li>
-</ul>
-<blockquote>
-<p>事务中的全部操作在数据库中是不可分割的，要么全部完成，要么均不执行。</p>
-</blockquote>
-<ul>
-<li>一致性(Consistency)</li>
-</ul>
-<blockquote>
-<p>几个并行执行的事务，其执行结果必须与按某一顺序串行执行的结果相一致。</p>
-</blockquote>
-<ul>
-<li>隔离性(Isolation)</li>
-</ul>
-<blockquote>
-<p>事务的执行不受其他事务的干扰，事务执行的中间结果对其他事务必须是透明的。</p>
-</blockquote>
-<ul>
-<li>持久性(Durability)</li>
-</ul>
-<blockquote>
-<p>对于任意已交事务，系统必须保证该事务对数据库的改变不被丢失，即使数据库出现异常。</p>
-</blockquote>
-<h2 id="3-存储过程"><a href="#3-存储过程" class="headerlink" title="3. 存储过程"></a>3. 存储过程</h2><h2 id="4-数据库怎么优化查询效率"><a href="#4-数据库怎么优化查询效率" class="headerlink" title="4. 数据库怎么优化查询效率"></a>4. 数据库怎么优化查询效率</h2><h2 id="5-数据库优化方案"><a href="#5-数据库优化方案" class="headerlink" title="5. 数据库优化方案"></a>5. 数据库优化方案</h2><h2 id="6-什么是悲观锁"><a href="#6-什么是悲观锁" class="headerlink" title="6. 什么是悲观锁"></a>6. 什么是悲观锁</h2><h2 id="7-什么是乐观锁"><a href="#7-什么是乐观锁" class="headerlink" title="7. 什么是乐观锁"></a>7. 什么是乐观锁</h2><h2 id="8-什么是缓存穿透"><a href="#8-什么是缓存穿透" class="headerlink" title="8. 什么是缓存穿透"></a>8. 什么是缓存穿透</h2><h2 id="9-什么是缓存击穿"><a href="#9-什么是缓存击穿" class="headerlink" title="9. 什么是缓存击穿"></a>9. 什么是缓存击穿</h2><h2 id="10-什么是缓存雪崩"><a href="#10-什么是缓存雪崩" class="headerlink" title="10. 什么是缓存雪崩"></a>10. 什么是缓存雪崩</h2><h2 id="11-SQL查询基础"><a href="#11-SQL查询基础" class="headerlink" title="11. SQL查询基础"></a>11. SQL查询基础</h2><p><strong><a href="https://www.runoob.com/sql/sql-tutorial.html" target="_blank" rel="noopener">SQL基础知识</a></strong></p>
-<ul>
-<li>select语句</li>
-</ul>
-<blockquote>
-<p>格式：select 字段 from 表名； # 全部字段可以用 *</p>
-</blockquote>
-<ul>
-<li>where 用于限制查询的结果</li>
-</ul>
-<blockquote>
-<p>格式：where 字段=’xxx’;  # 查询条件&gt; &lt; &gt;= &lt;= = !=</p>
-</blockquote>
-<ul>
-<li><p>与(AND)或(OR)</p>
-</li>
-<li><p>在(IN)不在(NOT IN)</p>
-</li>
-<li><p>空(NULL)非空(NOT NULL)</p>
-</li>
-<li><p>全部(ALL) 任一(ANY)</p>
-</li>
-<li><p>在[a,b]之间</p>
-</li>
-</ul>
-<blockquote>
-<p>格式：between a and b</p>
-</blockquote>
-<ul>
-<li>排重DISTINCT</li>
-</ul>
-<blockquote>
-<p>格式：select DISTINCT 字段 from 表名；</p>
-</blockquote>
-<h2 id="12-排序"><a href="#12-排序" class="headerlink" title="12. 排序"></a>12. 排序</h2><ul>
-<li>ORDER BY语句</li>
-</ul>
-<blockquote>
-<p>格式：select 字段 from 表名 where 条件 ORDER BY 字段；</p>
-</blockquote>
-<ul>
-<li>升序(ASC)与降序(DESC)</li>
-</ul>
-<blockquote>
-<p>格式：select 字段 from 表名 where 条件 ORDER BY 字段 ASC;<br>格式：select 字段 from 表名 where 条件 ORDER BY 字段 DESC;  </p>
-</blockquote>
-<ul>
-<li>多项排序</li>
-</ul>
-<blockquote>
-<p>格式：select 字段 from 表名 where 条件 ORDER BY 字段 ASC|DESC，字段ASC|DESC;</p>
-</blockquote>
-<h2 id="13-聚合函数"><a href="#13-聚合函数" class="headerlink" title="13. 聚合函数"></a>13. 聚合函数</h2><blockquote>
-<p>把 select 语句的查询结果汇聚成一个结果，这样的函数叫聚合函数。</p>
-</blockquote>
-<ul>
-<li><p>最大值(MAX)</p>
-</li>
-<li><p>最小值(MIN)</p>
-</li>
-<li><p>平均值(SVG)</p>
-</li>
-<li><p>求和(SUM)</p>
-</li>
-<li><p>统计数量(COUNT)</p>
-</li>
-</ul>
-<h2 id="14-分组"><a href="#14-分组" class="headerlink" title="14. 分组"></a>14. 分组</h2><ul>
-<li>GROUP BY</li>
-</ul>
-<blockquote>
-<p>格式：select 组函数 from 表 where 条件 group by 字段;</p>
-</blockquote>
-<ul>
-<li>HAVING 组判断条件，它的真假决定一组数据是否返回</li>
-</ul>
-<blockquote>
-<p>格式：select 组函数 from 表 where 条件 group by 字段 having 组判断条件;</p>
-</blockquote>
-<h2 id="15-关联查询"><a href="#15-关联查询" class="headerlink" title="15. 关联查询"></a>15. 关联查询</h2><ul>
-<li>JOIN：如果表中有至少一个匹配，则返回行  </li>
-</ul>
-<blockquote>
-<p>格式：select * from a join b on a.id=b.id;</p>
-</blockquote>
-<ul>
-<li>内连接(INNER JOIN)：只返回两个表中联结字段相等的行</li>
-</ul>
-<blockquote>
-<p>格式：select * from a inner join b on a.id=b.id;  # 其中inner可以省略，等同于JOIN的用法</p>
-</blockquote>
-<ul>
-<li>左外连接(LEFT JOIN 或 LEFT OUTER JOIN)：即使右表中没有匹配，也从左表返回所有的行</li>
-</ul>
-<blockquote>
-<p>格式：select * from a left outer join b on a.id=b.aid;  # 其中outer可忽略</p>
-</blockquote>
-<ul>
-<li>右外连接(RIGHT JOIN 或 RIGHT OUTER JOIN)：即使左表中没有匹配，也从右表返回所有的行</li>
-</ul>
-<blockquote>
-<p>格式：select * from a right outer join b on a.id=b.aid;  # 其中outer可忽略</p>
-</blockquote>
-<ul>
-<li>全连接(FULL JOIN 或 FULL OUTER JOIN): 只要其中一个表中存在匹配，就返回行。相当于左外连接+右外链接，注意mysql不支持全连接</li>
-</ul>
-<blockquote>
-<p>格式：select * from a full outer join b on a.id=b.id。# 其中outer可忽略</p>
-</blockquote>
-<ul>
-<li>自连接：自连接意思是把自身表当成另外一张表看待，互相关联查询，连接方式可以使用以上的内外连接，这种连接方式可以解决很多奇怪的问题。</li>
-</ul>
-<blockquote>
-<p>格式：SELECT ab.* from a ab,a ac where ab.id&gt;ac.id</p>
-</blockquote>
-<h2 id="16-LIMIT的用法"><a href="#16-LIMIT的用法" class="headerlink" title="16. LIMIT的用法"></a>16. LIMIT的用法</h2><blockquote>
-<p>格式：select * from student limit 10;  # 查询前10条数据，显示1-10条数据</p>
-</blockquote>
-<blockquote>
-<p>格式：select * from student limit 1,10;  # 查询从第2行开始，累加10条id记录，共显示id为2….11</p>
-</blockquote>
-<blockquote>
-<p>格式：select * from student limit 5,10;  # 查询从第6行开始向前加10条数据，共显示id为6,7….15  </p>
-</blockquote>
-<blockquote>
-<p>格式：select * from student limit i,n;  # i: 为查询结果的索引值(默认从0开始),当i=0时可省略i; n: 为查询结果返回的数量</p>
-</blockquote>
-<h2 id="17-case-when"><a href="#17-case-when" class="headerlink" title="17. case when"></a>17. case when</h2><p><strong><a href="https://www.cnblogs.com/aipan/p/7770611.html" target="_blank" rel="noopener">CASE WHEN 及 SELECT CASE WHEN的用法</a></strong><br><strong><a href="https://www.cnblogs.com/cx-zyq/archive/2013/05/16/3082295.html" target="_blank" rel="noopener">SQL Case when 的使用方法</a></strong></p>
-<ul>
-<li>简单Case函数</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CASE sex</span><br><span class="line">WHEN '1' THEN '男'</span><br><span class="line">WHEN '2' THEN '女'</span><br><span class="line">ELSE '其他' <span class="keyword">END</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Case搜索函数</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CASE WHEN sex = '1' THEN '男'</span><br><span class="line">WHEN sex = '2' THEN '女'</span><br><span class="line">ELSE '其他' <span class="keyword">END</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>两种方式，可以实现相同的功能。简单Case函数的写法相对比较简洁，但是和Case搜索函数相比，功能方面会有些限制，比如写判断式。还有一个需要注意的问题，Case函数只返回第一个符合条件的值，剩下的Case部分将会被自动忽略。</p>
-</blockquote>
-<p><strong>实例分析：</strong></p>
-<p>(1). 已知数据按照另外一种方式进行分组，分析</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*根据这个国家人口数据，统计亚洲和北美洲的人口数量*/</span></span><br><span class="line"><span class="keyword">SELECT</span>  <span class="keyword">SUM</span>(population),</span><br><span class="line"><span class="keyword">CASE</span> country  <span class="keyword">WHEN</span> <span class="string">'中国'</span> <span class="keyword">THEN</span> <span class="string">'亚洲'</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="string">'印度'</span> <span class="keyword">THEN</span> <span class="string">'亚洲'</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="string">'日本'</span> <span class="keyword">THEN</span> <span class="string">'亚洲'</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="string">'美国'</span> <span class="keyword">THEN</span> <span class="string">'北美洲'</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="string">'加拿大'</span>  <span class="keyword">THEN</span> <span class="string">'北美洲'</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="string">'墨西哥'</span>  <span class="keyword">THEN</span> <span class="string">'北美洲'</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span></span><br><span class="line"><span class="keyword">FROM</span>    Table_A</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line"><span class="keyword">CASE</span> country </span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">'中国'</span> <span class="keyword">THEN</span> <span class="string">'亚洲'</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">'印度'</span> <span class="keyword">THEN</span> <span class="string">'亚洲'</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">'日本'</span> <span class="keyword">THEN</span> <span class="string">'亚洲'</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">'美国'</span> <span class="keyword">THEN</span> <span class="string">'北美洲'</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">'加拿大'</span>   <span class="keyword">THEN</span> <span class="string">'北美洲'</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">'墨西哥'</span>   <span class="keyword">THEN</span> <span class="string">'北美洲'</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*判断工资的等级，并统计每一等级的人数*/</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">WHEN</span> salary &lt;= <span class="number">500</span> <span class="keyword">THEN</span> <span class="string">'1'</span></span><br><span class="line"><span class="keyword">WHEN</span> salary &gt; <span class="number">500</span> <span class="keyword">AND</span> salary &lt;= <span class="number">600</span>  <span class="keyword">THEN</span> <span class="string">'2'</span></span><br><span class="line"><span class="keyword">WHEN</span> salary &gt; <span class="number">600</span> <span class="keyword">AND</span> salary &lt;= <span class="number">800</span>  <span class="keyword">THEN</span> <span class="string">'3'</span></span><br><span class="line"><span class="keyword">WHEN</span> salary &gt; <span class="number">800</span> <span class="keyword">AND</span> salary &lt;= <span class="number">1000</span> <span class="keyword">THEN</span> <span class="string">'4'</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="literal">NULL</span> <span class="keyword">END</span> salary_class, <span class="comment">-- 别名命名</span></span><br><span class="line"><span class="keyword">COUNT</span>(*)  <span class="keyword">FROM</span>    Table_A</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">WHEN</span> salary &lt;= <span class="number">500</span> <span class="keyword">THEN</span> <span class="string">'1'</span></span><br><span class="line"><span class="keyword">WHEN</span> salary &gt; <span class="number">500</span> <span class="keyword">AND</span> salary &lt;= <span class="number">600</span>  <span class="keyword">THEN</span> <span class="string">'2'</span></span><br><span class="line"><span class="keyword">WHEN</span> salary &gt; <span class="number">600</span> <span class="keyword">AND</span> salary &lt;= <span class="number">800</span>  <span class="keyword">THEN</span> <span class="string">'3'</span></span><br><span class="line"><span class="keyword">WHEN</span> salary &gt; <span class="number">800</span> <span class="keyword">AND</span> salary &lt;= <span class="number">1000</span> <span class="keyword">THEN</span> <span class="string">'4'</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="literal">NULL</span> <span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
-
-<p>(2). 用一个SQL语句完成不同条件的分组</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*按照国家和性别进行分组*/</span></span><br><span class="line"><span class="keyword">SELECT</span> country, </span><br><span class="line"><span class="keyword">SUM</span>( <span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="string">'1'</span> <span class="keyword">THEN</span>  population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>),  <span class="comment">--男性人口</span></span><br><span class="line"><span class="keyword">SUM</span>( <span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="string">'2'</span> <span class="keyword">THEN</span>  population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>)   <span class="comment">--女性人口</span></span><br><span class="line"><span class="keyword">FROM</span>  Table_A  <span class="keyword">GROUP</span> <span class="keyword">BY</span> country;</span><br></pre></td></tr></table></figure>
-
-<p>(3). 在Check中使用Case函数</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*公司A，这个公司有个规定，女职员的工资必须高于1000块*/</span></span><br><span class="line">CONSTRAINT check_salary <span class="keyword">CHECK</span></span><br><span class="line">( <span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="string">'2'</span></span><br><span class="line"><span class="keyword">THEN</span> <span class="keyword">CASE</span> <span class="keyword">WHEN</span> salary &gt; <span class="number">1000</span></span><br><span class="line"><span class="keyword">THEN</span> <span class="number">1</span> <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="number">1</span> <span class="keyword">END</span> = <span class="number">1</span> )</span><br></pre></td></tr></table></figure>
-
-<p>(4). 根据条件有选择的UPDATE</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 1.工资5000以上的职员，工资减少10% */</span></span><br><span class="line"><span class="keyword">UPDATE</span> Personnel  <span class="keyword">SET</span> salary = salary * <span class="number">0.9</span>  <span class="keyword">WHERE</span> salary &gt;= <span class="number">5000</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 2.工资在2000到4600之间的职员，工资增加15% */</span></span><br><span class="line"><span class="keyword">UPDATE</span> Personnel  <span class="keyword">SET</span> salary = salary * <span class="number">1.15</span> <span class="keyword">WHERE</span> salary &gt;= <span class="number">2000</span> <span class="keyword">AND</span> salary &lt; <span class="number">4600</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 3.如果满足条件1和条件2，顺序执行则会出现问题。</span></span><br><span class="line"><span class="comment">假设有个人工资5000块。首先，按照条件1，工资减少10%，变成工资4500。</span></span><br><span class="line"><span class="comment">接下来运行第二个SQL时候，因为这个人的工资是4500在2000到4600的范围之内，需增加15%，</span></span><br><span class="line"><span class="comment">最后这个人的工资结果是5175,不但没有减少，反而增加了。</span></span><br><span class="line"><span class="comment">如果要是反过来执行，那么工资4600的人相反会变成减少工资。 </span></span><br><span class="line"><span class="comment">这里用到case when 进行不同条件的更新*/</span></span><br><span class="line"><span class="keyword">UPDATE</span> Personnel</span><br><span class="line"><span class="keyword">SET</span> salary =</span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">WHEN</span> salary &gt;= <span class="number">5000</span>  　                <span class="keyword">THEN</span> salary * <span class="number">0.9</span></span><br><span class="line">     <span class="keyword">WHEN</span> salary &gt;= <span class="number">2000</span> <span class="keyword">AND</span> salary &lt; <span class="number">4600</span>  <span class="keyword">THEN</span> salary * <span class="number">1.15</span></span><br><span class="line"><span class="keyword">ELSE</span> salary <span class="keyword">END</span>;  <span class="comment">-- 这行else必须写，不写会导致不符合这两个条件的工资会变成NULL</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 把主键a和b相互交换 */</span></span><br><span class="line"><span class="keyword">UPDATE</span> SomeTable</span><br><span class="line"><span class="keyword">SET</span> p_key = <span class="keyword">CASE</span> <span class="keyword">WHEN</span> p_key = <span class="string">'a'</span>  <span class="keyword">THEN</span> <span class="string">'b'</span></span><br><span class="line"><span class="keyword">WHEN</span> p_key = <span class="string">'b'</span>  <span class="keyword">THEN</span> <span class="string">'a'</span>  <span class="keyword">ELSE</span> p_key <span class="keyword">END</span></span><br><span class="line"><span class="keyword">WHERE</span> p_key <span class="keyword">IN</span> (<span class="string">'a'</span>, <span class="string">'b'</span>);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>检查两个表数据是否一致</li>
-</ul>
-<blockquote>
-<p>Case函数不同于DECODE函数。在Case函数中，可以使用BETWEEN,LIKE,IS NULL,IN,EXISTS等等。比如说使用IN,EXISTS，可以进行子查询，从而 实现更多的功能。</p>
-</blockquote>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--使用IN的时候</span></span><br><span class="line"><span class="keyword">SELECT</span> keyCol,</span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">WHEN</span> keyCol <span class="keyword">IN</span> ( <span class="keyword">SELECT</span> keyCol <span class="keyword">FROM</span> tbl_B )  <span class="keyword">THEN</span> <span class="string">'Matched'</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="string">'Unmatched'</span> <span class="keyword">END</span> Label</span><br><span class="line"><span class="keyword">FROM</span> tbl_A;</span><br><span class="line"></span><br><span class="line"><span class="comment">--使用EXISTS的时候</span></span><br><span class="line"><span class="keyword">SELECT</span> keyCol,</span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">EXISTS</span> ( <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tbl_B  <span class="keyword">WHERE</span> tbl_A.keyCol = tbl_B.keyCol )  <span class="keyword">THEN</span> <span class="string">'Matched'</span>  <span class="keyword">ELSE</span> <span class="string">'Unmatched'</span> <span class="keyword">END</span> Label</span><br><span class="line"><span class="keyword">FROM</span> tbl_A;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>在Case函数中使用合计函数</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Studentclass</span></span><br><span class="line"><span class="comment">+------+----------+--------------+-----------------+</span></span><br><span class="line"><span class="comment">|std_id| class_id |  class_name  |  main_class_flg |</span></span><br><span class="line"><span class="comment">+------+----------+--------------+-----------------+</span></span><br><span class="line"><span class="comment">| 100  |    1     |     经济学    |        Y        |</span></span><br><span class="line"><span class="comment">| 100  |    2     |     历史学    |        N        |</span></span><br><span class="line"><span class="comment">| 200  |    2     |     历史学    |        N        |</span></span><br><span class="line"><span class="comment">| 200  |    3     |     考古学    |        Y        |</span></span><br><span class="line"><span class="comment">| 200  |    4     |     计算机    |        N        |</span></span><br><span class="line"><span class="comment">| 300  |    4     |     计算机    |        N        |</span></span><br><span class="line"><span class="comment">| 400  |    5     |      化学     |        N        |</span></span><br><span class="line"><span class="comment">| 500  |    6     |      数学     |        N        |</span></span><br><span class="line"><span class="comment">+------+----------+---------------+----------------+</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--条件1：只选择了一门课程的学生, 返回那门课程的ID</span></span><br><span class="line"><span class="keyword">SELECT</span> std_id, <span class="keyword">MAX</span>(class_id) <span class="keyword">AS</span> main_class  <span class="keyword">FROM</span> Studentclass  <span class="keyword">GROUP</span> <span class="keyword">BY</span> std_id  <span class="keyword">HAVING</span> <span class="keyword">COUNT</span>(*) = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--条件2：选择多门课程的学生, 返回所选的主课程ID</span></span><br><span class="line"><span class="keyword">SELECT</span> std_id, class_id <span class="keyword">AS</span> main_class  <span class="keyword">FROM</span> Studentclass  <span class="keyword">WHERE</span> main_class_flg = <span class="string">'Y'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--使用Case函数,满足以上两个条件</span></span><br><span class="line"><span class="keyword">SELECT</span>  std_id, </span><br><span class="line"><span class="keyword">CASE</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="keyword">COUNT</span>(*) = <span class="number">1</span>                   <span class="keyword">THEN</span> <span class="keyword">MAX</span>(class_id)</span><br><span class="line"><span class="keyword">ELSE</span></span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> main_class_flg = <span class="string">'Y'</span>  <span class="keyword">THEN</span> class_id  <span class="keyword">ELSE</span> <span class="literal">NULL</span> <span class="keyword">END</span>)</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">AS</span> main_class</span><br><span class="line"><span class="keyword">FROM</span> Studentclass  <span class="keyword">GROUP</span> <span class="keyword">BY</span> std_id;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>select case when</li>
-</ul>
-<blockquote>
-<p>select 与 case结合使用最大的好处有两点，一是在显示查询结果时可以灵活的组织格式，二是有效避免了多次对同一个表或几个表的访问。</p>
-</blockquote>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 例如表 students(id, name ,birthday, sex, grade)，要求按每个年级统计男生和女生的数量各是多少，统计结果的表头为，年级，男生数量，女生数量。如果不用select case when，为了将男女数量并列显示，统计起来非常麻烦，先确定年级信息，再根据年级取男生数和女生数，而且很容易出错。*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> grade, <span class="keyword">COUNT</span> (<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="number">1</span> <span class="keyword">THEN</span> <span class="number">1</span></span><br><span class="line">                            <span class="keyword">ELSE</span> <span class="literal">NULL</span></span><br><span class="line">                        <span class="keyword">END</span>) 男生数,</span><br><span class="line">               <span class="keyword">COUNT</span> (<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="number">2</span> <span class="keyword">THEN</span> <span class="number">1</span></span><br><span class="line">                            <span class="keyword">ELSE</span> <span class="literal">NULL</span></span><br><span class="line">                       <span class="keyword">END</span>) 女生数</span><br><span class="line"><span class="keyword">FROM</span> students</span><br><span class="line"></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> grade;</span><br></pre></td></tr></table></figure>
-
-<h1 id="Mysql数据库"><a href="#Mysql数据库" class="headerlink" title="Mysql数据库"></a>Mysql数据库</h1><h2 id="1-mysql-常用数据类型"><a href="#1-mysql-常用数据类型" class="headerlink" title="1. mysql 常用数据类型"></a>1. mysql 常用数据类型</h2><h2 id="2-mysql数据库引擎"><a href="#2-mysql数据库引擎" class="headerlink" title="2. mysql数据库引擎"></a>2. mysql数据库引擎</h2><h2 id="3-mysql的索引类型"><a href="#3-mysql的索引类型" class="headerlink" title="3. mysql的索引类型"></a>3. mysql的索引类型</h2><h2 id="4-Mysql-几种锁的区别"><a href="#4-Mysql-几种锁的区别" class="headerlink" title="4. Mysql 几种锁的区别"></a>4. Mysql 几种锁的区别</h2><h2 id="5-mysql事务原理、特性、事务并发控制"><a href="#5-mysql事务原理、特性、事务并发控制" class="headerlink" title="5. mysql事务原理、特性、事务并发控制"></a>5. mysql事务原理、特性、事务并发控制</h2><h1 id="Redis数据库"><a href="#Redis数据库" class="headerlink" title="Redis数据库"></a>Redis数据库</h1><h2 id="1-redis的原理"><a href="#1-redis的原理" class="headerlink" title="1. redis的原理"></a>1. redis的原理</h2><h2 id="2-持久化机制"><a href="#2-持久化机制" class="headerlink" title="2. 持久化机制"></a>2. 持久化机制</h2><h2 id="3-redis-和-memcached-的主要区别"><a href="#3-redis-和-memcached-的主要区别" class="headerlink" title="3. redis 和 memcached 的主要区别"></a>3. redis 和 memcached 的主要区别</h2><h2 id="4-Redis-高可用"><a href="#4-Redis-高可用" class="headerlink" title="4. Redis 高可用"></a>4. Redis 高可用</h2><h2 id="5-Redis-高并发"><a href="#5-Redis-高并发" class="headerlink" title="5. Redis 高并发"></a>5. Redis 高并发</h2><h1 id="MongoDB数据库"><a href="#MongoDB数据库" class="headerlink" title="MongoDB数据库"></a>MongoDB数据库</h1><h1 id="Hive数据库"><a href="#Hive数据库" class="headerlink" title="Hive数据库"></a>Hive数据库</h1><h1 id="Hbase数据库"><a href="#Hbase数据库" class="headerlink" title="Hbase数据库"></a>Hbase数据库</h1><h1 id="Hadoop生态"><a href="#Hadoop生态" class="headerlink" title="Hadoop生态"></a>Hadoop生态</h1>]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-        <tag>Mysql</tag>
-        <tag>Redis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>算法编程知识点总结归纳</title>
-    <url>/2020/05/08/%E7%AE%97%E6%B3%95%E4%B8%8E%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<blockquote>
-<p>本文主要对算法编程基础知识进行梳理、回顾，以及一些常见的算法掌握。</p>
-</blockquote>
-<a id="more"></a>
-
-<div style='display: none'>
-
-<!-- TOC -->
-
-<ul>
-<li><a href="#算法编程">算法编程</a><ul>
-<li><a href="#1-反转链表">1. 反转链表</a></li>
-<li><a href="#2-dfs">2. DFS</a></li>
-<li><a href="#3-bfs">3. BFS</a></li>
-<li><a href="#4-冒泡排序">4. 冒泡排序</a></li>
-<li><a href="#5-快排">5. 快排</a></li>
-<li><a href="#6-堆排序">6. 堆排序</a></li>
-<li><a href="#7-二叉树">7. 二叉树</a></li>
-<li><a href="#8-二分查找">8. 二分查找</a></li>
-<li><a href="#9-求最大树深">9. 求最大树深</a></li>
-<li><a href="#10-动态规划问题">10. 动态规划问题</a></li>
-<li><a href="#11-01背包问题">11. 01背包问题</a></li>
-</ul>
-</li>
-</ul>
-<!-- /TOC -->
-
-</div>
-
-<h1 id="算法编程"><a href="#算法编程" class="headerlink" title="算法编程"></a>算法编程</h1><h2 id="1-反转链表"><a href="#1-反转链表" class="headerlink" title="1. 反转链表"></a>1. 反转链表</h2><h2 id="2-DFS"><a href="#2-DFS" class="headerlink" title="2. DFS"></a>2. DFS</h2><h2 id="3-BFS"><a href="#3-BFS" class="headerlink" title="3. BFS"></a>3. BFS</h2><h2 id="4-冒泡排序"><a href="#4-冒泡排序" class="headerlink" title="4. 冒泡排序"></a>4. 冒泡排序</h2><h2 id="5-快排"><a href="#5-快排" class="headerlink" title="5. 快排"></a>5. 快排</h2><h2 id="6-堆排序"><a href="#6-堆排序" class="headerlink" title="6. 堆排序"></a>6. 堆排序</h2><h2 id="7-二叉树"><a href="#7-二叉树" class="headerlink" title="7. 二叉树"></a>7. 二叉树</h2><h2 id="8-二分查找"><a href="#8-二分查找" class="headerlink" title="8. 二分查找"></a>8. 二分查找</h2><h2 id="9-求最大树深"><a href="#9-求最大树深" class="headerlink" title="9. 求最大树深"></a>9. 求最大树深</h2><h2 id="10-动态规划问题"><a href="#10-动态规划问题" class="headerlink" title="10. 动态规划问题"></a>10. 动态规划问题</h2><h2 id="11-01背包问题"><a href="#11-01背包问题" class="headerlink" title="11. 01背包问题"></a>11. 01背包问题</h2><h2 id="12-两个栈实现一个队列"><a href="#12-两个栈实现一个队列" class="headerlink" title="12. 两个栈实现一个队列"></a>12. 两个栈实现一个队列</h2><h2 id="13-二叉树的直径"><a href="#13-二叉树的直径" class="headerlink" title="13. 二叉树的直径"></a>13. 二叉树的直径</h2><h2 id="14-全排列"><a href="#14-全排列" class="headerlink" title="14. 全排列"></a>14. 全排列</h2><ul>
-<li>itertools内置permutations方法实现</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> permutations</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            n = int(input().strip())</span><br><span class="line">            s = [str(i + <span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line">            res = list(permutations(s))</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> res:</span><br><span class="line">                print(<span class="string">" "</span>.join(i))</span><br><span class="line">            print(len(res))</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    func()</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>递归实现</li>
-</ul>
-<p>具体详细的思路参考：</p>
-<p><strong><a href="https://blog.csdn.net/weixin_39910711/article/details/100692318" target="_blank" rel="noopener">递归实现全排列（回溯思想）</a></strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">permutations</span><span class="params">(s, begin, end)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> count</span><br><span class="line">    <span class="keyword">if</span> begin == end:</span><br><span class="line">        print(<span class="string">" "</span>.join(s))</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(begin, end):</span><br><span class="line">            s[i], s[begin] = s[begin], s[i]</span><br><span class="line">            permutations(s, begin + <span class="number">1</span>, end)</span><br><span class="line">            s[i], s[begin] = s[begin], s[i]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    s = [str(i + <span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(int(input().strip()))]</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    permutations(s, <span class="number">0</span>, len(s))</span><br><span class="line">    print(count)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>DFS实现</li>
-</ul>
-<p><strong><a href="https://blog.csdn.net/weixin_39910711/article/details/100692318" target="_blank" rel="noopener">深度优先搜索（DFS）实现全排列</a></strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">permutations</span><span class="params">(s, position, visit, num)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> position == len(s):</span><br><span class="line">        print(<span class="string">" "</span>.join(num))</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> index <span class="keyword">in</span> range(len(s)):</span><br><span class="line">            <span class="keyword">if</span> visit[index] == <span class="literal">True</span>:</span><br><span class="line">                num[position] = s[index]</span><br><span class="line">                visit[index] = <span class="literal">False</span></span><br><span class="line">                permutations(s, position + <span class="number">1</span>, visit, num)</span><br><span class="line">                visit[index] = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    n = int(input().strip())</span><br><span class="line">    s = [str(i + <span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line">    visit = [<span class="literal">True</span>] * n</span><br><span class="line">    num = [<span class="string">""</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line">    permutations(s, <span class="number">0</span>, visit, num)</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法编程</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>自然语言处理知识点总结归纳</title>
-    <url>/2020/05/08/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<blockquote>
-<p>本文主要对自然语言处理基础知识进行梳理、回顾，把一些需要记住的概念原理，和容易混淆，晦涩的知识点进行归纳。</p>
-</blockquote>
-<a id="more"></a>
-
-<div style='display: none'>
-
-<!-- TOC -->
-
-<ul>
-<li><a href="#1-情感分析">1. 情感分析</a></li>
-<li><a href="#2-文本挖掘">2. 文本挖掘</a></li>
-<li><a href="#3-语义分析">3. 语义分析</a></li>
-</ul>
-<!-- /TOC -->
-
-</div>
-
-<h2 id="1-情感分析"><a href="#1-情感分析" class="headerlink" title="1. 情感分析"></a>1. 情感分析</h2><h2 id="2-文本挖掘"><a href="#2-文本挖掘" class="headerlink" title="2. 文本挖掘"></a>2. 文本挖掘</h2><h2 id="3-语义分析"><a href="#3-语义分析" class="headerlink" title="3. 语义分析"></a>3. 语义分析</h2>]]></content>
-      <categories>
-        <category>自然语言处理</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>情感分析</tag>
-        <tag>文本分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo使用教程与常用命令</title>
-    <url>/2020/05/12/Hexo%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p>欢迎使用<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! 更多信息可以查看<a href="https://hexo.io/docs/" target="_blank" rel="noopener">Hexo官方文档</a> 。如果你在使用过程中遇到任何问题，可以在这<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">提问</a> 或者在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a> 上留言，这篇文章简单介绍下Hexo的使用以及常用的命令。</p>
-<a id="more"></a>
-
-<h2 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h2><h3 id="创建一篇文章"><a href="#创建一篇文章" class="headerlink" title="创建一篇文章"></a>创建一篇文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"文章标题"</span></span><br><span class="line">或者</span><br><span class="line">$ hexo n <span class="string">"文章标题"</span></span><br></pre></td></tr></table></figure>
-
-<p>更多信息: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">writing</a></p>
-<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">或者</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
-<p>更多信息: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">或者</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-
-<p>更多信息: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="部署到远端"><a href="#部署到远端" class="headerlink" title="部署到远端"></a>部署到远端</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">或者</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-
-<p>更多信息:: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<h2 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h2><h3 id="获取主题"><a href="#获取主题" class="headerlink" title="获取主题"></a>获取主题</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/holysll/hexo-theme-ayer</span><br></pre></td></tr></table></figure>
-
-<h3 id="修改主题配置"><a href="#修改主题配置" class="headerlink" title="修改主题配置"></a>修改主题配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">vi _config.yml</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: hexo-theme-ayer</span><br></pre></td></tr></table></figure>
-
-<h3 id="清除缓存并部署"><a href="#清除缓存并部署" class="headerlink" title="清除缓存并部署"></a>清除缓存并部署</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>个人博客</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>GitHub</tag>
-        <tag>blog</tag>
       </tags>
   </entry>
 </search>
