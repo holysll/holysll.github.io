@@ -46,7 +46,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="post-Web与前端" class="article article-type-post" itemscope
+  <article id="post-网络知识" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -63,7 +63,7 @@
 
     
     <div class="article-meta">
-      <a href="/2020/05/08/Web%E4%B8%8E%E5%89%8D%E7%AB%AF/" class="article-date">
+      <a href="/2020/05/08/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="article-date">
   <time datetime="2020-05-08T15:05:08.000Z" itemprop="datePublished">2020-05-08</time>
 </a>
       
@@ -78,7 +78,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">460</span>
+            <span class="post-count">684</span>
         </span>
     </span>
 
@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
+            <span class="post-count">2 min</span>
         </span>
     </span>
 </div>
@@ -127,6 +127,22 @@
 <li><a href="#2-常见的状态码">2. 常见的状态码</a></li>
 <li><a href="#3-三次握手">3. 三次握手</a></li>
 <li><a href="#4-四次挥手">4. 四次挥手</a></li>
+<li><a href="#5session和cookie的区别">5.session和cookie的区别</a></li>
+<li><a href="#6-https的建立连接的过程">6. https的建立连接的过程</a></li>
+<li><a href="#7-https的传输数据是否是对称加密">7. https的传输数据是否是对称加密</a></li>
+<li><a href="#8-tcp拥堵控制">8. TCP拥堵控制</a></li>
+<li><a href="#9-如何高效处理socket">9. 如何高效处理socket</a></li>
+<li><a href="#10-http的组成">10. http的组成</a></li>
+<li><a href="#11-http的头部keepalive的作用">11. http的头部，keepalive的作用</a></li>
+<li><a href="#12-tcp建立连接的方式">12. tcp建立连接的方式</a></li>
+<li><a href="#13-本机的socket需要经过协议栈解包么">13. 本机的socket需要经过协议栈解包么</a></li>
+<li><a href="#14-socket编程">14. socket编程</a></li>
+<li><a href="#15-urllib和urllib2">15. urllib和urllib2</a></li>
+<li><a href="#16-xsrf和xss">16. XSRF和XSS</a></li>
+<li><a href="#17-post和get">17. POST和GET</a></li>
+<li><a href="#18-python中实现io多路复用">18. python中实现IO多路复用</a></li>
+<li><a href="#19-selectpoll和epoll">19. select,poll和epoll</a></li>
+<li><a href="#20-python常用的并发网络库">20. python常用的并发网络库</a></li>
 </ul>
 </li>
 <li><a href="#django">Django</a></li>
@@ -199,7 +215,12 @@
 <li>第二次握手：服务器收到SYN包，必须确认客户的SYN（ack=x+1）,同时自己也发送一个SYN包（syn=y），即SYN+ACK包，服务器进入SYN_RECV状态。</li>
 <li>第三次握手：客户端收到服务器的SYN+ACK包，想服务器发送确认ACK包（ACK=y+1）,发送完毕，客户端和服务器进入ESTABLISHED状态，完成握手。</li>
 </ul>
-<h2 id="4-四次挥手"><a href="#4-四次挥手" class="headerlink" title="4. 四次挥手"></a>4. 四次挥手</h2><h1 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h1><h1 id="Flask"><a href="#Flask" class="headerlink" title="Flask"></a>Flask</h1><h1 id="Tornado"><a href="#Tornado" class="headerlink" title="Tornado"></a>Tornado</h1><h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h1 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h1><h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1>
+<h2 id="4-四次挥手"><a href="#4-四次挥手" class="headerlink" title="4. 四次挥手"></a>4. 四次挥手</h2><h2 id="5-session和cookie的区别"><a href="#5-session和cookie的区别" class="headerlink" title="5.session和cookie的区别"></a>5.session和cookie的区别</h2><h2 id="6-https的建立连接的过程"><a href="#6-https的建立连接的过程" class="headerlink" title="6. https的建立连接的过程"></a>6. https的建立连接的过程</h2><h2 id="7-https的传输数据是否是对称加密"><a href="#7-https的传输数据是否是对称加密" class="headerlink" title="7. https的传输数据是否是对称加密"></a>7. https的传输数据是否是对称加密</h2><h2 id="8-TCP拥堵控制"><a href="#8-TCP拥堵控制" class="headerlink" title="8. TCP拥堵控制"></a>8. TCP拥堵控制</h2><h2 id="9-如何高效处理socket"><a href="#9-如何高效处理socket" class="headerlink" title="9. 如何高效处理socket"></a>9. 如何高效处理socket</h2><h2 id="10-http的组成"><a href="#10-http的组成" class="headerlink" title="10. http的组成"></a>10. http的组成</h2><h2 id="11-http的头部，keepalive的作用"><a href="#11-http的头部，keepalive的作用" class="headerlink" title="11. http的头部，keepalive的作用"></a>11. http的头部，keepalive的作用</h2><h2 id="12-tcp建立连接的方式"><a href="#12-tcp建立连接的方式" class="headerlink" title="12. tcp建立连接的方式"></a>12. tcp建立连接的方式</h2><h2 id="13-本机的socket需要经过协议栈解包么"><a href="#13-本机的socket需要经过协议栈解包么" class="headerlink" title="13. 本机的socket需要经过协议栈解包么"></a>13. 本机的socket需要经过协议栈解包么</h2><h2 id="14-socket编程"><a href="#14-socket编程" class="headerlink" title="14. socket编程"></a>14. socket编程</h2><h2 id="15-urllib和urllib2"><a href="#15-urllib和urllib2" class="headerlink" title="15. urllib和urllib2"></a>15. urllib和urllib2</h2><h2 id="16-XSRF和XSS"><a href="#16-XSRF和XSS" class="headerlink" title="16. XSRF和XSS"></a>16. XSRF和XSS</h2><h2 id="17-POST和GET"><a href="#17-POST和GET" class="headerlink" title="17. POST和GET"></a>17. POST和GET</h2><h2 id="18-python中实现IO多路复用"><a href="#18-python中实现IO多路复用" class="headerlink" title="18. python中实现IO多路复用"></a>18. python中实现IO多路复用</h2><h2 id="19-select-poll和epoll"><a href="#19-select-poll和epoll" class="headerlink" title="19. select,poll和epoll"></a>19. select,poll和epoll</h2><h2 id="20-python常用的并发网络库"><a href="#20-python常用的并发网络库" class="headerlink" title="20. python常用的并发网络库"></a>20. python常用的并发网络库</h2><ul>
+<li>tornado</li>
+<li>gevent</li>
+<li>asyncio</li>
+</ul>
+<h1 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h1><h1 id="Flask"><a href="#Flask" class="headerlink" title="Flask"></a>Flask</h1><h1 id="Tornado"><a href="#Tornado" class="headerlink" title="Tornado"></a>Tornado</h1><h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h1 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h1><h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1>
       
       <!-- reward -->
       
@@ -263,7 +284,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/05/08/Web%E4%B8%8E%E5%89%8D%E7%AB%AF/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/05/08/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -281,19 +302,19 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/05/12/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" class="article-nav-link">
+      <a href="/2020/05/08/%E7%AE%97%E6%B3%95%E4%B8%8E%E7%BC%96%E7%A8%8B/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            Python语言知识点总结归纳
+            算法编程知识点总结归纳
           
         </div>
       </a>
     
     
-      <a href="/2020/05/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/" class="article-nav-link">
+      <a href="/2020/05/08/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">操作系统知识点总结归纳</div>
+        <div class="article-nav-title">自然语言处理知识点总结归纳</div>
       </a>
     
   </nav>

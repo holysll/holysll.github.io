@@ -78,7 +78,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">2.6k</span>
+            <span class="post-count">2.9k</span>
         </span>
     </span>
 
@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">10 min</span>
+            <span class="post-count">12 min</span>
         </span>
     </span>
 </div>
@@ -140,14 +140,23 @@
 <li><a href="#15-关联查询">15. 关联查询</a></li>
 <li><a href="#16-limit的用法">16. LIMIT的用法</a></li>
 <li><a href="#17-case-when">17. case when</a></li>
+<li><a href="#18-如何分库分表">18. 如何分库分表</a></li>
+<li><a href="#19-多个索引会有多份数据么">19. 多个索引会有多份数据么</a></li>
+<li><a href="#20-如何防止是数据库单点问题">20. 如何防止是数据库单点问题</a></li>
+<li><a href="#21-如何确保多台机器不会重复消费">21. 如何确保多台机器不会重复消费</a></li>
+<li><a href="#22-如何确保消费了反馈失效问题">22. 如何确保消费了反馈失效问题</a></li>
 </ul>
 </li>
 <li><a href="#mysql数据库">Mysql数据库</a><ul>
 <li><a href="#1-mysql-常用数据类型">1. mysql 常用数据类型</a></li>
 <li><a href="#2-mysql数据库引擎">2. mysql数据库引擎</a></li>
 <li><a href="#3-mysql的索引类型">3. mysql的索引类型</a></li>
-<li><a href="#4-mysql-几种锁的区别">4. Mysql 几种锁的区别</a></li>
+<li><a href="#4-mysql-几种锁的区别">4. mysql 几种锁的区别</a></li>
 <li><a href="#5-mysql事务原理特性事务并发控制">5. mysql事务原理、特性、事务并发控制</a></li>
+<li><a href="#6-mysql里的innot-inlike走不走索引">6. mysql里的in、not in、like走不走索引</a></li>
+<li><a href="#7-mysql查询优化">7. mysql查询优化</a></li>
+<li><a href="#8-mysql的主从复制">8. mysql的主从复制</a></li>
+<li><a href="#9左连接右连接的区别">9.左连接右连接的区别</a></li>
 </ul>
 </li>
 <li><a href="#redis数据库">Redis数据库</a><ul>
@@ -156,9 +165,21 @@
 <li><a href="#3-redis-和-memcached-的主要区别">3. redis 和 memcached 的主要区别</a></li>
 <li><a href="#4-redis-高可用">4. Redis 高可用</a></li>
 <li><a href="#5-redis-高并发">5. Redis 高并发</a></li>
+<li><a href="#6-redis的数据类型">6. redis的数据类型</a></li>
+<li><a href="#7-redis的aof太大如何优化">7. redis的AOF太大如何优化</a></li>
+<li><a href="#8-redis集群如何扩展">8. redis集群，如何扩展</a></li>
 </ul>
 </li>
-<li><a href="#mongodb数据库">MongoDB数据库</a></li>
+<li><a href="#mongodb数据库">MongoDB数据库</a><ul>
+<li><a href="#1-如何启动">1. 如何启动</a></li>
+</ul>
+</li>
+<li><a href="#elasticsearch数据库">Elasticsearch数据库</a><ul>
+<li><a href="#1-索引如何存储">1. 索引如何存储</a></li>
+<li><a href="#2-介绍下elastisearch原理和用途">2. 介绍下Elastisearch原理和用途</a></li>
+<li><a href="#3-分布式实时日志使用elk">3. 分布式实时日志使用ELK</a></li>
+</ul>
+</li>
 <li><a href="#hive数据库">Hive数据库</a></li>
 <li><a href="#hbase数据库">Hbase数据库</a></li>
 <li><a href="#hadoop生态">Hadoop生态</a></li>
@@ -369,7 +390,7 @@
 </blockquote>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 例如表 students(id, name ,birthday, sex, grade)，要求按每个年级统计男生和女生的数量各是多少，统计结果的表头为，年级，男生数量，女生数量。如果不用select case when，为了将男女数量并列显示，统计起来非常麻烦，先确定年级信息，再根据年级取男生数和女生数，而且很容易出错。*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> grade, <span class="keyword">COUNT</span> (<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="number">1</span> <span class="keyword">THEN</span> <span class="number">1</span></span><br><span class="line">                            <span class="keyword">ELSE</span> <span class="literal">NULL</span></span><br><span class="line">                        <span class="keyword">END</span>) 男生数,</span><br><span class="line">               <span class="keyword">COUNT</span> (<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="number">2</span> <span class="keyword">THEN</span> <span class="number">1</span></span><br><span class="line">                            <span class="keyword">ELSE</span> <span class="literal">NULL</span></span><br><span class="line">                       <span class="keyword">END</span>) 女生数</span><br><span class="line"><span class="keyword">FROM</span> students</span><br><span class="line"></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> grade;</span><br></pre></td></tr></table></figure>
 
-<h1 id="Mysql数据库"><a href="#Mysql数据库" class="headerlink" title="Mysql数据库"></a>Mysql数据库</h1><h2 id="1-mysql-常用数据类型"><a href="#1-mysql-常用数据类型" class="headerlink" title="1. mysql 常用数据类型"></a>1. mysql 常用数据类型</h2><h2 id="2-mysql数据库引擎"><a href="#2-mysql数据库引擎" class="headerlink" title="2. mysql数据库引擎"></a>2. mysql数据库引擎</h2><h2 id="3-mysql的索引类型"><a href="#3-mysql的索引类型" class="headerlink" title="3. mysql的索引类型"></a>3. mysql的索引类型</h2><h2 id="4-Mysql-几种锁的区别"><a href="#4-Mysql-几种锁的区别" class="headerlink" title="4. Mysql 几种锁的区别"></a>4. Mysql 几种锁的区别</h2><h2 id="5-mysql事务原理、特性、事务并发控制"><a href="#5-mysql事务原理、特性、事务并发控制" class="headerlink" title="5. mysql事务原理、特性、事务并发控制"></a>5. mysql事务原理、特性、事务并发控制</h2><h1 id="Redis数据库"><a href="#Redis数据库" class="headerlink" title="Redis数据库"></a>Redis数据库</h1><h2 id="1-redis的原理"><a href="#1-redis的原理" class="headerlink" title="1. redis的原理"></a>1. redis的原理</h2><h2 id="2-持久化机制"><a href="#2-持久化机制" class="headerlink" title="2. 持久化机制"></a>2. 持久化机制</h2><h2 id="3-redis-和-memcached-的主要区别"><a href="#3-redis-和-memcached-的主要区别" class="headerlink" title="3. redis 和 memcached 的主要区别"></a>3. redis 和 memcached 的主要区别</h2><h2 id="4-Redis-高可用"><a href="#4-Redis-高可用" class="headerlink" title="4. Redis 高可用"></a>4. Redis 高可用</h2><h2 id="5-Redis-高并发"><a href="#5-Redis-高并发" class="headerlink" title="5. Redis 高并发"></a>5. Redis 高并发</h2><h1 id="MongoDB数据库"><a href="#MongoDB数据库" class="headerlink" title="MongoDB数据库"></a>MongoDB数据库</h1><h1 id="Hive数据库"><a href="#Hive数据库" class="headerlink" title="Hive数据库"></a>Hive数据库</h1><h1 id="Hbase数据库"><a href="#Hbase数据库" class="headerlink" title="Hbase数据库"></a>Hbase数据库</h1><h1 id="Hadoop生态"><a href="#Hadoop生态" class="headerlink" title="Hadoop生态"></a>Hadoop生态</h1>
+<h2 id="18-如何分库分表"><a href="#18-如何分库分表" class="headerlink" title="18. 如何分库分表"></a>18. 如何分库分表</h2><h2 id="19-多个索引会有多份数据么"><a href="#19-多个索引会有多份数据么" class="headerlink" title="19. 多个索引会有多份数据么"></a>19. 多个索引会有多份数据么</h2><h2 id="20-如何防止是数据库单点问题"><a href="#20-如何防止是数据库单点问题" class="headerlink" title="20. 如何防止是数据库单点问题"></a>20. 如何防止是数据库单点问题</h2><h2 id="21-如何确保多台机器不会重复消费"><a href="#21-如何确保多台机器不会重复消费" class="headerlink" title="21. 如何确保多台机器不会重复消费"></a>21. 如何确保多台机器不会重复消费</h2><h2 id="22-如何确保消费了反馈失效问题"><a href="#22-如何确保消费了反馈失效问题" class="headerlink" title="22. 如何确保消费了反馈失效问题"></a>22. 如何确保消费了反馈失效问题</h2><h1 id="Mysql数据库"><a href="#Mysql数据库" class="headerlink" title="Mysql数据库"></a>Mysql数据库</h1><h2 id="1-mysql-常用数据类型"><a href="#1-mysql-常用数据类型" class="headerlink" title="1. mysql 常用数据类型"></a>1. mysql 常用数据类型</h2><h2 id="2-mysql数据库引擎"><a href="#2-mysql数据库引擎" class="headerlink" title="2. mysql数据库引擎"></a>2. mysql数据库引擎</h2><h2 id="3-mysql的索引类型"><a href="#3-mysql的索引类型" class="headerlink" title="3. mysql的索引类型"></a>3. mysql的索引类型</h2><h2 id="4-mysql-几种锁的区别"><a href="#4-mysql-几种锁的区别" class="headerlink" title="4. mysql 几种锁的区别"></a>4. mysql 几种锁的区别</h2><h2 id="5-mysql事务原理、特性、事务并发控制"><a href="#5-mysql事务原理、特性、事务并发控制" class="headerlink" title="5. mysql事务原理、特性、事务并发控制"></a>5. mysql事务原理、特性、事务并发控制</h2><h2 id="6-mysql里的in、not-in、like走不走索引"><a href="#6-mysql里的in、not-in、like走不走索引" class="headerlink" title="6. mysql里的in、not in、like走不走索引"></a>6. mysql里的in、not in、like走不走索引</h2><h2 id="7-mysql查询优化"><a href="#7-mysql查询优化" class="headerlink" title="7. mysql查询优化"></a>7. mysql查询优化</h2><h2 id="8-mysql的主从复制"><a href="#8-mysql的主从复制" class="headerlink" title="8. mysql的主从复制"></a>8. mysql的主从复制</h2><h2 id="9-左连接右连接的区别"><a href="#9-左连接右连接的区别" class="headerlink" title="9.左连接右连接的区别"></a>9.左连接右连接的区别</h2><h1 id="Redis数据库"><a href="#Redis数据库" class="headerlink" title="Redis数据库"></a>Redis数据库</h1><h2 id="1-redis的原理"><a href="#1-redis的原理" class="headerlink" title="1. redis的原理"></a>1. redis的原理</h2><h2 id="2-持久化机制"><a href="#2-持久化机制" class="headerlink" title="2. 持久化机制"></a>2. 持久化机制</h2><h2 id="3-redis-和-memcached-的主要区别"><a href="#3-redis-和-memcached-的主要区别" class="headerlink" title="3. redis 和 memcached 的主要区别"></a>3. redis 和 memcached 的主要区别</h2><h2 id="4-Redis-高可用"><a href="#4-Redis-高可用" class="headerlink" title="4. Redis 高可用"></a>4. Redis 高可用</h2><h2 id="5-Redis-高并发"><a href="#5-Redis-高并发" class="headerlink" title="5. Redis 高并发"></a>5. Redis 高并发</h2><h2 id="6-redis的数据类型"><a href="#6-redis的数据类型" class="headerlink" title="6. redis的数据类型"></a>6. redis的数据类型</h2><h2 id="7-redis的AOF太大如何优化"><a href="#7-redis的AOF太大如何优化" class="headerlink" title="7. redis的AOF太大如何优化"></a>7. redis的AOF太大如何优化</h2><h2 id="8-redis集群，如何扩展"><a href="#8-redis集群，如何扩展" class="headerlink" title="8. redis集群，如何扩展"></a>8. redis集群，如何扩展</h2><h1 id="MongoDB数据库"><a href="#MongoDB数据库" class="headerlink" title="MongoDB数据库"></a>MongoDB数据库</h1><h2 id="1-如何启动"><a href="#1-如何启动" class="headerlink" title="1. 如何启动"></a>1. 如何启动</h2><h1 id="Elasticsearch数据库"><a href="#Elasticsearch数据库" class="headerlink" title="Elasticsearch数据库"></a>Elasticsearch数据库</h1><h2 id="1-索引如何存储"><a href="#1-索引如何存储" class="headerlink" title="1. 索引如何存储"></a>1. 索引如何存储</h2><h2 id="2-介绍下Elastisearch原理和用途"><a href="#2-介绍下Elastisearch原理和用途" class="headerlink" title="2. 介绍下Elastisearch原理和用途"></a>2. 介绍下Elastisearch原理和用途</h2><h2 id="3-分布式实时日志使用ELK"><a href="#3-分布式实时日志使用ELK" class="headerlink" title="3. 分布式实时日志使用ELK"></a>3. 分布式实时日志使用ELK</h2><h1 id="Hive数据库"><a href="#Hive数据库" class="headerlink" title="Hive数据库"></a>Hive数据库</h1><h1 id="Hbase数据库"><a href="#Hbase数据库" class="headerlink" title="Hbase数据库"></a>Hbase数据库</h1><h1 id="Hadoop生态"><a href="#Hadoop生态" class="headerlink" title="Hadoop生态"></a>Hadoop生态</h1>
       
       <!-- reward -->
       
