@@ -78,7 +78,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">58.2k</span>
+            <span class="post-count">58.5k</span>
         </span>
     </span>
 
@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">237 min</span>
+            <span class="post-count">238 min</span>
         </span>
     </span>
 </div>
@@ -213,6 +213,7 @@
 <li><a href="#65-协程与生成器">65. 协程与生成器</a></li>
 <li><a href="#66-python-decimal精确计算">66. python decimal精确计算</a></li>
 <li><a href="#67-模块和代码块">67. 模块和代码块</a></li>
+<li><a href="#68-上下文管理器">68. 上下文管理器</a></li>
 </ul>
 <!-- /TOC -->
 
@@ -3642,6 +3643,20 @@
 <blockquote>
 <p>代码块就是可作为可执行单元的一段Python程序文本；模块、函数体和类定义都是代码块。不仅如此，每一个交互脚本命令也是一个代码块；一个脚本文件也是一个代码块；一个命令行脚本也是一个代码块。</p>
 </blockquote>
+<h2 id="68-上下文管理器"><a href="#68-上下文管理器" class="headerlink" title="68. 上下文管理器"></a>68. 上下文管理器</h2><blockquote>
+<p>使用上下文管理器最广泛的案例就是with语句，打开文件，对文件进行操作，然后关闭文件，如果在往文件里写数据的时候发生异常，它也会尝试去关闭文件。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># with语句，确保文件会被关闭</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'aaa.txt'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f</span><br><span class="line">    f.write(<span class="string">"sddsa"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 等价于</span></span><br><span class="line">f = open(<span class="string">'aaa.txt'</span>, <span class="string">'wb'</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    f.write(<span class="string">'sddsa'</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    f.close()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>利用<code>__enter__</code>和<code>__exit__</code>方法实现一个上下文管理类</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">File</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, file_name, method)</span>:</span></span><br><span class="line">        self.file_obj = open(file_name, method)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__enter__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.file_obj</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__exit__</span><span class="params">(self, exc_type, exc_val, exc_tb)</span>:</span></span><br><span class="line">        self.file_obj.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> File(<span class="string">'aaa.txt'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(<span class="string">"Hello"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行顺序</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">(1) with语句先暂存了File类的__exit__方法</span></span><br><span class="line"><span class="string">(2) 然后吊桶File类的__enter__方法</span></span><br><span class="line"><span class="string">(3) __enter__方法返回打开文件对象</span></span><br><span class="line"><span class="string">(4) 打开文件的对象被传给f</span></span><br><span class="line"><span class="string">(5) 使用write来写文件</span></span><br><span class="line"><span class="string">(6) 调用之前暂存的__exit__</span></span><br><span class="line"><span class="string">(7) __exit__关闭了文件</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>python有个contextlib模块，里面的contextmanager结合生成器可以实现上下文管理</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> contextlib <span class="keyword">import</span> contextmanager</span><br><span class="line"></span><br><span class="line"><span class="meta">@contextmanager</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">open_file</span><span class="params">(name)</span>:</span></span><br><span class="line">    f = open(name, <span class="string">'w'</span>)</span><br><span class="line">    <span class="keyword">yield</span> f</span><br><span class="line">    f.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open_file(<span class="string">'aaa.txt'</span>) <span class="keyword">as</span> ff:</span><br><span class="line">    ff.write(<span class="string">"sssss"</span>)</span><br></pre></td></tr></table></figure>
 
       
       <!-- reward -->
@@ -3732,9 +3747,9 @@
       </a>
     
     
-      <a href="/2020/05/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/" class="article-nav-link">
+      <a href="/2020/05/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9F%A5%E8%AF%86/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">操作系统知识点总结归纳</div>
+        <div class="article-nav-title">数据库知识点总结归纳</div>
       </a>
     
   </nav>
