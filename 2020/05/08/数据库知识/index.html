@@ -78,7 +78,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">17.3k</span>
+            <span class="post-count">24.8k</span>
         </span>
     </span>
 
@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">64 min</span>
+            <span class="post-count">93 min</span>
         </span>
     </span>
 </div>
@@ -125,27 +125,27 @@
 <li><a href="#数据库常识">数据库常识</a><ul>
 <li><a href="#1-什么是索引">1. 什么是索引</a></li>
 <li><a href="#2-索引的数据结构">2. 索引的数据结构</a></li>
-<li><a href="#3-什么是聚簇索引">3. 什么是聚簇索引</a></li>
+<li><a href="#3-聚簇索引与非聚簇索引">3. 聚簇索引与非聚簇索引</a></li>
 <li><a href="#4-什么是索引覆盖">4. 什么是索引覆盖</a></li>
 <li><a href="#5-什么是回表查询">5. 什么是回表查询</a></li>
 <li><a href="#6-建立索引需要考虑的因素">6. 建立索引需要考虑的因素</a></li>
 <li><a href="#7-联合索引">7. 联合索引</a></li>
 <li><a href="#8-查看索引是否被使用到">8. 查看索引是否被使用到</a></li>
-<li><a href="#10-为什么要尽量设定一个主键">10. 为什么要尽量设定一个主键</a></li>
-<li><a href="#11-主键使用自增id还是uuid">11. 主键使用自增ID还是UUID</a></li>
-<li><a href="#12-字段为什么要求定义为not-null">12. 字段为什么要求定义为NOT NULL</a></li>
-<li><a href="#13-如果要存储用户的密码散列应该使用什么字段进行存储">13. 如果要存储用户的密码散列，应该使用什么字段进行存储</a></li>
-<li><a href="#14-什么是事务">14. 什么是事务</a></li>
-<li><a href="#15-事务的特性">15. 事务的特性</a></li>
-<li><a href="#16-mysql的事务隔离级别">16. MySql的事务隔离级别</a></li>
-<li><a href="#17-同时多个事务并发执行可能造成的问题">17. 同时多个事务并发执行可能造成的问题</a></li>
-<li><a href="#18-不可重复读和幻读的区别">18. 不可重复读和幻读的区别</a></li>
-<li><a href="#19-共享锁与排他锁">19. 共享锁与排他锁</a></li>
-<li><a href="#20-表级锁行级锁页级锁">20. 表级锁、行级锁、页级锁</a></li>
-<li><a href="#21-死锁">21. 死锁</a></li>
-<li><a href="#22-什么是悲观锁">22. 什么是悲观锁</a></li>
-<li><a href="#23-什么是乐观锁">23. 什么是乐观锁</a></li>
-<li><a href="#24-mysql支持哪些存储引擎">24. MySQL支持哪些存储引擎</a><ul>
+<li><a href="#9-为什么要尽量设定一个主键">9. 为什么要尽量设定一个主键</a></li>
+<li><a href="#10-主键使用自增id还是uuid">10. 主键使用自增ID还是UUID</a></li>
+<li><a href="#11-字段为什么要求定义为not-null">11. 字段为什么要求定义为NOT NULL</a></li>
+<li><a href="#12-如果要存储用户的密码散列应该使用什么字段进行存储">12. 如果要存储用户的密码散列，应该使用什么字段进行存储</a></li>
+<li><a href="#13-什么是事务">13. 什么是事务</a></li>
+<li><a href="#14-事务的特性">14. 事务的特性</a></li>
+<li><a href="#15-mysql的事务隔离级别">15. MySql的事务隔离级别</a></li>
+<li><a href="#16-同时多个事务并发执行可能造成的问题">16. 同时多个事务并发执行可能造成的问题</a></li>
+<li><a href="#17-不可重复读和幻读的区别">17. 不可重复读和幻读的区别</a></li>
+<li><a href="#18-共享锁与排他锁">18. 共享锁与排他锁</a></li>
+<li><a href="#19-表级锁行级锁页级锁">19. 表级锁、行级锁、页级锁</a></li>
+<li><a href="#20-死锁">20. 死锁</a></li>
+<li><a href="#21-什么是悲观锁">21. 什么是悲观锁</a></li>
+<li><a href="#22-什么是乐观锁">22. 什么是乐观锁</a></li>
+<li><a href="#23-mysql支持哪些存储引擎">23. MySQL支持哪些存储引擎</a><ul>
 <li><a href="#1-innodb存储引擎">(1) InnoDB存储引擎</a></li>
 <li><a href="#2-myisam存储引擎">(2) MyISAM存储引擎</a></li>
 <li><a href="#3-memory存储引擎">(3) MEMORY存储引擎</a></li>
@@ -158,58 +158,80 @@
 <li><a href="#10-blackhole存储引擎">(10) BLACKHOLE存储引擎</a></li>
 </ul>
 </li>
-<li><a href="#25-myisam和innodb的区别">25. MyISAM和InnoDB的区别</a></li>
-<li><a href="#26-存储过程">26. 存储过程</a></li>
-<li><a href="#27-什么是视图">27. 什么是视图</a></li>
-<li><a href="#28-什么是游标">28. 什么是游标</a></li>
-<li><a href="#29-触发器">29. 触发器</a></li>
-<li><a href="#30-droptruncatedelete区别">30. drop、truncate、delete区别</a></li>
-<li><a href="#31-临时表">31. 临时表</a></li>
-<li><a href="#32-数据库范式">32. 数据库范式</a></li>
-<li><a href="#33-关系型数据库与非关系型数据库优势和区别">33. 关系型数据库与非关系型数据库优势和区别</a></li>
-<li><a href="#34-sql语言分类">34. SQL语言分类</a></li>
-<li><a href="#35-countcount1countcolumn的区别">35. count(*)、count(1)、count(column)的区别</a></li>
-<li><a href="#超大分页处理">超大分页处理</a></li>
-<li><a href="#慢查询优化">慢查询优化</a></li>
-<li><a href="#横向分表和纵向分表">横向分表和纵向分表</a></li>
-<li><a href="#什么是缓存穿透">什么是缓存穿透</a></li>
-<li><a href="#什么是缓存击穿">什么是缓存击穿</a></li>
-<li><a href="#什么是缓存雪崩">什么是缓存雪崩</a></li>
-<li><a href="#多个索引会有多份数据么">多个索引会有多份数据么</a></li>
-<li><a href="#如何防止是数据库单点问题">如何防止是数据库单点问题</a></li>
-<li><a href="#如何确保多台机器不会重复消费">如何确保多台机器不会重复消费</a></li>
-<li><a href="#如何确保消费了反馈失效问题">如何确保消费了反馈失效问题</a></li>
+<li><a href="#24-myisam和innodb的区别">24. MyISAM和InnoDB的区别</a></li>
+<li><a href="#25-存储过程">25. 存储过程</a></li>
+<li><a href="#26-什么是视图">26. 什么是视图</a></li>
+<li><a href="#27-什么是游标">27. 什么是游标</a></li>
+<li><a href="#28-触发器">28. 触发器</a></li>
+<li><a href="#29-droptruncatedelete区别">29. drop、truncate、delete区别</a></li>
+<li><a href="#30-临时表">30. 临时表</a></li>
+<li><a href="#31-数据库范式">31. 数据库范式</a></li>
+<li><a href="#32-关系型数据库与非关系型数据库优势和区别">32. 关系型数据库与非关系型数据库优势和区别</a></li>
+<li><a href="#33-sql语言分类">33. SQL语言分类</a></li>
+<li><a href="#34-countcount1和countcolumn的区别">34. count(*)、count(1)和count(column)的区别</a></li>
+<li><a href="#35-like百分号和下划线的区别">35. like、百分号和下划线的区别</a></li>
+<li><a href="#36-最左前缀原则">36. 最左前缀原则</a></li>
+<li><a href="#37-超大分页处理">37. 超大分页处理</a></li>
+<li><a href="#38-慢查询优化">38. 慢查询优化</a></li>
+<li><a href="#39-横向分表和纵向分表">39. 横向分表和纵向分表</a></li>
+<li><a href="#40-b树和b树的区别">40. B+树和B树的区别</a></li>
+<li><a href="#41-查询语句中用到的关键词">41. 查询语句中用到的关键词</a></li>
+<li><a href="#42-使用explain优化sql和索引">42. 使用explain优化SQL和索引</a></li>
+<li><a href="#43-数据库组主从复制的方式">43. 数据库组主从复制的方式</a></li>
+<li><a href="#44-数据库崩溃时事务的恢复机制redo日志和undo日志">44. 数据库崩溃时事务的恢复机制（REDO日志和UNDO日志）</a></li>
 </ul>
 </li>
 <li><a href="#mysql数据库">Mysql数据库</a><ul>
-<li><a href="#1-sql查询基础">1. SQL查询基础</a></li>
-<li><a href="#2-排序">2. 排序</a></li>
-<li><a href="#3-聚合函数">3. 聚合函数</a></li>
-<li><a href="#4-分组">4. 分组</a></li>
-<li><a href="#5-关联查询">5. 关联查询</a></li>
-<li><a href="#6-limit的用法">6. LIMIT的用法</a></li>
-<li><a href="#7-case-when">7. case when</a></li>
-<li><a href="#8-mysql-常用数据类型">8. mysql 常用数据类型</a></li>
-<li><a href="#10-mysql索引的数据结构">10. mysql索引的数据结构</a></li>
-<li><a href="#mysql里的innot-inlike走不走索引">mysql里的in、not in、like走不走索引</a></li>
-<li><a href="#mysql查询优化">mysql查询优化</a></li>
-<li><a href="#mysql的主从复制">mysql的主从复制</a></li>
-<li><a href="#左连接右连接的区别">左连接右连接的区别</a></li>
+<li><a href="#1-创建数据库">1. 创建数据库</a></li>
+<li><a href="#2-用户管理">2. 用户管理</a></li>
+<li><a href="#3-授权管理">3. 授权管理</a></li>
+<li><a href="#4-修改表的列">4. 修改表的列</a></li>
+<li><a href="#5-键的操作">5. 键的操作</a></li>
+<li><a href="#6-设置默认值">6. 设置默认值</a></li>
+<li><a href="#7-sql语句基础">7. SQL语句基础</a></li>
+<li><a href="#8-排序">8. 排序</a></li>
+<li><a href="#9-聚合函数">9. 聚合函数</a></li>
+<li><a href="#10-分组">10. 分组</a></li>
+<li><a href="#11-关联查询">11. 关联查询</a></li>
+<li><a href="#12-组合">12. 组合</a></li>
+<li><a href="#13-limit的用法">13. LIMIT的用法</a></li>
+<li><a href="#14-case-when">14. case when</a></li>
+<li><a href="#15-mysql-常用数据类型">15. mysql 常用数据类型</a></li>
+<li><a href="#16-mysql读取数据的基本单位">16. MySQL读取数据的基本单位</a></li>
+<li><a href="#17-为什么mysql事务回滚后自增id依然自增">17. 为什么mysql事务回滚后，自增ID依然自增</a></li>
+<li><a href="#18-mysql的主从复制的实现过程">18. mysql的主从复制的实现过程</a></li>
+<li><a href="#19-mysql高并发环境解决方案">19. mysql高并发环境解决方案</a></li>
 </ul>
 </li>
 <li><a href="#redis数据库">Redis数据库</a><ul>
-<li><a href="#1-redis的原理">1. redis的原理</a></li>
-<li><a href="#2-持久化机制">2. 持久化机制</a></li>
-<li><a href="#3-redis-和-memcached-的主要区别">3. redis 和 memcached 的主要区别</a></li>
-<li><a href="#4-redis-高可用">4. Redis 高可用</a></li>
-<li><a href="#5-redis-高并发">5. Redis 高并发</a></li>
-<li><a href="#6-redis的数据类型">6. redis的数据类型</a></li>
-<li><a href="#7-redis的aof太大如何优化">7. redis的AOF太大如何优化</a></li>
-<li><a href="#8-redis集群如何扩展">8. redis集群，如何扩展</a></li>
+<li><a href="#1-什么是redis">1. 什么是Redis</a></li>
+<li><a href="#2-redis的数据类型">2. redis的数据类型</a></li>
+<li><a href="#3-两种持久化方式">3. 两种持久化方式</a></li>
+<li><a href="#4-rdb与aof比较">4. RDB与AOF比较</a></li>
+<li><a href="#5-如果aof文件出现被写坏的情况该怎么处理">5. 如果AOF文件出现被写坏的情况，该怎么处理</a></li>
+<li><a href="#6-redis-和-memcached-的主要区别">6. redis 和 memcached 的主要区别</a></li>
+<li><a href="#7-事务处理">7. 事务处理</a></li>
+<li><a href="#8-redis常见的架构模式">8. Redis常见的架构模式</a><ul>
+<li><a href="#1-单机模式">(1) 单机模式</a></li>
+<li><a href="#2-主从复制模式">(2) 主从复制模式</a></li>
+<li><a href="#3-哨兵模式">(3) 哨兵模式</a></li>
+<li><a href="#4-集群模式">(4) 集群模式</a></li>
+</ul>
+</li>
+<li><a href="#9-redis如何实现分布式锁">9. Redis如何实现分布式锁</a></li>
+<li><a href="#10-缓存使用场景">10. 缓存使用场景</a></li>
+<li><a href="#11-常用的缓存使用模式">11. 常用的缓存使用模式</a></li>
+<li><a href="#12-什么是缓存穿透">12. 什么是缓存穿透</a></li>
+<li><a href="#13-什么是缓存击穿">13. 什么是缓存击穿</a></li>
+<li><a href="#14-什么是缓存雪崩">14. 什么是缓存雪崩</a></li>
+<li><a href="#15-连接redis">15. 连接Redis</a></li>
+<li><a href="#16-redis异步队列">16. Redis异步队列</a></li>
+<li><a href="#17-生产一次消费多次">17. 生产一次消费多次</a></li>
+<li><a href="#18-redis分区">18. Redis分区</a></li>
 </ul>
 </li>
 <li><a href="#mongodb数据库">MongoDB数据库</a><ul>
-<li><a href="#1-如何启动">1. 如何启动</a></li>
+<li><a href="#1-mongodb常用的操作">1. MongoDB常用的操作</a></li>
 </ul>
 </li>
 <li><a href="#elasticsearch数据库">Elasticsearch数据库</a><ul>
@@ -245,7 +267,7 @@
 <blockquote>
 <p>创建索引和删除索引：</p>
 </blockquote>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 普通索引</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> [index_name] <span class="keyword">on</span> [tb_name](字段名)</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> [tb_name] <span class="keyword">add</span> <span class="keyword">index</span> [index_name](字段名)</span><br><span class="line"></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">index</span> [index_name] <span class="keyword">on</span> [tb_name]  <span class="comment"># 删除索引</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 主键索引</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> [tb_name] <span class="keyword">add</span> primary <span class="keyword">key</span>(字段名)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除主键索引：</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> [tb_name] <span class="keyword">drop</span> primary <span class="keyword">key</span>  <span class="comment"># 普通非自增主键</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> [tb_name] <span class="keyword">id</span> <span class="keyword">modify</span> <span class="keyword">id</span> <span class="built_in">int</span>;  <span class="comment"># 自增主键，取消自增列</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> [tb_name] <span class="keyword">drop</span> primary <span class="keyword">key</span>  <span class="comment"># 删除主键索引</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 唯一索引，与普通索引类似，可以有null值</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">unique</span> <span class="keyword">index</span> [index_name] <span class="keyword">on</span> tb_name(字段名)</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> [tb_name] <span class="keyword">add</span> <span class="keyword">unique</span> <span class="keyword">index</span> [index_name](字段名)</span><br><span class="line"></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">index</span> [index_name] <span class="keyword">on</span> [tb_name]  <span class="comment"># 删除索引</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 多列索引</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> people <span class="keyword">ADD</span> <span class="keyword">INDEX</span> lname_fname_age (lame, fname,age);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 普通索引</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> index_name <span class="keyword">on</span> tb_name</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tb_name <span class="keyword">add</span> <span class="keyword">index</span> index_name</span><br><span class="line"></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">index</span> index_name <span class="keyword">on</span> tb_name  <span class="comment">-- 删除索引</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 主键索引</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tb_name <span class="keyword">add</span> primary <span class="keyword">key</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除主键索引：</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tb_name <span class="keyword">drop</span> primary <span class="keyword">key</span>  <span class="comment">-- 普通非自增主键</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tb_name <span class="keyword">id</span> <span class="keyword">modify</span> <span class="keyword">id</span> <span class="built_in">int</span>;  <span class="comment">-- 自增主键，取消自增列</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tb_name <span class="keyword">drop</span> primary <span class="keyword">key</span>  <span class="comment">-- 删除主键索引</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 唯一索引，与普通索引类似，可以有null值</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">unique</span> <span class="keyword">index</span> index_name <span class="keyword">on</span> tb_name</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tb_name <span class="keyword">add</span> <span class="keyword">unique</span> <span class="keyword">index</span> index_name</span><br><span class="line"></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">index</span> index_name <span class="keyword">on</span> tb_name  <span class="comment">-- 删除索引</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 多列索引</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> people <span class="keyword">ADD</span> <span class="keyword">INDEX</span> lname_fname_age (lame, fname,age);</span><br></pre></td></tr></table></figure>
 
 <h2 id="2-索引的数据结构"><a href="#2-索引的数据结构" class="headerlink" title="2. 索引的数据结构"></a>2. 索引的数据结构</h2><blockquote>
 <p>索引的数据结构和具体存储引擎的实现有关，在MySql中常用的有Hash索引和B+树索引，而常用的<code>InnoDB</code>存储引擎的默认索引实现为：B+树索引。</p>
@@ -301,7 +323,7 @@
 <li>在经常使用在WHERE子句中的列上面创建索引，加快条件的判断速度；</li>
 <li>经常在order by、group by之后的字段考虑建索引；</li>
 <li>考虑联合索引中的顺序，否则无法命中索引</li>
-<li>对非空字段(NOT NULL)创建索引，Mysql很难对控制做查询优化</li>
+<li>对非空字段<code>(NOT NULL)</code>创建索引，Mysql很难对控制做查询优化</li>
 <li>索引适合区分度高、离散程度大的字段，有大量重复值的字段不适合建索引；</li>
 <li>索引的长度不能太长，耗时；</li>
 <li>对于那些定义为text, image和bit数据类型的列不应该增加索引；</li>
@@ -324,24 +346,24 @@
 <li>当Mysql分析全表扫描比使用索引快的时候不用索引；</li>
 <li>当使用联合索引，前面一个条件为范围查询，后面的即使符合最左前缀原则，也无法使用索引；</li>
 </ul>
-<h2 id="10-为什么要尽量设定一个主键"><a href="#10-为什么要尽量设定一个主键" class="headerlink" title="10. 为什么要尽量设定一个主键"></a>10. 为什么要尽量设定一个主键</h2><blockquote>
+<h2 id="9-为什么要尽量设定一个主键"><a href="#9-为什么要尽量设定一个主键" class="headerlink" title="9. 为什么要尽量设定一个主键"></a>9. 为什么要尽量设定一个主键</h2><blockquote>
 <p>主键是数据库确保数据行在整张表唯一性的保障，即使业务上本张表没有主键，也建议添加一个自增长的ID列作为主键。设定了主键之后，在后续的删改查的时候可能更加快速以及确保操作数据范围安全。</p>
 </blockquote>
-<h2 id="11-主键使用自增ID还是UUID"><a href="#11-主键使用自增ID还是UUID" class="headerlink" title="11. 主键使用自增ID还是UUID"></a>11. 主键使用自增ID还是UUID</h2><blockquote>
-<p>推荐使用自增ID，不要使用UUID（通用唯一识别码，Universally Unique Identifier）。因为在InnoDB存储引擎中，主键索引是作为聚簇索引存在的，也就是说主键索引的B+树叶子节点上存储了主键索引以及全部的数据，如果主键索引是自增ID,那么只需要不断向后排序即可；如果用UUID，由于到来的ID与原来的大小不确定，会造成非常多的数据插入、数据移动，然后导致产生很多的内存碎片，进而造成插入性能的下降。</p>
+<h2 id="10-主键使用自增ID还是UUID"><a href="#10-主键使用自增ID还是UUID" class="headerlink" title="10. 主键使用自增ID还是UUID"></a>10. 主键使用自增ID还是UUID</h2><blockquote>
+<p>推荐使用自增ID，不要使用UUID（通用唯一识别码，Universally Unique Identifier）。因为在<code>InnoDB</code>存储引擎中，主键索引是作为聚簇索引存在的，也就是说主键索引的B+树叶子节点上存储了主键索引以及全部的数据，如果主键索引是自增ID,那么只需要不断向后排序即可；如果用UUID，由于到来的ID与原来的大小不确定，会造成非常多的数据插入、数据移动，然后导致产生很多的内存碎片，进而造成插入性能的下降。</p>
 </blockquote>
-<h2 id="12-字段为什么要求定义为NOT-NULL"><a href="#12-字段为什么要求定义为NOT-NULL" class="headerlink" title="12. 字段为什么要求定义为NOT NULL"></a>12. 字段为什么要求定义为NOT NULL</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># MySQL官网这样介绍：</span><br><span class="line">NULL columns require additional space in the rowto record whether their values are NULL. For MyISAM tables, each NULL columntakes one bit extra, rounded up to the nearest byte.</span><br></pre></td></tr></table></figure>
+<h2 id="11-字段为什么要求定义为NOT-NULL"><a href="#11-字段为什么要求定义为NOT-NULL" class="headerlink" title="11. 字段为什么要求定义为NOT NULL"></a>11. 字段为什么要求定义为NOT NULL</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- MySQL官网这样介绍：</span></span><br><span class="line">NULL columns require additional space in the rowto record whether their <span class="keyword">values</span> <span class="keyword">are</span> NULL. <span class="keyword">For</span> MyISAM <span class="keyword">tables</span>, <span class="keyword">each</span> <span class="literal">NULL</span> columntakes one <span class="built_in">bit</span> extra, rounded up <span class="keyword">to</span> the nearest byte.</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>NULL值会占用更多的字节，且会在程序中造成很多与预期不符的情况。</p>
 </blockquote>
-<h2 id="13-如果要存储用户的密码散列，应该使用什么字段进行存储"><a href="#13-如果要存储用户的密码散列，应该使用什么字段进行存储" class="headerlink" title="13. 如果要存储用户的密码散列，应该使用什么字段进行存储"></a>13. 如果要存储用户的密码散列，应该使用什么字段进行存储</h2><blockquote>
+<h2 id="12-如果要存储用户的密码散列，应该使用什么字段进行存储"><a href="#12-如果要存储用户的密码散列，应该使用什么字段进行存储" class="headerlink" title="12. 如果要存储用户的密码散列，应该使用什么字段进行存储"></a>12. 如果要存储用户的密码散列，应该使用什么字段进行存储</h2><blockquote>
 <p>密码散列、盐、用户身份证号等固定长度的字符串应该使用<code>char</code>而不是<code>varchar</code>来存储,这样可以节省空间且提高检索效率.</p>
 </blockquote>
-<h2 id="14-什么是事务"><a href="#14-什么是事务" class="headerlink" title="14. 什么是事务"></a>14. 什么是事务</h2><blockquote>
-<p>在MySQL中只有使用了Innodb数据库引擎的数据库或表才支持事务；事务是数据库并发控制的基本单位；事务可以用来管理INSERT/UPDATE/DELETE操作语句；事务处理可以用来维护数据库的完整性，保证成批的SQL语句要么全部执行，要么全部不执行（回滚）。</p>
+<h2 id="13-什么是事务"><a href="#13-什么是事务" class="headerlink" title="13. 什么是事务"></a>13. 什么是事务</h2><blockquote>
+<p>在MySQL中只有使用了<code>Innodb</code>数据库引擎的数据库或表才支持事务；事务是数据库并发控制的基本单位；事务可以用来管理<code>INSERT/UPDATE/DELETE</code>操作语句；事务处理可以用来维护数据库的完整性，保证成批的SQL语句要么全部执行，要么全部不执行（回滚）。</p>
 </blockquote>
-<h2 id="15-事务的特性"><a href="#15-事务的特性" class="headerlink" title="15. 事务的特性"></a>15. 事务的特性</h2><ul>
+<h2 id="14-事务的特性"><a href="#14-事务的特性" class="headerlink" title="14. 事务的特性"></a>14. 事务的特性</h2><ul>
 <li>原子性(Atomicity)</li>
 </ul>
 <blockquote>
@@ -365,7 +387,7 @@
 <blockquote>
 <p>对于任意已交事务，系统必须保证该事务对数据库的改变不被丢失，即使数据库出现异常。</p>
 </blockquote>
-<h2 id="16-MySql的事务隔离级别"><a href="#16-MySql的事务隔离级别" class="headerlink" title="16. MySql的事务隔离级别"></a>16. MySql的事务隔离级别</h2><ul>
+<h2 id="15-MySql的事务隔离级别"><a href="#15-MySql的事务隔离级别" class="headerlink" title="15. MySql的事务隔离级别"></a>15. MySql的事务隔离级别</h2><ul>
 <li>读未提交（Read uncommitted）</li>
 </ul>
 <blockquote>
@@ -430,13 +452,13 @@
 <td align="center">×</td>
 </tr>
 </tbody></table>
-<h2 id="17-同时多个事务并发执行可能造成的问题"><a href="#17-同时多个事务并发执行可能造成的问题" class="headerlink" title="17. 同时多个事务并发执行可能造成的问题"></a>17. 同时多个事务并发执行可能造成的问题</h2><ul>
+<h2 id="16-同时多个事务并发执行可能造成的问题"><a href="#16-同时多个事务并发执行可能造成的问题" class="headerlink" title="16. 同时多个事务并发执行可能造成的问题"></a>16. 同时多个事务并发执行可能造成的问题</h2><ul>
 <li>脏读：就是指当一个事务正在访问数据，并且对数据进行了修改，而这种修改还没有提交到数据库中，这时另外一个事务也访问这个数据，然后使用了这个数据。</li>
 <li>不可重复读：是指在一个事务内，多次读同一数据。在这个事务还没有结束时，另外一个事务也访问该同一数据。那么，在第一个事务中的两次读数据之间，由于第二个事务的修改，那么第一个事务两次读到的的数据可能是不一样的。</li>
 <li>幻读：事务在插入已经检查过不存在的记录时，惊奇的发现这些数据已经存在了，之前的检测获取到的数据如同鬼影一般。</li>
 <li>丢失修改：并发写入造成其中一些修改丢失。</li>
 </ul>
-<h2 id="18-不可重复读和幻读的区别"><a href="#18-不可重复读和幻读的区别" class="headerlink" title="18. 不可重复读和幻读的区别"></a>18. 不可重复读和幻读的区别</h2><ul>
+<h2 id="17-不可重复读和幻读的区别"><a href="#17-不可重复读和幻读的区别" class="headerlink" title="17. 不可重复读和幻读的区别"></a>17. 不可重复读和幻读的区别</h2><ul>
 <li>不可重复读是读取了其他事务更改的数据，针对update操作</li>
 </ul>
 <blockquote>
@@ -448,7 +470,7 @@
 <blockquote>
 <p>解决：使用表级锁，锁定整张表，事务A多次读取数据总量之后才释放该锁，这个时候才允许其他事务新增数据。</p>
 </blockquote>
-<h2 id="19-共享锁与排他锁"><a href="#19-共享锁与排他锁" class="headerlink" title="19. 共享锁与排他锁"></a>19. 共享锁与排他锁</h2><blockquote>
+<h2 id="18-共享锁与排他锁"><a href="#18-共享锁与排他锁" class="headerlink" title="18. 共享锁与排他锁"></a>18. 共享锁与排他锁</h2><blockquote>
 <p>共享锁(shared lock)，又叫读锁，读锁是可以共享的，或者说多个读请求可以共享一把锁读数据，而不会造成阻塞。当用户要进行数据的读取时，对数据加上共享锁，共享锁可以同时加上多个。</p>
 </blockquote>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table_name <span class="keyword">WHERE</span> ... <span class="keyword">LOCK</span> <span class="keyword">IN</span> <span class="keyword">SHARE</span> <span class="keyword">MODE</span></span><br></pre></td></tr></table></figure>
@@ -458,7 +480,7 @@
 </blockquote>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table_name <span class="keyword">WHERE</span> ... <span class="keyword">FOR</span> <span class="keyword">UPDATE</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="20-表级锁、行级锁、页级锁"><a href="#20-表级锁、行级锁、页级锁" class="headerlink" title="20. 表级锁、行级锁、页级锁"></a>20. 表级锁、行级锁、页级锁</h2><p><strong><a href="https://www.cnblogs.com/luyucheng/p/6297752.html" target="_blank" rel="noopener">MySQL锁详解</a></strong></p>
+<h2 id="19-表级锁、行级锁、页级锁"><a href="#19-表级锁、行级锁、页级锁" class="headerlink" title="19. 表级锁、行级锁、页级锁"></a>19. 表级锁、行级锁、页级锁</h2><p><strong><a href="https://www.cnblogs.com/luyucheng/p/6297752.html" target="_blank" rel="noopener">MySQL锁详解</a></strong></p>
 <blockquote>
 <p>表级别的锁定是MySQL各存储引擎中最大颗粒度的锁定机制。该锁定机制最大的特点是实现逻辑非常简单，带来的系统负面影响最小。所以获取锁和释放锁的速度很快。由于表级锁一次会将整个表锁定，所以可以很好的避免困扰我们的死锁问题。锁定颗粒度大所带来最大的负面影响就是出现锁定资源争用的概率也会最高，致使并大度大打折扣。</p>
 </blockquote>
@@ -490,7 +512,7 @@
 <blockquote>
 <p>适用：从锁的角度来说，表级锁更适合于以查询为主，只有少量按索引条件更新数据的应用，如Web应用；而行级锁则更适合于有大量按索引条件并发更新少量不同数据，同时又有并发查询的应用，如一些在线事务处理（OLTP）系统。</p>
 </blockquote>
-<h2 id="21-死锁"><a href="#21-死锁" class="headerlink" title="21. 死锁"></a>21. 死锁</h2><blockquote>
+<h2 id="20-死锁"><a href="#20-死锁" class="headerlink" title="20. 死锁"></a>20. 死锁</h2><blockquote>
 <p>在InnoDB中，除单个SQL组成的事务外，锁是逐步获得的，当两个事务都需要获得对方持有的排他锁才能继续完成事务，这种循环锁等待就是典型的死锁。</p>
 </blockquote>
 <blockquote>
@@ -515,29 +537,29 @@
 <li><p>设置锁超时时间：<code>set innodb_lock_wait_timeout=1000;</code></p>
 </li>
 </ul>
-<h2 id="22-什么是悲观锁"><a href="#22-什么是悲观锁" class="headerlink" title="22. 什么是悲观锁"></a>22. 什么是悲观锁</h2><blockquote>
+<h2 id="21-什么是悲观锁"><a href="#21-什么是悲观锁" class="headerlink" title="21. 什么是悲观锁"></a>21. 什么是悲观锁</h2><blockquote>
 <p>悲观锁(Pessimistic Lock)，顾名思义就是很悲观。每次去操作数据的时候，都会认为别人会修改。所以为了防止别人修改，就在操作的时候上锁。这样别人来访问的时候就会阻塞在那里直到锁被是释放。传统的关系型数据库里面就用到了很多这种锁机制，比如行锁、表锁、读锁、写锁等，都是在操作之前先上锁。</p>
 </blockquote>
 <blockquote>
 <p>遵循逻辑为一锁二查三更新(select for update)会把数据给锁住，其中MySQL默认InnoDB引擎，默认是行级锁，基于索引的，若SQL语句用不到索引，则不会使用行级锁的，会使用表级锁将整张表锁住。</p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 来源：https://www.jianshu.com/p/083bbe5f5534</span></span><br><span class="line"><span class="comment"># encoding:utf-8</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">场景：商品goods表中有一个字段status，status为1代表商品未被下单，status为2代表商品已经被下单，那么我们对某个商品下单的时候必须确保该商品status为1。假设商品id为1。</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果不使用锁,那么操作方法如下:</span></span><br><span class="line"><span class="comment"># 1.查询出商品信息</span></span><br><span class="line">select status <span class="keyword">from</span> t_goods where id = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.根据商品信息生成订单</span></span><br><span class="line">insert into t_orders(id,goods_d) values(null,<span class="number">1</span>);</span><br><span class="line"><span class="comment"># 3.修改商品status为2</span></span><br><span class="line">update t_goods set status=<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">上面这种场景在高并发访问的情况下很可能会出现问题。</span></span><br><span class="line"><span class="string">前面已经提到，只有上status为1的时候，才能对该商品下单，上面的第一步操作中查询出来的上面品status为1，但是当我们执行第二步的时候，很有可能有的人先一步执行了步骤2和步骤3，此时订单已经被下过了，然后我们又下了一次。很有可能就出现一个订单被下单了两次的情况。</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 解决这种问题的方法，我们使用悲观锁来实现。</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">在上面的场景中，商品信息从查询出来到修改，中间有一个处理订单的过程。使用悲观锁的原理就是,当我们查询goods的信息时，就把当前的数据锁住，直到我们修改完毕后再解锁。那么在这个过程中，因为goods被锁定了，就不会出现有第三者来对其进行修改了。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">注意：如果要使用悲观锁，我们必须将mysql数据库的自动提交功能关闭。因为mysql默认使用autocommit模式，也就是说，当你执行一个更新操作后，MySql会立即将结果进行提交。</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 我们可以使用命令设置MySQL为非autocommit的模式:</span></span><br><span class="line">set autocommit=<span class="number">0</span>;</span><br><span class="line"><span class="comment"># 设置完autocommit后,我们就可以执行我们的正常业务了。具体如下：</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 0.事务开始</span></span><br><span class="line">begin;/begin work;/start trasaction;  <span class="comment"># 三者选一即可</span></span><br><span class="line"><span class="comment"># 1.查询出商品信息</span></span><br><span class="line">select status <span class="keyword">from</span> t_goods where id=<span class="number">1</span> <span class="keyword">for</span> update;</span><br><span class="line"><span class="comment"># 2.根据商品信息生成订单</span></span><br><span class="line">insert into t_orders (id ,goods_id) values (null,<span class="number">1</span>);</span><br><span class="line"><span class="comment"># 3.修改商品status为2</span></span><br><span class="line">update t_goods set status=<span class="number">2</span>;</span><br><span class="line"><span class="comment"># 4.提交事务</span></span><br><span class="line">commit;/ commint work;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上面的第一步我们执行了一次查询操作:</span></span><br><span class="line">select status <span class="keyword">from</span> t_goods <span class="keyword">from</span> t_good where id=<span class="number">1</span> <span class="keyword">for</span> update;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 与普通查询不一样的是，我们使用了select... for update的方式，这样就通过数据库实现了悲观锁。此时t_goods表中，id为1的那条数据就被我们锁定了，其他的事务必须等本次事务提交之后才能执行。这样我们可以保证当前的数据不会被其他事务修改。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 来源：https://www.jianshu.com/p/083bbe5f5534</span></span><br><span class="line"><span class="comment">-- encoding:utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 场景：商品goods表中有一个字段status，status为1代表商品未被下单，status为2代表商品已经被下单，那么我们对某个商品下单的时候必须确保该商品status为1。假设商品id为1。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 如果不使用锁,那么操作方法如下:</span></span><br><span class="line"><span class="comment">-- 1.查询出商品信息</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">status</span> <span class="keyword">from</span> t_goods <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2.根据商品信息生成订单</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> t_orders(<span class="keyword">id</span>,goods_d) <span class="keyword">values</span>(<span class="literal">null</span>,<span class="number">1</span>);</span><br><span class="line"><span class="comment">-- 3.修改商品status为2</span></span><br><span class="line"><span class="keyword">update</span> t_goods <span class="keyword">set</span> <span class="keyword">status</span>=<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 上面这种场景在高并发访问的情况下很可能会出现问题。</span></span><br><span class="line"><span class="comment">-- 前面已经提到，只有上status为1的时候，才能对该商品下单，上面的第一步操作中查询出来的上面品status为1，但是当我们执行第二步的时候，很有可能有的人先一步执行了步骤2和步骤3，此时订单已经被下过了，然后我们又下了一次。很有可能就出现一个订单被下单了两次的情况。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 解决这种问题的方法，我们使用悲观锁来实现。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 在上面的场景中，商品信息从查询出来到修改，中间有一个处理订单的过程。使用悲观锁的原理就是,当我们查询goods的信息时，就把当前的数据锁住，直到我们修改完毕后再解锁。那么在这个过程中，因为goods被锁定了，就不会出现有第三者来对其进行修改了。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 注意：如果要使用悲观锁，我们必须将mysql数据库的自动提交功能关闭。因为mysql默认使用autocommit模式，也就是说，当你执行一个更新操作后，MySql会立即将结果进行提交。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 我们可以使用命令设置MySQL为非autocommit的模式:</span></span><br><span class="line"><span class="keyword">set</span> autocommit=<span class="number">0</span>;</span><br><span class="line"><span class="comment">-- 设置完autocommit后,我们就可以执行我们的正常业务了。具体如下：</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 0.事务开始</span></span><br><span class="line"><span class="keyword">begin</span>;/<span class="keyword">begin</span> <span class="keyword">work</span>;/<span class="keyword">start</span> trasaction;  <span class="comment">-- 三者选一即可</span></span><br><span class="line"><span class="comment">-- 1.查询出商品信息</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">status</span> <span class="keyword">from</span> t_goods <span class="keyword">where</span> <span class="keyword">id</span>=<span class="number">1</span> <span class="keyword">for</span> <span class="keyword">update</span>;</span><br><span class="line"><span class="comment">-- 2.根据商品信息生成订单</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> t_orders (<span class="keyword">id</span> ,goods_id) <span class="keyword">values</span> (<span class="literal">null</span>,<span class="number">1</span>);</span><br><span class="line"><span class="comment">-- 3.修改商品status为2</span></span><br><span class="line"><span class="keyword">update</span> t_goods <span class="keyword">set</span> <span class="keyword">status</span>=<span class="number">2</span>;</span><br><span class="line"><span class="comment">-- 4.提交事务</span></span><br><span class="line"><span class="keyword">commit</span>;/ commint work;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 上面的第一步我们执行了一次查询操作:</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">status</span> <span class="keyword">from</span> t_goods <span class="keyword">from</span> t_good <span class="keyword">where</span> <span class="keyword">id</span>=<span class="number">1</span> <span class="keyword">for</span> <span class="keyword">update</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 与普通查询不一样的是，我们使用了select... for update的方式，这样就通过数据库实现了悲观锁。此时t_goods表中，id为1的那条数据就被我们锁定了，其他的事务必须等本次事务提交之后才能执行。这样我们可以保证当前的数据不会被其他事务修改。</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>悲观锁的优缺点：悲观锁的策略是先取锁在访问，保证了数据的安全性，但是效率方面，处理锁机制会让数据库产生额外开销，还有可能增加产生死锁的可能，所以一般只有在写操作冲突很多的时候才使用悲观锁，而读操作不需要加锁。</p>
 </blockquote>
-<h2 id="23-什么是乐观锁"><a href="#23-什么是乐观锁" class="headerlink" title="23. 什么是乐观锁"></a>23. 什么是乐观锁</h2><blockquote>
+<h2 id="22-什么是乐观锁"><a href="#22-什么是乐观锁" class="headerlink" title="22. 什么是乐观锁"></a>22. 什么是乐观锁</h2><blockquote>
 <p>乐观锁(Optimistic Lock)，顾名思义就是很乐观，每次去拿数据的时候都认为比人不会修改，所以不会上锁。但是在更新数据的时候，会判断一下在更新数据的这段时间内，数据有没有被修改；如果被修改了，就取消这次操作；如果没有被修改，则使得这次操作生效。一般使用版本号或者时间戳的方式来实现。</p>
 </blockquote>
 <blockquote>
 <p>遵循先修改，更新时发现数据已经变了就回滚(check and set)，乐观锁一般通过数据库版本号或时间戳实现。在数据库增加一个字段version，当我们操作数据的时候，将版本号一同取出来，当我们更新数据，在提交更新的时候，会再去数据查询下当前的版本号，跟我们之前取出来的版本号，是否一致。如果一致，就使得这次更新生效。并且在每次更新数据的时候，都使得版本号加1。</p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">使用版本号时,可以再数据初始化时指定一个版本号，每次对数据的更新操作都对版本号执行+1操作。并判断一下当前的版本号是不是该数据的最新的版本号。</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="comment"># 1. 查询出商品信息</span></span><br><span class="line">select (status, version) <span class="keyword">from</span> t_goods where id = <span class="string">'id'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.根据商品信息生成订单</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.修改商品status为2</span></span><br><span class="line">update t_goods set status=<span class="number">2</span>, version=version+<span class="number">1</span></span><br><span class="line">where id=<span class="string">'id'</span> <span class="keyword">and</span> version=<span class="string">'version'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 使用版本号时,可以再数据初始化时指定一个版本号，每次对数据的更新操作都对版本号执行+1操作。并判断一下当前的版本号是不是该数据的最新的版本号。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1. 查询出商品信息</span></span><br><span class="line"><span class="keyword">select</span> (<span class="keyword">status</span>, <span class="keyword">version</span>) <span class="keyword">from</span> t_goods <span class="keyword">where</span> <span class="keyword">id</span> = <span class="string">'id'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2.根据商品信息生成订单</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 3.修改商品status为2</span></span><br><span class="line"><span class="keyword">update</span> t_goods <span class="keyword">set</span> <span class="keyword">status</span>=<span class="number">2</span>, <span class="keyword">version</span>=<span class="keyword">version</span>+<span class="number">1</span></span><br><span class="line"><span class="keyword">where</span> <span class="keyword">id</span>=<span class="string">'id'</span> <span class="keyword">and</span> <span class="keyword">version</span>=<span class="string">'version'</span>;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>乐观锁的优缺点：乐观并发控制相信事务之间的数据竞争的概率是比较小的，会先进行操作。再提交的时候，再进行验证这次提交是否可行，因此不会有任何的死锁和锁。但是这样做还是有问题的，例如如果某两个事务对同一行的数据同时进行了修改，经过修改之后，同时写进了数据库，这时就会出现问题。所以乐观锁，一般用在读数据比较多的地方。而对于写数据比较多的地方，我们最好使用悲观锁来解决。</p>
 </blockquote>
-<h2 id="24-MySQL支持哪些存储引擎"><a href="#24-MySQL支持哪些存储引擎" class="headerlink" title="24. MySQL支持哪些存储引擎"></a>24. MySQL支持哪些存储引擎</h2><p><strong><a href="https://blog.csdn.net/holysll/article/details/89197810" target="_blank" rel="noopener">MySQL的存储引擎的特点比较</a></strong></p>
+<h2 id="23-MySQL支持哪些存储引擎"><a href="#23-MySQL支持哪些存储引擎" class="headerlink" title="23. MySQL支持哪些存储引擎"></a>23. MySQL支持哪些存储引擎</h2><p><strong><a href="https://blog.csdn.net/holysll/article/details/89197810" target="_blank" rel="noopener">MySQL的存储引擎的特点比较</a></strong></p>
 <h3 id="1-InnoDB存储引擎"><a href="#1-InnoDB存储引擎" class="headerlink" title="(1) InnoDB存储引擎"></a>(1) InnoDB存储引擎</h3><blockquote>
 <p>MySQL的默认存储引擎，提供事务安全表，该存储引擎提供了具有提交、回滚和崩溃恢复能力的事务安全。用于事务处理应用程序，具有众多特性，包括ACID事务支持。相对于MyISAM引擎，写的处理效率会差一些，并且会占用更多的磁盘空间以保留数据和索引。</p>
 </blockquote>
@@ -587,7 +609,7 @@
 <h3 id="10-BLACKHOLE存储引擎"><a href="#10-BLACKHOLE存储引擎" class="headerlink" title="(10) BLACKHOLE存储引擎"></a>(10) BLACKHOLE存储引擎</h3><blockquote>
 <p>BLACKHOLE存储引擎接受但不存储数据，并且检索总是返回一个空集。用于临时禁止对数据库的应用程序输入。</p>
 </blockquote>
-<h2 id="25-MyISAM和InnoDB的区别"><a href="#25-MyISAM和InnoDB的区别" class="headerlink" title="25. MyISAM和InnoDB的区别"></a>25. MyISAM和InnoDB的区别</h2><table>
+<h2 id="24-MyISAM和InnoDB的区别"><a href="#24-MyISAM和InnoDB的区别" class="headerlink" title="24. MyISAM和InnoDB的区别"></a>24. MyISAM和InnoDB的区别</h2><table>
 <thead>
 <tr>
 <th align="center"></th>
@@ -636,7 +658,7 @@
 <td align="left">支持MVCC</td>
 </tr>
 </tbody></table>
-<h2 id="26-存储过程"><a href="#26-存储过程" class="headerlink" title="26. 存储过程"></a>26. 存储过程</h2><blockquote>
+<h2 id="25-存储过程"><a href="#25-存储过程" class="headerlink" title="25. 存储过程"></a>25. 存储过程</h2><blockquote>
 <p>存储过程是一些预编译的SQL语句，执行效率比较高，一个存储过程代替大量的T-SQL语句，可以降低网络通信量，提高通信速率，可以一定程度上确保数据安全。</p>
 </blockquote>
 <blockquote>
@@ -655,7 +677,7 @@
 </li>
 <li>缺点：移植性差</li>
 </ul>
-<h2 id="27-什么是视图"><a href="#27-什么是视图" class="headerlink" title="27. 什么是视图"></a>27. 什么是视图</h2><blockquote>
+<h2 id="26-什么是视图"><a href="#26-什么是视图" class="headerlink" title="26. 什么是视图"></a>26. 什么是视图</h2><blockquote>
 <p>视图是一种虚拟的表，具有和物理表相同的功能。可以对视图进行增、改、查操作，试图通常是有一个表或者多个表的行或列的子集。对视图的修改会影响基本表。它使得我们获取数据更容易，相比多表查询。</p>
 </blockquote>
 <blockquote>
@@ -674,21 +696,21 @@
 </ul>
 </li>
 </ul>
-<h2 id="28-什么是游标"><a href="#28-什么是游标" class="headerlink" title="28. 什么是游标"></a>28. 什么是游标</h2><blockquote>
+<h2 id="27-什么是游标"><a href="#27-什么是游标" class="headerlink" title="27. 什么是游标"></a>27. 什么是游标</h2><blockquote>
 <p>游标是对查询出来的结果作为一个单元来有效的处理。游标可以定在该单元中的特定行，从结果集的当前行检索一行或者多行。可以对结果集当前行做修改。一般不用游标，主要用在逐条处理数据时。</p>
 </blockquote>
-<h2 id="29-触发器"><a href="#29-触发器" class="headerlink" title="29. 触发器"></a>29. 触发器</h2><blockquote>
+<h2 id="28-触发器"><a href="#28-触发器" class="headerlink" title="28. 触发器"></a>28. 触发器</h2><blockquote>
 <p>触发器是一种特殊的存储过程，主要是通过实践来触发而被执行的。它可以强化约束，来维护数据的完整性和一致性，可以跟踪数据库内的操作从而不允许未经许可的更新和变化。可以联级运算，如某表上的触发器包含对另一个表的数据操作，而该操作又会导致该表触发器被触发。</p>
 </blockquote>
-<h2 id="30-drop、truncate、delete区别"><a href="#30-drop、truncate、delete区别" class="headerlink" title="30. drop、truncate、delete区别"></a>30. drop、truncate、delete区别</h2><ul>
+<h2 id="29-drop、truncate、delete区别"><a href="#29-drop、truncate、delete区别" class="headerlink" title="29. drop、truncate、delete区别"></a>29. drop、truncate、delete区别</h2><ul>
 <li>drop直接删除表</li>
 <li>truncate删除表中的数据，再插入时自增长id又从1开始</li>
 <li>delete删除表中的数据，可以加where语句</li>
 </ul>
-<h2 id="31-临时表"><a href="#31-临时表" class="headerlink" title="31. 临时表"></a>31. 临时表</h2><blockquote>
+<h2 id="30-临时表"><a href="#30-临时表" class="headerlink" title="30. 临时表"></a>30. 临时表</h2><blockquote>
 <p>MySQL 临时表在我们需要保存一些临时数据时是非常有用的。临时表只在当前连接可见，当关闭连接时，Mysql会自动删除表并释放所有空间。默认情况下，当你断开与数据库的连接后，临时表就会自动被销毁。当然你也可以在当前MySQL会话使用 DROP TABLE 命令来手动删除临时表。</p>
 </blockquote>
-<h2 id="32-数据库范式"><a href="#32-数据库范式" class="headerlink" title="32. 数据库范式"></a>32. 数据库范式</h2><blockquote>
+<h2 id="31-数据库范式"><a href="#31-数据库范式" class="headerlink" title="31. 数据库范式"></a>31. 数据库范式</h2><blockquote>
 <p>第一范式：最基本范式，数据库表中所有字段都是不可分解的原子值。</p>
 </blockquote>
 <blockquote>
@@ -706,7 +728,7 @@
 <blockquote>
 <p>第五范式：从最终结构重新建立原始结构。</p>
 </blockquote>
-<h2 id="33-关系型数据库与非关系型数据库优势和区别"><a href="#33-关系型数据库与非关系型数据库优势和区别" class="headerlink" title="33. 关系型数据库与非关系型数据库优势和区别"></a>33. 关系型数据库与非关系型数据库优势和区别</h2><ul>
+<h2 id="32-关系型数据库与非关系型数据库优势和区别"><a href="#32-关系型数据库与非关系型数据库优势和区别" class="headerlink" title="32. 关系型数据库与非关系型数据库优势和区别"></a>32. 关系型数据库与非关系型数据库优势和区别</h2><ul>
 <li><p>关系型数据库</p>
 <ul>
 <li>复杂查询：可以用SQL语句方便的在一个表以及多个表之间做非常复杂的数据查询。</li>
@@ -726,16 +748,16 @@
 </ul>
 </li>
 </ul>
-<h2 id="34-SQL语言分类"><a href="#34-SQL语言分类" class="headerlink" title="34. SQL语言分类"></a>34. SQL语言分类</h2><ul>
+<h2 id="33-SQL语言分类"><a href="#33-SQL语言分类" class="headerlink" title="33. SQL语言分类"></a>33. SQL语言分类</h2><ul>
 <li>数据查询语言DQL：主要是<code>SELECT</code>、<code>FROM</code>、<code>WHERE</code>语句</li>
 <li>数据操纵语句DML：主要是<code>INSERT</code>、<code>UPDATE</code>、<code>DELETE</code></li>
 <li>数据定义语言DDL：创建数据库中的各种对象（表、视图、索引、同义词）<code>CREATE TABLE/VIEW/INDEX/SYN/CLUSTER</code></li>
-<li>数据控制语言DCL：授权（<code>GRANT</code>）、回滚上次最后提交的状态（<code>ROLLBACK</code>）、回退到某个点（<code>ROLLBACK [WORK] TO [SAVEPOINT]</code>）、提交（<code>COMMIT [WORK]</code>）。</li>
+<li>数据控制语言DCL：授权（<code>GRANT</code>）、回滚上次最后提交的状态（<code>ROLLBACK</code>）、回退到某个点（<code>ROLLBACK WORK TO [SAVEPOINT</code>）、提交（<code>COMMIT WORK</code>）。</li>
 </ul>
-<h2 id="35-count-、count-1-、count-column-的区别"><a href="#35-count-、count-1-、count-column-的区别" class="headerlink" title="35. count(*)、count(1)、count(column)的区别"></a>35. count(*)、count(1)、count(column)的区别</h2><ul>
-<li>count(*)：对行的数目进行计算，包含NULL，跟count(非主键)一样，扫描整个表；</li>
-<li>count(1)：与count(主键)是一样的，只扫描主键；</li>
-<li>count(column)：对特定的类的值具体的函数进行计算，不包含NULL值；</li>
+<h2 id="34-count-、count-1-和count-column-的区别"><a href="#34-count-、count-1-和count-column-的区别" class="headerlink" title="34. count(*)、count(1)和count(column)的区别"></a>34. count(*)、count(1)和count(column)的区别</h2><ul>
+<li><code>count(*)</code>：对行的数目进行计算，包含NULL，跟<code>count(非主键)</code>一样，扫描整个表；</li>
+<li><code>count(1)</code>：与<code>count(主键)</code>是一样的，只扫描主键；</li>
+<li><code>count(column)</code>：对特定的类的值具体的函数进行计算，不包含NULL值；</li>
 </ul>
 <blockquote>
 <p>特别注意：</p>
@@ -746,7 +768,7 @@
 <li>杜绝<code>SELECT COUNT(COL) FROM tablename WHERE COL1 = &#39;value&#39;</code>的出现；</li>
 <li>如果表没有主键，那么<code>count(1)</code>比<code>count(*)</code>快；若果有主键，那么<code>count(主键，联合主键)</code>比<code>count(*)</code>快；若过表只有一个字段，<code>count(*)</code>最快。</li>
 </ul>
-<h2 id="36-like、-和-的区别"><a href="#36-like、-和-的区别" class="headerlink" title="36. like、% 和 _ 的区别"></a>36. like、% 和 _ 的区别</h2><ul>
+<h2 id="35-like、百分号和下划线的区别"><a href="#35-like、百分号和下划线的区别" class="headerlink" title="35. like、百分号和下划线的区别"></a>35. like、百分号和下划线的区别</h2><ul>
 <li>like操作符：LIKE作用是指示MySQL后面的搜索模式是利用通配符而不是直接相等匹配进行比较；若like后面没有通配符，则跟=等号效果一致。</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> products <span class="keyword">WHERE</span> products.prod_name <span class="keyword">like</span> <span class="string">'1000'</span>;</span><br></pre></td></tr></table></figure>
@@ -762,36 +784,35 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 向前匹配一个字符</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">FROM</span> products <span class="keyword">WHERE</span> products.prod_name <span class="keyword">like</span> <span class="string">'_aaa'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 向后匹配一个字符</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">FROM</span> products <span class="keyword">WHERE</span> products.prod_name <span class="keyword">like</span> <span class="string">'aaa_'</span>;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>特别注意</li>
-</ul>
-<blockquote>
-<p>MySQL的通配符很有用，但这种通配符搜索的处理一般比较慢。</p>
-</blockquote>
+<li><p>特别注意</p>
 <ul>
+<li>MySQL的通配符很有用，但这种通配符搜索的处理一般比较慢。</li>
 <li>不要过度使用通配符,如果其他操作符能达到相同的目的，应该使用其他操作符;</li>
 <li>在确实需要使用通配符时，除非绝对有必要，否则不要把它们用在搜索模式的开始处，因为会很慢；</li>
 <li>仔细注意通配符的位置，如果放错地方，可能不会返回想要的结果。</li>
 </ul>
-<h2 id="37-最左前缀原则"><a href="#37-最左前缀原则" class="headerlink" title="37. 最左前缀原则"></a>37. 最左前缀原则</h2><blockquote>
+</li>
+</ul>
+<h2 id="36-最左前缀原则"><a href="#36-最左前缀原则" class="headerlink" title="36. 最左前缀原则"></a>36. 最左前缀原则</h2><blockquote>
 <p>最左前缀原则：顾名思义，就是最左优先。在mysql中执行查询时，只能使用一个索引；在多列分别建索引，执行查询时，只用使用一个索引，mysql会选择一个最严格的的索引（获得结果集记录数最少的）。</p>
 </blockquote>
-<h2 id="38-超大分页处理"><a href="#38-超大分页处理" class="headerlink" title="38. 超大分页处理"></a>38. 超大分页处理</h2><ul>
+<h2 id="37-超大分页处理"><a href="#37-超大分页处理" class="headerlink" title="37. 超大分页处理"></a>37. 超大分页处理</h2><ul>
 <li>数据库层面：核心思想是减少load数据，适当利用所应覆盖</li>
 <li>靠缓存机制解决，可预测性地提前查到所需的内存，缓存到redis等k-v数据库中，直接返回即可。</li>
 </ul>
-<h2 id="39-慢查询优化"><a href="#39-慢查询优化" class="headerlink" title="39. 慢查询优化"></a>39. 慢查询优化</h2><ul>
+<h2 id="38-慢查询优化"><a href="#38-慢查询优化" class="headerlink" title="38. 慢查询优化"></a>38. 慢查询优化</h2><ul>
 <li>首先分析语句，查看是否load了额外的数据，可能是查询了多余的行并抛弃了，可能是加载了许多结果中并不需要的列，对语句进行分析并重写；</li>
 <li>分析语句的执行计划，然后获得其索引情况，之后修改语句或者修改索引，使得语句可以尽可能的命中索引；</li>
 <li>如果对语句的优化已经无法进行，可以考虑表中的数据量是否太大，如果是的话可以进行横向或纵向的分表；</li>
 <li><code>slow_query_log_file</code> 查看慢查询日志，调整数据修改索引</li>
 </ul>
-<h2 id="40-横向分表和纵向分表"><a href="#40-横向分表和纵向分表" class="headerlink" title="40. 横向分表和纵向分表"></a>40. 横向分表和纵向分表</h2><blockquote>
+<h2 id="39-横向分表和纵向分表"><a href="#39-横向分表和纵向分表" class="headerlink" title="39. 横向分表和纵向分表"></a>39. 横向分表和纵向分表</h2><blockquote>
 <p>横向分表是按行分表，假设我们有一张用户表，主键是自增ID且同时是用户的ID。数据量较大，有1亿多条，那么此时放在一张表里的查询效果就不太理想。我们可以根据主键ID进行分表，无论是按尾号分，或者按ID的区间分都是可以的。假设按照尾号0-99分为100个表，那么每张表中的数据就仅有100w。这时的查询效率无疑是可以满足要求的。</p>
 </blockquote>
 <blockquote>
 <p>纵向分表是按列分表，假设我们现在有一张文章表。包含字段id-摘要-内容。而系统中的展示形式是刷新出一个列表，列表中仅包含标题和摘要，当用户点击某篇文章进入详情时才需要正文内容。此时，如果数据量大，将内容这个很大且不经常使用的列放在一起会拖慢原表的查询速度。我们可以将上面的表分为两张。id-摘要，id-内容，当用户点击详情，那主键再来取一次内容即可，而增加的存储量只是很小的主键字段，代价很小。</p>
 </blockquote>
-<h2 id="41-B-树和-B-树的区别"><a href="#41-B-树和-B-树的区别" class="headerlink" title="41. B+ 树和 B 树的区别"></a>41. B+ 树和 B 树的区别</h2><p><strong><a href="https://www.cnblogs.com/zhuyeshen/p/12082839.html" target="_blank" rel="noopener">MySQL索引-B+树（看完你就明白了）</a></strong></p>
+<h2 id="40-B-树和B树的区别"><a href="#40-B-树和B树的区别" class="headerlink" title="40. B+树和B树的区别"></a>40. B+树和B树的区别</h2><p><strong><a href="https://www.cnblogs.com/zhuyeshen/p/12082839.html" target="_blank" rel="noopener">MySQL索引-B+树（看完你就明白了）</a></strong></p>
 <p><strong><a href="https://blog.csdn.net/qq_35571554/article/details/82759668" target="_blank" rel="noopener">漫画叙述B+树和B-树</a></strong></p>
 <blockquote>
 <p>(1). B+ 树非叶子节点上是不存储数据的，仅存储键值，而 B 树节点中不仅存储键值，也会存储数据。之所以这么做是因为在数据库中页的大小是固定的，InnoDB 中页的默认大小是 16KB。如果不存储数据，那么就会存储更多的键值，相应的树的阶数（节点的子节点树）就会更大，树就会更矮更胖，如此一来我们查找数据进行磁盘的 IO 次数又会再次减少，数据查询的效率也会更快。</p>
@@ -803,12 +824,12 @@
 <p>(3). B+ 树索引的所有数据均存储在叶子节点，而且数据是按照顺序排列的。那么 B+ 树使得范围查找，排序查找，分组查找以及去重查找变得异常简单。而 B 树因为数据分散在各个节点，要实现这一点是很不容易的。</p>
 </blockquote>
 <blockquote>
-<p>(4). B+ 树中各个页之间是通过双向链表连接的，叶子节点中的数据是通过单向链表连接的。在 InnoDB 中，数据页之间通过双向链表连接以及叶子节点中数据之间通过单向链表连接的方式可以找到表中所有的数据；在 MyISAM 中，B+ 树索引的叶子节点并不存储数据，而是存储数据的文件地址。</p>
+<p>(4). B+ 树中各个页之间是通过双向链表连接的，叶子节点中的数据是通过单向链表连接的。在<code>InnoDB</code>中，数据页之间通过双向链表连接以及叶子节点中数据之间通过单向链表连接的方式可以找到表中所有的数据；在 MyISAM 中，B+ 树索引的叶子节点并不存储数据，而是存储数据的文件地址。</p>
 </blockquote>
 <blockquote>
 <p>(5). B+树的磁盘读写代价更低，IO 次数少，数据查询的效率也会更快；B+树的查询效率更加稳定，任何关键字的查找必须走一条从根结点到叶子结点的路，路径长度相同，所以每一个数据的查询效率相当。</p>
 </blockquote>
-<h2 id="42-查询语句中用到的关键词"><a href="#42-查询语句中用到的关键词" class="headerlink" title="42. 查询语句中用到的关键词"></a>42. 查询语句中用到的关键词</h2><blockquote>
+<h2 id="41-查询语句中用到的关键词"><a href="#41-查询语句中用到的关键词" class="headerlink" title="41. 查询语句中用到的关键词"></a>41. 查询语句中用到的关键词</h2><blockquote>
 <p>查询中用到的关键词主要包含六个，且执行顺序为<code>select--&gt;from--&gt;where--&gt;group by--&gt;having--order by</code></p>
 </blockquote>
 <blockquote>
@@ -829,7 +850,7 @@
 <blockquote>
 <p><strong>from后面的表关联，是自右向左解析，而where条件的解析顺序是自下而上的：</strong> 在写SQL语句的时候，尽量把数据量小的表放在最右边来进行关联（用小表去匹配大表），而把能筛选出小量数据的条件放在where语句的最左边（用小表去匹配大表）。</p>
 </blockquote>
-<h2 id="43-使用explain优化SQL和索引"><a href="#43-使用explain优化SQL和索引" class="headerlink" title="43. 使用explain优化SQL和索引"></a>43. 使用explain优化SQL和索引</h2><blockquote>
+<h2 id="42-使用explain优化SQL和索引"><a href="#42-使用explain优化SQL和索引" class="headerlink" title="42. 使用explain优化SQL和索引"></a>42. 使用explain优化SQL和索引</h2><blockquote>
 <p>对于复杂、效率低的sql语句，可以使用<code>explain + sql</code>的格式来分析sql语句，可以打印出语句执行的过程，以便分析与优化。</p>
 </blockquote>
 <table>
@@ -892,7 +913,7 @@
 <td align="left">关于MySQL如何解析查询的额外信息</td>
 </tr>
 </tbody></table>
-<h2 id="44-数据库组主从复制的方式"><a href="#44-数据库组主从复制的方式" class="headerlink" title="44. 数据库组主从复制的方式"></a>44. 数据库组主从复制的方式</h2><ul>
+<h2 id="43-数据库组主从复制的方式"><a href="#43-数据库组主从复制的方式" class="headerlink" title="43. 数据库组主从复制的方式"></a>43. 数据库组主从复制的方式</h2><ul>
 <li>同步复制</li>
 </ul>
 <blockquote>
@@ -910,7 +931,7 @@
 <blockquote>
 <p>master只保证slaves中的一个操作成功就返回，其他的不管。这个是由goole为MySQL引入的。</p>
 </blockquote>
-<h2 id="45-数据库崩溃时事务的恢复机制（REDO日志和UNDO日志）"><a href="#45-数据库崩溃时事务的恢复机制（REDO日志和UNDO日志）" class="headerlink" title="45. 数据库崩溃时事务的恢复机制（REDO日志和UNDO日志）"></a>45. 数据库崩溃时事务的恢复机制（REDO日志和UNDO日志）</h2><ul>
+<h2 id="44-数据库崩溃时事务的恢复机制（REDO日志和UNDO日志）"><a href="#44-数据库崩溃时事务的恢复机制（REDO日志和UNDO日志）" class="headerlink" title="44. 数据库崩溃时事务的恢复机制（REDO日志和UNDO日志）"></a>44. 数据库崩溃时事务的恢复机制（REDO日志和UNDO日志）</h2><ul>
 <li>Undo Log</li>
 </ul>
 <blockquote>
@@ -932,11 +953,11 @@
 
 <h2 id="2-用户管理"><a href="#2-用户管理" class="headerlink" title="2. 用户管理"></a>2. 用户管理</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 创建用户</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> <span class="string">'用户名'</span>@<span class="string">'IP地址'</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'密码'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除用户</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">user</span> <span class="string">'用户名'</span>@<span class="string">'IP地址'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 修改用户</span></span><br><span class="line"><span class="keyword">rename</span> <span class="keyword">user</span> <span class="string">'用户名'</span>@<span class="string">'IP地址'</span>; to '新用户名'@'IP地址';;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 修改密码</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> <span class="string">'用户名'</span>@<span class="string">'IP地址'</span> = <span class="keyword">Password</span>(<span class="string">'新密码'</span>);</span><br><span class="line"><span class="comment">-- 或者用update更新user</span></span><br><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">password</span>=<span class="keyword">password</span>(<span class="string">'123'</span>) <span class="keyword">where</span> <span class="keyword">user</span>=<span class="string">'root'</span> <span class="keyword">and</span> host=<span class="string">'localhost'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 修改需要刷新才生效</span></span><br><span class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</span><br></pre></td></tr></table></figure>
 
-<h2 id="3-授权管理"><a href="#3-授权管理" class="headerlink" title="3. 授权管理"></a>3. 授权管理</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 查看权限</span></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">grant</span> <span class="keyword">for</span> <span class="string">'用户名'</span>@<span class="string">'IP地址'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 授权</span></span><br><span class="line"><span class="keyword">grant</span> 权限 <span class="keyword">on</span> 数据库.表 <span class="keyword">to</span> <span class="string">'用户名'</span>@<span class="string">'IP地址'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 取消权限</span></span><br><span class="line"><span class="keyword">revoke</span> 权限 <span class="keyword">on</span> 数据库.表 <span class="keyword">from</span> <span class="string">'用户名'</span>@<span class="string">'IP地址'</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="3-授权管理"><a href="#3-授权管理" class="headerlink" title="3. 授权管理"></a>3. 授权管理</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 查看权限</span></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">grant</span> <span class="keyword">for</span> <span class="string">'用户名'</span>@<span class="string">'IP地址'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 授权</span></span><br><span class="line"><span class="keyword">grant</span> 权限 <span class="keyword">on</span> database1.table1 <span class="keyword">to</span> <span class="string">'用户名'</span>@<span class="string">'IP地址'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 取消权限</span></span><br><span class="line"><span class="keyword">revoke</span> 权限 <span class="keyword">on</span> database1.table1 <span class="keyword">from</span> <span class="string">'用户名'</span>@<span class="string">'IP地址'</span>;</span><br></pre></td></tr></table></figure>
 
-<h2 id="4-修改表的列"><a href="#4-修改表的列" class="headerlink" title="4. 修改表的列"></a>4. 修改表的列</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 添加列</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> 列名 类型;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 默认添加到最后一列</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">add</span> age <span class="built_in">int</span> <span class="keyword">default</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 添加到第一列</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">add</span> addr <span class="built_in">char</span>(<span class="number">12</span>) <span class="keyword">first</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 添加到addr列后面</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">add</span> phone <span class="keyword">after</span> addr;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除列</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">drop</span> phone;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 修改列，只修改类型</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">modify</span> <span class="keyword">column</span> phone <span class="built_in">INTEGER</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 列名和类型同时修改</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">change</span> <span class="keyword">column</span> <span class="keyword">name</span> myname <span class="built_in">varchar</span>(<span class="number">20</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="4-修改表的列"><a href="#4-修改表的列" class="headerlink" title="4. 修改表的列"></a>4. 修改表的列</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 添加列</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">add</span> <span class="keyword">column</span> <span class="built_in">int</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 默认添加到最后一列</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">add</span> age <span class="built_in">int</span> <span class="keyword">default</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 添加到第一列</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">add</span> addr <span class="built_in">char</span>(<span class="number">12</span>) <span class="keyword">first</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 添加到addr列后面</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">add</span> phone <span class="keyword">after</span> addr;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除列</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">drop</span> phone;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 修改列，只修改类型</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">modify</span> <span class="keyword">column</span> phone <span class="built_in">INTEGER</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 列名和类型同时修改</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">change</span> <span class="keyword">column</span> <span class="keyword">name</span> myname <span class="built_in">varchar</span>(<span class="number">20</span>);</span><br></pre></td></tr></table></figure>
 
-<h2 id="5-键的操作"><a href="#5-键的操作" class="headerlink" title="5. 键的操作"></a>5. 键的操作</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 添加主键</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">add</span> primary <span class="keyword">key</span>(<span class="keyword">id</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除主键</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">drop</span> primary <span class="keyword">key</span>(<span class="keyword">id</span>);</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">modify</span> <span class="keyword">id</span> <span class="built_in">int</span>, <span class="keyword">drop</span> primary <span class="keyword">key</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 添加外键</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 从表 <span class="keyword">add</span> <span class="keyword">constraint</span> 从键名称 foreign_key 从表(外键字段)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除外键</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">drop</span> foreign_key 外键名称</span><br></pre></td></tr></table></figure>
+<h2 id="5-键的操作"><a href="#5-键的操作" class="headerlink" title="5. 键的操作"></a>5. 键的操作</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 添加主键</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">add</span> primary <span class="keyword">key</span>(<span class="keyword">id</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除主键</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">drop</span> primary <span class="keyword">key</span>(<span class="keyword">id</span>);</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">modify</span> <span class="keyword">id</span> <span class="built_in">int</span>, <span class="keyword">drop</span> primary <span class="keyword">key</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 添加外键</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 从表 <span class="keyword">add</span> <span class="keyword">constraint</span> 从键名称 foreign_key 从表(外键字段)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除外键</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">drop</span> foreign_key key_name</span><br></pre></td></tr></table></figure>
 
 <h2 id="6-设置默认值"><a href="#6-设置默认值" class="headerlink" title="6. 设置默认值"></a>6. 设置默认值</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 设置默认值</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">alter</span> age <span class="keyword">set</span> <span class="keyword">default</span> <span class="number">18</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除默认值</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">alter</span> age <span class="keyword">drop</span> <span class="keyword">default</span>;</span><br></pre></td></tr></table></figure>
 
@@ -945,13 +966,13 @@
 <li>select语句</li>
 </ul>
 <blockquote>
-<p>格式：select 字段 from 表名； # 全部字段可以用 *</p>
+<p>格式：select 字段 from 表名； 全部字段可以用 *</p>
 </blockquote>
 <ul>
 <li>where 用于限制查询的结果</li>
 </ul>
 <blockquote>
-<p>格式：<code>where 字段=&#39;xxx&#39;;</code>  # 查询条件&gt; &lt; &gt;= &lt;= = !=</p>
+<p>格式：<code>where 字段=&#39;xxx&#39;;</code> 查询条件&gt; &lt; &gt;= &lt;= = !=</p>
 </blockquote>
 <ul>
 <li><p>与(AND)或(OR)</p>
@@ -1012,7 +1033,6 @@
 </blockquote>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 升序</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> 表 <span class="keyword">order</span> <span class="keyword">by</span> 列 <span class="keyword">asc</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 降序</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> 表 <span class="keyword">order</span> <span class="keyword">by</span> 列 <span class="keyword">desc</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 多项排序</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> 表 <span class="keyword">order</span> <span class="keyword">by</span> 列<span class="number">1</span> <span class="keyword">desc</span>,列<span class="number">2</span> <span class="keyword">asc</span>;</span><br></pre></td></tr></table></figure>
 
-
 <h2 id="9-聚合函数"><a href="#9-聚合函数" class="headerlink" title="9. 聚合函数"></a>9. 聚合函数</h2><blockquote>
 <p>把 select 语句的查询结果汇聚成一个结果，这样的函数叫聚合函数。</p>
 </blockquote>
@@ -1052,25 +1072,25 @@
 <li>内连接(INNER JOIN)：只返回两个表中联结字段相等的行</li>
 </ul>
 <blockquote>
-<p>格式：<code>select * from a inner join b on a.id=b.id;</code>  # 其中inner可以省略，等同于JOIN的用法</p>
+<p>格式：<code>select * from a inner join b on a.id=b.id;</code>  其中inner可以省略，等同于JOIN的用法</p>
 </blockquote>
 <ul>
 <li>左外连接(LEFT JOIN 或 LEFT OUTER JOIN)：即使右表中没有匹配，也从左表返回所有的行</li>
 </ul>
 <blockquote>
-<p>格式：<code>select * from a left outer join b on a.id=b.aid;</code>  # 其中outer可忽略</p>
+<p>格式：<code>select * from a left outer join b on a.id=b.aid;</code>  其中outer可忽略</p>
 </blockquote>
 <ul>
 <li>右外连接(RIGHT JOIN 或 RIGHT OUTER JOIN)：即使左表中没有匹配，也从右表返回所有的行</li>
 </ul>
 <blockquote>
-<p>格式：<code>select * from a right outer join b on a.id=b.aid;</code>  # 其中outer可忽略</p>
+<p>格式：<code>select * from a right outer join b on a.id=b.aid;</code>  其中outer可忽略</p>
 </blockquote>
 <ul>
 <li>全连接(FULL JOIN 或 FULL OUTER JOIN): 只要其中一个表中存在匹配，就返回行。相当于左外连接+右外链接，注意mysql不支持全连接</li>
 </ul>
 <blockquote>
-<p>格式：<code>select * from a full outer join b on a.id=b.id;</code># 其中outer可忽略</p>
+<p>格式：<code>select * from a full outer join b on a.id=b.id;</code> 其中outer可忽略</p>
 </blockquote>
 <ul>
 <li>自连接：自连接意思是把自身表当成另外一张表看待，互相关联查询，连接方式可以使用以上的内外连接，这种连接方式可以解决很多奇怪的问题。</li>
@@ -1081,16 +1101,16 @@
 <h2 id="12-组合"><a href="#12-组合" class="headerlink" title="12. 组合"></a>12. 组合</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 组合，自动处理重合</span></span><br><span class="line"><span class="keyword">select</span> username <span class="keyword">from</span> A <span class="keyword">union</span> <span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> B;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 组合，不处理重合</span></span><br><span class="line"><span class="keyword">select</span> username <span class="keyword">from</span> A <span class="keyword">union</span> <span class="keyword">all</span> <span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> B;</span><br></pre></td></tr></table></figure>
 
 <h2 id="13-LIMIT的用法"><a href="#13-LIMIT的用法" class="headerlink" title="13. LIMIT的用法"></a>13. LIMIT的用法</h2><blockquote>
-<p>格式：<code>select * from student limit 10;</code>  # 查询前10条数据，显示1-10条数据</p>
+<p>格式：<code>select * from student limit 10;</code>  查询前10条数据，显示1-10条数据</p>
 </blockquote>
 <blockquote>
-<p>格式：<code>select * from student limit 1,10;</code>  # 查询从第2行开始，累加10条id记录，共显示id为2….11</p>
+<p>格式：<code>select * from student limit 1,10;</code>  查询从第2行开始，累加10条id记录，共显示id为2….11</p>
 </blockquote>
 <blockquote>
-<p>格式：<code>select * from student limit 5,10;</code>  # 查询从第6行开始向前加10条数据，共显示id为6,7….15  </p>
+<p>格式：<code>select * from student limit 5,10;</code>  查询从第6行开始向前加10条数据，共显示id为6,7….15  </p>
 </blockquote>
 <blockquote>
-<p>格式：<code>select * from student limit i,n;</code>  # i: 为查询结果的索引值(默认从0开始),当i=0时可省略i; n: 为查询结果返回的数量</p>
+<p>格式：<code>select * from student limit i,n;</code>  i: 为查询结果的索引值(默认从0开始),当i=0时可省略i; n: 为查询结果返回的数量</p>
 </blockquote>
 <h2 id="14-case-when"><a href="#14-case-when" class="headerlink" title="14. case when"></a>14. case when</h2><p><strong><a href="https://www.cnblogs.com/aipan/p/7770611.html" target="_blank" rel="noopener">CASE WHEN 及 SELECT CASE WHEN的用法</a></strong><br><strong><a href="https://www.cnblogs.com/cx-zyq/archive/2013/05/16/3082295.html" target="_blank" rel="noopener">SQL Case when 的使用方法</a></strong></p>
 <ul>
@@ -1216,12 +1236,12 @@
 <ul>
 <li>（1）开启binlog功能，修改<code>vim /etc/my.cnf</code>配置</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">server-id=1 <span class="comment"># 指明主库的身份id为1</span></span><br><span class="line"><span class="built_in">log</span>-bin=/var/<span class="built_in">log</span>/mysql/mysql-bin <span class="comment"># 指明binlog的日志名</span></span><br><span class="line">innodb_flush_log_at_trx_commit = 1  <span class="comment"># 为了在使用带事务的InnoDB进行复制设置时尽可能提高持久性和一致性</span></span><br><span class="line">sync_binlog = 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">&lt;!-- 指明主库的身份id为1 --&gt;</span><br><span class="line">server-id=1</span><br><span class="line">&lt;!-- 指明binlog的日志名 --&gt;</span><br><span class="line"><span class="built_in">log</span>-bin=/var/<span class="built_in">log</span>/mysql/mysql-bin</span><br><span class="line">&lt;!-- 为了在使用带事务的InnoDB进行复制设置时尽可能提高持久性和一致性 --&gt;</span><br><span class="line">innodb_flush_log_at_trx_commit = 1</span><br><span class="line">sync_binlog = 1</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>（2）创建日志目录并赋予权限，重启mysql，使得binlog生效</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /var/<span class="built_in">log</span>/mysql  <span class="comment"># 创建日志目录</span></span><br><span class="line">chown mysql.mysql /varlog/mysql  <span class="comment"># 赋予权限</span></span><br><span class="line">systemctl restart mysqld  <span class="comment"># mysqld重启服务</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 创建日志目录 --&gt;</span><br><span class="line">mkdir /var/<span class="built_in">log</span>/mysql</span><br><span class="line">&lt;!-- 赋予权限 --&gt;</span><br><span class="line">chown mysql.mysql /varlog/mysql</span><br><span class="line">&lt;!-- mysqld重启服务 --&gt;</span><br><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>（3）登录mysql，检查主库的状态</li>
@@ -1268,7 +1288,7 @@
 <ul>
 <li>（2）重启mysql，使得binlog生效</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld  <span class="comment"># mysqld重启服务</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- mysqld重启服务 --&gt;</span><br><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>（3）登录slave从库，导入主库的数据信息</li>
@@ -1278,7 +1298,7 @@
 <ul>
 <li>（4）从数据库上进行复制行为的相关配置</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">change</span> <span class="keyword">master</span> <span class="keyword">to</span> master_host=<span class="string">'192.168.x.xx'</span>,</span><br><span class="line">master_user=<span class="string">'database_backup'</span>,</span><br><span class="line">master_password=<span class="string">'database_backup_666'</span>,</span><br><span class="line">master_log_file=<span class="string">'mysql-bin.000001'</span>,  <span class="comment"># 根据show master status给出的状态</span></span><br><span class="line">master_log_pos=<span class="number">666</span>;  <span class="comment"># 根据show master status给出的状态</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">change</span> <span class="keyword">master</span> <span class="keyword">to</span> master_host=<span class="string">'192.168.x.xx'</span>,</span><br><span class="line">master_user=<span class="string">'database_backup'</span>,</span><br><span class="line">master_password=<span class="string">'database_backup_666'</span>,</span><br><span class="line">master_log_file=<span class="string">'mysql-bin.000001'</span>,  <span class="comment">-- 根据show master status给出的状态</span></span><br><span class="line">master_log_pos=<span class="number">666</span>;  <span class="comment">-- 根据show master status给出的状态</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>（5）启动slave线程</li>
@@ -1297,17 +1317,409 @@
 <li>集群方案，解决DB宕机带来的单点DB不能访问问题；</li>
 <li>读写分离策略，极大限度提高了应用中Read数据的速度和并发量。无法解决高写入压力；</li>
 </ul>
-<h1 id="Redis数据库"><a href="#Redis数据库" class="headerlink" title="Redis数据库"></a>Redis数据库</h1><h2 id="1-redis"><a href="#1-redis" class="headerlink" title="1. redis"></a>1. redis</h2><blockquote>
-<p>Redis 是一个开源的使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存亦可持久化的日志型、Key-Value 数据库，并提供多种语言的 API的非关系型数据库。</p>
+<h1 id="Redis数据库"><a href="#Redis数据库" class="headerlink" title="Redis数据库"></a>Redis数据库</h1><h2 id="1-什么是Redis"><a href="#1-什么是Redis" class="headerlink" title="1. 什么是Redis"></a>1. 什么是Redis</h2><blockquote>
+<p>Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。</p>
 </blockquote>
-<h2 id="2-持久化机制"><a href="#2-持久化机制" class="headerlink" title="2. 持久化机制"></a>2. 持久化机制</h2><h2 id="3-redis-和-memcached-的主要区别"><a href="#3-redis-和-memcached-的主要区别" class="headerlink" title="3. redis 和 memcached 的主要区别"></a>3. redis 和 memcached 的主要区别</h2><h2 id="4-Redis-高可用"><a href="#4-Redis-高可用" class="headerlink" title="4. Redis 高可用"></a>4. Redis 高可用</h2><h2 id="5-Redis-高并发"><a href="#5-Redis-高并发" class="headerlink" title="5. Redis 高并发"></a>5. Redis 高并发</h2><h2 id="6-redis的数据类型"><a href="#6-redis的数据类型" class="headerlink" title="6. redis的数据类型"></a>6. redis的数据类型</h2><ul>
+<blockquote>
+<p>Redis 与其他 key - value 缓存产品有以下三个特点：</p>
+</blockquote>
+<ul>
+<li>Redis支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。</li>
+<li>Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储。</li>
+<li>Redis支持数据的备份，即master-slave模式的数据备份。</li>
+</ul>
+<blockquote>
+<p>Redis的优势：</p>
+</blockquote>
+<ul>
+<li>性能极高：Redis能读的速度是110000次/s,写的速度是81000次/s 。</li>
+<li>丰富的数据类型：Redis支持二进制案例的 Strings, Lists, Hashes, Sets 及 Ordered Sets 数据类型操作。</li>
+<li>原子性：Redis的所有操作都是原子性的，意思就是要么成功执行要么失败完全不执行。单个操作是原子性的。多个操作也支持事务，即原子性，通过MULTI和EXEC指令包起来。</li>
+<li>丰富的特性：Redis还支持 publish/subscribe, 通知, key 过期等等特性。</li>
+</ul>
+<blockquote>
+<p>Redis与其他key-value存储有什么不同</p>
+</blockquote>
+<ul>
+<li><p>Redis有着更为复杂的数据结构并且提供对他们的原子性操作，这是一个不同于其他数据库的进化路径。Redis的数据类型都是基于基本数据结构的同时对程序员透明，无需进行额外的抽象。</p>
+</li>
+<li><p>Redis运行在内存中但是可以持久化到磁盘，所以在对不同数据集进行高速读写时需要权衡内存，因为数据量不能大于硬件内存。在内存数据库方面的另一个优点是，相比在磁盘上相同的复杂的数据结构，在内存中操作起来非常简单，这样Redis可以做很多内部复杂性很强的事情。同时，在磁盘格式方面他们是紧凑的以追加的方式产生的，因为他们并不需要进行随机访问。</p>
+</li>
+</ul>
+<p><strong><a href="https://www.runoob.com/redis/redis-intro.html" target="_blank" rel="noopener">以上来源于《菜鸟教程–Redis简介》</a></strong></p>
+<h2 id="2-redis的数据类型"><a href="#2-redis的数据类型" class="headerlink" title="2. redis的数据类型"></a>2. redis的数据类型</h2><ul>
 <li>字符串(String)</li>
+</ul>
+<blockquote>
+<p>string类型是二进制安全的，可以包含任何数据，比如JPG图片或者序列化对象。string类型是Redis最基本的数据类型，一个键最大能存储512MB。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置字符串类型</span></span><br><span class="line">127.0.0.1:6379&gt; <span class="built_in">set</span> key value</span><br><span class="line"><span class="comment"># 读取字符串类型</span></span><br><span class="line">127.0.0.1:6379&gt; get key value</span><br></pre></td></tr></table></figure>
+
+<ul>
 <li>哈希(Hash)</li>
+</ul>
+<blockquote>
+<p>hash存的是字符串和字符串值之间的映射，是一个键值(key=&gt;value)对集合，比如用户存储姓名、年龄等信息，非常适合存储对象。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 建立哈希，并赋值</span></span><br><span class="line">127.0.0.1:6379&gt; hmset name key1 value1 key2 value2 ...</span><br><span class="line">127.0.0.1:6379&gt; hmset user:001 username liming <span class="built_in">pwd</span> 123456 age 18</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出哈希的内容</span></span><br><span class="line">127.0.0.1:6379&gt; hgetall user:001</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="string">"username"</span></span><br><span class="line"><span class="string">"liming"</span></span><br><span class="line"><span class="string">"pwd"</span></span><br><span class="line"><span class="string">"123456"</span></span><br><span class="line"><span class="string">"age"</span></span><br><span class="line"><span class="string">"18"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更改哈希中的某一个值</span></span><br><span class="line">127.0.0.1:6379&gt; hgetall user:001 <span class="built_in">pwd</span> aaaaaa</span><br><span class="line"><span class="comment"># 查看更改后的哈希的内容</span></span><br><span class="line">127.0.0.1:6379&gt; hgetall user:001</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="string">"username"</span></span><br><span class="line"><span class="string">"liming"</span></span><br><span class="line"><span class="string">"pwd"</span></span><br><span class="line"><span class="string">"aaaaaa"</span></span><br><span class="line"><span class="string">"age"</span></span><br><span class="line"><span class="string">"18"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
 <li>列表(List)</li>
+</ul>
+<blockquote>
+<p>Redis 列表是简单的字符串列表，按照插入顺序排序，底层实现是链表，对于一个具有几百上千万个元素的list来说，在头部和尾部插入一个新元素，其时间复杂度是常数级别的，插入速度也是不变的。弊端就是链表型的list比数组型的list定位更慢。list主要应用在消息队列上，可以确保先后顺序，还可以利用<code>lrange</code>实现分页功能，博客系统中评论也可以存入一个单独的list中。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 头部插入元素</span></span><br><span class="line">127.0.0.1:6379&gt; lpush mylist <span class="string">"1"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 尾部插入元素</span></span><br><span class="line">127.0.0.1:6379&gt; rpush mylist <span class="string">"2"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取list中的元素</span></span><br><span class="line">127.0.0.1:6379&gt; lrange mylist index1 index2 ...</span><br><span class="line"><span class="comment"># 读取list中编号0到倒数第一个元素</span></span><br><span class="line">127.0.0.1:6379&gt; lrange mylist 0 -1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除元素</span></span><br><span class="line">127.0.0.1:6379&gt; lrem mylist index</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取list长度</span></span><br><span class="line">127.0.0.1:6379&gt; llen mylist</span><br></pre></td></tr></table></figure>
+
+<ul>
 <li>集合(Set)</li>
+</ul>
+<blockquote>
+<p>Redis的Set是string类型的无序且元素不重复的集合，集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是O(1)，同时可以进行集合运算：取交集、取并集、取差集等。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加元素</span></span><br><span class="line">127.0.0.1:6379&gt; sadd myset <span class="string">"1"</span></span><br><span class="line"><span class="comment"># 读取元素</span></span><br><span class="line">127.0.0.1:6379&gt; smembers myset</span><br><span class="line"><span class="comment"># 删除元素</span></span><br><span class="line">127.0.0.1:6379&gt; srem myset <span class="string">"1"</span></span><br><span class="line"><span class="comment"># 判断元素是否存在，存在返回1，否则返回0</span></span><br><span class="line">127.0.0.1:6379&gt; sismember myset <span class="string">"1"</span></span><br><span class="line"><span class="comment"># 取交集</span></span><br><span class="line">127.0.0.1:6379&gt; sinter set1 set2</span><br><span class="line"><span class="comment"># 取并集</span></span><br><span class="line">127.0.0.1:6379&gt; sunion set1 set2</span><br><span class="line"><span class="comment"># 取差集</span></span><br><span class="line">127.0.0.1:6379&gt; sdiff set1 set2</span><br></pre></td></tr></table></figure>
+
+<ul>
 <li>有序集合(sorted set)</li>
 </ul>
-<h2 id="7-redis的AOF太大如何优化"><a href="#7-redis的AOF太大如何优化" class="headerlink" title="7. redis的AOF太大如何优化"></a>7. redis的AOF太大如何优化</h2><h2 id="8-redis集群，如何扩展"><a href="#8-redis集群，如何扩展" class="headerlink" title="8. redis集群，如何扩展"></a>8. redis集群，如何扩展</h2><h2 id="9-什么是缓存穿透"><a href="#9-什么是缓存穿透" class="headerlink" title="9. 什么是缓存穿透"></a>9. 什么是缓存穿透</h2><h2 id="10-什么是缓存击穿"><a href="#10-什么是缓存击穿" class="headerlink" title="10. 什么是缓存击穿"></a>10. 什么是缓存击穿</h2><h2 id="11-什么是缓存雪崩"><a href="#11-什么是缓存雪崩" class="headerlink" title="11. 什么是缓存雪崩"></a>11. 什么是缓存雪崩</h2><h1 id="MongoDB数据库"><a href="#MongoDB数据库" class="headerlink" title="MongoDB数据库"></a>MongoDB数据库</h1><h2 id="1-如何启动"><a href="#1-如何启动" class="headerlink" title="1. 如何启动"></a>1. 如何启动</h2><h1 id="Elasticsearch数据库"><a href="#Elasticsearch数据库" class="headerlink" title="Elasticsearch数据库"></a>Elasticsearch数据库</h1><h2 id="1-索引如何存储"><a href="#1-索引如何存储" class="headerlink" title="1. 索引如何存储"></a>1. 索引如何存储</h2><h2 id="2-介绍下Elastisearch原理和用途"><a href="#2-介绍下Elastisearch原理和用途" class="headerlink" title="2. 介绍下Elastisearch原理和用途"></a>2. 介绍下Elastisearch原理和用途</h2><h2 id="3-分布式实时日志使用ELK"><a href="#3-分布式实时日志使用ELK" class="headerlink" title="3. 分布式实时日志使用ELK"></a>3. 分布式实时日志使用ELK</h2><h1 id="Hive数据库"><a href="#Hive数据库" class="headerlink" title="Hive数据库"></a>Hive数据库</h1><h1 id="Hbase数据库"><a href="#Hbase数据库" class="headerlink" title="Hbase数据库"></a>Hbase数据库</h1><h1 id="Hadoop生态"><a href="#Hadoop生态" class="headerlink" title="Hadoop生态"></a>Hadoop生态</h1>
+<blockquote>
+<p>有序集合中，每个元素都会关联一个double类型的分数(score)，redis正是通过分数来为集合中的元素进行从小到大的排序。有序集合中的元素是唯一的，但分数(score)可以重复。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加元素，赋予序号1</span></span><br><span class="line">127.0.0.1:6379&gt; zadd myzset 1 aa</span><br><span class="line"><span class="comment"># 添加元素，赋予序号2</span></span><br><span class="line">127.0.0.1:6379&gt; zadd myzset 2 bb</span><br><span class="line"><span class="comment"># 添加元素，赋予序号3</span></span><br><span class="line">127.0.0.1:6379&gt; zadd myzset 3 cc</span><br><span class="line"><span class="comment"># 读取元素，并输出序号（即score）</span></span><br><span class="line">127.0.0.1:6379&gt; zrange myzset 0 -1 with scores</span><br><span class="line"><span class="comment"># 得出排名</span></span><br><span class="line">127.0.0.1:6379&gt; zrange myzset cc</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-两种持久化方式"><a href="#3-两种持久化方式" class="headerlink" title="3. 两种持久化方式"></a>3. 两种持久化方式</h2><blockquote>
+<p>持久化就是把内存的数据写到磁盘中去，防止服务宕机了内存数据丢失。</p>
+</blockquote>
+<ul>
+<li>RDB(Redis DataBase)</li>
+</ul>
+<blockquote>
+<p>RDB是Redis默认的方式，就是把某一时刻的数据以快照的方式存储到磁盘等介质上。Redis在进行持久化过程中，会调用rdbSave()函数，把数据写到临时文件中，等持久化过程都结束了，才调用rdbLoad()函数加载上次持久化好的文件，并用新的临时文件进行覆盖，快照文件总是完整的。</p>
+</blockquote>
+<blockquote>
+<p>Redis会单独创建一个子进程进行持久化，而主进程是不会进行任何IO操作，确保了Redis极高的性能。</p>
+</blockquote>
+<blockquote>
+<p>如果需要进行大规模数据的恢复，且对于数据恢复的完整性不是非常敏感，那RDB方式要比AOF方式更加的高效。但是如果对数据的完整性非常敏感，RDB方式安全性低一些，可能在故障时丢失数据。</p>
+</blockquote>
+<ul>
+<li>AOF(Append Only File)</li>
+</ul>
+<blockquote>
+<p>Append Only File意思是只允许最佳不允许改写的文件，AOF的方式是将执行过程的所有写指令记录下来，在数据回复时按照冲钱到后顺序在将指令执行一遍。通过配置redis.conf中的<code>appendonly yes</code>就可以打开AOF功能，每当服务器执行定时任务或者函数时，都会调用<code>flushAppendOnlyFile()</code>函数，根据条件将aof_buf中的缓存写到AOF文件中，而后调用<code>fsync()</code>或 <code>fdatasync()</code>函数将AOF保存到磁盘中。其中AOF默认持久化的策略是每秒钟fsync一次，所以对数据安全更加有保障。</p>
+</blockquote>
+<blockquote>
+<p>因为采用了追加的方式，不做处理的话，AOF文件将会越来越大，所以要使用AOF文件重写机制，当AOF文件大小超过说设定的阈值时，Redis就会启动AOF文件的内容压缩，只保留可以恢复数据的最小指令集。如100条INCR指令可以合并层一条SET指令。</p>
+</blockquote>
+<blockquote>
+<p>在进行AOF重写时，仍然先写入临时文件，全部完成后再进行替换，因此断电、磁盘满等问题都不会影响AOF文件的可用性。</p>
+</blockquote>
+<blockquote>
+<p>在同样的数据规模下，AOF文件比RDB文件的体积更大，且AOF方式恢复数据的速度也比RDB方式慢。</p>
+</blockquote>
+<h2 id="4-RDB与AOF比较"><a href="#4-RDB与AOF比较" class="headerlink" title="4. RDB与AOF比较"></a>4. RDB与AOF比较</h2><ul>
+<li>AOF文件比RDB更新更加频繁，因此AOF文件更大</li>
+<li>AOF方式比RDB方式数据安全性更高</li>
+<li>RDB性能比AOF更好</li>
+<li>优先使用AOF还原数据</li>
+</ul>
+<h2 id="5-如果AOF文件出现被写坏的情况，该怎么处理"><a href="#5-如果AOF文件出现被写坏的情况，该怎么处理" class="headerlink" title="5. 如果AOF文件出现被写坏的情况，该怎么处理"></a>5. 如果AOF文件出现被写坏的情况，该怎么处理</h2><blockquote>
+<p>出现AOF文件被写坏的情况，Redis并不会冒然加载这个有问题的AOF文件，而是报错退出，这时可以用过以下步骤来修复出错文件：</p>
+</blockquote>
+<ul>
+<li>备份被写坏的AOF文件</li>
+<li>运行<code>redis-check-aof -fix</code>进行修复</li>
+<li>用<code>diff -u</code>比两个文件的差异，定位问题点并修复</li>
+<li>重启redis，加载修复后的AOF文件</li>
+</ul>
+<h2 id="6-redis-和-memcached-的主要区别"><a href="#6-redis-和-memcached-的主要区别" class="headerlink" title="6. redis 和 memcached 的主要区别"></a>6. redis 和 memcached 的主要区别</h2><p><strong><a href="https://www.cnblogs.com/xingxia/p/redis_compare_memcache.html" target="_blank" rel="noopener">redis和memcached的区别详解</a></strong></p>
+<ul>
+<li>Redis支持服务器端的数据操作：相比于memcached，redis拥有更多是数据结构，所以支持更多的数据操作，而在Memcached里，你需要将数据拿到客户端来进行类似的修改再set回去。</li>
+<li>内存使用效率对比：使用简单的key-value存储的话，Memcached的内存利用率更高，而如果Redis采用hash结构来做key-value存储，由于其组合式的压缩，其内存利用率会高于Memcached。</li>
+<li>性能对比：redis只支持单核，memcached可以使用多核，所以平均每一个核上 redis 在存储小数据时比 memcached 性能更高，但是在大数据存储上的处理memcached性能更高。</li>
+<li>redis内部使用的是文件事件处理器<code>file event handler</code>，是单线程模型，处理效率高。文件事件处理器的结构包含多个socket、IO多路复用程序（非阻塞）、文件事件分派器、事件处理器四个部分。</li>
+<li>存储数据安全：Redis拥有持久化机制，而memcached没有。</li>
+<li>应用场景：Redis除了作为NoSQL数据库使用外，还能做消息队列、数据堆栈和数据缓存等；而Memcached适用于缓存SQL语句、数据集、用户临时性数据、延迟查询数据和session等。</li>
+</ul>
+<h2 id="7-事务处理"><a href="#7-事务处理" class="headerlink" title="7. 事务处理"></a>7. 事务处理</h2><blockquote>
+<p>Redis 事务可以一次执行多个命令，并且带有以下三个重要的保证：</p>
+</blockquote>
+<ul>
+<li>批量操作在发送 EXEC 命令前被放入队列缓存</li>
+<li>收到 EXEC 命令后进入事务执行，事务中任意命令执行失败，其余的命令依然被执行</li>
+<li>在事务执行过程，其他客户端提交的命令请求不会插入到事务执行命令序列中</li>
+</ul>
+<blockquote>
+<p>一个事务从开始到执行会经历开始事务、命令入队、执行事务三个阶段。</p>
+</blockquote>
+<blockquote>
+<p>redis 通过 MULTI、EXEC、DISCARD、WATCH四个指令实现事务处理</p>
+</blockquote>
+<ul>
+<li>MULTI用来组装一个事务</li>
+<li>EXEC用来执行一个事务</li>
+<li>DISCARD用来取消一个事务</li>
+<li>WATCH用来监视一些key，一旦这些key在事务执行之前被改变，则取消事务的执行</li>
+</ul>
+<h2 id="8-Redis常见的架构模式"><a href="#8-Redis常见的架构模式" class="headerlink" title="8. Redis常见的架构模式"></a>8. Redis常见的架构模式</h2><h3 id="1-单机模式"><a href="#1-单机模式" class="headerlink" title="(1) 单机模式"></a>(1) 单机模式</h3><ul>
+<li>内存容量有限</li>
+<li>处理能力有限</li>
+<li>无法高可用</li>
+</ul>
+<h3 id="2-主从复制模式"><a href="#2-主从复制模式" class="headerlink" title="(2) 主从复制模式"></a>(2) 主从复制模式</h3><blockquote>
+<p>MySQL一样，redis是支持主从同步的，而且也支持一主多从以及多级从结构。一是为了纯粹的冗余备份，二是为了提升读性能。</p>
+</blockquote>
+<blockquote>
+<p>通常我们会设置一个主节点，N个从节点，默认情况下，主节点负责处理使用者的IO操作，而从节点则会对主节点的数据进行备份，并且也会对外提供读操作的处理。</p>
+</blockquote>
+<blockquote>
+<p>主从架构中，可以考虑关闭主服务器的数据持久化功能，只让从服务器进行持久化，这样可以提高主服务器的处理性能。</p>
+</blockquote>
+<blockquote>
+<p>Redis的主从同步是异步进行的，不会阻塞主节点，主节点和从节点是读写分离的。</p>
+</blockquote>
+<blockquote>
+<p>全量同步：Redis全量复制一般发生在slave初始化阶段，这时，需要将Master上所有数据都复制一份。具体步骤如下：</p>
+</blockquote>
+<ul>
+<li>从服务器连接主服务器，发送SYNC命令</li>
+<li>主服务器接收到SYNC命令后，开始执行BGSAVE命令生成RDB文件并使用缓冲区记录此后执行的所有写命令</li>
+<li>主服务器BGSAVE执行完后，向所有从服务器发送快照文件，并在发送期间继续记录被执行的写命令</li>
+<li>从服务器收到快照文件后丢弃所有旧数据，载入收到的快照</li>
+<li>主服务器快照发送完毕后开始向从服务器发送缓冲区中的写命令</li>
+<li>从服务器完成对快照的载入，开始接受命令请求 ，并执行来自主服务器缓冲区的写命令</li>
+</ul>
+<blockquote>
+<p>增量同步：通常情况下，Master每执行一个写命令就回向Slave发送相同的命令，然后slave接收并执行。只有slave第一次连接是全量同步，断线重连有可能是全量同步，也有可能是增量同步；除此之外都是增量同步。</p>
+</blockquote>
+<blockquote>
+<p>Redis主从复制模式的优点：</p>
+</blockquote>
+<ul>
+<li>解决数据备份问题</li>
+<li>实现读写分离，降低读压力，提高服务器性能</li>
+</ul>
+<blockquote>
+<p>Redis主从复制模式的缺点：</p>
+</blockquote>
+<ul>
+<li>无法实现高可用，一旦出现故障需要人工进行故障转移</li>
+<li>无法实现动态扩容，受单击控制</li>
+</ul>
+<h3 id="3-哨兵模式"><a href="#3-哨兵模式" class="headerlink" title="(3) 哨兵模式"></a>(3) 哨兵模式</h3><blockquote>
+<p>sentinel是基于主从模式进行优化，能够为Redis提供高可用性。在实际生产中，服务器难免遇到服务器宕机、停电、硬件损坏等突发状况，哨兵模式可以一定程度上帮助规避这些意外情况导致的灾难性的后果。核心还是主从复制，增加了由一个或多个Sentinel实例组成的Sentinel系统，监视任意多个主服务器以及这些主服务器属下的所有从服务器，当主服务器宕机导致不可写或者下线状态时，自动将主服务器下的某个服务器升级为新的主服务器。这样，就保证了Redis的高可用，规避数据丢失风险。</p>
+</blockquote>
+<blockquote>
+<p>sentinel的特点：</p>
+</blockquote>
+<ul>
+<li>监控（Monitoring）：它会监听不断检查主服务器和从服务器之间是否在正常工作。</li>
+<li>通知（Notification）：当监控的某个Redis服务器出现问题时，Sentinel可以通过API向管理管或者其他应用程序发送通知。</li>
+<li>故障自动转移（Automatic failover）：当一个主服务器出现故障不能正常工作时，Sentinel会在所有从服务器中选择一个作为新的主服务器，实现故障自动转移。</li>
+<li>提供主服务器地址：能够向当前使用者提供当前主节点的地址，特别是在故障自动转移后，使用者不用做任何修改就可以知道当前的主节点地址。</li>
+<li>sentinel也可以集群，部署多个哨兵，sentinel可以通过发布和订阅(pub/sub)来自动发现Redis集群上的其他Sentinel。sentinel在发现其它sentinel进程后，会将其放入一个列表中，这个列表存储了所有已被发现的sentinel。</li>
+</ul>
+<blockquote>
+<p>Redis哨兵模式的优点：</p>
+</blockquote>
+<ul>
+<li>保证高可用</li>
+<li>监控各个节点</li>
+<li>自动故障迁移</li>
+</ul>
+<blockquote>
+<p>Redis哨兵模式的缺点：</p>
+</blockquote>
+<ul>
+<li>切换需要时间，可能存在丢失数据风险</li>
+<li>从节点下线，故障不能自动转移</li>
+<li>无法实现动态扩容</li>
+</ul>
+<h3 id="4-集群模式"><a href="#4-集群模式" class="headerlink" title="(4) 集群模式"></a>(4) 集群模式</h3><p><strong><a href="http://www.redis.cn/topics/cluster-tutorial.html" target="_blank" rel="noopener">Redis 集群</a></strong></p>
+<blockquote>
+<p>Redis 集群是一个提供在多个Redis间节点间共享数据的程序集。Redis集群并不支持处理多个keys的命令，因为这需要在不同的节点间移动数据，从而达不到像Redis那样的性能，在高负载的情况下可能会导致不可预料的错误。</p>
+</blockquote>
+<blockquote>
+<p>Redis 集群通过分区来提供一定程度的可用性，在实际环境中当某个节点宕机或者不可达的情况下继续处理命令。</p>
+</blockquote>
+<blockquote>
+<p>Redis 集群没有使用一致性hash, 而是引入了 哈希槽的概念。Redis 集群有16384个哈希槽,每个key通过CRC16校验后对16384取模来决定放置哪个槽。集群的每个节点负责一部分hash槽，比如当前集群有3个节点，那么节点 A 包含 0 到 5500号哈希槽；节点 B 包含5501 到 11000 号哈希槽；节点 C 包含11001 到 16384号哈希槽；这种结构很容易添加或者删除节点，比如如果我想新添加个节点D，我需要从节点 A, B, C中得部分槽到D上。如果我想移除节点A，需要将A中的槽移到B和C节点上，然后将没有任何槽的A节点从集群中移除即可。由于从一个节点将哈希槽移动到另一个节点并不会停止服务，所以无论添加删除或者改变某个节点的哈希槽的数量都不会造成集群不可用的状态。</p>
+</blockquote>
+<blockquote>
+<p>一致哈希算法根据数据的key值计算映射位置时和所使用的节点数量有非常大的关系。一致哈希分区的实现思路是为系统中每个节点分配一个token，范围一般在0~2^32，这些token构成一个哈希环，数据读写执行节点查找操作时，先根据key计算hash值，然后顺时针找到第一个大于等于该hash值的token节点，需要操作的数据就保存在该节点上。</p>
+</blockquote>
+<blockquote>
+<p>Redis 一致性保证 Redis 并不能保证数据的强一致性。这意味这在实际中集群在特定的条件下可能会丢失写操作。</p>
+</blockquote>
+<blockquote>
+<p>投票过程是集群中所有master参与，如果半数以上master节点与master节点通信超时(cluster-node-timeout)，认为当前master节点挂掉。这时如果当前master没有slave，集群就进入fail状态；当集群超过半数以上master挂掉，无论是否有slave，集群进入fail状态。</p>
+</blockquote>
+<blockquote>
+<p>一般集群建议搭建三主三从架构，三主提供服务，三从提供备份功能。</p>
+</blockquote>
+<blockquote>
+<p>Redis集群模式的优点：</p>
+</blockquote>
+<ul>
+<li>有效解决了Redis在分布式方面的需求</li>
+<li>遇到单击内存，并发和流量瓶颈问题时，可采用Cluster方案达到负载均衡的目的</li>
+<li>可实现动态扩容，可线性扩展到1000个节点，节点可以动态的添加或删除</li>
+<li>P2P模式，无中心化</li>
+<li>自动故障转移，节点间通过Gossip协议同步节点信息，用投票机制完成slave到maser的角色提升</li>
+<li>数据按照Slot存储分布在多个节点，节点间数据共享，可动态调整数据分布。</li>
+<li>高可用性，部分节点不可用时，集群仍然可用，通过增加slave做备份数据副本</li>
+</ul>
+<blockquote>
+<p>Redis集群模式的缺点：</p>
+</blockquote>
+<ul>
+<li>架构比较新，最佳时间比较少</li>
+<li>为了性能提升，客户端需要缓存路由表信息</li>
+<li>节点发现、reshard操作不够自动化</li>
+</ul>
+<h2 id="9-Redis如何实现分布式锁"><a href="#9-Redis如何实现分布式锁" class="headerlink" title="9. Redis如何实现分布式锁"></a>9. Redis如何实现分布式锁</h2><blockquote>
+<p>使用 setnx 实现枷锁，可以同时通过 expire 添加超时时间</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 当key不存在时，为key设置一个值，否则在一定时间内进行尝试</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">acquire_lock</span><span class="params">(conn, lockname, acquire_timeout=<span class="number">10</span>)</span>:</span></span><br><span class="line">    identifier = str(uuid.uuid4())</span><br><span class="line">    end = time.time() + acquire_timeout</span><br><span class="line">    <span class="keyword">while</span> time.time() &lt; end:</span><br><span class="line">        <span class="keyword">if</span> conn.setnx(<span class="string">'lock:'</span> + lockname, identifier):</span><br><span class="line">            <span class="keyword">return</span> identifier</span><br><span class="line">        time.sleep(<span class="number">0.001</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>锁的 value 值可以使用一个随机的 uuid 或者特定的命名</p>
+</blockquote>
+<blockquote>
+<p>释放锁的时候，通过 uuid 判断是否是该锁，是则执行 delete 释放锁</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">release_lock</span><span class="params">(conn, lockname,identifier)</span>:</span></span><br><span class="line">    pipe = conn.pipeline(<span class="literal">True</span>)</span><br><span class="line">    lockname = <span class="string">'lock:'</span> + lockname</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            pipe.watch(lockname)</span><br><span class="line">            <span class="keyword">if</span> pipe.get(lockname) == identifier:</span><br><span class="line">                pipe.multi()</span><br><span class="line">                pipe.delete(lockname)</span><br><span class="line">                pipe.execute()</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            pipe.unwatch()</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">except</span> redis.exceptions.WatcjError:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="10-缓存使用场景"><a href="#10-缓存使用场景" class="headerlink" title="10. 缓存使用场景"></a>10. 缓存使用场景</h2><blockquote>
+<p>缓解关系数据库并发访问的压力： 热点数据</p>
+</blockquote>
+<blockquote>
+<p>减少响应时间：内存IO速度比磁盘快</p>
+</blockquote>
+<blockquote>
+<p>提升吞吐量：redis等内存数据库单机就可以支撑很大并发</p>
+</blockquote>
+<h2 id="11-常用的缓存使用模式"><a href="#11-常用的缓存使用模式" class="headerlink" title="11. 常用的缓存使用模式"></a>11. 常用的缓存使用模式</h2><ul>
+<li>Cache-Aside</li>
+</ul>
+<blockquote>
+<p>Cache-Aside可能是项目中最常见的一种模式。它是一种控制逻辑都实现在应用程序中的模式。缓存不和数据库直接进行交互，而是由应用程序来同时和缓存以及数据库打交道，即同时更新缓存和数据库。</p>
+</blockquote>
+<blockquote>
+<p>应用场景：应用于缓存不支持Read-Through/Write-Through的系统。</p>
+</blockquote>
+<blockquote>
+<p>优点：缓存仅仅保存被请求的数据，属于懒加载模式，避免了任何数据都被写入缓存造成缓存频繁的更新。</p>
+</blockquote>
+<blockquote>
+<p>缺点：当发生缓存未命中的情况时，则会比较慢，因为要经过三个步骤，查询缓存、从数据库读取、写入缓存；复杂的逻辑都在应用程序中，如果实现微服务，多个微服务中会有重复的逻辑代码。</p>
+</blockquote>
+<ul>
+<li>Read-Through / Write Through</li>
+</ul>
+<blockquote>
+<p>这种模式中，应用程序将缓存作为主要的数据源，而数据库对于应用程序是透明的，更新数据库和从数据库的读取的任务都交给缓存来代理了，所以对于应用程序来说，简单很多。先更新缓存，缓存负责同步更新数据库。</p>
+</blockquote>
+<blockquote>
+<p>应用场景：写入之后经常被读取的应用。</p>
+</blockquote>
+<blockquote>
+<p>优点：缓存不存在脏数据；相比较Cache-Aside懒加载模式，读取速度更高，因为较少因为缓存未命中而从数据库中查找；应用程序的逻辑相对简单。</p>
+</blockquote>
+<blockquote>
+<p>缺点：对于总是写入却很少被读取的应用，那么Write-Through会非常浪费性能，因为数据可能更改了很多次，却没有被读取，白白的每次都写入缓存造成写入延迟。</p>
+</blockquote>
+<ul>
+<li>Write-Back</li>
+</ul>
+<blockquote>
+<p>又叫做Write-Behind，和Write-Through写入的时机不同，Write-Back将缓存作为可靠的数据源，每次都只写入缓存，而写入数据库则采用异步的方式，比如当数据要被移除出缓存的时候再存储到数据库或者一段时间之后批量更新数据库。即先更新缓存，缓存定期异步更新数据库。</p>
+</blockquote>
+<blockquote>
+<p>应用场景：读写效率都非常好，写的时候因为异步存储到数据库，提升了写的效率，适用于读写密集的应用。</p>
+</blockquote>
+<blockquote>
+<p>优点：写入和读取数据都非常的快，因为都是从缓存中直接读取和写入；对于数据库不可用的情况有一定的容忍度，即使数据库暂时不可用，系统也整体可用，当数据库之后恢复的时候，再将数据写入数据库。</p>
+</blockquote>
+<blockquote>
+<p>缺点：有数据丢失的风险，如果缓存挂掉而数据没有及时写到数据库中，那么缓存中的有些数据将永久的丢失了。</p>
+</blockquote>
+<ul>
+<li>Write-Around</li>
+</ul>
+<blockquote>
+<p>和Write-Through不同，更新的时候只写入数据库，不写入缓存，结合Read-Through或者Cache-Aside使用，只在缓存未命中的情况下写缓存。</p>
+</blockquote>
+<blockquote>
+<p>应用场景：适合于只写入一次而很少被读取的应用。</p>
+</blockquote>
+<blockquote>
+<p>优点：相比较Write-Through写入的时候的效率较高，如果数据写入后很少被读取，缓存也不会被没用到的数据占满。</p>
+</blockquote>
+<blockquote>
+<p>缺点：如果数据会写入多次，那么可能存在缓存和数据库不一致</p>
+</blockquote>
+<h2 id="12-什么是缓存穿透"><a href="#12-什么是缓存穿透" class="headerlink" title="12. 什么是缓存穿透"></a>12. 什么是缓存穿透</h2><blockquote>
+<p>一般的缓存系统，都是按照key去缓存查询，如果不存在对应的value，就应该去后端系统查找（比如DB）。一些恶意的请求会故意查询不存在的key,请求量很大，就会对后端系统造成很大的压力。这就叫做缓存穿透。</p>
+</blockquote>
+<blockquote>
+<p>解决：对查询结果为空的情况也进行缓存，缓存时间设置短一点，或者该key对应的数据insert了之后清理缓存；对一定不存在的key进行过滤，可以把所有的可能存在的key放到一个大的Bitmap中，查询时通过该bitmap过滤。</p>
+</blockquote>
+<h2 id="13-什么是缓存击穿"><a href="#13-什么是缓存击穿" class="headerlink" title="13. 什么是缓存击穿"></a>13. 什么是缓存击穿</h2><blockquote>
+<p>缓存击穿是指缓存中没有但数据库中有的数据（一般是缓存时间到期，热点数据key失效），这时由于并发用户特别多，同时读缓存没读到数据，又同时去数据库去取数据，引起数据库压力瞬间增大，造成过大压力。</p>
+</blockquote>
+<blockquote>
+<p>解决：设置热点数据永远不过期；分布式锁；异步后台更新，后台任务针对过期的key自动刷新。</p>
+</blockquote>
+<h2 id="14-什么是缓存雪崩"><a href="#14-什么是缓存雪崩" class="headerlink" title="14. 什么是缓存雪崩"></a>14. 什么是缓存雪崩</h2><blockquote>
+<p>当缓存服务器重启或者大量缓存集中在某一个时间段失效，这样在失效的时候，会给后端系统带来很大压力，导致系统崩溃。和缓存击穿不同的是，缓存击穿指并发查同一条数据，缓存雪崩是不同数据都过期了，很多数据都查不到从而查数据库。</p>
+</blockquote>
+<blockquote>
+<p>解决：在缓存失效后，通过加锁或者队列来控制读数据库写缓存的线程数量，比如对某个key只允许一个线程查询数据和写缓存，其他线程等待；做二级缓存，A1为原始缓存，A2为拷贝缓存，A1失效时，可以访问A2，A1缓存失效时间设置为短期，A2设置为长期；不同的key，设置不同的过期时间，让缓存失效的时间点尽量均匀。</p>
+</blockquote>
+<blockquote>
+<p>架构层面解决： 提升系统可用性， 监控、报警完善</p>
+</blockquote>
+<h2 id="15-连接Redis"><a href="#15-连接Redis" class="headerlink" title="15. 连接Redis"></a>15. 连接Redis</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># StrictRedis方式</span></span><br><span class="line"><span class="keyword">from</span> redis <span class="keyword">import</span> StrictRedis</span><br><span class="line">redis = StrictRedis(host=<span class="string">'localhost'</span>, prot=<span class="number">6379</span>, db=<span class="string">'test'</span>, password=<span class="string">'123456'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置一个字符串值</span></span><br><span class="line">redis.set(<span class="string">'name'</span>, <span class="string">'Bob'</span>)</span><br><span class="line">print(redis.get(<span class="string">'name'</span>))</span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">b'Bob'</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ConnectionPool连接方式</span></span><br><span class="line"><span class="keyword">from</span> redis <span class="keyword">import</span> StrictRedis, ConnectionPool</span><br><span class="line">pool = ConnectionPool(host=<span class="string">'localhost'</span>, port=<span class="number">63799</span>, db=<span class="string">'test'</span>, password=<span class="string">'123456'</span>)</span><br><span class="line">redis = StrictRedis(connection_pool=pool)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ConnectionPool支持通过URL来构建</span></span><br><span class="line"><span class="keyword">from</span> redis <span class="keyword">import</span> StrictRedis, ConnectionPool</span><br><span class="line">url = <span class="string">'redis://:123456@localhost:6379/test'</span></span><br><span class="line">pool = ConnectionPool.from_url(url)</span><br><span class="line">redis = StrictRedis(connect_pool=pool)</span><br></pre></td></tr></table></figure>
+
+<h2 id="16-Redis异步队列"><a href="#16-Redis异步队列" class="headerlink" title="16. Redis异步队列"></a>16. Redis异步队列</h2><blockquote>
+<p>一般使用list结构作为队列，rpush生产消息，lpop消费消息，当lpop没有消息的时候，要适当sleep一会再重试。</p>
+</blockquote>
+<blockquote>
+<p>缺点：在消费者下线的情况，生产者的消息会丢失，得使用专业的消息队列如Rabbitmq。</p>
+</blockquote>
+<h2 id="17-生产一次消费多次"><a href="#17-生产一次消费多次" class="headerlink" title="17. 生产一次消费多次"></a>17. 生产一次消费多次</h2><blockquote>
+<p>使用pub/sub主题订阅者模式，可以实现1：N的消息队列。</p>
+</blockquote>
+<h2 id="18-Redis分区"><a href="#18-Redis分区" class="headerlink" title="18. Redis分区"></a>18. Redis分区</h2><blockquote>
+<p>分区是分割数据到多个Redis实例的处理过程，因此每个实例只保存key的一个子集。</p>
+</blockquote>
+<blockquote>
+<p>分区的优势：</p>
+</blockquote>
+<ul>
+<li>通过利用多台计算机内存的和值，允许我们构造更大的数据库。</li>
+<li>通过多核和多台计算机，允许我们扩展计算能力；通过多台计算机和网络适配器，允许我们扩展网络带宽。</li>
+</ul>
+<blockquote>
+<p>分区的不足：</p>
+</blockquote>
+<ul>
+<li>涉及多个key的操作通常是不被支持的，如当两个set映射到不同的redis实例上时，你就不能对这两个set执行交集操作。</li>
+<li>涉及多个key的redis事务不能使用。</li>
+<li>当使用分区时，数据处理较为复杂，比如你需要处理多个rdb/aof文件，并且从多个实例和主机备份持久化文件。</li>
+<li>增加或删除容量也比较复杂。redis集群大多数支持在运行时增加、删除节点的透明数据平衡的能力，但是类似于客户端分区、代理等其他系统则不支持这项特性。</li>
+</ul>
+<blockquote>
+<p>分区类型：</p>
+</blockquote>
+<ul>
+<li>范围分区：最简单的分区方式是按范围分区，就是映射一定范围的对象到特定的Redis实例。</li>
+<li>哈希分区：另外一种分区方法是hash分区。这对任何key都适用，也无需是object_name: 这种形式。</li>
+</ul>
+<h1 id="MongoDB数据库"><a href="#MongoDB数据库" class="headerlink" title="MongoDB数据库"></a>MongoDB数据库</h1><h2 id="1-MongoDB常用的操作"><a href="#1-MongoDB常用的操作" class="headerlink" title="1. MongoDB常用的操作"></a>1. MongoDB常用的操作</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymongo</span><br><span class="line">client = pymongo.MongoClient(host=<span class="string">'localhost'</span>, port=<span class="number">27017</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定数据库test</span></span><br><span class="line">db = client.test</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定集合</span></span><br><span class="line">collection = db.students</span><br><span class="line"></span><br><span class="line"><span class="comment"># 插入数据</span></span><br><span class="line">student1 = &#123;</span><br><span class="line">    <span class="string">'id'</span>: <span class="string">'20180101'</span>,</span><br><span class="line">    <span class="string">'name'</span>: <span class="string">'zhangsan'</span>,</span><br><span class="line">    <span class="string">'age'</span>: <span class="number">20</span>,</span><br><span class="line">    <span class="string">'gender'</span>: <span class="string">'male'</span></span><br><span class="line">&#125;</span><br><span class="line">student2 = &#123;</span><br><span class="line">    <span class="string">'id'</span>: <span class="string">'20180102'</span>,</span><br><span class="line">    <span class="string">'name'</span>: <span class="string">'lisi'</span>,</span><br><span class="line">    <span class="string">'age'</span>: <span class="number">20</span>,</span><br><span class="line">    <span class="string">'gender'</span>: <span class="string">'male'</span></span><br><span class="line">&#125;</span><br><span class="line">result = collection.insert([student1, student2])</span><br><span class="line">result = collection.insert_one(student1)</span><br><span class="line">result = collection.insert_many([student1, student2])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询</span></span><br><span class="line">result = collection.find_one(&#123;<span class="string">'name'</span>: <span class="string">'zhangsan'</span>&#125;)</span><br><span class="line">results = collection.find(&#123;<span class="string">'age'</span>: <span class="number">20</span>&#125;)</span><br><span class="line"><span class="keyword">for</span> res <span class="keyword">in</span> results:</span><br><span class="line">    print(res)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 年龄小于20的数据</span></span><br><span class="line">results = collection.find(&#123;<span class="string">'age'</span>: &#123;<span class="string">'$lt'</span>: <span class="number">20</span>&#125;&#125;)</span><br><span class="line"><span class="comment"># 年龄小于等于20的数据</span></span><br><span class="line">results = collection.find(&#123;<span class="string">'age'</span>: &#123;<span class="string">'$lte'</span>: <span class="number">20</span>&#125;&#125;)</span><br><span class="line"><span class="comment"># 年龄大于20的数据</span></span><br><span class="line">results = collection.find(&#123;<span class="string">'age'</span>: &#123;<span class="string">'$gt'</span>: <span class="number">20</span>&#125;&#125;)</span><br><span class="line"><span class="comment"># 年龄大于等于20的数据</span></span><br><span class="line">results = collection.find(&#123;<span class="string">'age'</span>: &#123;<span class="string">'$gte'</span>: <span class="number">20</span>&#125;&#125;)</span><br><span class="line"><span class="comment"># 年龄不等于20的数据</span></span><br><span class="line">results = collection.find(&#123;<span class="string">'age'</span>: &#123;<span class="string">'$ne'</span>: <span class="number">20</span>&#125;&#125;)</span><br><span class="line"><span class="comment"># 年龄在[18, 25]范围内的数据</span></span><br><span class="line">results = collection.find(&#123;<span class="string">'age'</span>: &#123;<span class="string">'$in'</span>: [<span class="number">18</span>,<span class="number">23</span>]&#125;&#125;)</span><br><span class="line"><span class="comment"># 年龄不在[18, 25]范围内的数据</span></span><br><span class="line">results = collection.find(&#123;<span class="string">'age'</span>: &#123;<span class="string">'$nin'</span>: [<span class="number">18</span>,<span class="number">23</span>]&#125;&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 正则查询，匹配以M开头的数据</span></span><br><span class="line">results = collection.find(&#123;<span class="string">'name'</span>: &#123;<span class="string">'$regex'</span>: <span class="string">'^M.*'</span>&#125;&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计数</span></span><br><span class="line">num = collection.find(&#123;<span class="string">'age'</span>: <span class="number">20</span>&#125;).count()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据字段，升序ASCENDING/降序DESCENDING</span></span><br><span class="line">results = collection.find().sort(<span class="string">'name'</span>, pymongo.ASCENDING)</span><br><span class="line">print(result[<span class="string">'name'</span>] <span class="keyword">for</span> result <span class="keyword">in</span> results)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 偏移位置，skip(n)忽略前n个元素</span></span><br><span class="line">results = collection.find().sort(<span class="string">'name'</span>, pymongo.ASCENDING).skip(<span class="number">2</span>)</span><br><span class="line">print(result[<span class="string">'name'</span>] <span class="keyword">for</span> result <span class="keyword">in</span> results)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 限制返回结果个数limit(n)，从左到右</span></span><br><span class="line">results = collection.find().sort(<span class="string">'name'</span>, pymongo.ASCENDING).limit(<span class="number">2</span>)</span><br><span class="line">print(result[<span class="string">'name'</span>] <span class="keyword">for</span> result <span class="keyword">in</span> results)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新update()</span></span><br><span class="line">condition = &#123;<span class="string">'name'</span>: <span class="string">'wangwu'</span>&#125;</span><br><span class="line">student = collection.find_one(condition)</span><br><span class="line">student[<span class="string">'age'</span>] = <span class="number">25</span></span><br><span class="line">result = collection.update(condition, student)</span><br><span class="line"></span><br><span class="line"><span class="comment"># $set操作符只更新student字典内存在的字段，其他字段不更新也不删除</span></span><br><span class="line">result = collection.update(condition, &#123;<span class="string">'$set'</span>: student&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># update_one()</span></span><br><span class="line">result = collection.update_one(condition, &#123;<span class="string">'$set'</span>: student&#125;)</span><br><span class="line"><span class="comment"># 查看获得匹配的数据条数和影响的数据条数</span></span><br><span class="line">print(result.matched_count, result.modified_count)</span><br><span class="line"></span><br><span class="line"><span class="comment"># update_many()</span></span><br><span class="line">condition = &#123;<span class="string">'age'</span>: &#123;<span class="string">'$gt'</span>: <span class="number">20</span>&#125;&#125;</span><br><span class="line">result = collection.update_many(condition, &#123;<span class="string">'$inc'</span>: &#123;<span class="string">'age'</span>: <span class="number">18</span>&#125;)</span><br><span class="line"><span class="comment"># 查看获得匹配的数据条数和影响的数据条数</span></span><br><span class="line">print(result.matched_count, result.modified_count)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除</span></span><br><span class="line">result = collection.remove(&#123;<span class="string">'name'</span>: <span class="string">'zhangsan'</span>&#125;)</span><br><span class="line">result = collection.delete_one(&#123;<span class="string">'name'</span>: <span class="string">'zhangsan'</span>&#125;)</span><br><span class="line">result = collection.delete_many(&#123;<span class="string">'age'</span>: &#123;<span class="string">'$lt'</span>: <span class="number">20</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="Elasticsearch数据库"><a href="#Elasticsearch数据库" class="headerlink" title="Elasticsearch数据库"></a>Elasticsearch数据库</h1><h2 id="1-索引如何存储"><a href="#1-索引如何存储" class="headerlink" title="1. 索引如何存储"></a>1. 索引如何存储</h2><h2 id="2-介绍下Elastisearch原理和用途"><a href="#2-介绍下Elastisearch原理和用途" class="headerlink" title="2. 介绍下Elastisearch原理和用途"></a>2. 介绍下Elastisearch原理和用途</h2><h2 id="3-分布式实时日志使用ELK"><a href="#3-分布式实时日志使用ELK" class="headerlink" title="3. 分布式实时日志使用ELK"></a>3. 分布式实时日志使用ELK</h2><h1 id="Hive数据库"><a href="#Hive数据库" class="headerlink" title="Hive数据库"></a>Hive数据库</h1><h1 id="Hbase数据库"><a href="#Hbase数据库" class="headerlink" title="Hbase数据库"></a>Hbase数据库</h1><h1 id="Hadoop生态"><a href="#Hadoop生态" class="headerlink" title="Hadoop生态"></a>Hadoop生态</h1>
       
       <!-- reward -->
       
