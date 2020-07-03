@@ -78,7 +78,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">13.5k</span>
+            <span class="post-count">19.6k</span>
         </span>
     </span>
 
@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">50 min</span>
+            <span class="post-count">74 min</span>
         </span>
     </span>
 </div>
@@ -162,7 +162,47 @@
 <li><a href="#37-幂等">37. 幂等</a></li>
 </ul>
 </li>
-<li><a href="#django">Django</a></li>
+<li><a href="#django">Django</a><ul>
+<li><a href="#1-django">1. Django</a></li>
+<li><a href="#2-django请求生命周期">2. Django请求生命周期</a></li>
+<li><a href="#3-mvc模式与mvt模式">3. MVC模式与MVT模式</a></li>
+<li><a href="#4-fbv和cbv">4. FBV和CBV</a></li>
+<li><a href="#5-orm的理解">5. ORM的理解</a></li>
+<li><a href="#6-中间件的作用">6. 中间件的作用</a></li>
+<li><a href="#7-谈谈restful规范的认识">7. 谈谈restful规范的认识</a></li>
+<li><a href="#8-rest_framework框架中有哪些组件">8. rest_framework框架中有哪些组件</a></li>
+<li><a href="#9-rest_framework框架认证流程">9. rest_framework框架认证流程</a></li>
+<li><a href="#10-rest_framework实现用户访问频率控制">10. rest_framework实现用户访问频率控制</a></li>
+<li><a href="#11-路由匹配的原则">11. 路由匹配的原则</a></li>
+<li><a href="#12-路由系统中include的作用">12. 路由系统中include的作用</a></li>
+<li><a href="#13-django默认自动在网址结尾添加">13. Django默认自动在网址结尾添加’/‘</a></li>
+<li><a href="#14-urlpatterns中的name与namespace的作用">14. urlpatterns中的name与namespace的作用</a></li>
+<li><a href="#15-如何根据urlpatterns中的name方向生成url这样反向生成url的方式有几种">15. 如何根据urlpatterns中的name方向生成url，这样反向生成url的方式有几种</a></li>
+<li><a href="#16-wsgiuwsgiuwsgi">16. WSGI/uwsgi/uWSGI</a></li>
+<li><a href="#17-简述django对http请求的执行流程">17. 简述Django对HTTP请求的执行流程</a></li>
+<li><a href="#18-django中的跨域问题如何处理">18. Django中的跨域问题如何处理</a></li>
+<li><a href="#19-django中csrf的实现机制">19. Django中CSRF的实现机制</a></li>
+<li><a href="#20-django的model的继承有几种形式">20. Django的Model的继承有几种形式</a></li>
+<li><a href="#21-django中如何加载初始化数据">21. Django中如何加载初始化数据</a></li>
+<li><a href="#22-django如何批量创建数据">22. Django如何批量创建数据</a></li>
+<li><a href="#23-orm取消级联">23. ORM取消级联</a></li>
+<li><a href="#24-querydict与dict的区别">24. QueryDict与dict的区别</a></li>
+<li><a href="#25-查询集的两大特性">25. 查询集的两大特性</a></li>
+<li><a href="#26-查询集返回的列表过滤器有哪些">26. 查询集返回的列表过滤器有哪些</a></li>
+<li><a href="#27-django中写原生sql">27. django中写原生sql</a></li>
+<li><a href="#28-django中查询queryset时什么情况下用f和q">28. Django中查询queryset时，什么情况下用F和Q</a></li>
+<li><a href="#29-datetimefield类型中auto_now与auto_now_add的区别">29. DateTimeField类型中auto_now与auto_now_add的区别</a></li>
+<li><a href="#30-values与values_list的区别">30. values()与values_list()的区别</a></li>
+<li><a href="#31-selected_related与prefetch_related的区别">31. selected_related与prefetch_related的区别</a></li>
+<li><a href="#32-class-meta中的元素信息字段有哪些">32. class Meta中的元素信息字段有哪些</a></li>
+<li><a href="#33-django中多对多关系如何手动生成中间关联表">33. django中多对多关系如何手动生成中间关联表</a></li>
+<li><a href="#34-cookie与session">34. Cookie与Session</a></li>
+<li><a href="#35-django中如何实现单元测试">35. django中如何实现单元测试</a></li>
+<li><a href="#36-django的缓存机制">36. django的缓存机制</a></li>
+<li><a href="#37-缓存系统类型">37. 缓存系统类型</a></li>
+<li><a href="#38-django中的runserver不用用来部署">38. Django中的runserver不用用来部署</a></li>
+</ul>
+</li>
 <li><a href="#flask">Flask</a></li>
 <li><a href="#tornado">Tornado</a></li>
 <li><a href="#twisted">Twisted</a></li>
@@ -1013,7 +1053,347 @@
 <blockquote>
 <p>PUT方法所对应的URI是要创建或更新的资源本身。比如<code>PUT http://www.forum/articles/4231</code>的语义是创建或者更新ID为4231的帖子。对同一URI进行多次PUT的副作用和一次PUT是相同的，因此PUT方法具备幂等性。</p>
 </blockquote>
-<h1 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h1><h1 id="Flask"><a href="#Flask" class="headerlink" title="Flask"></a>Flask</h1><h1 id="Tornado"><a href="#Tornado" class="headerlink" title="Tornado"></a>Tornado</h1><h1 id="Twisted"><a href="#Twisted" class="headerlink" title="Twisted"></a>Twisted</h1><h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h1 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h1><h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1>
+<h1 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h1><h2 id="1-Django"><a href="#1-Django" class="headerlink" title="1. Django"></a>1. Django</h2><blockquote>
+<p>Django 是一个由 Python 编写的一个开放源代码的 Web 应用框架。使用 Django，只要很少的代码，Python 的程序开发人员就可以轻松地完成一个正式网站所需要的大部分内容，并进一步开发出全功能的 Web 服务 Django 本身基于 MVC 模型，即 Model（模型）+ View（视图）+ Controller（控制器）设计模式，MVC 模式使后续对程序的修改和扩展简化，并且使程序某一部分的重复利用成为可能。</p>
+</blockquote>
+<blockquote>
+<p>Django的优点：</p>
+</blockquote>
+<ul>
+<li>自带ORM，强大的数据库功能</li>
+<li>自带强大的后台功能</li>
+<li>优雅的地址匹配</li>
+<li>易扩展的、简易且样式分离的模版系统</li>
+<li>与memcached等缓存系统联用表现出色，加载速度快</li>
+<li>MVC模式，低耦合、开发快捷、部署方便、可重用性高</li>
+</ul>
+<blockquote>
+<p>常用的一些命令：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建项目</span></span><br><span class="line">django-admin startproject xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 项目根目录下运行服务器，通过浏览器访问http://127.0.0.1:8000/查看</span></span><br><span class="line">python manage.py runserver</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建应用程序app，创建完成需要在setting.py文件中INSTALLED_APPS中添加app名称</span></span><br><span class="line">python manage.py startapp xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动数据库</span></span><br><span class="line">python manage.py makemigrations</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据迁移</span></span><br><span class="line">python manage.py migrate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建超级用户</span></span><br><span class="line">python manage.py createsuperuser</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成对应的ORM表结构</span></span><br><span class="line">python manage.py inspectdb</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-Django请求生命周期"><a href="#2-Django请求生命周期" class="headerlink" title="2. Django请求生命周期"></a>2. Django请求生命周期</h2><blockquote>
+<p>一般是用户通过浏览器向服务器发送一个请求（request），这个骑牛会去访问视图函数，如果不涉及到数据调用，那么这个时候视图函数返回一个模版也就是一个网页给用户，视图函数调用Model，模型去数据库查找数据，然后逐级返回，视图函数把返回的数据渲染到模版中，最后返回网页给用户。</p>
+</blockquote>
+<blockquote>
+<p>大致步骤：</p>
+</blockquote>
+<ul>
+<li>（1）wsgi请求封装后交给Web框架</li>
+<li>（2）中间件，对请求进行校验或在请求中添加其他相关数据，如csrf/request.session</li>
+<li>（3）路由匹配，根据浏览器发送的不同url去匹配不同的视图函数</li>
+<li>（4）视图函数，在视图函数中进行业务逻辑的处理，orm–&gt;templates–&gt;渲染</li>
+<li>（5）中间件，对相应的数据进行处理</li>
+<li>（6）wsgi将响应的内容发送给浏览器</li>
+</ul>
+<h2 id="3-MVC模式与MVT模式"><a href="#3-MVC模式与MVT模式" class="headerlink" title="3. MVC模式与MVT模式"></a>3. MVC模式与MVT模式</h2><ul>
+<li>MVC</li>
+</ul>
+<blockquote>
+<p>MVC（Model-View-Controller）即模型-视图-控制器，它们之间以一种插件式的、松耦合的方式连接在一起。其中，Model负责业务对象与数据库的映射（ORM）；View负责与用户页面交互；Controller接受用户输入调用模型和视图完成用户的请求。</p>
+</blockquote>
+<ul>
+<li>MVT</li>
+</ul>
+<blockquote>
+<p>MVT（Model-View-Template）即模型-视图-模版，本质上与MVC是一样的，为了各组件之间保持松耦合关系。其中，Model负责业务对象与数据库的映射（ORM）；View负责业务逻辑并在适当的时候调用Model和Template；Template负责如何把页面展示给用户（即html）。</p>
+</blockquote>
+<h2 id="4-FBV和CBV"><a href="#4-FBV和CBV" class="headerlink" title="4. FBV和CBV"></a>4. FBV和CBV</h2><ul>
+<li>FBV（Function Base View）：就是在视图里面使用函数处理请求</li>
+<li>CBV（Class Base View）：就是在视图里面使用类处理请求</li>
+</ul>
+<h2 id="5-ORM的理解"><a href="#5-ORM的理解" class="headerlink" title="5. ORM的理解"></a>5. ORM的理解</h2><blockquote>
+<p>ORM（Object Relational Mapping）即对象-关系-映射，是MVC或MVT框架中的一个重要部分，用于实现业务对象数据模型与数据表中字段映射，数据模型的设计不需要依赖于特定的数据库，通过简单的配置就可以轻松更换数据库，极大减少了开发人员的工作量。常用的ORM库有sqlalchemy、django ORM。</p>
+</blockquote>
+<h2 id="6-中间件的作用"><a href="#6-中间件的作用" class="headerlink" title="6. 中间件的作用"></a>6. 中间件的作用</h2><blockquote>
+<p>中间件是一个用于处理Django的请求和响应的框架级别的钩子，每个中间件都负责做一些特定的功能。</p>
+</blockquote>
+<blockquote>
+<p>中间件是介于request与response处理之间的一道处理过程，相对比较轻量级，并在全局范围内改变Django的输入和输出。</p>
+</blockquote>
+<h2 id="7-谈谈restful规范的认识"><a href="#7-谈谈restful规范的认识" class="headerlink" title="7. 谈谈restful规范的认识"></a>7. 谈谈restful规范的认识</h2><blockquote>
+<p>首先restful是一种软件架构风格或者是一种设计风格，并不是标准，它只是提供了一种设计原则和约束条件，主要用于客户端和服务器交互类软件。就像设计模式一样，并不是一定要遵循这个原则，而是基于这个风格设计的软件可以更加简洁，层次更清晰。</p>
+</blockquote>
+<blockquote>
+<p>一些常见的规范：</p>
+</blockquote>
+<ul>
+<li>restful提倡面向资源编程，在URL接口中尽量要使用名词，不要使用动词</li>
+<li>在URL接口中推荐使用HTTPS协议，让网络接口更加安全</li>
+<li>在URL中可以体现版本号</li>
+<li>URL中可以体现是否是API接口</li>
+<li>URL中可以添加添加条件去筛选匹配</li>
+<li>可以根据HTTP不同的method，进行不同的资源操作</li>
+<li>响应式应该设置状态码</li>
+<li>有返回值值，而且格式为统一的json格式</li>
+<li>返回值错误信息</li>
+<li>返回结果中要提供帮助链接，即api最好做到Hypermedia</li>
+</ul>
+<h2 id="8-rest-framework框架中有哪些组件"><a href="#8-rest-framework框架中有哪些组件" class="headerlink" title="8. rest_framework框架中有哪些组件"></a>8. rest_framework框架中有哪些组件</h2><ul>
+<li>序列化组件：serializers 对queryset序列化以及对请求数据格式化校验</li>
+<li>路由组件：routers 进行路由分发</li>
+<li>视图组件：ModelViewSet 帮助开发者提供一些类和方法</li>
+<li>认证组件：写一个类并注册到认证类（authentication_classes），在类的authticate方法中编写认证逻辑</li>
+<li>权限组件：写一个类并注册到权限类（permission_classes），在类的has_permission方法中编写权限逻辑</li>
+<li>频率限制组件：写一个类并注册到频率类（throttle_classes），在类的allow_request/wait方法中编写频率限制逻辑</li>
+<li>解释器：选择多数据解析的类，在解析器类中注册（parser_classes）</li>
+<li>渲染器：定义数据如何渲染到页面上，在渲染器上注册（renderer_classes）</li>
+<li>分页：对获取的数据进行分页处理，pagination_class</li>
+<li>版本：版本控制用来在不同的客户端使用不同的行为</li>
+</ul>
+<h2 id="9-rest-framework框架认证流程"><a href="#9-rest-framework框架认证流程" class="headerlink" title="9. rest_framework框架认证流程"></a>9. rest_framework框架认证流程</h2><p><strong><a href="https://www.cnblogs.com/derek1184405959/p/8712206.html" target="_blank" rel="noopener">Django rest framework源码分析（1）—-认证</a></strong></p>
+<blockquote>
+<p>基于CBV使用rest_framework框架，基于反射实现根据请求方式不同，执行不同的方法。原理：url–&gt;view方法–&gt;dispatch方法（反射执行其他方法：GET/POST/PUT/DELETE等）。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1、在settings的app中添加rest_framework</span></span><br><span class="line">INSTALLED_APPS = &#123;</span><br><span class="line">    <span class="string">'rest_framework'</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置url</span></span><br><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line">fromm API.views <span class="keyword">import</span> AuthView</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">'admin/'</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">'api/v1/auth/'</span>, AuthView.as_view()),</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># models，一个保存用户的信息，一个保存用户登录成功后的token</span></span><br><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserInfo</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    USER_TYPE= (</span><br><span class="line">        (<span class="number">1</span>, <span class="string">'普通用户'</span>),</span><br><span class="line">        (<span class="number">2</span>, <span class="string">'VIP'</span>),</span><br><span class="line">        (<span class="number">3</span>, <span class="string">'SVIP'</span>)</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    user_type = models.IntegerField(choices=USER_TYPE)</span><br><span class="line">    username = models.CharField(max_length=<span class="number">32</span>)</span><br><span class="line">    password = models.CharField(max_length=<span class="number">64</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserToken</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    user = models.OneToOneField(UserInfo, on_delete=models.CASCADE)</span><br><span class="line">    token = models.CharField(max_length=<span class="number">64</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用户登录的views</span></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> JsonResponse</span><br><span class="line"><span class="keyword">from</span> rest_framework.views <span class="keyword">import</span> APIView  <span class="comment"># rest_framework框架，继承View</span></span><br><span class="line"><span class="keyword">from</span> API <span class="keyword">import</span> models</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">md5</span><span class="params">(user)</span>:</span></span><br><span class="line">    <span class="comment"># 当前时间，相当于生成一个随机的字符串</span></span><br><span class="line">    ctime = str(time.time())</span><br><span class="line">    m = hashlib.md5(bytes(user, encoding=<span class="string">"utf-8"</span>))</span><br><span class="line">    m.update(bytes(ctime, encoding=<span class="string">"utf-8"</span>))</span><br><span class="line">    <span class="keyword">return</span> m.hexdigest()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AuthView</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># 用于用户登录验证</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">post</span><span class="params">(self, request, *args, **kwargs)</span>:</span></span><br><span class="line">        ret = (<span class="string">'code'</span>: <span class="number">1000</span>, <span class="string">'msg'</span>: <span class="literal">None</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            user = request._request.POST.get(<span class="string">'username'</span>)</span><br><span class="line">            pwd = request._request.POST.get(<span class="string">'password'</span>)</span><br><span class="line">            obj = models.UserInfo.objects.filter(username=user, password=pwd).first()</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> obj:</span><br><span class="line">                ret[<span class="string">'code'</span>] = <span class="number">1001</span></span><br><span class="line">                ret[<span class="string">'msg'</span>] = <span class="string">'用户名或密码错误'</span></span><br><span class="line">            <span class="comment"># 为用户创建token</span></span><br><span class="line">            token = md5(user)</span><br><span class="line">            <span class="comment"># 存在就更新，不存在就创建</span></span><br><span class="line">            models.UserToken.objects.update_or_create(user=obj, default=&#123;<span class="string">'token'</span>: token&#125;)</span><br><span class="line">            ret[<span class="string">'token'</span>] = token</span><br><span class="line"></span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            ret[<span class="string">'code'</span>] = <span class="number">1002</span></span><br><span class="line">            ret[<span class="string">'msg'</span>] = <span class="string">'请求异常'</span></span><br><span class="line">        <span class="keyword">return</span> JsonResponse(ret)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加一个认证类</span></span><br><span class="line"><span class="keyword">from</span> rest_framework.request <span class="keyword">import</span> Request</span><br><span class="line"><span class="keyword">from</span> rest_framework <span class="keyword">import</span> exceptions <span class="comment"># 验证失败触发异常</span></span><br><span class="line"><span class="keyword">from</span> rest_framework.authentication <span class="keyword">import</span> BasicAuthentication</span><br><span class="line"></span><br><span class="line">ORDER_DICT = &#123;</span><br><span class="line">    <span class="number">1</span>:&#123;</span><br><span class="line">        <span class="string">'name'</span>: <span class="string">'apple'</span>,</span><br><span class="line">        <span class="string">'price'</span>: <span class="number">15</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="number">2</span>:&#123;</span><br><span class="line">        <span class="string">'name'</span>: <span class="string">'dog'</span>,</span><br><span class="line">        <span class="string">'price'</span>: <span class="number">100</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Authentication</span><span class="params">(APIView)</span>:</span></span><br><span class="line">    <span class="comment"># 认证</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">authenticate</span><span class="params">(self, request)</span>:</span></span><br><span class="line">        token = request._request.GET.get(<span class="string">'token'</span>)</span><br><span class="line">        token_obj = models.UserToken.objects.filter(token=token).first()</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> token_obj:</span><br><span class="line">            <span class="keyword">raise</span> exceptions.AuthenticationFailed(<span class="string">'用户认证失败'</span>)</span><br><span class="line">        <span class="comment"># 在rest_framework内部将会这两个字段赋值给request，以供后续操作使用</span></span><br><span class="line">        <span class="keyword">return</span> (token_obj.user, token_obj)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">suthenticate_header</span><span class="params">(self, request)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OrderView</span><span class="params">(APIView)</span>:</span></span><br><span class="line">    <span class="comment"># 订单相关业务</span></span><br><span class="line">    authentication_classes = [Authentication,]  <span class="comment"># 添加认证</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, request, *args, **kwargs)</span>:</span></span><br><span class="line">        ret = &#123;<span class="string">'code'</span>: <span class="number">1000</span>, <span class="string">'msg'</span>: <span class="literal">None</span>, <span class="string">'data'</span>: <span class="literal">None</span>&#125;</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            ret[<span class="string">'data'</span>] = ORDER_DICT</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">return</span> JsonRespone(ret)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">post</span><span class="params">(self, request, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> HttpResponse(<span class="string">"post"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">put</span><span class="params">(self, request, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> HttpResponse(<span class="string">"put"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">delete</span><span class="params">(self, request, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> HttpResponse(<span class="string">"delete"</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>drf的认证科研究下源码，BaseAuthentication源码。</p>
+</blockquote>
+<blockquote>
+<p>自己写认证类方法：</p>
+</blockquote>
+<ul>
+<li>创建认证类：继承BaseAuthentication类，重写authenticate方法，authenticate_header方法直接写pass即可。</li>
+<li>authenticate()返回值：None表示当前认证不管等下一个认证执行；<code>raise exceptions.AuthenticationFailed(&#39;用户认证失败&#39;)</code>；返回值是元组形式。</li>
+<li>局部使用：<code>authentication_classes=[BaseAuthentication,]</code></li>
+<li>全局使用：<code>REST_FRAMEWORK = {&quot;DEFAULT_AUTHENTICATION_CLASSES&quot;: [&#39;API.utils.auth.Authentication&#39;,]}</code></li>
+</ul>
+<h2 id="10-rest-framework实现用户访问频率控制"><a href="#10-rest-framework实现用户访问频率控制" class="headerlink" title="10. rest_framework实现用户访问频率控制"></a>10. rest_framework实现用户访问频率控制</h2><blockquote>
+<p><code>from rest_framework.throttling import SimpleRateThrottle</code></p>
+</blockquote>
+<blockquote>
+<p>这里使用字节流类是继承了<code>SimpleRateThrottle</code>类，而这个类利用了django内置的缓存来存储访问记录。通过全局节流设置，所以的视图默认是使用<code>UserThrottle</code>类进行节流，如果不想使用默认的类就自定义给<code>throttle_classes</code>属性变量赋值，如<code>throttle_classes=[VisitThrottle]</code>。</p>
+</blockquote>
+<h2 id="11-路由匹配的原则"><a href="#11-路由匹配的原则" class="headerlink" title="11. 路由匹配的原则"></a>11. 路由匹配的原则</h2><blockquote>
+<p>URLconf配置</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(正则表达式, views视图, 参数, 别名),</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">正则表达式：一个正则表达式字符串</span></span><br><span class="line"><span class="string">views视图函数：一个可调用对象，通常为一个视图函数或者一个指定视图函数路径的字符串</span></span><br><span class="line"><span class="string">参数：可循啊的要传递给视图函数的默认参数（字典形式）</span></span><br><span class="line"><span class="string">别名：一个可选的name参数</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Django2.0 路由系统的写法</span></span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">'articles/2003/'</span>, views.special_case_2003),</span><br><span class="line">    path(<span class="string">'articles/&lt;int:year&gt;/'</span>, views.year_archive),</span><br><span class="line">    path(<span class="string">'articles/&lt;int:year&gt;/&lt;int:month&gt;/'</span>, views.month_archive),</span><br><span class="line">    path(<span class="string">'articles/&lt;int:year&gt;/&lt;int:month&gt;/&lt;slug:slug&gt;/'</span>, views.article_detail),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>关于正则匹配优先级</p>
+</blockquote>
+<ul>
+<li>在url匹配列表中，如果第一条和第二条同时满足匹配规则，则优先匹配第一条</li>
+<li>在url匹配列表中，如果第一条为正则模糊匹配，第二条为精确匹配，则优先匹配第一条</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</span><br><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> app01 <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(<span class="string">r'^blog/2017/12/'</span>, views.blog_list),</span><br><span class="line">    url(<span class="string">r'^blog/(\d&#123;4&#125;)/([0-5]&#123;2&#125;)/'</span>, views.blog_list),</span><br><span class="line">    url(<span class="string">r'^blog/(\d&#123;4&#125;)/[7-9]/$'</span>, views.blog_list),</span><br><span class="line">    url(<span class="string">r'^admin/'</span>, admin.site.urls),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h2 id="12-路由系统中include的作用"><a href="#12-路由系统中include的作用" class="headerlink" title="12. 路由系统中include的作用"></a>12. 路由系统中include的作用</h2><blockquote>
+<p>include作用是路由转发，通常在每个app里，各自创建一个urls.py的路由模块，然后从根路由触发，将app所属的url请求，全部转发到相应的urls.py模块中。</p>
+</blockquote>
+<h2 id="13-Django默认自动在网址结尾添加’-‘"><a href="#13-Django默认自动在网址结尾添加’-‘" class="headerlink" title="13. Django默认自动在网址结尾添加’/‘"></a>13. Django默认自动在网址结尾添加’/‘</h2><blockquote>
+<p>Django settings.py配置文件中，<code>APPEND_SLASH = True</code>表示开启URL地址后面自动添加’/‘。</p>
+</blockquote>
+<h2 id="14-urlpatterns中的name与namespace的作用"><a href="#14-urlpatterns中的name与namespace的作用" class="headerlink" title="14. urlpatterns中的name与namespace的作用"></a>14. urlpatterns中的name与namespace的作用</h2><ul>
+<li>name：别名，给路由取一个别名</li>
+<li>namespace：名称空间，防止多个应用之间的路由重复</li>
+</ul>
+<h2 id="15-如何根据urlpatterns中的name方向生成url，这样反向生成url的方式有几种"><a href="#15-如何根据urlpatterns中的name方向生成url，这样反向生成url的方式有几种" class="headerlink" title="15. 如何根据urlpatterns中的name方向生成url，这样反向生成url的方式有几种"></a>15. 如何根据urlpatterns中的name方向生成url，这样反向生成url的方式有几种</h2><blockquote>
+<p>（1）在url 中配置 redirect_to 或者 RedirectView</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置 redirect_to</span></span><br><span class="line"><span class="keyword">from</span> django.views.generic.simple <span class="keyword">import</span> redirect_to</span><br><span class="line"></span><br><span class="line">urlpatterns = patterns(<span class="string">''</span>,</span><br><span class="line">    (<span class="string">r'^one/$'</span>, redirect_to, &#123;<span class="string">'url'</span>: <span class="string">'/another/'</span>&#125;),</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 RedirectView</span></span><br><span class="line"><span class="keyword">from</span> django.views.generic <span class="keyword">import</span> RedirectView</span><br><span class="line">urlpatterns = patterns(<span class="string">''</span>,</span><br><span class="line">    (<span class="string">r'^one/$'</span>, RedirectView.as_view(url=<span class="string">'/another/'</span>)),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>（2）在view 中 通过 HttpResponseRedirect 实现 redirect，状态码是301、302</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponseRedirect</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myview</span><span class="params">(request)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> HttpResponseRedirect(<span class="string">"/path/"</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>（3）利用django的 redirect app实现，主要是<code>RedirectFallbackMiddleware</code>来完成，如果django发现404错误，就会去<code>django_redirect</code>去匹配URL，若匹配成功且存在新的URL，则自动转向URL；若新URL为空，返回410；若匹配不成功，返回原来的错误。</p>
+</blockquote>
+<ul>
+<li>在settings.py中增加<code>django.contrib.redirects</code>到你的INSTALLED_APPS 设置。</li>
+<li>在<code>MIDDLEWARE_CLASSES</code>中添加<code>django.contrib.middleware.RedirectFallbackMiddleware</code>。</li>
+<li>运行<code>manage.py syncdb</code> 创建<code>django_redirect</code>这个表，包含了<code>site_id</code>、<code>old_path</code>、<code>new_path</code>字段。</li>
+</ul>
+<h2 id="16-WSGI-uwsgi-uWSGI"><a href="#16-WSGI-uwsgi-uWSGI" class="headerlink" title="16. WSGI/uwsgi/uWSGI"></a>16. WSGI/uwsgi/uWSGI</h2><blockquote>
+<p>WSGI（Web Server Gateway interface）Web服务器网关接口，不是服务器也不是API之类的，只是一种描述web服务器（如nginx、uWSGI服务器）如何与web应用程序通信的规范。</p>
+</blockquote>
+<blockquote>
+<p>uwsgi与WSGI一样是uWSGI服务器的独占通信协议，用于定义传输信息的类型，每个uwsgi packet 前 4 bytes为传输信息类型的描述，与WSGI协议完全是两种东西。</p>
+</blockquote>
+<blockquote>
+<p>uWSGI是一个全功能的HTTP服务器，实现了WSGI协议、uwsgi协议、HTTP协议等，目的就是把HTTP协议转化为语言支持的网络协议，如把HTTP协议转化为WSGI协议，让python直接使用。</p>
+</blockquote>
+<h2 id="17-简述Django对HTTP请求的执行流程"><a href="#17-简述Django对HTTP请求的执行流程" class="headerlink" title="17. 简述Django对HTTP请求的执行流程"></a>17. 简述Django对HTTP请求的执行流程</h2><blockquote>
+<p>Django自带的开发者服务器或者uWSGI服务器，WSGI网关协议的服务器监听端口等待外界HTTP请求，服务器根据WSGI协议从HTTP中提取出必要的参数组成一个字段传入Handler中进行处理分析，加载中间件、路由分配、调用路由匹配的视图、完成数据请求或处理，最后返回一个可以被浏览器解析的符合HTTP协议的HTTPResponse。</p>
+</blockquote>
+<h2 id="18-Django中的跨域问题如何处理"><a href="#18-Django中的跨域问题如何处理" class="headerlink" title="18. Django中的跨域问题如何处理"></a>18. Django中的跨域问题如何处理</h2><p><strong><a href="https://blog.csdn.net/apple9005/article/details/54427902" target="_blank" rel="noopener">django解决跨域请求的问题</a></strong></p>
+<blockquote>
+<p>跨域是指一个域下面的文档或脚本试图去请求另一个与下的资源。当一个请求url的协议、域名、端口三者之间任意一个与当前页面url不同时，就会出现跨域。</p>
+</blockquote>
+<blockquote>
+<p>解决跨域问题:</p>
+</blockquote>
+<ul>
+<li>（1）安装第三方扩展：<code>pip install django-cors-headers</code></li>
+<li>（2）添加应用</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INSTALL_APPS = (</span><br><span class="line">    <span class="string">'corsheaders'</span>,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>（3）添加中间件，第一条</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MIDDLEWARE = [</span><br><span class="line">    <span class="string">'corsheaders.middleware.CorMiddleware'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>（4）配置访问规则或者白名单</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 允许所有域名跨域（优先选择）</span></span><br><span class="line">CORS_ORIGIN_ALLOW_ALL = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置白名单</span></span><br><span class="line">CORS_ORIGIN_WHITELIST = (</span><br><span class="line">    <span class="string">'*'</span></span><br><span class="line">    <span class="comment"># '127.0.0.1:8000',  # ip地址：端口</span></span><br><span class="line">    <span class="comment"># 'localhost:8000',</span></span><br><span class="line">    <span class="comment"># 'www.baidu.com:80',</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置方法</span></span><br><span class="line">CORS_ALLOW_METHODS = (</span><br><span class="line">    <span class="string">'GET'</span>,</span><br><span class="line">    <span class="string">'POST'</span>,</span><br><span class="line">    <span class="string">'DELETE'</span>,</span><br><span class="line">    <span class="string">'PUT'</span>,</span><br><span class="line">    <span class="string">'OPTIONS'</span>,</span><br><span class="line">    <span class="string">'PATCH'</span>,</span><br><span class="line">    <span class="string">'VIEW'</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置headers</span></span><br><span class="line">CORS_ALLOW_HEADERS = (</span><br><span class="line">    <span class="string">'XMLHttpRequest'</span>,</span><br><span class="line">    <span class="string">'X_FILENAME'</span>,</span><br><span class="line">    <span class="string">'accept-encoding'</span>,</span><br><span class="line">    <span class="string">'authorization'</span>,</span><br><span class="line">    <span class="string">'content-type'</span>,</span><br><span class="line">    <span class="string">'dnt'</span>,</span><br><span class="line">    <span class="string">'origin'</span>,</span><br><span class="line">    <span class="string">'user-agent'</span>,</span><br><span class="line">    <span class="string">'x-csrftoken'</span>,</span><br><span class="line">    <span class="string">'x-request-with'</span>,</span><br><span class="line">    <span class="string">'Pragma'</span>,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>settings.py设置允许携带cookie：<code>CORS_ALLOW_CREDENTIALS = True</code>，如果配置了nginx，则</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入nginx.conf</span></span><br><span class="line">vim /usr/<span class="built_in">local</span>/nginx/conf/nginx.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改配置</span></span><br><span class="line">location / &#123;</span><br><span class="line">    proxy_pass 127.0.0.1:8000/;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="19-Django中CSRF的实现机制"><a href="#19-Django中CSRF的实现机制" class="headerlink" title="19. Django中CSRF的实现机制"></a>19. Django中CSRF的实现机制</h2><ul>
+<li>（1）django第一次响应来自某个客户端的请求时，后端随机产生一个tocken值，把这个token保存在session状态中；同时，后端把这个token放到cookie中交给前端页面。</li>
+<li>（2）下次前端需要发起请求的时候，把这个token值加入到请求数据或者头信息中，一起穿个后端<code>Cookies: {csrftoken:xxxxx}</code>。</li>
+<li>（3）后端校验前端请求带过来的token和session里的token是否一致。</li>
+</ul>
+<h2 id="20-Django的Model的继承有几种形式"><a href="#20-Django的Model的继承有几种形式" class="headerlink" title="20. Django的Model的继承有几种形式"></a>20. Django的Model的继承有几种形式</h2><blockquote>
+<p>抽象基类继承（Abstract base classes）: 用父model保存那些重复录入的信息，父类是不使用的也就是不生成单独的数据表。</p>
+</blockquote>
+<blockquote>
+<p>多重表继承（Multi-table inheritance）：从现有的Model继承并让每个Model都有自己的数据表</p>
+</blockquote>
+<blockquote>
+<p>代理model（Proxy models）：只想model中修改python-level级的行为，而不涉及字段改变。</p>
+</blockquote>
+<h2 id="21-Django中如何加载初始化数据"><a href="#21-Django中如何加载初始化数据" class="headerlink" title="21. Django中如何加载初始化数据"></a>21. Django中如何加载初始化数据</h2><blockquote>
+<p>Django在创建对象时，在调用save()方法后，ORM框架会把对象的属性转为写入到数据库中，实现对数据库的初始化；通过操作对象，查询数据库，将查询集返回给视图函数，通过模版展现在前端页面。</p>
+</blockquote>
+<h2 id="22-Django如何批量创建数据"><a href="#22-Django如何批量创建数据" class="headerlink" title="22. Django如何批量创建数据"></a>22. Django如何批量创建数据</h2><blockquote>
+<p>使用<code>django.db.models.query.QuertSet.bulk_create()</code>批量创建对象，为了减少SQL查询次数，改进如下：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">querysetlist = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> resultlist:</span><br><span class="line">    querysetlist.append(Account(name=i))</span><br><span class="line">Account.objects.bulk_creat(querysetlist)</span><br></pre></td></tr></table></figure>
+
+<h2 id="23-ORM取消级联"><a href="#23-ORM取消级联" class="headerlink" title="23. ORM取消级联"></a>23. ORM取消级联</h2><blockquote>
+<p>Django取消练级删除，只有在null=True时，才可以使用。<br><code>user = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL</code></p>
+</blockquote>
+<h2 id="24-QueryDict与dict的区别"><a href="#24-QueryDict与dict的区别" class="headerlink" title="24. QueryDict与dict的区别"></a>24. QueryDict与dict的区别</h2><blockquote>
+<p>QueryDict类似字典的自定义类，用来处理单键对应多值的情况。在HttpResponse对象中，GET和POST属性是django.http.QueryDict类的实例。</p>
+</blockquote>
+<blockquote>
+<p>而python原生的dict是不允许出现一键多值，只能保留一个。但在HTML表单中，通常会发生一键多值的情况，如多选框就是常见情况。</p>
+</blockquote>
+<h2 id="25-查询集的两大特性"><a href="#25-查询集的两大特性" class="headerlink" title="25. 查询集的两大特性"></a>25. 查询集的两大特性</h2><ul>
+<li>惰性执行：创建查询集不会访问数据库，直到调用数据时才访问数据库</li>
+<li>缓存：</li>
+</ul>
+<h2 id="26-查询集返回的列表过滤器有哪些"><a href="#26-查询集返回的列表过滤器有哪些" class="headerlink" title="26. 查询集返回的列表过滤器有哪些"></a>26. 查询集返回的列表过滤器有哪些</h2><ul>
+<li>all()：返回所有数据</li>
+<li>filter()：返回满足条件的数据</li>
+<li>exclude()：返回满足条件之外的数据，等同于sql中的<code>where...not</code></li>
+<li>order_by()：排序</li>
+</ul>
+<h2 id="27-django中写原生sql"><a href="#27-django中写原生sql" class="headerlink" title="27. django中写原生sql"></a>27. django中写原生sql</h2><ul>
+<li>使用extra</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Book.objects.filter(pub_name=<span class="string">'人民邮电出版社'</span>).extra(where=[<span class="string">'price&gt;50'</span>])</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用raw</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">books=Book.objects.raw(<span class="string">'select * from e_book'</span>)</span><br><span class="line"><span class="keyword">for</span> book <span class="keyword">in</span> books:</span><br><span class="line">    print(book)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>自定义sql</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> connection</span><br><span class="line"></span><br><span class="line">cursor = connection.cursor()</span><br><span class="line">cursor.excute(<span class="string">"insert into e_book(name)VALUES('山海经')"</span>)</span><br><span class="line">cursor.excute(<span class="string">"update e_book set name='流畅的python' WHERE name='山海经'"</span>)</span><br><span class="line">cursor.excute(<span class="string">"delete from e_book where name='山海经'"</span>)</span><br><span class="line">cursor.excute(<span class="string">"select * from e_book"</span>)</span><br><span class="line">cursor.fetchone()</span><br><span class="line">cursor.fetchall()</span><br></pre></td></tr></table></figure>
+
+<h2 id="28-Django中查询queryset时，什么情况下用F和Q"><a href="#28-Django中查询queryset时，什么情况下用F和Q" class="headerlink" title="28. Django中查询queryset时，什么情况下用F和Q"></a>28. Django中查询queryset时，什么情况下用F和Q</h2><blockquote>
+<p>F：对数据本身的不同字段进行操作，如比较、更新，对数据进行加减操作等。</p>
+</blockquote>
+<blockquote>
+<p>Q：用于构造复杂的查询条件，如’&amp;’、’|’等操作。</p>
+</blockquote>
+<h2 id="29-DateTimeField类型中auto-now与auto-now-add的区别"><a href="#29-DateTimeField类型中auto-now与auto-now-add的区别" class="headerlink" title="29. DateTimeField类型中auto_now与auto_now_add的区别"></a>29. DateTimeField类型中auto_now与auto_now_add的区别</h2><ul>
+<li>DateTimeField.auto_now</li>
+</ul>
+<blockquote>
+<p>这个参数的默认值为false，设置为true时，能够在保存该字段时，将其值设置为当前时间，并且每次修改model，都会自动更新。这个参数在需要存储“最后修改时间”的场景下，设置该参数为true时，并不简单地意味着字段的默认值为当前时间，而是指字段会被“强制”更新到当前时间，你无法程序中手动为字段赋值，在admin中字段也会成为只读的。</p>
+</blockquote>
+<ul>
+<li>DateTimeField.auto_now_add</li>
+</ul>
+<blockquote>
+<p>这个参数的默认值也为False，设置为True时，会在model对象第一次被创建时，将字段的值设置为创建时的时间，以后修改对象时，字段的值不会再更新。该属性通常被用在存储“创建时间”的场景下，一旦被设置为True，就无法在程序中手动为字段赋值，在admin中字段也会成为只读的。</p>
+</blockquote>
+<h2 id="30-values-与values-list-的区别"><a href="#30-values-与values-list-的区别" class="headerlink" title="30. values()与values_list()的区别"></a>30. values()与values_list()的区别</h2><ul>
+<li>values()：取字典的queryset</li>
+<li>values_list()：取元组的queryset</li>
+</ul>
+<h2 id="31-selected-related与prefetch-related的区别"><a href="#31-selected-related与prefetch-related的区别" class="headerlink" title="31. selected_related与prefetch_related的区别"></a>31. selected_related与prefetch_related的区别</h2><ul>
+<li>select_related：适用于外键和多对一的关系查询</li>
+<li>prefetch_related：适用于一对多或者多对多查询</li>
+</ul>
+<h2 id="32-class-Meta中的元素信息字段有哪些"><a href="#32-class-Meta中的元素信息字段有哪些" class="headerlink" title="32. class Meta中的元素信息字段有哪些"></a>32. class Meta中的元素信息字段有哪些</h2><ul>
+<li>app_label: 模型类不在默认的应用程序包下的models.py文件中，需要指定应用程序。</li>
+<li>db_table：用于指定自定义数据库表名的，若不提供，默认会用<code>app_label + &#39;_&#39; + module_name</code>作为表名。</li>
+<li>db_tablespace：指定这个模型对应的数据库表放在哪个数据库表空间。</li>
+<li>get_lastest_by：根据哪个字段获取到最新的对象。</li>
+<li>managed：Django会自动根据模型类生成映射的数据库表，managed=False则不会对数据表进行migrate/migrations、删除等操作。</li>
+<li>order_with_respect_to：一般用于多对多的关系中，指向一个关联对象并排序。</li>
+<li>ordering：对象返回的记录结果集是按照哪个字段排序的，<code>ordering=[&#39;-order_date&#39;, &#39;author&#39;]</code>，其中-表示降序，?表示随机，多个元素按从左至右排序。</li>
+<li>permissions：Admin管理模块下，设置指定方法权限。</li>
+<li>unique_together：通过两个字段保持唯一性时使用，<code>unique_together = ((&quot;first_name&quot;, &quot;last_name&quot;),)</code></li>
+<li>verbose_name：取别名，<code>verbose_name = &quot;hello&quot;</code></li>
+<li>verbose_name_plural：指定模型的复数形式，<code>verose_name_plural=&quot;stories</code></li>
+</ul>
+<h2 id="33-django中多对多关系如何手动生成中间关联表"><a href="#33-django中多对多关系如何手动生成中间关联表" class="headerlink" title="33. django中多对多关系如何手动生成中间关联表"></a>33. django中多对多关系如何手动生成中间关联表</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tags = models.ManyToManyField(to=<span class="string">"Tag"</span>, through=<span class="string">"Article2Tag"</span>, through_fields=(<span class="string">'article'</span>, <span class="string">'tag'</span>),)</span><br></pre></td></tr></table></figure>
+
+<h2 id="34-Cookie与Session"><a href="#34-Cookie与Session" class="headerlink" title="34. Cookie与Session"></a>34. Cookie与Session</h2><ul>
+<li>Cookie：会话跟踪技术，是由服务器创建的，然后通过响应发送给客户端的一个键值对。具体一个浏览器对一个服务器存储的键值对key-value。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取cookie</span></span><br><span class="line">request.COOKIES.get(<span class="string">"is_login"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置cookie</span></span><br><span class="line">response.set_cookie(<span class="string">"is_login"</span>, <span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Session：是服务端技术，服务器在运行时可以为每一个用户的浏览器创建一个独享的session对象，用户在访问服务器的web资源时，可以把各自的数据放在各自的session中，当用户再次访问该服务器的其他web资源师，其他web资源再从用户各自的session中去除数据为用户服务。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取session</span></span><br><span class="line">request.session[<span class="string">"is_login"</span>] = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置session</span></span><br><span class="line">is_login = request.session.get(<span class="string">"is_login"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清空session</span></span><br><span class="line">request.session.flush()</span><br></pre></td></tr></table></figure>
+
+<h2 id="35-django中如何实现单元测试"><a href="#35-django中如何实现单元测试" class="headerlink" title="35. django中如何实现单元测试"></a>35. django中如何实现单元测试</h2><blockquote>
+<p>django的单元测试使用python的unittest模块，这个模块使用基于类的方法来定义测试。</p>
+</blockquote>
+<h2 id="36-django的缓存机制"><a href="#36-django的缓存机制" class="headerlink" title="36. django的缓存机制"></a>36. django的缓存机制</h2><blockquote>
+<p>Django根据设置的缓存反射式，浏览器第一次请求时，cache会缓存单个变量或者珍格格网页等内容到硬盘或者内存中，同时设置response头部，当浏览器再次发起请求时，附带<code>f-Modified-Since</code>请求时间到Django，django发现<code>f-Modified-Since</code>会先去参数之后，会与缓存中的过期时间相比较，如果缓存时间比较新，则会重庆请求数据，并缓存起来，然后返回response给客户端，如果珲春没有过期，则直接从缓存中提取数据，返回response给客户端。</p>
+</blockquote>
+<h2 id="37-缓存系统类型"><a href="#37-缓存系统类型" class="headerlink" title="37. 缓存系统类型"></a>37. 缓存系统类型</h2><ul>
+<li>全站缓存</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MIDDLEWARE_CLASSES = (</span><br><span class="line">    <span class="string">'django.middleware.cache.UpdateCacheMiddleware'</span>,</span><br><span class="line">    <span class="string">'django.middleware.common.CommonMiddleware'</span>,</span><br><span class="line">    <span class="string">'django.middleaware.cache.FetchFromCacheMiddleware'</span>,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>视图缓存</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.views.decorators.cache <span class="keyword">import</span> cache_page</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="meta">@cache_page(15)  # 超时时间为15秒</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">    t = time.time()  <span class="comment"># 获取当前时间</span></span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'index.html'</span>, locals())</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>模版缓存</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;% load cache %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span> <span class="attr">style</span>=<span class="string">"color: green"</span>&gt;</span>不缓存：-----&#123;&#123; t &#125;&#125;<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;% cache 2 'name' %&#125;  # 缓存的key</span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>缓存：-----：&#123;&#123; t &#125;&#125;<span class="tag">&lt;<span class="name">h3</span>&gt;</span></span><br><span class="line">&#123;% endcache %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="38-Django中的runserver不用用来部署"><a href="#38-Django中的runserver不用用来部署" class="headerlink" title="38. Django中的runserver不用用来部署"></a>38. Django中的runserver不用用来部署</h2><blockquote>
+<p>runserver方法是调试Django时经常用到的运行方式，它使用Django自带的WSGI Server运行，主要在测试和开发中使用，并且runserver开启的方式也是单进程。</p>
+</blockquote>
+<blockquote>
+<p>uWSGI是一个Web服务器，实现了WSGI协议、uwsgi、http等协议，具有超快的性能、低内存占用和多app管理等优点，并且搭配着Nginx就是一个生产环境，能够将用户访问请求与应用app隔离开，实现真正的部署。相比来讲，支持并发量更高，方便管理多进程，发挥多核的优势，提升性能。</p>
+</blockquote>
+<h1 id="Flask"><a href="#Flask" class="headerlink" title="Flask"></a>Flask</h1><blockquote>
+<p>微框架， 插件机制， 比较灵活， 过于灵活就导致代码结构太自由， 不利于工程维护。</p>
+</blockquote>
+<h1 id="Tornado"><a href="#Tornado" class="headerlink" title="Tornado"></a>Tornado</h1><blockquote>
+<p>Tornado源意为龙卷风，这里是一款可扩展的，非阻塞的Web服务器，应用开发框架，以及异步联网库，但生态还不够完善。Tornado是高度灵活，专门设计为开发人员和第三方工具厂商提供了一个开放环境。已有部分应用程序接口可以利用并附带参考书目，内容从开发环境接口到连接实现。另外，它还配备了一个WSGI服务器，其他WSGI Python应用程序(和框架)也可以使用。</p>
+</blockquote>
+<h1 id="Twisted"><a href="#Twisted" class="headerlink" title="Twisted"></a>Twisted</h1><blockquote>
+<p>Twisted是一款事件驱动的网络编程框架，支持许多常见的传输及应用层协议，如TCP、UDP、SSL/TLS、HTTP、IMAP、SSH、IRC以及FTP。还支持Unix domain sockets，在MIT许可下应用。</p>
+</blockquote>
+<blockquote>
+<p>Twisted附带了一个可以web服务器上运行的WSGI，它能够为其他Python web应用程序允许开发人员使用的服务器定制HTTP服务。</p>
+</blockquote>
+<h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h1 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h1><h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1>
       
       <!-- reward -->
       
@@ -1095,20 +1475,15 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/05/08/%E7%AE%97%E6%B3%95%E4%B8%8E%E7%BC%96%E7%A8%8B/" class="article-nav-link">
+      <a href="/2020/05/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9F%A5%E8%AF%86/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            算法编程知识点总结归纳
+            数据库知识点总结归纳
           
         </div>
       </a>
     
-    
-      <a href="/2020/05/08/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/" class="article-nav-link">
-        <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">自然语言处理知识点总结归纳</div>
-      </a>
     
   </nav>
 
