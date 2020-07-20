@@ -78,7 +78,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">564</span>
+            <span class="post-count">7.2k</span>
         </span>
     </span>
 
@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">2 min</span>
+            <span class="post-count">30 min</span>
         </span>
     </span>
 </div>
@@ -127,7 +127,27 @@
 <li><a href="#2-反爬手段">2. 反爬手段</a></li>
 <li><a href="#3-常见反爬虫应对方法">3. 常见反爬虫应对方法</a></li>
 <li><a href="#4-投毒反爬策略">4. 投毒反爬策略</a></li>
-<li><a href="#5-分布式爬虫">5. 分布式爬虫</a></li>
+<li><a href="#5-urllib与requests">5. urllib与requests</a><ul>
+<li><a href="#1urllib">（1）urllib</a></li>
+<li><a href="#2requests">（2）requests</a></li>
+</ul>
+</li>
+<li><a href="#6-正则表达式">6. 正则表达式</a></li>
+<li><a href="#7-selenium的使用">7. Selenium的使用</a></li>
+<li><a href="#8-验证码的识别">8. 验证码的识别</a><ul>
+<li><a href="#1图形验证码识别">（1）图形验证码识别</a></li>
+<li><a href="#2极验滑动验证码识别">（2）极验滑动验证码识别</a></li>
+<li><a href="#3-点击选择验证码的识别">（3） 点击选择验证码的识别</a></li>
+<li><a href="#4-拖动旋转至正的验证码识别">（4） 拖动旋转至正的验证码识别</a></li>
+<li><a href="#5宫格连线验证码识别">（5）宫格连线验证码识别</a></li>
+</ul>
+</li>
+<li><a href="#9-代理的使用">9. 代理的使用</a></li>
+<li><a href="#10-模拟登陆headers与cookies">10. 模拟登陆（Headers与Cookies）</a></li>
+<li><a href="#11-app爬取">11. APP爬取</a></li>
+<li><a href="#12-pyspider框架">12. PySpider框架</a></li>
+<li><a href="#13-scrapy框架">13. Scrapy框架</a></li>
+<li><a href="#14-分布式爬虫">14. 分布式爬虫</a></li>
 </ul>
 </li>
 </ul>
@@ -135,8 +155,19 @@
 
 </div>
 
-<h1 id="爬虫知识"><a href="#爬虫知识" class="headerlink" title="爬虫知识"></a>爬虫知识</h1><h2 id="1-Scrapy框架原理"><a href="#1-Scrapy框架原理" class="headerlink" title="1. Scrapy框架原理"></a>1. Scrapy框架原理</h2><h2 id="2-反爬手段"><a href="#2-反爬手段" class="headerlink" title="2. 反爬手段"></a>2. 反爬手段</h2><ul>
-<li>遵守robots协议</li>
+<h1 id="爬虫知识"><a href="#爬虫知识" class="headerlink" title="爬虫知识"></a>爬虫知识</h1><h2 id="1-Scrapy框架原理"><a href="#1-Scrapy框架原理" class="headerlink" title="1. Scrapy框架原理"></a>1. Scrapy框架原理</h2><ul>
+<li>（1）Engine首先打开一个网站，找到处理该网站的Spider，并向该Spider请求第一个要爬取的URL</li>
+<li>（2）Engine从Spider中获取到第一个要爬取的URL，并通过Scheduler以Request的形式调度</li>
+<li>（3）Engine向Scheduler请求下一个呀哦爬取的URL</li>
+<li>（4）Scheduler返回下一个要爬取的URL给Engine，Engine将URL通过Downloader Middlewares转发给Downloader下载</li>
+<li>（5）一旦页面下载完毕，Downloader生成该页面的Response，并将其通过Downloader Middlewares发送给Engine</li>
+<li>（6）Engine从下载器中接收到Response，并将其通过Spider Middlewares发送给Spider处理</li>
+<li>（7）Spider处理Response，并返回提取到的item及新的Request给Engine</li>
+<li>（8）Engine将Spider返回给item给Item Pipeline，将新的Request给Scheduler</li>
+<li>（9）重复第（2）~（8）步，直到Scheduler中没有更多的Request，Engine关闭该网站，爬取结束</li>
+</ul>
+<h2 id="2-反爬手段"><a href="#2-反爬手段" class="headerlink" title="2. 反爬手段"></a>2. 反爬手段</h2><ul>
+<li>遵守robots协议：网络爬虫排除标准，也叫爬虫协议、机器人协议，用来告诉爬虫或者搜索引擎那些页面可以抓取，那些不可抓取。</li>
 <li>限制访问频率</li>
 <li>验证码</li>
 <li>多账号反爬</li>
@@ -173,10 +204,541 @@
 <li>钻石反爬：异地登录需要手机短信验证，拖动、拼图等各类人机验证码</li>
 <li>王者反爬：前端写的代码让你的爬虫在 parse html 阶段的测试，难度上升为 nlp</li>
 </ul>
-<h2 id="5-分布式爬虫"><a href="#5-分布式爬虫" class="headerlink" title="5. 分布式爬虫"></a>5. 分布式爬虫</h2><blockquote>
-<p>分布式作用是：防止对方封IP，以及避免使用代理IP，因为一些实时性要求比较高的爬虫系统，使用代理IP响应时间太长。</p>
+<h2 id="5-urllib与requests"><a href="#5-urllib与requests" class="headerlink" title="5. urllib与requests"></a>5. urllib与requests</h2><h3 id="（1）urllib"><a href="#（1）urllib" class="headerlink" title="（1）urllib"></a>（1）urllib</h3><h3 id="（2）requests"><a href="#（2）requests" class="headerlink" title="（2）requests"></a>（2）requests</h3><h2 id="6-正则表达式"><a href="#6-正则表达式" class="headerlink" title="6. 正则表达式"></a>6. 正则表达式</h2><blockquote>
+<p><strong>正则表达式常用的匹配规则</strong></p>
 </blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">模式</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="left"><strong><em>\</em>***一般字符*****</strong></td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="left">匹配除换行符”\n”和”\r”之外的任意字符，在re.S模式下则能匹配任意字符</td>
+</tr>
+<tr>
+<td align="center">\</td>
+<td align="left">转义字符，使下一个字符标记为或特殊字符、或原义字符、或向后引用、或八进制转义符，如果原始字符串中含有`* . ? + $ ^ [ ] ( ) { }</td>
+</tr>
+<tr>
+<td align="center">[…]</td>
+<td align="left">字符集，用来表示一组字符，对应的位置可以是字符集中任意一个字符，字符集中的字符可以逐个列出，也可以给出范围如[abc]或[a-c]，所有的特殊字符在字符集中都失去本原有的含义，需要加\进行转义；常见的字符集[0-9]、[a-z]、[A-Z]、<code>^[\u4e00-\u9fa5]*$</code></td>
+</tr>
+<tr>
+<td align="center">[^…]</td>
+<td align="left">在字符集内的开头加入非，表示匹配不在字符集内的其他任意字符，如[^abc]表示匹配除abc之外的任意字符</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><strong><em>\</em>***预定义字符集（可以写在字符集[…]中）*****</strong></td>
+</tr>
+<tr>
+<td align="center">\d</td>
+<td align="left">匹配任意数字，等价于[0-9]</td>
+</tr>
+<tr>
+<td align="center">\D</td>
+<td align="left">匹配任意非数字的字符，等价于[^\d]</td>
+</tr>
+<tr>
+<td align="center">\s</td>
+<td align="left">匹配空白字符，等价于[\t\n\r\f]，如\t(Tab)、\r(回车)、’ ‘(空格)、\f(换页符)、\n(换行符)、\v(垂直制表符)</td>
+</tr>
+<tr>
+<td align="center">\S</td>
+<td align="left">匹配非空白字符，等价于[^\s]</td>
+</tr>
+<tr>
+<td align="center">\w</td>
+<td align="left">匹配字母数字及下划线，等价于[A-Za-z0-9_]</td>
+</tr>
+<tr>
+<td align="center">\W</td>
+<td align="left">匹配非字母数字及下划线的其他字符，等价于[^A-Za-z0-9_]</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><strong><em>\</em>***数量词（用在字符或(…)之后）*****</strong></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="left">匹配前一个字符、子表达式0次或多次，例如<code>abc*</code>能匹配ab，也能匹配abc、abcc，*等价于{0,}</td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td align="left">匹配前一个字符、子表达式1次或多次，例如<code>abc+</code>，能匹配abc、abcc，但是不能匹配到ab，+号前的字符至少要匹配一次，+等价于{1,}</td>
+</tr>
+<tr>
+<td align="center">?</td>
+<td align="left">匹配前一个字符、子表达式0次或1次，例如<code>do(es)?</code>可以匹配到do或does，?等价于{0,1}</td>
+</tr>
+<tr>
+<td align="center">{n}</td>
+<td align="left">精确匹配前一个字符、子表达式n次，例如<code>ab{2}c</code>可以匹配到abbc，n为非负整数</td>
+</tr>
+<tr>
+<td align="center">{n,}</td>
+<td align="left">匹配前一个字符、子表达式至少n次(即[n,+∞])，例如<code>ab{2,}c</code>可以匹配到abbc或abbbbbbbc，n为非负整数</td>
+</tr>
+<tr>
+<td align="center">{,n}</td>
+<td align="left">匹配前一个字符、子表达式至多n次(即[0,n])，例如<code>ab{,2}c</code>可以匹配到ac、abc或abbc，n为非负整数</td>
+</tr>
+<tr>
+<td align="center">{n,m}</td>
+<td align="left">匹配前一个字符、子表达式最少匹配n次，最多m次(即[n,m])，例如<code>ab{1,2}c</code>可以匹配到abc或abbc，n, m为非负整数，且n&lt;=m</td>
+</tr>
+<tr>
+<td align="center"><code>*?, +?, ??</code></td>
+<td align="left">默认情况下<em>、+和?的匹配模式是贪婪模式，即会尽可能对的匹配符合规则的字符，</em>?、+?和??表示启用对应的非贪婪模式。如对于字符串”Pythonnn”，正则表达式Python+能匹配大整个字符串，而Python+?则匹配Python</td>
+</tr>
+<tr>
+<td align="center"><code>{n,m}?</code></td>
+<td align="left">同上，启用非贪婪模式，即只匹配n次，n, m为非负整数，且n&lt;=m</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><strong><em>\</em>***边界匹配（不消耗待匹配字符串中的字符）*****</strong></td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td align="left">匹配字符串的开头，在多行模式下(re.M)匹配每一行的开头，如^abc可以匹配abc</td>
+</tr>
+<tr>
+<td align="center">$</td>
+<td align="left">匹配字符串的末尾，在多行模式下(re.M)匹配每一行的末尾，如abc$可以匹配abc</td>
+</tr>
+<tr>
+<td align="center">\A</td>
+<td align="left">仅匹配字符串开头，如\Aabc可以匹配abc</td>
+</tr>
+<tr>
+<td align="center">\Z</td>
+<td align="left">仅匹配字符串末尾，如果存在换行，只匹配到换行前的结束字符串，如abc\Z可以匹配abc</td>
+</tr>
+<tr>
+<td align="center">\z</td>
+<td align="left">仅匹配字符串末尾，如果存在换行，同时还会匹配到换行符</td>
+</tr>
+<tr>
+<td align="center">\b</td>
+<td align="left">匹配单词边界，也就是指单词和空格间的位置，如<code>er\b</code>可以匹配到never中的er，但不能匹配到verb中的er</td>
+</tr>
+<tr>
+<td align="center">\B</td>
+<td align="left">匹配非单词边界，也就是指单词和空格间的位置，如<code>er\B</code>可以匹配到verb中的er，但不能匹配到never中的er，等价于[^\b]</td>
+</tr>
+<tr>
+<td align="center">\G</td>
+<td align="left">匹配最后匹配完成的位置</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><strong><em>\</em>***逻辑、分组*****</strong></td>
+</tr>
+<tr>
+<td align="center">`</td>
+<td align="left">`</td>
+</tr>
+<tr>
+<td align="center">(…)</td>
+<td align="left">匹配圆括号中的正则表达式，或者指定一个子组的开始和结束位置，被括起来的表达式将作为分组，从表达式的左边开始每遇到一个分组的左括号’(‘，编号+1；另外分组表达式作为一个整体，后面可以接数量词；表达式中的`</td>
+</tr>
+<tr>
+<td align="center"><code>(?P&lt;name&gt;...)</code></td>
+<td align="left">给分组命名，除了愿有你的编号外在指定一个额外的别名，通过分组名字name既可以访问到子组匹配的字串，例如<code>(?P&lt;id&gt;abc){2}</code>能够匹配到abcabc</td>
+</tr>
+<tr>
+<td align="center"><code>\&lt;number&gt;</code></td>
+<td align="left">引用序号为<code>&lt;number&gt;</code>对应的子组所匹配到的字符串，子组的序号从1开始计算；如果序号以0开头，或者3个数字的长度，那么不会被引用对应的子组，而是用于匹配八进制数字所表示的ASCII码值所对应的字符。例如<code>(.+) \1</code>会匹配”python python” 或 “66 66”，但不会匹配holysll”</td>
+</tr>
+<tr>
+<td align="center"><code>(?P=name)</code></td>
+<td align="left">引用别名为<code>&lt;name&gt;</code>的分组匹配到的字符串，如<code>(?P&lt;id&gt;\d)abc(?P=id)</code>能够匹配到1abc1、5abc5</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><strong><em>\</em>***特殊构造（不作为分组）*****</strong></td>
+</tr>
+<tr>
+<td align="center"><code>(?:...)</code></td>
+<td align="left">(…)的不分组版本，用于使用`</td>
+</tr>
+<tr>
+<td align="center"><code>(?aiLmsux)</code></td>
+<td align="left">aiLmsux的每个字符代表一种匹配模式，<code>(?</code> 后可以紧跟着 ‘a’，’i’，’L’，’m’，’s’，’u’，’x’ 中的一个或多个字符，只能在正则表达式的开头使用，如<code>(?i)abc</code>匹配模式是忽略大小写，能够匹配abc、Abc、aBc、abC、ABc、AbC、aBC、ABC</td>
+</tr>
+<tr>
+<td align="center"><code>(?#...)</code></td>
+<td align="left">#后的内容将作为主食被忽略，如<code>abc(?#comment)123</code>能够匹配abc123</td>
+</tr>
+<tr>
+<td align="center"><code>(?=...)</code></td>
+<td align="left">之后的字符串内容需要匹配表达式才能匹配成功，不消耗字符创的内容。如<code>a(?=\d)</code>能匹配后面全是数字的a</td>
+</tr>
+<tr>
+<td align="center"><code>(?!...)</code></td>
+<td align="left">之后的字符串内容需要不匹配表达式才能匹配成功，不消耗字符创的内容。如<code>a(?!\d)</code>能匹配后面不是数字的a</td>
+</tr>
+<tr>
+<td align="center"><code>(?&lt;=...)</code></td>
+<td align="left">之前的字符串内容需要匹配表达式才能匹配成功，不消耗字符创的内容。如<code>a(?&lt;=\d)</code>能匹配前面是数字的a</td>
+</tr>
+<tr>
+<td align="center"><code>(?&lt;!...)</code></td>
+<td align="left">之前的字符串内容需要不匹配表达式才能匹配成功，不消耗字符创的内容。如<code>a(?&lt;!\d)</code>能匹配后面不是数字的a</td>
+</tr>
+<tr>
+<td align="center">`(?(id/name)yes-pattern</td>
+<td align="left">no-pattern)`</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>正则表达式的匹配模式：</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">flags</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">re.I(IGNORECASE)</td>
+<td align="left">忽略大小写，使匹配对大小写不敏感</td>
+</tr>
+<tr>
+<td align="center">re.L(LOCALE)</td>
+<td align="left">做本地化识别（locale-aware）匹配</td>
+</tr>
+<tr>
+<td align="center">re.M(MULTILINE)</td>
+<td align="left">多行匹配模式，影响^ 和 $</td>
+</tr>
+<tr>
+<td align="center">re.S(DOTALL)</td>
+<td align="left">使 . 匹配包括换行在内的所有任意字符</td>
+</tr>
+<tr>
+<td align="center">re.U</td>
+<td align="left">根据Unicode字符集解析字符，这个标志影响\w、\W、\b、\B、\d、\D、\s、\S</td>
+</tr>
+<tr>
+<td align="center">re.X(VERBOSE)</td>
+<td align="left">该标志通过给予更灵活的格式以便将正则表达式更易于理解，详细表达式</td>
+</tr>
+<tr>
+<td align="center">re.A</td>
+<td align="left">只匹配ASCII字符</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>re分组匹配对象的方法：</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">group([group1, …])</td>
+<td align="left">用于获得一个或者多个分组匹配的字符串，当要获得整个匹配的子串时，使用group()或group(0)；groups()等价于(group(1), group(2), …)</td>
+</tr>
+<tr>
+<td align="center">start([group])</td>
+<td align="left">用于获取分组匹配的子串在整个字符串的起始位置（子串第一个字符的索引），参数值默认为0</td>
+</tr>
+<tr>
+<td align="center">end([group])</td>
+<td align="left">用于获取分组匹配的子串在整个字符串的结束位置（子串最后一个字符的索引+1），参数值默认为0</td>
+</tr>
+<tr>
+<td align="center">span([group])</td>
+<td align="left">返回(start(group), end(group))；span(0) 返回匹配成功的整个子串的索引；span(1) 返回第一个分组匹配成功的子串的索引</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>re模块中一些重要的函数：</strong></p>
+</blockquote>
+<ul>
+<li>search：扫描整个字符串并返回第一个成功的匹配，匹配成功返回一个匹配的对象，否则返回None。</li>
+</ul>
+<blockquote>
+<p>search()函数语法：<code>re.search(pattern, string[, flags])</code> 其中，参数pattern是匹配的正则表达式；参数string是需要匹配的字符串；参数flags是标志位，用于控制正则表达式的匹配模式。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">res = re.search(<span class="string">r'www\.(.*)\.(.&#123;3&#125;)'</span>, <span class="string">'www.baidu.com'</span>, re.I)  <span class="comment"># 忽略大小写</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> res:</span><br><span class="line">    print(res.groups())  <span class="comment"># 从分组1算起</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">"分组0："</span>)</span><br><span class="line">    print(res.group())</span><br><span class="line">    print(res.group(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"分组1："</span>)</span><br><span class="line">    print(res.group(<span class="number">1</span>))</span><br><span class="line">    print(res.start(<span class="number">1</span>))</span><br><span class="line">    print(res.end(<span class="number">1</span>))</span><br><span class="line">    print(res.span(<span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"分组2："</span>)</span><br><span class="line">    print(res.group(<span class="number">2</span>))</span><br><span class="line">    print(res.start(<span class="number">2</span>))</span><br><span class="line">    print(res.end(<span class="number">2</span>))</span><br><span class="line">    print(res.span(<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">('baidu', 'com')</span></span><br><span class="line"><span class="string">分组0：</span></span><br><span class="line"><span class="string">www.baidu.com</span></span><br><span class="line"><span class="string">www.baidu.com</span></span><br><span class="line"><span class="string">分组1：</span></span><br><span class="line"><span class="string">baidu</span></span><br><span class="line"><span class="string">4</span></span><br><span class="line"><span class="string">9</span></span><br><span class="line"><span class="string">(4, 9)</span></span><br><span class="line"><span class="string">分组2：</span></span><br><span class="line"><span class="string">com</span></span><br><span class="line"><span class="string">10</span></span><br><span class="line"><span class="string">13</span></span><br><span class="line"><span class="string">(10, 13)</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>match：尝试从字符串的起始位置匹配一个模式，如果不是起始位置匹配成功的话，match()就返回none。</li>
+</ul>
+<blockquote>
+<p>match()函数语法：<code>re.match(pattern, string[, flags])</code>其中，参数pattern是匹配的正则表达式；参数string是需要匹配的字符串；参数flags是标志位，用于控制正则表达式的匹配模式。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">res = re.search(<span class="string">r'baidu'</span>, <span class="string">'www.baidu.com'</span>, re.I)</span><br><span class="line"><span class="keyword">if</span> res:</span><br><span class="line">    print(<span class="string">"search匹配成功"</span>)</span><br><span class="line">    print(res.group())</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"search匹配失败"</span>)</span><br><span class="line"></span><br><span class="line">rem = re.match(<span class="string">r'baidu'</span>, <span class="string">'www.baidu.com'</span>, re.I)</span><br><span class="line"><span class="keyword">if</span> rem:</span><br><span class="line">    print(<span class="string">"match匹配成功"</span>)</span><br><span class="line">    print(rem.group())</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"match匹配失败"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">search匹配成功</span></span><br><span class="line"><span class="string">baidu</span></span><br><span class="line"><span class="string">match匹配失败</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>compile：用于编译正则表达式，生成一个正则表达式(pattern)对象，供match()和search()这两个函数使用。</li>
+</ul>
+<blockquote>
+<p>compile()函数语法：<code>re.compile(pattern[, flags])</code>其中，参数pattern是匹配的正则表达式；可选参数flags是匹配模式，用于控制正则表达式的匹配模式。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">pattern = re.compile(<span class="string">r'\w+'</span>, re.I)</span><br><span class="line">res = pattern.search(<span class="string">'www.baidu.com'</span>)</span><br><span class="line"><span class="keyword">if</span> res:</span><br><span class="line">    print(<span class="string">"compile search匹配成功"</span>)</span><br><span class="line">    print(res.group(<span class="number">0</span>))</span><br><span class="line">    print(res.start(<span class="number">0</span>))</span><br><span class="line">    print(res.end(<span class="number">0</span>))</span><br><span class="line">    print(res.span(<span class="number">0</span>))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"compile search匹配失败"</span>)</span><br><span class="line"></span><br><span class="line">rem = pattern.match(<span class="string">'www.baidu.com'</span>, <span class="number">4</span>, <span class="number">8</span>)</span><br><span class="line"><span class="keyword">if</span> rem:</span><br><span class="line">    print(<span class="string">"compile match匹配成功"</span>)</span><br><span class="line">    print(rem.group(<span class="number">0</span>))</span><br><span class="line">    print(rem.start(<span class="number">0</span>))</span><br><span class="line">    print(rem.end(<span class="number">0</span>))</span><br><span class="line">    print(rem.span(<span class="number">0</span>))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"compile match匹配失败"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">compile search匹配成功</span></span><br><span class="line"><span class="string">www</span></span><br><span class="line"><span class="string">0</span></span><br><span class="line"><span class="string">3</span></span><br><span class="line"><span class="string">(0, 3)</span></span><br><span class="line"><span class="string">compile match匹配成功</span></span><br><span class="line"><span class="string">baidu</span></span><br><span class="line"><span class="string">4</span></span><br><span class="line"><span class="string">9</span></span><br><span class="line"><span class="string">(4, 9)</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>findall：在字符串中找到正则表达式所匹配的所有子串，并返回一个列表，如果没有找到匹配的，则返回空列表。match 和 search 是匹配一次 findall 匹配所有。</li>
+</ul>
+<blockquote>
+<p>findall()函数语法：<code>re.findall(pattern, string[, flags])</code>其中，参数pattern是匹配的正则表达式；参数string是需要匹配的字符串；参数flags是标志位，用于控制正则表达式的匹配模式。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">res = re.findall(<span class="string">r'\w+'</span>, <span class="string">'Hello World!'</span>, re.I)</span><br><span class="line">print(res)  <span class="comment"># 返回的是一个列表</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">['Hello', 'World']</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过compile编译正则表达式</span></span><br><span class="line">pattern = re.compile(<span class="string">r'\w+'</span>, re.I)</span><br><span class="line">rec = re.findall(pattern, <span class="string">'Hello World!'</span>)</span><br><span class="line">print(rec)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">['Hello', 'World']</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>sub：将字符串中与模式pattern匹配的子串都替换为repl。</li>
+</ul>
+<blockquote>
+<p>sub()函数语法：<code>re.sub(pattern, repl, string[, count=0, flags])</code>其中，参数pattern是匹配的正则表达式；参数repl是替换的字符串，也可以是一个函数；参数string是需要匹配的字符串；可选参数count是模式匹配后替换的最大次数，默认0表示替换所有的匹配项；可选参数flags是标志位，用于控制正则表达式的匹配模式。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">res0 = re.sub(<span class="string">r'\D'</span>, <span class="string">''</span>, <span class="string">'abc123#￥@'</span>, <span class="number">0</span>, re.I)  <span class="comment"># 把非数字部分删除</span></span><br><span class="line">res1 = re.sub(<span class="string">r'\D'</span>, <span class="string">''</span>, <span class="string">'abc123#￥@'</span>, <span class="number">1</span>, re.I)</span><br><span class="line">res2 = re.sub(<span class="string">r'\D'</span>, <span class="string">''</span>, <span class="string">'abc123#￥@'</span>, <span class="number">3</span>, re.I)</span><br><span class="line">print(res0)</span><br><span class="line">print(res1)</span><br><span class="line">print(res2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">123</span></span><br><span class="line"><span class="string">bc123#￥@</span></span><br><span class="line"><span class="string">123#￥@</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过compile编译正则表达式</span></span><br><span class="line">pattern = re.compile(<span class="string">r'\D'</span>, re.I)</span><br><span class="line">res = re.sub(pattern, <span class="string">''</span>, <span class="string">'abc123#￥@'</span>, <span class="number">0</span>)  <span class="comment"># 这时，不能传入flags匹配模式，而要在compile里传入</span></span><br><span class="line">print(res)</span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">123</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># repl是一个函数时，将匹配到的数字乘以2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">double</span><span class="params">(num)</span>:</span></span><br><span class="line">    print(num.group(<span class="string">'value'</span>))</span><br><span class="line">    value = int(num.group(<span class="string">'value'</span>))</span><br><span class="line">    <span class="keyword">return</span> str(value * <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">result = re.sub(<span class="string">r'(?P&lt;value&gt;\d+)'</span>, double, <span class="string">'a1B23C456d7890'</span>)</span><br><span class="line">print(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">1</span></span><br><span class="line"><span class="string">23</span></span><br><span class="line"><span class="string">456</span></span><br><span class="line"><span class="string">7890</span></span><br><span class="line"><span class="string">a2B46C912d15780</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>split：按照能够匹配的子串将字符串分割后返回列表。</li>
+</ul>
+<blockquote>
+<p>split()函数语法：<code>re.split(pattern, string[, maxsplit=0, flags=0])</code>其中，参数pattern是匹配的正则表达式；参数string是需要匹配的字符串；可选参数maxsplit是分割次数，默认为0表示不限制次数；可选参数flags是标志位，用于控制正则表达式的匹配模式。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">res1 = re.split(<span class="string">'\W+'</span>, <span class="string">'www.baidu.com'</span>)</span><br><span class="line">res2 = re.split(<span class="string">'(\W+)'</span>, <span class="string">'www.baidu.com'</span>)</span><br><span class="line">res3 = re.split(<span class="string">'\W+'</span>, <span class="string">'www.baidu.com'</span>, <span class="number">1</span>)  <span class="comment"># 分割一次</span></span><br><span class="line">res4 = re.split(<span class="string">'p*'</span>, <span class="string">'www.baidu.com'</span>)  <span class="comment"># 匹配不到的正则表达式</span></span><br><span class="line">print(res1)</span><br><span class="line">print(res2)</span><br><span class="line">print(res3)</span><br><span class="line">print(res4)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">['www', 'baidu', 'com']</span></span><br><span class="line"><span class="string">['www', '.', 'baidu', '.', 'com']</span></span><br><span class="line"><span class="string">['www', 'baidu.com']</span></span><br><span class="line"><span class="string">['', 'h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', '']</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>escape：将字符串中所有的特殊字正则表达式字符转义，当大量主要加反斜杠\进行转义时，这个函数很有用，避免一些不必要的错误，实际上功能有点类似正则表达式前面加r。</li>
+</ul>
+<blockquote>
+<p>escape()函数语法：<code>re.escape(pattern)</code></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">res = re.escape(<span class="string">'www.python.org'</span>)</span><br><span class="line">print(res)</span><br><span class="line"></span><br><span class="line">result = re.findall(re.escape(<span class="string">'.py'</span>), <span class="string">"python www.python.org proxy.py"</span>)</span><br><span class="line">print(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">www\.python\.org</span></span><br><span class="line"><span class="string">['.py', '.py']</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>手写正则邮箱地址：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">email_addr = <span class="string">'Please reply this email to &lt;abc23@sample.com.cn&gt;'</span></span><br><span class="line"><span class="comment"># tool.chinaz.com给出的是：\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]&#123;2,14&#125;</span></span><br><span class="line">pattern = re.compile(<span class="string">r'([\w\.-]+)@([\w\.-]+)(\.[\w\.]+)'</span>)</span><br><span class="line">res = re.search(pattern, email_addr)</span><br><span class="line"><span class="keyword">if</span> res:</span><br><span class="line">    print(res.group)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"匹配失败"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">abc23@sample.com.cn</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><a href="http://tool.chinaz.com/regex" target="_blank" rel="noopener">常用正则表达式</a></strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">目标</th>
+<th align="left">表达式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">中文字符</td>
+<td align="left"><code>[\u4e00-\u9fa5]</code></td>
+</tr>
+<tr>
+<td align="center">双字节字符(包括汉字在内)</td>
+<td align="left"><code>[^\x00-\xff]</code></td>
+</tr>
+<tr>
+<td align="center">空白行</td>
+<td align="left"><code>\n\s*\r</code></td>
+</tr>
+<tr>
+<td align="center">Email地址</td>
+<td align="left"><code>\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}</code></td>
+</tr>
+<tr>
+<td align="center">网址URL</td>
+<td align="left"><code>[a-zA-z]+://[^\s]*</code> 或 `^((https</td>
+</tr>
+<tr>
+<td align="center">国内电话号码</td>
+<td align="left"><code>[0-9-()（）]{7,18}</code></td>
+</tr>
+<tr>
+<td align="center">国内手机号码</td>
+<td align="left">`0?(13</td>
+</tr>
+<tr>
+<td align="center">QQ号码</td>
+<td align="left"><code>[1-9]([0-9]{5,11})</code></td>
+</tr>
+<tr>
+<td align="center">邮政编码</td>
+<td align="left"><code>\d{6}</code></td>
+</tr>
+<tr>
+<td align="center">身份证号</td>
+<td align="left">`^(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})([0-9]</td>
+</tr>
+<tr>
+<td align="center">日期格式</td>
+<td align="left">`\d{4}(-</td>
+</tr>
+<tr>
+<td align="center">IP地址</td>
+<td align="left">`(25[0-5]</td>
+</tr>
+<tr>
+<td align="center">整数</td>
+<td align="left"><code>-?[1-9]\d*</code></td>
+</tr>
+<tr>
+<td align="center">正整数</td>
+<td align="left"><code>[1-9]\d*</code></td>
+</tr>
+<tr>
+<td align="center">负整数</td>
+<td align="left"><code>-[1-9]\d*</code></td>
+</tr>
+<tr>
+<td align="center">正浮点数</td>
+<td align="left">`[1-9]\d<em>.\d</em></td>
+</tr>
+<tr>
+<td align="center">负浮点数</td>
+<td align="left">`-([1-9]\d<em>.\d</em></td>
+</tr>
+<tr>
+<td align="center">用户名(字母、数字、下划线、-、以及中文)</td>
+<td align="left"><code>[A-Za-z0-9_\-\u4e00-\u9fa5]+</code></td>
+</tr>
+</tbody></table>
+<h2 id="7-Selenium的使用"><a href="#7-Selenium的使用" class="headerlink" title="7. Selenium的使用"></a>7. Selenium的使用</h2><h2 id="8-验证码的识别"><a href="#8-验证码的识别" class="headerlink" title="8. 验证码的识别"></a>8. 验证码的识别</h2><h3 id="（1）图形验证码识别"><a href="#（1）图形验证码识别" class="headerlink" title="（1）图形验证码识别"></a>（1）图形验证码识别</h3><blockquote>
+<p>最简单的图片验证码，利用OCR技术识别验证码，通过库<code>tesserocr</code>。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tesserocr</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 识别验证码图片转换为文本</span></span><br><span class="line">image = Image.open(<span class="string">"Verify.jpg"</span>)</span><br><span class="line">result = tesserocr.image_to_text(image)</span><br><span class="line">print(result)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接将验证码图片转换为字符串（效果不如上者）</span></span><br><span class="line">print(tesserocr.file_to_text(<span class="string">"Verify.jpg"</span>))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果图片存在干扰，需要去除噪声，如转灰度、二值化等操作，提高验证码识别的准确率。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tesserocr</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line">image = Image.open(<span class="string">'code.jpg'</span>)</span><br><span class="line">image = image.convert(<span class="string">'L'</span>)  <span class="comment"># 图片转灰度</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># image = image.convert('1')  # 二值化处理</span></span><br><span class="line"></span><br><span class="line">threshold = <span class="number">127</span>  <span class="comment"># 指定二值化的阈值</span></span><br><span class="line">table = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">256</span>):</span><br><span class="line">    <span class="keyword">if</span> i &lt; threshold:</span><br><span class="line">        table.append(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        table.append(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">image = image.point(table, <span class="string">'1'</span>)</span><br><span class="line">result = tesserocr.image_to_text(text)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="（2）极验滑动验证码识别"><a href="#（2）极验滑动验证码识别" class="headerlink" title="（2）极验滑动验证码识别"></a>（2）极验滑动验证码识别</h3><blockquote>
+<p>极验滑动验证码官网：<code>http://www.geetest.com/</code>，一般是点击滑动到缺口位置，或者生成滑块拖动路径，有效避免人际，犯伪造，防密集攻击了暴力识别，主要用到<code>selenium</code>库和配置<code>ChromeDriver</code>。</p>
+</blockquote>
+<blockquote>
+<p>实现步骤：</p>
+</blockquote>
+<ul>
+<li>模拟点击验证按钮（为了显示缺口）</li>
+<li>识别滑动缺口位置（对照前后两张图片）</li>
+<li>模拟滑动滑块（人拖动轨迹是先慢后快<code>s=v0*t + 0.5*a*t*t</code>和<code>v=v0 + a*t</code>，前面加速度a=2，后面为-3）</li>
+</ul>
+<h3 id="（3）-点击选择验证码的识别"><a href="#（3）-点击选择验证码的识别" class="headerlink" title="（3） 点击选择验证码的识别"></a>（3） 点击选择验证码的识别</h3><blockquote>
+<p>经典12306验证码，文字识别+图片识别，还有TouClick官网按顺序在验证图片找字的验证码。</p>
+</blockquote>
+<blockquote>
+<p>互联网也有很多验证码服务平台，如超级鹰<code>https://www.chaojiying.com</code>，支持英文数字混合(20)、中文汉字(7)、纯英文(12)、纯数字(11)、任意特殊字符、坐标选择识别、计算题、选择题、问答题、选字、选物、选动物等。</p>
+</blockquote>
+<h3 id="（4）-拖动旋转至正的验证码识别"><a href="#（4）-拖动旋转至正的验证码识别" class="headerlink" title="（4） 拖动旋转至正的验证码识别"></a>（4） 拖动旋转至正的验证码识别</h3><h3 id="（5）宫格连线验证码识别"><a href="#（5）宫格连线验证码识别" class="headerlink" title="（5）宫格连线验证码识别"></a>（5）宫格连线验证码识别</h3><blockquote>
+<p>找规律，C型、Z型、X型等等，箭头朝向遍历组合，全图匹配组合</p>
+</blockquote>
+<h2 id="9-代理的使用"><a href="#9-代理的使用" class="headerlink" title="9. 代理的使用"></a>9. 代理的使用</h2><blockquote>
+<p>访问太频繁，导致IP被封禁。通过代理，伪装ip让服务器无法识别是本机发起的请求，免费的代理服务，如西刺<code>http://www.xichidaili.com</code>、66免费代理<code>http://www.66ip.cn/</code>、有代理IP<code>http://www.youdaili.net/</code>、快代理<code>https://www.kuaidaili.com/free/</code>等等，可以参考<a href="https://zhuanlan.zhihu.com/p/52145790" target="_blank" rel="noopener">知乎这篇文章</a>。</p>
+</blockquote>
+<blockquote>
+<p>HTTP代理服务的端口是9743，SOCKS代理服务的端口是9742。</p>
+</blockquote>
+<blockquote>
+<p>代理池的维护，搭建高可用的代理池，防止ip别人占用被封禁或代理服务器出现网络故障，提高爬虫效率。利用Redis的Sorted Set来存储抓取下来的代理，定时抓取各大代理网站的代理，定时检测数据库中的代理，评分与阈值淘汰制，链接数据库通过Web API提供接口服务，随机返回某个可代理的接口。</p>
+</blockquote>
+<h2 id="10-模拟登陆（Headers与Cookies）"><a href="#10-模拟登陆（Headers与Cookies）" class="headerlink" title="10. 模拟登陆（Headers与Cookies）"></a>10. 模拟登陆（Headers与Cookies）</h2><blockquote>
+<p>Headers里面主要包含Cookie、Host、Referer、User-Agent等</p>
+</blockquote>
+<blockquote>
+<p>Form Data包含</p>
+</blockquote>
+<ul>
+<li>commit: Sign in</li>
+<li>utf8: ✔</li>
+<li>authenticity_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxx</li>
+<li>login: amdin</li>
+<li>password: 123456</li>
+</ul>
+<h2 id="11-APP爬取"><a href="#11-APP爬取" class="headerlink" title="11. APP爬取"></a>11. APP爬取</h2><h2 id="12-PySpider框架"><a href="#12-PySpider框架" class="headerlink" title="12. PySpider框架"></a>12. PySpider框架</h2><blockquote>
+<p><strong>PySpider框架的功能：</strong></p>
+</blockquote>
+<ul>
+<li>提供方便易用的WebUI系统，可视化地编写和调试爬虫</li>
+<li>提供爬取进度监控、爬取结果查看、爬虫项目管理等功能</li>
+<li>支持多种数据库，如MySQL、MongoDB、Redis、SQLite、Elasticsearch、PostgreSQL</li>
+<li>支持多种消息队列，如RabbitMQ、Beanstalk、Redis、Kombu</li>
+<li>提供优先级控制、失败重试、定时抓取等功能</li>
+<li>对接了PhantomJS，可以抓取JavaScript渲染的页面</li>
+<li>支持单击和分布式部署，支持Docker部署</li>
+</ul>
+<blockquote>
+<p><strong>PySpider与Scrapy比较：</strong></p>
+</blockquote>
+<ul>
+<li>PySpider提供了WebUI可视化，爬虫的编写和调试都可以在WebUI中进行的；而Scrapy原生的是不具备这个功能的，它采用的是代码和命令操作，但可以通过对接Portia实现可视化配置。</li>
+<li>PySpider调试非常方便，WebUI可视化界面直观；而Scrapy是使用parse命令进行调试，其方便程度不及PySpider。</li>
+<li>PySpider支持PhantomJS来进行JavaScript渲染页面的采集；而Scrapy可以对接Scrapy-Splash组件，这需要额外牌子。</li>
+<li>PySpider中内置了pyquery作为选择器；而Scrapy对接了XPath、CSS选择器和正则匹配。</li>
+<li>PySpider的可扩展程度不足，可配置化程度不高；而Scrapy可以通过Middleware、Pipeline、Extension等组件实现非常强大的功能，模块间耦合程度低，可扩展程度极高。</li>
+</ul>
+<h2 id="13-Scrapy框架"><a href="#13-Scrapy框架" class="headerlink" title="13. Scrapy框架"></a>13. Scrapy框架</h2><blockquote>
+<p>Scrapy框架是基于Twisted的一部处理框架，纯python实现 ，模块间耦合度极低，可扩展性极强。框架包含几个部分：</p>
+</blockquote>
+<ul>
+<li>Engine：引擎，处理整个系统的数据流处理、触发事务，是整个框架的核心。</li>
+<li>Item：项目，它定义了爬取结果的数据结构，爬取的数据会被赋值成该Item对象。</li>
+<li>Scheduler：调度器，接受引擎发过来的请求并将其加入队列中，在引擎再次请求的时候将请求提供给引擎。</li>
+<li>Downloader：下载器，下载网页内容，并将网页内容返回给spider。</li>
+<li>Spiders：蜘蛛，其内定义了爬取的逻辑和网页的解析规则，它主要负责解析相应并生成提取结果和新的请求。</li>
+<li>Item Pipeline：项目管道，负责处理由蜘蛛从网页抽取的项目，它的主要任务是清洗、验证和存储数据。</li>
+<li>Downloader Middlewares：下载器中间件，位于引擎和下载器的链接框架，主要处理引擎与下载器之间的请求及响应。</li>
+<li>Spider Middlewares：蜘蛛中间件，位于引擎和蜘蛛之间的链接框架，主要处理向蜘蛛输入的响应和输出的结果及新的请求。</li>
+</ul>
+<blockquote>
+<p>搭建Scrapy项目</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建项目</span></span><br><span class="line">scrapy startproject test</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个Spider</span></span><br><span class="line">cd test</span><br><span class="line">scrapy genspider baidu www.baidu.com  <span class="comment"># 网址是所要爬取网页的域名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaiduSpider</span><span class="params">(scrapy.Spider)</span>:</span></span><br><span class="line">    name = <span class="string">"baidu"</span></span><br><span class="line">    allowed_domains = [<span class="string">"www.baidu.com"</span>]</span><br><span class="line">    start_urls = [<span class="string">"http://www.baidu.com"</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span>  <span class="comment"># 这里提取方式用CSS选择器或者XPath选择器</span></span><br><span class="line">        res = response.css(<span class="string">'.quote'</span>)</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> res:</span><br><span class="line">            item = BaiduItem()</span><br><span class="line">            text = s.css(<span class="string">'.text::text'</span>).extract_first()</span><br><span class="line">            author = s.css(<span class="string">'.author::text'</span>).extract_first()</span><br><span class="line">            tags = s.css(<span class="string">'.tags tag::text'</span>).extract()</span><br><span class="line">            <span class="keyword">yield</span> item</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建 Item，定义类型为scrapy.Field</span></span><br><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaiduItem</span><span class="params">(scrapy.Item)</span>:</span></span><br><span class="line">    text = scrapy.Field()</span><br><span class="line">    author = scrapy.Field()</span><br><span class="line">    tags = scrapy.Field()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找到后续的Request（即翻页）</span></span><br><span class="line">next = response.css(<span class="string">'.pager .next a::attr(href)'</span>).extract_first()</span><br><span class="line">url = response.urljoin(next)</span><br><span class="line"><span class="keyword">yield</span> scrapy.Request(url=url, callback=self.parse)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行项目</span></span><br><span class="line">scrapy crawl baidu</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存文件</span></span><br><span class="line">scrapy crawl baidu -o baidu.jl  <span class="comment"># 保存为一行json</span></span><br><span class="line">scrapy crawl baidu -o baidu.csv  <span class="comment"># 保存为csv</span></span><br><span class="line">scrapy crawl baidu -o baidu.xml  <span class="comment"># 保存为xml</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用Item Pipeline实现保存到数据库，修改pipeline.py</span></span><br><span class="line"><span class="keyword">from</span> scrapy.exceptions <span class="keyword">import</span> DropItem</span><br><span class="line"><span class="keyword">import</span> pymongo</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MongoPipeline</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, mongo_uri, mongo_db)</span>:</span></span><br><span class="line">        self.mongo_uri = mongo_uri</span><br><span class="line">        self.mongo_db = mongo_db</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">from_crawler</span><span class="params">(cls, crawler)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> cls(</span><br><span class="line">            mongo_uri = crawler.setting.get(<span class="string">"MONGO.URI"</span>),</span><br><span class="line">            mongo_db = crawler.setting.get(<span class="string">"MONGO.DB"</span>)</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">open_spider</span><span class="params">(self, spider)</span>:</span>  <span class="comment"># 初始化操作</span></span><br><span class="line">        self.client = pymongo.MongoClient(self.mongo_uri)</span><br><span class="line">        self.db = self.client[self.mongo_db]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(self, item, spider)</span>:</span></span><br><span class="line">        name = item.__class__.__name__</span><br><span class="line">        self.db[name].insert(dict(item))</span><br><span class="line">        <span class="keyword">return</span> item</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">close_spider</span><span class="params">(self, spider)</span>:</span>  <span class="comment"># 关闭数据库链接</span></span><br><span class="line">        self.client.close()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在setting.py中加入</span></span><br><span class="line">ITEM_PIPELINES = &#123;</span><br><span class="line">    <span class="string">'test.pipilines.TextPipeline'</span>: <span class="number">300</span>,  <span class="comment"># 保存为txt</span></span><br><span class="line">    <span class="string">'test.pipilines.MongoPipeline'</span>: <span class="number">400</span>,  <span class="comment"># 保存到mongodb</span></span><br><span class="line">&#125;</span><br><span class="line">MONGO_URI = <span class="string">'localhost'</span></span><br><span class="line">MONGO_DB = test</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>项目目录结构：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">myMpider/</span><br><span class="line">    scrapy.cfg</span><br><span class="line">    mySpider/</span><br><span class="line">        __init__.py</span><br><span class="line">        items.py</span><br><span class="line">        pipelines.py</span><br><span class="line">        settings.py</span><br><span class="line">        middlewares.py</span><br><span class="line">        spiders/</span><br><span class="line">            __init__.py</span><br><span class="line">            ...</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>scrapy.cfg：它是Scrapy项目的配置文件，其内定义了项目的配置文件路径、部署相关信息等内容。</li>
+<li>item.py：它定义Item数据结构，所有的Item的定义Item Pipeline。为了定义通用输出数据格式，Scrapy提供了Item类。Item对象是用于收集抓取数据的简单容器。它们提供类似字典的API，并具有用于声明其可用字段的方便语法。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># Define here the models for your scraped items</span></span><br><span class="line"><span class="comment"># See documentation in:</span></span><br><span class="line"><span class="comment"># https://doc.scrapy.org/en/latest/topics/items.html</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"><span class="keyword">from</span> scrapy.item <span class="keyword">import</span> Item, Field</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PropertiesItem</span><span class="params">(scrapy.Item)</span>:</span></span><br><span class="line">    <span class="comment"># Primary fields</span></span><br><span class="line">    title = Field()</span><br><span class="line">    price = Field()</span><br><span class="line">    description = Field()</span><br><span class="line">    address  = Field()</span><br><span class="line">    image_urls = Field()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Calculated fields</span></span><br><span class="line">    images = Field()</span><br><span class="line">    location = Field()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Housekeeping fields</span></span><br><span class="line">    url = Field()</span><br><span class="line">    project = Field()</span><br><span class="line">    spider = Field()</span><br><span class="line">    server = Field()</span><br><span class="line">    date = Field()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>pipelines.py：它定义Item Pipeline的实现，所有的Item Pipeline的实现Item Pipeline。主要负责处理Spider中获取到的Item，并进行（详细分析、过滤、存储等）后期处理。项目管道的典型用途是：<ul>
+<li>项目管道的典型用途是</li>
+<li>验证已删除的数据（检查项目是否包含某些字段）</li>
+<li>检查重复项（并删除它们）</li>
+<li>将已删除的项目存储在数据库中</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 几种项目管道的方法：</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(self, item, spider)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> item   <span class="comment">#返回的数据类型是dict类型的</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">open_spider</span><span class="params">(self, spider)</span>:</span></span><br><span class="line">        self.file = open(<span class="string">'items.jl'</span>, <span class="string">'w'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">close_spider</span><span class="params">(self, spider)</span>:</span></span><br><span class="line">        self.file.close()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 把item保存为json</span></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">JsonWriterPipeline</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">open_spider</span><span class="params">(self, spider)</span>:</span></span><br><span class="line">        self.file = open(<span class="string">'items.jl'</span>, <span class="string">'w'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">close_spider</span><span class="params">(self, spider)</span>:</span></span><br><span class="line">        self.file.close()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(self, item, spider)</span>:</span></span><br><span class="line">        line = json.dumps(dict(item)) + <span class="string">"\n"</span></span><br><span class="line">        self.file.write(line)</span><br><span class="line">        <span class="keyword">return</span> item</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存到MongoDB数据库</span></span><br><span class="line"><span class="keyword">import</span> pymongo</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MongoPipeline</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    collection_name = <span class="string">'scrapy_items'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, mongo_uri, mongo_db)</span>:</span></span><br><span class="line">        self.mongo_uri = mongo_uri</span><br><span class="line">        self.mongo_db = mongo_db</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">from_crawler</span><span class="params">(cls, crawler)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> cls(</span><br><span class="line">            mongo_uri=crawler.settings.get(<span class="string">'MONGO_URI'</span>),</span><br><span class="line">            mongo_db=crawler.settings.get(<span class="string">'MONGO_DATABASE'</span>, <span class="string">'items'</span>)</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">open_spider</span><span class="params">(self, spider)</span>:</span></span><br><span class="line">        self.client = pymongo.MongoClient(self.mongo_uri)</span><br><span class="line">        self.db = self.client[self.mongo_db]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">close_spider</span><span class="params">(self, spider)</span>:</span></span><br><span class="line">        self.client.close()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(self, item, spider)</span>:</span></span><br><span class="line">        self.db[self.collection_name].insert_one(dict(item))</span><br><span class="line">        <span class="keyword">return</span> item</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>settings.py：它定义项目的全局配置。Scrapy设置允许您自定义所有Scrapy组件的行为，包括核心，扩展，管道和爬虫本身。设置的基础结构提供了键值映射的全局命名空间，代码可以使用该命名空间从中提取配置值，可以通过不同的机制填充设置。</p>
+</li>
+<li><p>middlewares.py：它定义Spider Middlewares和Downloader Middlewares的实现。Spider Middlewares是一个可以自定扩展和操作引擎和Spider中间通信的功能组件。Downloader Middlewares是一个可以自定义扩展下载功能的组件。</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># Define here the models for your spider middleware</span></span><br><span class="line"><span class="comment"># See documentation in:</span></span><br><span class="line"><span class="comment"># https://doc.scrapy.org/en/latest/topics/spider-middleware.html</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> scrapy <span class="keyword">import</span> signals</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PropertiesSpiderMiddleware</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># Not all methods need to be defined. If a method is not defined,</span></span><br><span class="line">    <span class="comment"># scrapy acts as if the spider middleware does not modify the</span></span><br><span class="line">    <span class="comment"># passed objects.</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">from_crawler</span><span class="params">(cls, crawler)</span>:</span></span><br><span class="line">        <span class="comment"># This method is used by Scrapy to create your spiders.</span></span><br><span class="line">        s = cls()</span><br><span class="line">        crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)</span><br><span class="line">        <span class="keyword">return</span> s</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_spider_input</span><span class="params">(self, response, spider)</span>:</span></span><br><span class="line">        <span class="comment"># Called for each response that goes through the spider</span></span><br><span class="line">        <span class="comment"># middleware and into the spider.</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># Should return None or raise an exception.</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_spider_output</span><span class="params">(self, response, result, spider)</span>:</span></span><br><span class="line">        <span class="comment"># Called with the results returned from the Spider, after</span></span><br><span class="line">        <span class="comment"># it has processed the response.</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># Must return an iterable of Request, dict or Item objects.</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">            <span class="keyword">yield</span> i</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_spider_exception</span><span class="params">(self, response, exception, spider)</span>:</span></span><br><span class="line">        <span class="comment"># Called when a spider or process_spider_input() method</span></span><br><span class="line">        <span class="comment"># (from other spider middleware) raises an exception.</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># Should return either None or an iterable of Response, dict</span></span><br><span class="line">        <span class="comment"># or Item objects.</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_start_requests</span><span class="params">(self, start_requests, spider)</span>:</span></span><br><span class="line">        <span class="comment"># Called with the start requests of the spider, and works</span></span><br><span class="line">        <span class="comment"># similarly to the process_spider_output() method, except</span></span><br><span class="line">        <span class="comment"># that it doesn’t have a response associated.</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># Must return only requests (not items).</span></span><br><span class="line">        <span class="keyword">for</span> r <span class="keyword">in</span> start_requests:</span><br><span class="line">            <span class="keyword">yield</span> r</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">spider_opened</span><span class="params">(self, spider)</span>:</span></span><br><span class="line">        spider.logger.info(<span class="string">'Spider opened: %s'</span> % spider.name)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PropertiesDownloaderMiddleware</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># Not all methods need to be defined. If a method is not defined,</span></span><br><span class="line">    <span class="comment"># scrapy acts as if the downloader middleware does not modify the</span></span><br><span class="line">    <span class="comment"># passed objects.</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">from_crawler</span><span class="params">(cls, crawler)</span>:</span></span><br><span class="line">        <span class="comment"># This method is used by Scrapy to create your spiders.</span></span><br><span class="line">        s = cls()</span><br><span class="line">        crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)</span><br><span class="line">        <span class="keyword">return</span> s</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_request</span><span class="params">(self, request, spider)</span>:</span></span><br><span class="line">        <span class="comment"># Called for each request that goes through the downloader</span></span><br><span class="line">        <span class="comment"># middleware.</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># Must either:</span></span><br><span class="line">        <span class="comment"># - return None: continue processing this request</span></span><br><span class="line">        <span class="comment"># - or return a Response object</span></span><br><span class="line">        <span class="comment"># - or return a Request object</span></span><br><span class="line">        <span class="comment"># - or raise IgnoreRequest: process_exception() methods of</span></span><br><span class="line">        <span class="comment">#   installed downloader middleware will be called</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_response</span><span class="params">(self, request, response, spider)</span>:</span></span><br><span class="line">        <span class="comment"># Called with the response returned from the downloader.</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># Must either;</span></span><br><span class="line">        <span class="comment"># - return a Response object</span></span><br><span class="line">        <span class="comment"># - return a Request object</span></span><br><span class="line">        <span class="comment"># - or raise IgnoreRequest</span></span><br><span class="line">        <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_exception</span><span class="params">(self, request, exception, spider)</span>:</span></span><br><span class="line">        <span class="comment"># Called when a download handler or a process_request()</span></span><br><span class="line">        <span class="comment"># (from other downloader middleware) raises an exception.</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># Must either:</span></span><br><span class="line">        <span class="comment"># - return None: continue processing this exception</span></span><br><span class="line">        <span class="comment"># - return a Response object: stops process_exception() chain</span></span><br><span class="line">        <span class="comment"># - return a Request object: stops process_exception() chain</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">spider_opened</span><span class="params">(self, spider)</span>:</span></span><br><span class="line">        spider.logger.info(<span class="string">'Spider opened: %s'</span> % spider.name)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>spiders：其内包含一个个Spider的实现，每个Spider都有一个文件。Scrapy用他来从网页里抓取内容，并解析抓取的结果。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyspiderSpider</span><span class="params">(scrapy.Spider)</span>:</span></span><br><span class="line">    name = <span class="string">'myspider'</span></span><br><span class="line">    allowed_domains = [<span class="string">'www.baidu.com'</span>]</span><br><span class="line">    start_urls = [<span class="string">'http://www.baidu.com/'</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="14-分布式爬虫"><a href="#14-分布式爬虫" class="headerlink" title="14. 分布式爬虫"></a>14. 分布式爬虫</h2>
       
       <!-- reward -->
       

@@ -181,7 +181,7 @@
 <li><a href="#5-多级反馈队列调度multilevel-feedback-queue-scheduling">(5) 多级反馈队列调度(Multilevel Feedback Queue Scheduling)</a></li>
 </ul>
 </li>
-<li><a href="#18-空">18. 空</a></li>
+<li><a href="#18-treadlocal">18. TreadLocal</a></li>
 <li><a href="#19-nginx如何处理连接">19. nginx如何处理连接</a></li>
 <li><a href="#20-nginx如何做性能优化">20. nginx如何做性能优化</a></li>
 <li><a href="#21-nginx与apache的区别">21. nginx与apache的区别</a></li>
@@ -958,7 +958,7 @@
 <li>仅当第一队列空闲时，调度程序才调度第二队列中的进程运行；仅当第一到第（i-1）队列空时，才会调度第i队列中的进程运行，并执行相应的时间片轮转。</li>
 <li>如果处理机正在处理第i队列中某进程，又有新进程进入优先级较高的队列，则此新队列抢占正在运行的处理机，并把正在运行的进行放在第i队列的队尾。</li>
 </ul>
-<h2 id="18-空"><a href="#18-空" class="headerlink" title="18. 空"></a>18. 空</h2><h2 id="19-nginx如何处理连接"><a href="#19-nginx如何处理连接" class="headerlink" title="19. nginx如何处理连接"></a>19. nginx如何处理连接</h2><h2 id="20-nginx如何做性能优化"><a href="#20-nginx如何做性能优化" class="headerlink" title="20. nginx如何做性能优化"></a>20. nginx如何做性能优化</h2><h2 id="21-nginx与apache的区别"><a href="#21-nginx与apache的区别" class="headerlink" title="21. nginx与apache的区别"></a>21. nginx与apache的区别</h2><h2 id="22-nginx超时怎么办"><a href="#22-nginx超时怎么办" class="headerlink" title="22. nginx超时怎么办"></a>22. nginx超时怎么办</h2><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="1-linux常用命令"><a href="#1-linux常用命令" class="headerlink" title="1. linux常用命令"></a>1. linux常用命令</h2><h2 id="2-Linux内存管理机制"><a href="#2-Linux内存管理机制" class="headerlink" title="2. Linux内存管理机制"></a>2. Linux内存管理机制</h2><h2 id="3-使用什么命令查看cpu和内存情况"><a href="#3-使用什么命令查看cpu和内存情况" class="headerlink" title="3.使用什么命令查看cpu和内存情况"></a>3.使用什么命令查看cpu和内存情况</h2><h2 id="4-如何查看进程的线程情况"><a href="#4-如何查看进程的线程情况" class="headerlink" title="4. 如何查看进程的线程情况"></a>4. 如何查看进程的线程情况</h2><blockquote>
+<h2 id="18-TreadLocal"><a href="#18-TreadLocal" class="headerlink" title="18. TreadLocal"></a>18. TreadLocal</h2><h2 id="19-nginx如何处理连接"><a href="#19-nginx如何处理连接" class="headerlink" title="19. nginx如何处理连接"></a>19. nginx如何处理连接</h2><h2 id="20-nginx如何做性能优化"><a href="#20-nginx如何做性能优化" class="headerlink" title="20. nginx如何做性能优化"></a>20. nginx如何做性能优化</h2><h2 id="21-nginx与apache的区别"><a href="#21-nginx与apache的区别" class="headerlink" title="21. nginx与apache的区别"></a>21. nginx与apache的区别</h2><h2 id="22-nginx超时怎么办"><a href="#22-nginx超时怎么办" class="headerlink" title="22. nginx超时怎么办"></a>22. nginx超时怎么办</h2><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="1-linux常用命令"><a href="#1-linux常用命令" class="headerlink" title="1. linux常用命令"></a>1. linux常用命令</h2><h2 id="2-Linux内存管理机制"><a href="#2-Linux内存管理机制" class="headerlink" title="2. Linux内存管理机制"></a>2. Linux内存管理机制</h2><h2 id="3-使用什么命令查看cpu和内存情况"><a href="#3-使用什么命令查看cpu和内存情况" class="headerlink" title="3.使用什么命令查看cpu和内存情况"></a>3.使用什么命令查看cpu和内存情况</h2><h2 id="4-如何查看进程的线程情况"><a href="#4-如何查看进程的线程情况" class="headerlink" title="4. 如何查看进程的线程情况"></a>4. 如何查看进程的线程情况</h2><blockquote>
 <p><code>top -H -p</code></p>
 </blockquote>
 <h2 id="5-如何查看系统性能、性能指标"><a href="#5-如何查看系统性能、性能指标" class="headerlink" title="5. 如何查看系统性能、性能指标"></a>5. 如何查看系统性能、性能指标</h2><h2 id="6-查看系统负载"><a href="#6-查看系统负载" class="headerlink" title="6. 查看系统负载"></a>6. 查看系统负载</h2><h2 id="7-linux文件类型、文件管理"><a href="#7-linux文件类型、文件管理" class="headerlink" title="7. linux文件类型、文件管理"></a>7. linux文件类型、文件管理</h2><h2 id="8-cup负载过高怎么解决"><a href="#8-cup负载过高怎么解决" class="headerlink" title="8. cup负载过高怎么解决"></a>8. cup负载过高怎么解决</h2>
@@ -1043,11 +1043,11 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/05/08/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/" class="article-nav-link">
+      <a href="/2020/05/08/%E7%AE%97%E6%B3%95%E4%B8%8E%E7%BC%96%E7%A8%8B/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            自然语言处理知识点总结归纳
+            算法编程知识点总结归纳
           
         </div>
       </a>

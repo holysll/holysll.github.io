@@ -78,7 +78,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">25.1k</span>
+            <span class="post-count">25.2k</span>
         </span>
     </span>
 
@@ -324,7 +324,7 @@
 <li>在经常使用在WHERE子句中的列上面创建索引，加快条件的判断速度；</li>
 <li>经常在order by、group by之后的字段考虑建索引；</li>
 <li>考虑联合索引中的顺序，否则无法命中索引</li>
-<li>对非空字段<code>(NOT NULL)</code>创建索引，Mysql很难对控制做查询优化</li>
+<li>对非空字段<code>(NOT NULL)</code>创建索引，Mysql很难对空值做查询优化</li>
 <li>索引适合区分度高、离散程度大的字段，有大量重复值的字段不适合建索引；</li>
 <li>索引的长度不能太长，耗时；</li>
 <li>对于那些定义为text, image和bit数据类型的列不应该增加索引；</li>
@@ -1099,6 +1099,11 @@
 <blockquote>
 <p>格式：<code>SELECT ab.* from a ab,a ac where ab.id&gt;ac.id;</code></p>
 </blockquote>
+<ul>
+<li>自然连接：是一种特殊的等值连接，要求两个关系表中进行连接的必须是相同的属性列（名字相同），无需添加连接条件，并且在结果中消除重复的属性列。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> table1 <span class="keyword">natural</span> <span class="keyword">join</span> <span class="keyword">table</span>;</span><br></pre></td></tr></table></figure>
+
 <h2 id="12-组合"><a href="#12-组合" class="headerlink" title="12. 组合"></a>12. 组合</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 组合，自动处理重合</span></span><br><span class="line"><span class="keyword">select</span> username <span class="keyword">from</span> A <span class="keyword">union</span> <span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> B;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 组合，不处理重合</span></span><br><span class="line"><span class="keyword">select</span> username <span class="keyword">from</span> A <span class="keyword">union</span> <span class="keyword">all</span> <span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> B;</span><br></pre></td></tr></table></figure>
 
 <h2 id="13-LIMIT的用法"><a href="#13-LIMIT的用法" class="headerlink" title="13. LIMIT的用法"></a>13. LIMIT的用法</h2><blockquote>
