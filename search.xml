@@ -1100,7 +1100,7 @@
 </blockquote>
 <p><strong>缺点：</strong><br>①清除非活动对象前必须顺序扫描整个堆内存，哪怕只剩下小部分活动对象也要扫描所有对象。</p>
 <ul>
-<li>分带回收策略</li>
+<li>分代回收策略</li>
 </ul>
 <blockquote>
 <p>分代回收的整体思想是：将系统中所有的内存块根据其存活时间划分为不同的集合，每个集合就成为一个“代”，python将内存等为3“代”，分别是年轻代(第0代)、中年代(第1代)、老年代(第2代)，它们对应的是三个链表，它们的垃圾回收集频率随着“代”的存活时间的增大而减小，新创建的对象都会分配在年轻代，年轻代链表总数达到上限时，python垃圾回收机制就回被触发，把那些可以被回收的对象回收，而那些不被回收的对象就会移到中年代去，以此类推，老年代中的对象是存活时间最久的对象，甚至是存活于整个系统的生命周期，存活时间通常利用经过几次垃圾回收来度量。同时，分代回收是建立在标记清除技术基础之上。</p>
@@ -4370,37 +4370,6 @@
       </tags>
   </entry>
   <entry>
-    <title>自然语言处理知识点总结归纳</title>
-    <url>/2020/05/08/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<blockquote>
-<p>本文主要对自然语言处理基础知识进行梳理、回顾，把一些需要记住的概念原理，和容易混淆，晦涩的知识点进行归纳。</p>
-</blockquote>
-<a id="more"></a>
-
-<div style='display: none'>
-
-<!-- TOC -->
-
-<ul>
-<li><a href="#1-情感分析">1. 情感分析</a></li>
-<li><a href="#2-文本挖掘">2. 文本挖掘</a></li>
-<li><a href="#3-语义分析">3. 语义分析</a></li>
-</ul>
-<!-- /TOC -->
-
-</div>
-
-<h2 id="1-情感分析"><a href="#1-情感分析" class="headerlink" title="1. 情感分析"></a>1. 情感分析</h2><h2 id="2-文本挖掘"><a href="#2-文本挖掘" class="headerlink" title="2. 文本挖掘"></a>2. 文本挖掘</h2><h2 id="3-语义分析"><a href="#3-语义分析" class="headerlink" title="3. 语义分析"></a>3. 语义分析</h2>]]></content>
-      <categories>
-        <category>自然语言处理</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>情感分析</tag>
-        <tag>文本分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>算法编程知识点总结归纳</title>
     <url>/2020/05/08/%E7%AE%97%E6%B3%95%E4%B8%8E%E7%BC%96%E7%A8%8B/</url>
     <content><![CDATA[<blockquote>
@@ -4419,7 +4388,7 @@
 <li><a href="#3-bfs">3. BFS</a></li>
 <li><a href="#4-冒泡排序">4. 冒泡排序</a></li>
 <li><a href="#5-快排">5. 快排</a></li>
-<li><a href="#6-堆排序">6. 堆排序</a></li>
+<li><a href="#6-归并排序">6. 归并排序</a></li>
 <li><a href="#7-二叉树">7. 二叉树</a><ul>
 <li><a href="#1-二叉树">(1) 二叉树</a></li>
 <li><a href="#2-二叉树的前序遍历leetcode-144">(2) 二叉树的前序遍历(leetcode 144)</a></li>
@@ -4472,10 +4441,10 @@
 </blockquote>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quickSort</span><span class="params">(arr)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(arr) &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> arr</span><br><span class="line">    <span class="comment"># 左、右两边数组</span></span><br><span class="line">    left, right = [], []</span><br><span class="line">    <span class="comment"># 基准数</span></span><br><span class="line">    base = arr.pop()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 对需要排序的数组进行划分</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> arr:</span><br><span class="line">        <span class="keyword">if</span> i &lt; base:</span><br><span class="line">            left.append(i)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            right.append(i)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 递归</span></span><br><span class="line">    <span class="keyword">return</span> quickSort(left) + [base] + quickSort(right)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    arr = [<span class="number">10</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">5</span>]</span><br><span class="line">    print(quickSort(arr))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">[1, 5, 7, 8, 9, 10]</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="6-堆排序"><a href="#6-堆排序" class="headerlink" title="6. 堆排序"></a>6. 堆排序</h2><blockquote>
-<p>时间复杂度O(nlogn)，空间复杂度O(1)</p>
+<h2 id="6-归并排序"><a href="#6-归并排序" class="headerlink" title="6. 归并排序"></a>6. 归并排序</h2><blockquote>
+<p>时间复杂度O(nlogn)，空间复杂度O(n)</p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeSort</span><span class="params">(self, arr)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> len(arr) &lt; <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> arr</span><br><span class="line">        mid = len(arr) // <span class="number">2</span></span><br><span class="line">        left, right = arr[<span class="number">0</span>: mid], [mid:]</span><br><span class="line">        <span class="keyword">return</span> self.merge(self.mergeSort(left), self.mergeSort(right))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(self, left, right)</span>:</span></span><br><span class="line">        res = []</span><br><span class="line">        <span class="keyword">while</span> left <span class="keyword">and</span> right:</span><br><span class="line">            <span class="keyword">if</span> left[<span class="number">0</span>] &lt;= right[<span class="number">0</span>]:</span><br><span class="line">                res.append(left.pop(<span class="number">0</span>))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                res.append(right.pop(<span class="number">0</span>))</span><br><span class="line">    <span class="keyword">while</span> left:</span><br><span class="line">        res.append(left.pop(<span class="number">0</span>))</span><br><span class="line">    <span class="keyword">while</span> right:</span><br><span class="line">        res.append(right.pop(<span class="number">0</span>))</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    arr = [<span class="number">12</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line">    solution  = Solution()</span><br><span class="line">    res = solution.mergeSort(arr)</span><br><span class="line">    print(res)</span><br></pre></td></tr></table></figure>
 
 <h2 id="7-二叉树"><a href="#7-二叉树" class="headerlink" title="7. 二叉树"></a>7. 二叉树</h2><h3 id="1-二叉树"><a href="#1-二叉树" class="headerlink" title="(1) 二叉树"></a>(1) 二叉树</h3><blockquote>
 <p>二叉树是最基本的数据结构之一，二叉树（Binary Tree）是包含n个节点的有限集合，该集合或者为空集（此时，二叉树称为空树），或者由一个根节点和两棵互不相交的、分别称为根节点的左子树和右子树的二叉树组成。二叉树中的节点至多包含两棵子树，分别称为左子树和右子树，而左子树和右子树又分别至多包含两棵子树。二叉树的定义是一种递归的定义。</p>
@@ -4547,7 +4516,9 @@
 <p>本题中，路径被定义为一条从树中任意节点出发，达到任意节点的序列。该路径至少包含一个节点，且不一定经过根节点。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义二叉树节点</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 官方递归解法</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.maxSum = float(<span class="string">"-inf"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxPathSum</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">get_max</span><span class="params">(node)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> node:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 递归计算左右节点的最大贡献值，并且要大于0</span></span><br><span class="line">            left = max(get_max(node.left), <span class="number">0</span>)</span><br><span class="line">            right = max(get_max(node.right), <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 节点的最大路径和取决于该节点的值与该节点的左右节点的最大贡献值</span></span><br><span class="line">            max_path = node.val + left + right</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 更新最大路径值</span></span><br><span class="line">            self.maxSum = max(self.maxSum, max_path)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 返回节点的最大贡献值</span></span><br><span class="line">            <span class="keyword">return</span> node.val + max(left, right)</span><br><span class="line"></span><br><span class="line">        get_max(root)</span><br><span class="line">        <span class="keyword">return</span> self.maxSum</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 大佬逻辑清晰解答</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">思路：</span></span><br><span class="line"><span class="string">最大路径和：根据当前节点的角色，路径和可分为两种情况：</span></span><br><span class="line"><span class="string">    一：以当前节点为根节点</span></span><br><span class="line"><span class="string">    1.只有当前节点</span></span><br><span class="line"><span class="string">    2.当前节点+左子树</span></span><br><span class="line"><span class="string">    3.当前节点+右子书</span></span><br><span class="line"><span class="string">    4.当前节点+左右子树    </span></span><br><span class="line"><span class="string">    这四种情况的最大值即为以当前节点为根的最大路径和</span></span><br><span class="line"><span class="string">    此最大值要和已经保存的最大值比较，得到整个树的最大路径值</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    二：当前节点作为父节点的一个子节点</span></span><br><span class="line"><span class="string">    和父节点连接的话则需取【单端的最大值】</span></span><br><span class="line"><span class="string">    1.只有当前节点</span></span><br><span class="line"><span class="string">    2.当前节点+左子树</span></span><br><span class="line"><span class="string">    3.当前节点+右子书</span></span><br><span class="line"><span class="string">    这三种情况的最大值   </span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution1</span><span class="params">(object)</span>:</span></span><br><span class="line">    res = -sys.maxsize - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxPathSum</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.maxValue(root)</span><br><span class="line">        <span class="keyword">return</span> self.res</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxValue</span><span class="params">(self, node)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> node:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        left_value = self.maxValue(node.left)</span><br><span class="line">        right_value = self.maxValue(node.right)</span><br><span class="line"></span><br><span class="line">        value1 = node.val</span><br><span class="line">        value2 = node.val + left_value</span><br><span class="line">        value3 = node.val + right_value</span><br><span class="line">        value4 = node.val + left_value + right_value</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 以此节点为根节点的最大值</span></span><br><span class="line">        maxValue = max([value1, value2, value3, value4])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 当前遍历树的最大值</span></span><br><span class="line">        self.res = max(maxValue, self.res)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 和父节点关联，去除情况4的最大值</span></span><br><span class="line">        <span class="keyword">return</span> max([value1, value2, value3])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 递归，后续遍历</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution2</span><span class="params">(object)</span>:</span></span><br><span class="line">    res = float(<span class="string">'-inf'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxPathSum</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(node)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> node:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            l = helper(node.left)</span><br><span class="line">            r = helper(node.right)</span><br><span class="line">            self.res = max(self.res, max(l, <span class="number">0</span>) + max(r, <span class="number">0</span>) + node.val)</span><br><span class="line">            <span class="keyword">return</span> max(l, r, <span class="number">0</span>) + node.val</span><br><span class="line"></span><br><span class="line">        helper(root)</span><br><span class="line">        <span class="keyword">return</span> self.res</span><br></pre></td></tr></table></figure>
 
-<h2 id="15-动态规划问题"><a href="#15-动态规划问题" class="headerlink" title="15. 动态规划问题"></a>15. 动态规划问题</h2><h2 id="16-01背包问题"><a href="#16-01背包问题" class="headerlink" title="16. 01背包问题"></a>16. 01背包问题</h2><h2 id="17-两个栈实现一个队列"><a href="#17-两个栈实现一个队列" class="headerlink" title="17. 两个栈实现一个队列"></a>17. 两个栈实现一个队列</h2><h2 id="18-二叉树的直径"><a href="#18-二叉树的直径" class="headerlink" title="18. 二叉树的直径"></a>18. 二叉树的直径</h2><h2 id="19-全排列"><a href="#19-全排列" class="headerlink" title="19. 全排列"></a>19. 全排列</h2><ul>
+<h2 id="15-动态规划问题"><a href="#15-动态规划问题" class="headerlink" title="15. 动态规划问题"></a>15. 动态规划问题</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 青蛙跳台阶问题</span></span><br><span class="line"><span class="keyword">import</span> functools  <span class="comment"># 调试时估计不让导入模块，而且常规递归容易超时</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接递归法，容易超时，加入缓存装饰器，递归转换成迭代</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution1</span><span class="params">(object)</span>:</span></span><br><span class="line"><span class="meta">    @functools.lru_cache(100)  # 缓存装饰器</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numWays</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span>: <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span>: <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">2</span>: <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">        <span class="keyword">return</span> self.numWays(n - <span class="number">1</span>) + self.numWays(n - <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数组记忆递归法，减少重复计算</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution2</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numWays</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        nums = [<span class="number">-1</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(n + <span class="number">1</span>)]</span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span>: <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span>: <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">2</span>: <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> nums[n] == <span class="number">-1</span>:</span><br><span class="line">            nums[n] = self.numWays(n - <span class="number">1</span>) + self.numWays(n - <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">return</span> nums[n] % <span class="number">1000000007</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接DP，利用字典存储变量</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution3</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numWays</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        dp = &#123;&#125;</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">        dp[<span class="number">2</span>] = <span class="number">2</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>, n + <span class="number">1</span>):</span><br><span class="line">            dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>]</span><br><span class="line">        <span class="keyword">return</span> dp[n] % <span class="number">1000000007</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># DP，存储元素交换，建议用一个临时变量temp，使得a,b a+b进行交换，这样更节省时间</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution4</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numWays</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span> <span class="keyword">or</span> n == <span class="number">1</span>: <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">2</span>: <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">        a, b = <span class="number">1</span>, <span class="number">2</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>, n + <span class="number">1</span>):</span><br><span class="line">            b, a = a + b, b</span><br><span class="line">        <span class="keyword">return</span> b % <span class="number">1000000007</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 动态规划</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution5</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numWays</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> n &lt; <span class="number">2</span>: <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        dp = [<span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(n + <span class="number">1</span>)]</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, n + <span class="number">1</span>):</span><br><span class="line">            dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>]</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">-1</span>] % <span class="number">1000000007</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    n = <span class="number">7</span></span><br><span class="line">    solution1 = Solution1()</span><br><span class="line">    res1 = solution1.numWays(n)</span><br><span class="line">    print(res1)</span><br><span class="line"></span><br><span class="line">    solution2 = Solution2()</span><br><span class="line">    res2 = solution2.numWays(n)</span><br><span class="line">    print(res2)</span><br><span class="line"></span><br><span class="line">    solution3 = Solution3()</span><br><span class="line">    res3 = solution3.numWays(n)</span><br><span class="line">    print(res3)</span><br><span class="line"></span><br><span class="line">    solution4 = Solution4()</span><br><span class="line">    res4 = solution4.numWays(n)</span><br><span class="line">    print(res4)</span><br><span class="line"></span><br><span class="line">    solution5 = Solution5()</span><br><span class="line">    res5 = solution5.numWays(n)</span><br><span class="line">    print(res5)</span><br></pre></td></tr></table></figure>
+
+<h2 id="16-01背包问题"><a href="#16-01背包问题" class="headerlink" title="16. 01背包问题"></a>16. 01背包问题</h2><h2 id="17-两个栈实现一个队列"><a href="#17-两个栈实现一个队列" class="headerlink" title="17. 两个栈实现一个队列"></a>17. 两个栈实现一个队列</h2><h2 id="18-二叉树的直径"><a href="#18-二叉树的直径" class="headerlink" title="18. 二叉树的直径"></a>18. 二叉树的直径</h2><h2 id="19-全排列"><a href="#19-全排列" class="headerlink" title="19. 全排列"></a>19. 全排列</h2><ul>
 <li>itertools内置permutations方法实现</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> permutations</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            n = int(input().strip())</span><br><span class="line">            s = [str(i + <span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line">            res = list(permutations(s))</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> res:</span><br><span class="line">                print(<span class="string">" "</span>.join(i))</span><br><span class="line">            print(len(res))</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    func()</span><br></pre></td></tr></table></figure>
@@ -4578,6 +4549,37 @@
       </categories>
       <tags>
         <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自然语言处理知识点总结归纳</title>
+    <url>/2020/05/08/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<blockquote>
+<p>本文主要对自然语言处理基础知识进行梳理、回顾，把一些需要记住的概念原理，和容易混淆，晦涩的知识点进行归纳。</p>
+</blockquote>
+<a id="more"></a>
+
+<div style='display: none'>
+
+<!-- TOC -->
+
+<ul>
+<li><a href="#1-情感分析">1. 情感分析</a></li>
+<li><a href="#2-文本挖掘">2. 文本挖掘</a></li>
+<li><a href="#3-语义分析">3. 语义分析</a></li>
+</ul>
+<!-- /TOC -->
+
+</div>
+
+<h2 id="1-情感分析"><a href="#1-情感分析" class="headerlink" title="1. 情感分析"></a>1. 情感分析</h2><h2 id="2-文本挖掘"><a href="#2-文本挖掘" class="headerlink" title="2. 文本挖掘"></a>2. 文本挖掘</h2><h2 id="3-语义分析"><a href="#3-语义分析" class="headerlink" title="3. 语义分析"></a>3. 语义分析</h2>]]></content>
+      <categories>
+        <category>自然语言处理</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>情感分析</tag>
+        <tag>文本分析</tag>
       </tags>
   </entry>
   <entry>
@@ -6457,7 +6459,7 @@
 <ul>
 <li>简单Case函数</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CASE sex</span><br><span class="line">WHEN '1' THEN '男'</span><br><span class="line">WHEN '2' THEN '女'</span><br><span class="line">ELSE '其他' <span class="keyword">END</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CASE sex</span><br><span class="line">    WHEN '1' THEN '男'</span><br><span class="line">    WHEN '2' THEN '女'</span><br><span class="line">    ELSE '其他' </span><br><span class="line"><span class="keyword">END</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>Case搜索函数</li>
@@ -7122,6 +7124,7 @@
 <li><a href="#35-soap">35. SOAP</a></li>
 <li><a href="#36-restful架构">36. RESTful架构</a></li>
 <li><a href="#37-幂等">37. 幂等</a></li>
+<li><a href="#38-为什么要有time_wait这个状态">38. 为什么要有TIME_WAIT这个状态</a></li>
 </ul>
 </li>
 <li><a href="#django">Django</a><ul>
@@ -7319,7 +7322,7 @@
 <p>因为当Server端收到Client端的SYN连接请求报文后，可以直接发送SYN+ACK报文。其中ACK报文是用来应答的，SYN报文是用来同步的。但是关闭连接时，当Server端收到FIN报文时，很可能并不会立即关闭SOCKET，所以只能先回复一个ACK报文，告诉Client端，”你发的FIN报文我收到了”。只有等到我Server端所有的报文都发送完了，我才能发送FIN报文，因此不能一起发送。故需要四步握手。</p>
 </blockquote>
 <h2 id="9-为什么TIME-WAIT状态需要经过2MSL-最大报文段生存时间-才能返回到CLOSE状态"><a href="#9-为什么TIME-WAIT状态需要经过2MSL-最大报文段生存时间-才能返回到CLOSE状态" class="headerlink" title="9. 为什么TIME_WAIT状态需要经过2MSL(最大报文段生存时间)才能返回到CLOSE状态"></a>9. 为什么TIME_WAIT状态需要经过2MSL(最大报文段生存时间)才能返回到CLOSE状态</h2><blockquote>
-<p>按道理，四个报文都发送完毕，我们可以直接进入CLOSE状态了，但是我们必须假象网络是不可靠的，有可以最后一个ACK丢失。所以TIME_WAIT状态就是用来重发可能丢失的ACK报文。在Client发送出最后的ACK回复，但该ACK可能丢失。Server如果没有收到ACK，将不断重复发送FIN片段。所以Client不能立即关闭，它必须确认Server接收到了该ACK。Client会在发送出ACK之后进入到TIME_WAIT状态。Client会设置一个计时器，等待2MSL的时间。如果在该时间内再次收到FIN，那么Client会重发ACK并再次等待2MSL。所谓的2MSL是两倍的MSL(Maximum Segment Lifetime)。MSL指一个片段在网络中最大的存活时间，2MSL就是一个发送和一个回复所需的最大时间。如果直到2MSL，Client都没有再次收到FIN，那么Client推断ACK已经被成功接收，则结束TCP连接。</p>
+<p>按道理，四个报文都发送完毕，我们可以直接进入CLOSE状态了，但是我们必须假想网络是不可靠的，有可以最后一个ACK丢失。所以TIME_WAIT状态就是用来重发可能丢失的ACK报文。在Client发送出最后的ACK回复，但该ACK可能丢失。Server如果没有收到ACK，将不断重复发送FIN片段。所以Client不能立即关闭，它必须确认Server接收到了该ACK。Client会在发送出ACK之后进入到TIME_WAIT状态。Client会设置一个计时器，等待2MSL的时间。如果在该时间内再次收到FIN，那么Client会重发ACK并再次等待2MSL。所谓的2MSL是两倍的MSL(Maximum Segment Lifetime)。MSL指一个片段在网络中最大的存活时间，2MSL就是一个发送和一个回复所需的最大时间。如果直到2MSL，Client都没有再次收到FIN，那么Client推断ACK已经被成功接收，则结束TCP连接。</p>
 </blockquote>
 <h2 id="10-如果已经建立了连接，但是客户端突然出现故障了怎么办"><a href="#10-如果已经建立了连接，但是客户端突然出现故障了怎么办" class="headerlink" title="10. 如果已经建立了连接，但是客户端突然出现故障了怎么办"></a>10. 如果已经建立了连接，但是客户端突然出现故障了怎么办</h2><blockquote>
 <p>TCP还设有一个保活计时器，显然，客户端如果出现故障，服务器不能一直等下去，白白浪费资源。服务器每收到一次客户端的请求后都会重新复位这个计时器，时间通常是设置为2小时，若两小时还没有收到客户端的任何数据，服务器就会发送一个探测报文段，以后每隔75秒钟发送一次。若一连发送10个探测报文仍然没反应，服务器就认为客户端出了故障，接着就关闭连接。</p>
@@ -7360,7 +7363,7 @@
 <p>将加密密钥分为公钥和私钥，公钥可以公开，私钥是保密的；客户端用公钥加密数据，服务端可以用私钥解密。如RSA、ECC等。</p>
 </blockquote>
 <h2 id="13-HTTP和HTTPS的区别"><a href="#13-HTTP和HTTPS的区别" class="headerlink" title="13. HTTP和HTTPS的区别"></a>13. HTTP和HTTPS的区别</h2><blockquote>
-<p>HTTP协议传输的数据都是为加密的，也就是明文的，因此使用HTTP协议传输隐私信息非常不安全，为了保证这些隐私数据能够加密传输，引入了SSL（Secure Sockets Layer）协议对HTTP协议传输的数据进行加密，因此HTTPS等同于HTTP + SSL。</p>
+<p>HTTP协议传输的数据都是未加密的，也就是明文的，因此使用HTTP协议传输隐私信息非常不安全，为了保证这些隐私数据能够加密传输，引入了SSL（Secure Sockets Layer）协议对HTTP协议传输的数据进行加密，因此HTTPS等同于HTTP + SSL。</p>
 </blockquote>
 <blockquote>
 <p>HTTPS协议简单来说就是HTTP + SSL协议构建的可进行加密传输、身份认证的网络协议，比HTTP协议更加安全。</p>
@@ -7474,7 +7477,7 @@
 <p><strong>Host头处理</strong>：在HTTP1.0中认为每台服务器都绑定唯一的IP地址，因此请求消息中的URL并没有传递主机名（hostname）。但随着虚拟主机技术的发展，在一台物理服务器上可以存在多个虚拟主机，并且他们共享一个IP地址；在HTTP1.1中，请求消息和响应消息都支持Host头域，且请求消息中如果没有Host头域会报告400（Bad Request）。</p>
 </blockquote>
 <blockquote>
-<p><strong>长连接</strong>：HTTP1.1支持长连接（Persistent Connection）和请求的流水线处理（Pipelining），在一个TCP连接上可以传送多个HTTP请求和响应，减少了建立和关闭连接的消耗和延迟，在HTTP1.1中默认开启<code>Connection: keep-alive</code>，一定程度受伤弥补了HTTP1.0每次请求都要创建连接的缺点。</p>
+<p><strong>长连接</strong>：HTTP1.1支持长连接（Persistent Connection）和请求的流水线处理（Pipelining），在一个TCP连接上可以传送多个HTTP请求和响应，减少了建立和关闭连接的消耗和延迟，在HTTP1.1中默认开启<code>Connection: keep-alive</code>，一定程度上弥补了HTTP1.0每次请求都要创建连接的缺点。</p>
 </blockquote>
 <blockquote>
 <p><strong>新增Request方法</strong>：HTTP1.1增加了OPTIONS、PUT、DELETE、TRACE、CONNECT这些Request方法。</p>
@@ -7862,7 +7865,7 @@
 <li>select</li>
 </ul>
 <blockquote>
-<p>通过一个select()系统调用来见识多个文件描述符的数组，当select()返回后，该数组中就绪的文件描述符便会被内核修改标志位，使得进程可以获得这些文件描述符从而进行后续的读写操作。</p>
+<p>通过一个select()系统调用来监视多个文件描述符的数组，当select()返回后，该数组中就绪的文件描述符便会被内核修改标志位，使得进程可以获得这些文件描述符从而进行后续的读写操作。</p>
 </blockquote>
 <blockquote>
 <p>select优缺点：</p>
@@ -8014,6 +8017,9 @@
 </blockquote>
 <blockquote>
 <p>PUT方法所对应的URI是要创建或更新的资源本身。比如<code>PUT http://www.forum/articles/4231</code>的语义是创建或者更新ID为4231的帖子。对同一URI进行多次PUT的副作用和一次PUT是相同的，因此PUT方法具备幂等性。</p>
+</blockquote>
+<h2 id="38-为什么要有TIME-WAIT这个状态"><a href="#38-为什么要有TIME-WAIT这个状态" class="headerlink" title="38. 为什么要有TIME_WAIT这个状态"></a>38. 为什么要有TIME_WAIT这个状态</h2><blockquote>
+<p>为什么主动关闭的一端不直接进入closed状态，而是要先进入time_wait并且停留两倍的MSL时长呢？这是因为TCP是建立在不可靠网络上的可靠协议。如果主动关闭的一端收到被动关闭一端的发出的FIN包后，返回ACK包，同时进入TIME_WAIT，但是由于网络的原因，主动关闭一端发送的ACK包可能会延迟，从而触发被动关闭一方重传FIN包，这样一来一回极端情况正好是2MSL。如果主动关闭的一端直接close或者不到两倍MSL时间就关闭，那么被动关闭发出重传FIN包到达，可能出现的问题是：旧的连接不存在，系统只能返回RST包；新的TCP连接已经建立，延迟包可能会干扰新连接。这都可能导致TCP不可靠。（所以需要旧的连接一直保持time_wait 2MSL时间）</p>
 </blockquote>
 <h1 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h1><h2 id="1-Django"><a href="#1-Django" class="headerlink" title="1. Django"></a>1. Django</h2><blockquote>
 <p>Django 是一个由 Python 编写的一个开放源代码的 Web 应用框架。使用 Django，只要很少的代码，Python 的程序开发人员就可以轻松地完成一个正式网站所需要的大部分内容，并进一步开发出全功能的 Web 服务 Django 本身基于 MVC 模型，即 Model（模型）+ View（视图）+ Controller（控制器）设计模式，MVC 模式使后续对程序的修改和扩展简化，并且使程序某一部分的重复利用成为可能。</p>
